@@ -1,7 +1,7 @@
 
 depth = 0
 
-interactRadius = sprite_width*4
+
 enum playerStates{
 	normal,
 }
@@ -13,9 +13,15 @@ function movementY(){
 	return movementVector[1]*movementSpeed;
 }
 resetInputs() //same effect as initializing inputs
-playerVariables_movement()
-generalVariables();
+
+playerVariables_movement() //initialize movement-related variables
+
+generalVariables(); //initialize general variables
 //initializeEnums();
+
+//summon the object showing the visual player
 visual = summonObject(obj_player_visual, [["parent", id]]);
+
+interactRadius = visual.sprite_width*1.5 //area of interaction
 
 nearbyAlerts = ds_list_create();
