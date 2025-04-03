@@ -12,7 +12,7 @@ function movementX(){
 function movementY(){
 	return movementVector[1]*movementSpeed;
 }
-resetInputs() //same effect as initializing inputs
+
 
 playerVariables_movement() //initialize movement-related variables
 

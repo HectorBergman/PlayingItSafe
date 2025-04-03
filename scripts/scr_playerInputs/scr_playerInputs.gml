@@ -17,6 +17,10 @@ function playerInput(){
 	}
 	if mouse_check_button(mb_left)
 	{
+		mouseHeld = true;
+	}
+	if mouse_check_button_pressed(mb_left)
+	{
 		mouseClick = true;
 	}
 	if keyboard_check_pressed(ord("E")){
@@ -29,6 +33,7 @@ function resetInputs(){
 	moveDown = false;
 	moveLeft = false;
 	moveRight = false;
+	mouseHeld = false;
 	mouseClick = false;
 	interact = false;
 }

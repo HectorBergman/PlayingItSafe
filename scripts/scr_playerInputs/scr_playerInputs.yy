@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_playerInputs",
   "parent":{
-    "name":"playerVariables",
-    "path":"folders/Objects/aInitiationVariables/playerVariables.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

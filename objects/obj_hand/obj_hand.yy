@@ -1,15 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_cam",
+  "%Name":"obj_hand",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_cam",
+  "name":"obj_hand",
   "overriddenProperties":[],
   "parent":{
-    "name":"handlers",
-    "path":"folders/Objects/handlers.yy",
+    "name":"dragAndDrop",
+    "path":"folders/Objects/minigames/dragAndDrop.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hand",
+    "path":"sprites/spr_hand/spr_hand.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

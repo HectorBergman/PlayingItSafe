@@ -1,13 +1,13 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function playerState_normal(){
-	if moveDown || moveUp{
-		movementVector[1] = (moveDown-moveUp);
+	if inHand.moveDown || inHand.moveUp{
+		movementVector[1] = (inHand.moveDown-inHand.moveUp);
 	}else{
 		movementVector[1] = 0;
 	}
-	if moveLeft || moveRight{
-		movementVector[0] = (moveRight-moveLeft);
+	if inHand.moveLeft ||inHand. moveRight{
+		movementVector[0] = (inHand.moveRight-inHand.moveLeft);
 	}else{
 		movementVector[0] = 0;
 	}
