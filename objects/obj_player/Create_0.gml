@@ -1,5 +1,5 @@
 
-
+depth = 0
 enum playerStates{
 	normal,
 }
