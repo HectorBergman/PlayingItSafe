@@ -1,5 +1,7 @@
 
 depth = 0
+
+interactRadius = sprite_width*4
 enum playerStates{
 	normal,
 }
@@ -16,3 +18,4 @@ generalVariables();
 //initializeEnums();
 visual = summonObject(obj_player_visual, [["parent", id]]);
 
+nearbyAlerts = ds_list_create();

@@ -19,6 +19,9 @@ function playerInput(){
 	{
 		mouseClick = true;
 	}
+	if keyboard_check_pressed(ord("E")){
+		interact = true;
+	}
 }
 
 function resetInputs(){
@@ -27,4 +30,5 @@ function resetInputs(){
 	moveLeft = false;
 	moveRight = false;
 	mouseClick = false;
+	interact = false;
 }
