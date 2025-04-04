@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_dragAndDrop_item",
+  "%Name":"obj_doors",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_dragAndDrop_item",
+  "name":"obj_doors",
   "overriddenProperties":[],
   "parent":{
     "name":"dragAndDrop",
@@ -27,14 +27,14 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"correctArea","filters":[],"listItems":[],"multiselect":false,"name":"correctArea","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"fridgeDoor","filters":[],"listItems":[],"multiselect":false,"name":"fridgeDoor","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_milk",
-    "path":"sprites/spr_milk/spr_milk.yy",
+    "name":"spr_dragAndDrop_doors_fridge",
+    "path":"sprites/spr_dragAndDrop_doors_fridge/spr_dragAndDrop_doors_fridge.yy",
   },
   "spriteMaskId":null,
   "visible":true,
