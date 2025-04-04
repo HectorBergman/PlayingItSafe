@@ -15,6 +15,8 @@ if (minigameComplete){
 		}
 	}
 	if minigameComplete{ //todo: add more code for handling minigame completion
+						 //add time between minigame complete and return to kitchen
+						 //increase complexity of minigame
 		scoreHand.currentScore += 100
 		room_goto(rm_kitchen);
 	}
