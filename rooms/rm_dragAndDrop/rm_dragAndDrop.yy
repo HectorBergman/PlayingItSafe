@@ -14,7 +14,7 @@
     {"name":"inst_361FFC01","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},
     {"name":"inst_2C8A67AD","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},
     {"name":"inst_7579FE5","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},
-    {"name":"inst_12CA5424","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},
+    {"name":"dndHand","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -31,7 +31,7 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
         {"$GMRInstance":"v1","%Name":"inst_2C8A67AD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2C8A67AD","objectId":{"name":"obj_dragAndDrop_item","path":"objects/obj_dragAndDrop_item/obj_dragAndDrop_item.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":336.0,"y":163.0,},
         {"$GMRInstance":"v1","%Name":"inst_7579FE5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7579FE5","objectId":{"name":"obj_dragAndDrop_item","path":"objects/obj_dragAndDrop_item/obj_dragAndDrop_item.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":163.0,},
-        {"$GMRInstance":"v1","%Name":"inst_12CA5424","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_12CA5424","objectId":{"name":"obj_zdragAndDrop_handler","path":"objects/obj_zdragAndDrop_handler/obj_zdragAndDrop_handler.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":10.0,"scaleY":7.125,"x":256.0,"y":-186.0,},
+        {"$GMRInstance":"v1","%Name":"dndHand","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"dndHand","objectId":{"name":"obj_zdragAndDrop_handler","path":"objects/obj_zdragAndDrop_handler/obj_zdragAndDrop_handler.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":10.0,"scaleY":7.125,"x":256.0,"y":-186.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":1000,"effectEnabled":true,"effectType":null,"gridX":64,"gridY":64,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_dragAndDrop_bg_unfinished","path":"sprites/spr_dragAndDrop_bg_unfinished/spr_dragAndDrop_bg_unfinished.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

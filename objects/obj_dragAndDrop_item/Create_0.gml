@@ -5,3 +5,5 @@ held = false;
 timeNotHeld = 0;
 
 inPosition = false; //if in gamewinning position
+
+complete = false;

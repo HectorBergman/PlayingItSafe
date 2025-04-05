@@ -19,3 +19,5 @@ doorsArray[highestI + 1] = noone;
 
 
 minigameComplete = false;
+
+checkmark = noone;
