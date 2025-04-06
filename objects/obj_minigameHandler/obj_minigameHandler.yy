@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_zdragAndDrop_handler",
+  "%Name":"obj_minigameHandler",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_zdragAndDrop_handler",
+  "name":"obj_minigameHandler",
   "overriddenProperties":[],
   "parent":{
-    "name":"dragAndDrop",
-    "path":"folders/Objects/minigames/dragAndDrop.yy",
+    "name":"handlers",
+    "path":"folders/Objects/handlers.yy",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -32,5 +32,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

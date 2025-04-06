@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_generalFunctions",
+  "%Name":"scr_dragAndDrop",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_generalFunctions",
+  "name":"scr_dragAndDrop",
   "parent":{
-    "name":"oScripts",
-    "path":"folders/oScripts.yy",
+    "name":"minigames",
+    "path":"folders/oScripts/minigames.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

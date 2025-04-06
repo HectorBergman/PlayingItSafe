@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_generalFunctions",
+  "%Name":"scr_generalMinigameFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_generalFunctions",
+  "name":"scr_generalMinigameFunctions",
   "parent":{
     "name":"oScripts",
     "path":"folders/oScripts.yy",

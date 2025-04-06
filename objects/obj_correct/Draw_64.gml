@@ -1,1 +1,1 @@
-draw_sprite_ext(spr_correct, image_index, window_get_width()/2-sprite_width/2*scale, window_get_height()/2-sprite_height/2*scale, scale, scale,0,c_white,1)
+draw_sprite_ext(spr_correct, image_index, drawX, drawY, scale, scale,0,c_white,1)

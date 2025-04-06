@@ -1,5 +1,5 @@
 if !complete{
-	if dndHand.minigameComplete{
+	if miniHand.minigameStatus = status.finished{
 		complete = true;
 		exit;
 	}

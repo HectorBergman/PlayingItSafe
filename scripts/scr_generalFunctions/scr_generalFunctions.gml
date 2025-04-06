@@ -214,3 +214,16 @@ function isCovered(instanceChecked, covering){
     // No covering instance found
     return false;
 }
+
+/// @desc converts a string to an enum
+/// @param {string} str string to convert
+/// @returns enum
+
+function stringToEnum(str) {
+    switch (str) {
+        case "dragAndDrop": return minigame.dragAndDrop;
+        case "none": return minigame.none;
+        default: exception_unhandled_handler(str + " is not an existing enemy type!") //this crashes but
+																					  //not a custom crash
+    }
+}
