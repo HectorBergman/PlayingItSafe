@@ -7,6 +7,7 @@ if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby 
 	if (!collision_line(x,y,nearestAlert.x,nearestAlert.y, [obj_wall], 0, 1)){
 		miniHand.currentMinigame = stringToEnum(nearestAlert.minigameEnum);
 		miniHand.minigameStatus = status.started;
+		miniHand.playerPosition = [x,y];
 		room_goto(nearestAlert.minigame); //enter minigame if path from player to alert isnt blocked
 	}
 }

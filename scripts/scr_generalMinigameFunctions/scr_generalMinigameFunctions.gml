@@ -1,7 +1,7 @@
 
 
 function exitMinigame(){
-	minigameStatus = status.none;
+	minigameStatus = status.started;
 	currentMinigame = minigame.none;
 	room_goto(rm_kitchen);
 }

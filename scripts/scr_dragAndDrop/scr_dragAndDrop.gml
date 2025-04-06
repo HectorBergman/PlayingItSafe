@@ -43,8 +43,6 @@ function minigame_dragAndDrop_step(){
 	if minigameComplete{ //todo: add more code for handling minigame completion
 						 //increase complexity of minigame
 		minigameStatus = status.finished;
-		
-		
 	}
 }
 

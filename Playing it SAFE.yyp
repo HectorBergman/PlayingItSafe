@@ -67,6 +67,7 @@
     {"id":{"name":"scr_generalMinigameFunctions","path":"scripts/scr_generalMinigameFunctions/scr_generalMinigameFunctions.yy",},},
     {"id":{"name":"scr_generalVariables","path":"scripts/scr_generalVariables/scr_generalVariables.yy",},},
     {"id":{"name":"scr_minigameTemplate","path":"scripts/scr_minigameTemplate/scr_minigameTemplate.yy",},},
+    {"id":{"name":"scr_none","path":"scripts/scr_none/scr_none.yy",},},
     {"id":{"name":"scr_playerInputs","path":"scripts/scr_playerInputs/scr_playerInputs.yy",},},
     {"id":{"name":"scr_playerStates_normal","path":"scripts/scr_playerStates_normal/scr_playerStates_normal.yy",},},
     {"id":{"name":"scr_playerVariables_movement","path":"scripts/scr_playerVariables_movement/scr_playerVariables_movement.yy",},},
