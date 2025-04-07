@@ -84,7 +84,6 @@
     {"id":{"name":"spr_interactable","path":"sprites/spr_interactable/spr_interactable.yy",},},
     {"id":{"name":"spr_invalidArea","path":"sprites/spr_invalidArea/spr_invalidArea.yy",},},
     {"id":{"name":"spr_milk","path":"sprites/spr_milk/spr_milk.yy",},},
-    {"id":{"name":"spr_new_sprite","path":"sprites/spr_new_sprite/spr_new_sprite.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
   ],
