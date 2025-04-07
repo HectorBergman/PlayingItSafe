@@ -3,6 +3,7 @@
 enum minigame{
 	none,
 	dragAndDrop,
+	washingHands,
 	moreMinigamesHere,
 }
 
