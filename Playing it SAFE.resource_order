@@ -45,6 +45,7 @@
     {"name":"scr_none","order":2,"path":"scripts/scr_none/scr_none.yy",},
     {"name":"scr_playerInputs","order":2,"path":"scripts/scr_playerInputs/scr_playerInputs.yy",},
     {"name":"scr_playerStates_normal","order":1,"path":"scripts/scr_playerStates_normal/scr_playerStates_normal.yy",},
+    {"name":"lol","order":12,"path":"sprites/lol/lol.yy",},
     {"name":"spr_correct","order":11,"path":"sprites/spr_correct/spr_correct.yy",},
     {"name":"spr_dragAndDrop_bg_temp","order":2,"path":"sprites/spr_dragAndDrop_bg_temp/spr_dragAndDrop_bg_temp.yy",},
     {"name":"spr_dragAndDrop_completion_hitbox","order":5,"path":"sprites/spr_dragAndDrop_completion_hitbox/spr_dragAndDrop_completion_hitbox.yy",},
