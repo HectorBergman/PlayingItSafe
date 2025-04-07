@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_fryFood",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_fryFood",
+  "parent":{
+    "name":"minigames",
+    "path":"folders/oScripts/minigames.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
