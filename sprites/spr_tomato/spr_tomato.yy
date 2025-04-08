@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"vegetables",
-    "path":"folders/Sprites/food/vegetables.yy",
+    "path":"folders/Sprites/falling_chicken/food/vegetables.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
