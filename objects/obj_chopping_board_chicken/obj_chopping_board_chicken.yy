@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_chicken_fillet_raw",
+  "%Name":"obj_chopping_board_chicken",
   "eventList":[],
   "managed":true,
-  "name":"obj_chicken_fillet_raw",
+  "name":"obj_chopping_board_chicken",
   "overriddenProperties":[],
   "parent":{
-    "name":"chicken",
-    "path":"folders/Objects/minigames/falling_chicken/food/chicken.yy",
+    "name":"chopping_boards",
+    "path":"folders/Objects/minigames/falling_chicken/chopping_boards.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chicken_fillet_raw",
-    "path":"sprites/spr_chicken_fillet_raw/spr_chicken_fillet_raw.yy",
+    "name":"spr_chopping_board_chicken",
+    "path":"sprites/spr_chopping_board_chicken/spr_chopping_board_chicken.yy",
   },
   "spriteMaskId":null,
   "visible":true,

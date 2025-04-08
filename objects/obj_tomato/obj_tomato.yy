@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_chicken_fillet_raw",
+  "%Name":"obj_tomato",
   "eventList":[],
   "managed":true,
-  "name":"obj_chicken_fillet_raw",
+  "name":"obj_tomato",
   "overriddenProperties":[],
   "parent":{
-    "name":"chicken",
-    "path":"folders/Objects/minigames/falling_chicken/food/chicken.yy",
+    "name":"vegetables",
+    "path":"folders/Objects/minigames/falling_chicken/food/vegetables.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chicken_fillet_raw",
-    "path":"sprites/spr_chicken_fillet_raw/spr_chicken_fillet_raw.yy",
+    "name":"spr_tomato",
+    "path":"sprites/spr_tomato/spr_tomato.yy",
   },
   "spriteMaskId":null,
   "visible":true,
