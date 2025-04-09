@@ -11,9 +11,7 @@ enum screenStates{
 currentScreen = pauseScreen.notPaused
 screenState = screenStates.old
 
-
 global.pause = false;
-depth = -9999;
 global.pausable = true;
 scale = 2;
 mouseCoordsOnPause = [0,0];
@@ -22,12 +20,10 @@ settingsButton = noone;
 backButton = noone;
 volumeBar = noone;
 
-debugTimer = 0;
+
 
 function drawButton(button){
-	
 	draw_sprite_ext(button.sprite_index, button.image_index, button.x*scale,button.y*scale,scale,scale,0,c_white,1);
-	
 }
 
 function volumeBarDrawer(bar){
@@ -48,20 +44,7 @@ function volumeBarDrawer(bar){
 		draw_sprite_ext(bar.sprite_index, bar.image_index, bar.x, bar.y*scale, scale, scale, 0, c_white, 1);
 	}
 }
-function volumeBarDrawerDebug(bar){
-	if (!bar.adult){
-		if (bar.type == "master"){
-			print("master")
-			print(bar.sprite_width*global.masterVolume);
-		}else if (bar.type == "music"){
-			print("music")
-		}else if (bar.type == "sfx"){
-			print("sfx")
-		}
-	}else{
-		print("child")
-	}
-}
+
 
 #macro PAUSEVARS prePauseSpeed = sprite_get_speed(sprite_index)
 #macro PAUSE if (global.pause) exit//{sprite_set_speed(sprite_index, 0, spritespeed_framespersecond); exit}else{  
