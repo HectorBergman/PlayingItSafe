@@ -56,6 +56,7 @@
     {"name":"spr_interactable","order":6,"path":"sprites/spr_interactable/spr_interactable.yy",},
     {"name":"spr_invalidArea","order":4,"path":"sprites/spr_invalidArea/spr_invalidArea.yy",},
     {"name":"spr_milk","order":3,"path":"sprites/spr_milk/spr_milk.yy",},
+    {"name":"spr_pizza","order":7,"path":"sprites/spr_pizza/spr_pizza.yy",},
     {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_wall","order":4,"path":"sprites/spr_wall/spr_wall.yy",},
   ],
