@@ -45,6 +45,8 @@
     {"name":"obj_correct","order":7,"path":"objects/obj_correct/obj_correct.yy",},
     {"name":"obj_doors","order":2,"path":"objects/obj_doors/obj_doors.yy",},
     {"name":"obj_dragAndDrop_item","order":1,"path":"objects/obj_dragAndDrop_item/obj_dragAndDrop_item.yy",},
+    {"name":"obj_food_dropper","order":3,"path":"objects/obj_food_dropper/obj_food_dropper.yy",},
+    {"name":"obj_food_parent","order":4,"path":"objects/obj_food_parent/obj_food_parent.yy",},
     {"name":"obj_inputHandler","order":1,"path":"objects/obj_inputHandler/obj_inputHandler.yy",},
     {"name":"obj_interactableEvent","order":2,"path":"objects/obj_interactableEvent/obj_interactableEvent.yy",},
     {"name":"obj_lettuce","order":1,"path":"objects/obj_lettuce/obj_lettuce.yy",},

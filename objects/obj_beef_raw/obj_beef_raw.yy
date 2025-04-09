@@ -9,7 +9,10 @@
     "name":"meat",
     "path":"folders/Objects/minigames/falling_chicken/food/meat.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_food_parent",
+    "path":"objects/obj_food_parent/obj_food_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

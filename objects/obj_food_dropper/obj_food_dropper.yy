@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_chicken_fillet_raw",
-  "eventList":[],
+  "%Name":"obj_food_dropper",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_chicken_fillet_raw",
+  "name":"obj_food_dropper",
   "overriddenProperties":[],
   "parent":{
-    "name":"chicken",
-    "path":"folders/Objects/minigames/falling_chicken/food/chicken.yy",
+    "name":"falling_chicken",
+    "path":"folders/Objects/minigames/falling_chicken.yy",
   },
-  "parentObjectId":{
-    "name":"obj_food_parent",
-    "path":"objects/obj_food_parent/obj_food_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_chicken_fillet_raw",
-    "path":"sprites/spr_chicken_fillet_raw/spr_chicken_fillet_raw.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
