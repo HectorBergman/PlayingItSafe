@@ -1,3 +1,4 @@
+PAUSE
 if !complete{
 	if miniHand.minigameStatus = status.finished{
 		complete = true;

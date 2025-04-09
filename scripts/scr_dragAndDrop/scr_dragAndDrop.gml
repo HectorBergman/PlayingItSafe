@@ -48,6 +48,7 @@ function minigame_dragAndDrop_step(){
 
 function minigame_dragAndDrop_finish(){
 	if checkmark == noone{
+		global.pausable = false;
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
 		for (var i = 0; itemsArray[i] != noone; i++;) {
@@ -65,6 +66,7 @@ function minigame_dragAndDrop_finish(){
 	}else{
 
 		if checkmark.life == checkmark.lifeTime{
+			global.pausable = true;
 			exitMinigame();
 			miniHandRefresh();
 		}
