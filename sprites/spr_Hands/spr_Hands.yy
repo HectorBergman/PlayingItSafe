@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_Hands",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":239,
   "bbox_left":30,
   "bbox_right":240,
@@ -32,7 +32,7 @@
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
-    "$GMSequence":"",
+    "$GMSequence":"v1",
     "%Name":"spr_Hands",
     "autoRecord":true,
     "backdropHeight":768,
@@ -63,6 +63,8 @@
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
+    "seqHeight":256.0,
+    "seqWidth":256.0,
     "showBackdrop":true,
     "showBackdropImage":false,
     "timeUnits":1,
