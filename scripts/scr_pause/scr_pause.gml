@@ -1,17 +1,17 @@
-function pause_notPaused_control(){
+function pause_notPaused_control(){ //when game is not paused
 	switch (screenState){
-		case screenStates.old: pause_notPaused_old(); break;
-		case screenStates.brandNew: pause_notPaused_brandNew(); break;
+		case screenStates.old: pause_notPaused_old(); break; //first game frame since entering notPaused
+		case screenStates.brandNew: pause_notPaused_brandNew(); break; //all other game frames
 	}
 }
 
-function pause_paused_control(){
+function pause_paused_control(){ //when game is on the pause page
 	switch (screenState){
 		case screenStates.old: pause_paused_old(); break;
 		case screenStates.brandNew: pause_paused_brandNew(); break;
 	}
 }
-function pause_settings_control(){
+function pause_settings_control(){ //when game is on the settings page of the pause page
 	switch (screenState){
 		case screenStates.old: pause_settings_old(); break;
 		case screenStates.brandNew: pause_settings_brandNew(); break;
@@ -20,13 +20,13 @@ function pause_settings_control(){
 
 function pause_paused_brandNew(){	
 	global.pause = true;
-	//here goes any code you need to start the minigame
 	settingsButton = summonObject(obj_button, [["x", window_get_width()/4],["y", 64*3],["sprite", spr_settings], ["parent", id], ["action", 1]]);
+	backButton = summonObject(obj_button, [["x", window_get_width()/4],["y", 64*5],["sprite", spr_back], ["parent", id], ["action", 2]]);
 	screenState = screenStates.old
 
 }
 function pause_paused_old(){
-	if (keyboard_check_pressed(vk_escape)){
+	if (keyboard_check_pressed(vk_escape)){ //unpause
 		screenState = screenStates.brandNew
 		currentScreen = pauseScreen.notPaused;
 	}
@@ -45,33 +45,18 @@ function pause_settings_old(){
 }
 
 function pause_notPaused_brandNew(){
-	//deleting here
-	print("lol");
 	instance_destroy(settingsButton);
+	instance_destroy(backButton);
 	global.pause = false;
-	//this could also have a requirement in-case you want to have an animation or something b4 minigame start
 	screenState = screenStates.old
 }
 
-//template for ongoing minigame handler actions. You can also control the minigame via this
-//but I chose to do it via the minigame items instead (obj_dnd_item, obj_doors)
+
 function pause_notPaused_old(){
-	if (keyboard_check_pressed(vk_escape) && global.pausable){
+	if (keyboard_check_pressed(vk_escape) && global.pausable){ //pause
 		mouseCoordsOnPause = [mouse_x,mouse_y];
 		screenState = screenStates.brandNew
 		currentScreen = pauseScreen.paused;
-
 	}
-	/*
-	if (keyboard_check_pressed(vk_escape) && global.pausable){
-		if global.pause{
-			instance_destroy(settingsButton);
-			global.pause = false;
-		}else{
-			settingsButton = summonObject(obj_button, [["x", window_get_width()/4],["y", 64*3],["sprite", spr_settings]]);
-			mouseCoordsOnPause = [mouse_x,mouse_y];
-			global.pause = true;
-		}
-	}*/
 }
 
