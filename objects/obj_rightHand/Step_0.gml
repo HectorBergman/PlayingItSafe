@@ -52,7 +52,7 @@ switch (hand_state)
 	{
 		if (keyboard_check_pressed(ord("E"))) {
 			print("Nicely washed hands boi")
-			room_goto(rm_menu);
+			miniHand.minigameStatus = status.finished;
 		}
 	}
 	break;
