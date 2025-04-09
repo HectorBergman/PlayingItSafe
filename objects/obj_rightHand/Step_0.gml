@@ -41,7 +41,7 @@ switch (hand_state)
 	
 	case HandState.RINSE:
 	{
-		if (keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_towl) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.DRY;
 			print("Hands are dried")
 		}
@@ -50,7 +50,7 @@ switch (hand_state)
 	
 	case HandState.DRY:
 	{
-		if (place_meeting(x, y, obj_towl) && keyboard_check_pressed(ord("E"))) {
+		if (keyboard_check_pressed(ord("E"))) {
 			print("Nicely washed hands boi")
 			miniHand.minigameStatus = status.finished;
 		}
