@@ -40,6 +40,7 @@
     {"name":"obj_pauseHandler","order":5,"path":"objects/obj_pauseHandler/obj_pauseHandler.yy",},
     {"name":"obj_player_visual","order":1,"path":"objects/obj_player_visual/obj_player_visual.yy",},
     {"name":"obj_scoreHandler","order":3,"path":"objects/obj_scoreHandler/obj_scoreHandler.yy",},
+    {"name":"obj_volumeBar","order":1,"path":"objects/obj_volumeBar/obj_volumeBar.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"rm_dragAndDrop","order":2,"path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},
     {"name":"rm_menu","order":1,"path":"rooms/rm_menu/rm_menu.yy",},
@@ -64,6 +65,7 @@
     {"name":"spr_pauseBg","order":1,"path":"sprites/spr_pauseBg/spr_pauseBg.yy",},
     {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_settings","order":1,"path":"sprites/spr_settings/spr_settings.yy",},
+    {"name":"spr_volume","order":3,"path":"sprites/spr_volume/spr_volume.yy",},
     {"name":"spr_wall","order":4,"path":"sprites/spr_wall/spr_wall.yy",},
   ],
 }
