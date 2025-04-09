@@ -27,6 +27,6 @@ switch (hand_state) {
         break;
         
     case HandState.DRY:
-        draw_text(200, 200, "Dry hands [E]");
+        draw_text(200, 200, "Exit [E]");
         break;
 }
