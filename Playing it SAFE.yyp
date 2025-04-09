@@ -73,6 +73,8 @@
     {"id":{"name":"obj_correct","path":"objects/obj_correct/obj_correct.yy",},},
     {"id":{"name":"obj_doors","path":"objects/obj_doors/obj_doors.yy",},},
     {"id":{"name":"obj_dragAndDrop_item","path":"objects/obj_dragAndDrop_item/obj_dragAndDrop_item.yy",},},
+    {"id":{"name":"obj_food_dropper","path":"objects/obj_food_dropper/obj_food_dropper.yy",},},
+    {"id":{"name":"obj_food_parent","path":"objects/obj_food_parent/obj_food_parent.yy",},},
     {"id":{"name":"obj_inputHandler","path":"objects/obj_inputHandler/obj_inputHandler.yy",},},
     {"id":{"name":"obj_interactableEvent","path":"objects/obj_interactableEvent/obj_interactableEvent.yy",},},
     {"id":{"name":"obj_lettuce","path":"objects/obj_lettuce/obj_lettuce.yy",},},
@@ -139,10 +141,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_falling_chicken","path":"rooms/rm_falling_chicken/rm_falling_chicken.yy",},},
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_kitchen","path":"rooms/rm_kitchen/rm_kitchen.yy",},},
     {"roomId":{"name":"rm_dragAndDrop","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},},
-    {"roomId":{"name":"rm_falling_chicken","path":"rooms/rm_falling_chicken/rm_falling_chicken.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
