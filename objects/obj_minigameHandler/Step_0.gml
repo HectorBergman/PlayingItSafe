@@ -1,3 +1,4 @@
+PAUSE
 debugTime++ //for debugging only
 
 //follow dragAndDrop's example when creating minigames. See: scr_dragAndDrop

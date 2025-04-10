@@ -1,3 +1,9 @@
+if (global.pause && held){
+	x = startCoords[0];
+	y = startCoords[1];
+	held = false;
+}
+PAUSE
 if !complete{
 	if miniHand.minigameStatus = status.finished{
 		complete = true;

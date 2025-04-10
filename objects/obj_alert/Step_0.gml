@@ -1,3 +1,4 @@
+PAUSE
 timer++
 var time = timer mod totalTime
 if time <= fadingTime {
