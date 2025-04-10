@@ -7,12 +7,20 @@ yRelative = 0;
 
 recencyGrabbedDepth = 999;
 
+scrubKey1 = "E";
+scrubKey2 = "Q";
+scrubKey3 = "F";
+scrubKey4 = "H";
+
 // Define hand states
 enum HandState {
     DIRTY,
     WET,
     SOAP,
-	SCRUB,
+	SCRUB1,
+	SCRUB2,
+	SCRUB3,
+	SCRUB4,
 	RINSE,
 	DRY,
 }
