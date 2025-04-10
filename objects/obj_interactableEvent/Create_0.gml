@@ -1,4 +1,4 @@
 interactable = true;
 alert = noone;
 
-difficulty = 7;
+difficulty = 4;

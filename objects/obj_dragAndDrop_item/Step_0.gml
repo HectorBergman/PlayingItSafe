@@ -1,5 +1,5 @@
 if !complete{
-	if miniHand.minigameStatus = status.finished{
+	if miniHand.minigameStatus == status.finished{
 		complete = true;
 		exit;
 	}
