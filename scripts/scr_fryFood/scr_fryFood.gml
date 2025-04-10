@@ -1,4 +1,4 @@
-function minigameTemplate_control(){
+function minigame_fryFood_control(){
 	switch (minigameStatus){
 		case status.started: minigameTemplate_create(); break;
 		case status.ongoing: minigameTemplate_step(); break;
@@ -6,7 +6,7 @@ function minigameTemplate_control(){
 		case status.none: break;
 	}
 }
-function minigameTemplate_create(){
+function minigame_fryFood_create(){
 
 	//here goes any code you need to start the minigame
 
@@ -16,7 +16,7 @@ function minigameTemplate_create(){
 
 //template for ongoing minigame handler actions. You can also control the minigame via this
 //but I chose to do it via the minigame items instead (obj_dnd_item, obj_doors)
-function minigameTemplate_step(){
+function minigame_fryFood_step(){
 	var minigameComplete = true;
 	
 	//if requirements for minigame completion not met:
@@ -29,7 +29,7 @@ function minigameTemplate_step(){
 }
 
 //template for minigames completed, doesnt have to look like this ofc
-function minigameTemplate_finish(){
+function minigame_fryFood_finish(){
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);

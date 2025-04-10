@@ -77,6 +77,7 @@
     {"id":{"name":"scr_playerStates_normal","path":"scripts/scr_playerStates_normal/scr_playerStates_normal.yy",},},
     {"id":{"name":"scr_playerVariables_movement","path":"scripts/scr_playerVariables_movement/scr_playerVariables_movement.yy",},},
     {"id":{"name":"spr_alert","path":"sprites/spr_alert/spr_alert.yy",},},
+    {"id":{"name":"spr_burn","path":"sprites/spr_burn/spr_burn.yy",},},
     {"id":{"name":"spr_correct","path":"sprites/spr_correct/spr_correct.yy",},},
     {"id":{"name":"spr_done","path":"sprites/spr_done/spr_done.yy",},},
     {"id":{"name":"spr_dragAndDrop_bg_temp","path":"sprites/spr_dragAndDrop_bg_temp/spr_dragAndDrop_bg_temp.yy",},},
@@ -98,10 +99,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_fryFood","path":"rooms/rm_fryFood/rm_fryFood.yy",},},
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_kitchen","path":"rooms/rm_kitchen/rm_kitchen.yy",},},
     {"roomId":{"name":"rm_dragAndDrop","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},},
-    {"roomId":{"name":"rm_fryFood","path":"rooms/rm_fryFood/rm_fryFood.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
