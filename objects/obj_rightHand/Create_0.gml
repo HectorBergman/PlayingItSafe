@@ -25,5 +25,5 @@ enum HandState {
 	DRY,
 }
 
-// Start in IDLE state
+// Start in dirty state
 hand_state = HandState.DIRTY;

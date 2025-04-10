@@ -45,3 +45,9 @@ function minigame_washingHands_finish(){
 	}
 
 }
+
+function generateRandomLetter(){
+    var randLetter = irandom_range(0, lettersArrayLength - 1)
+    return letters[randLetter]
+}
+
