@@ -1,5 +1,6 @@
 
 function minigame_none_control(){
+
 	switch (minigameStatus){
 		case status.started: minigame_none_create(); break;
 		case status.ongoing: minigame_none_step(); break;
@@ -9,6 +10,7 @@ function minigame_none_control(){
 }
 
 function minigame_none_create(){
+
 	player = instance_find(obj_player, 0);
 	player.x = playerPosition[0];
 	player.y = playerPosition[1];

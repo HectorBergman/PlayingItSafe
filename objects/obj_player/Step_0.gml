@@ -1,5 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+PAUSE
+
 collision_circle_list(x,y,interactRadius, obj_alert, false, true, nearbyAlerts, true)
 if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby alerts,
 											   //and the player hits the interact button
