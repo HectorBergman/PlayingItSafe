@@ -134,7 +134,6 @@
     {"id":{"name":"spr_plus","path":"sprites/spr_plus/spr_plus.yy",},},
     {"id":{"name":"spr_settings","path":"sprites/spr_settings/spr_settings.yy",},},
     {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},},
-    {"id":{"name":"spr_testSprite","path":"sprites/spr_testSprite/spr_testSprite.yy",},},
     {"id":{"name":"spr_volume","path":"sprites/spr_volume/spr_volume.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
   ],
