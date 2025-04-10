@@ -23,10 +23,21 @@ switch (hand_state)
 	
 	case HandState.SOAP:
 	{
-		if (keyboard_check_pressed(ord(scrubKey1))) {
-			hand_state = HandState.SCRUB1;
-			print("Scrub 1")
+		if (scrub_timer <= 0 && keyboard_check_pressed(ord(scrubKey1))) {
+	        scrub_count++;
+	        scrub_timer = room_speed * 0.4; // 0.4 seconds in frames (assuming 60 FPS)
+	        print("Scrub " + string(scrub_count));
+        
+	        if (scrub_count >= 5) {
+	            hand_state = HandState.SCRUB1;
+	            print("Scrub 1 completed!");
+	        }
 		}
+
+	    // Reduce the timer every frame
+	    if (scrub_timer > 0) {
+	        scrub_timer--;
+	    }
 	}
 	break;
 	

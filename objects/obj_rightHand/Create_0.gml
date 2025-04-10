@@ -7,6 +7,10 @@ yRelative = 0;
 
 recencyGrabbedDepth = 999;
 
+scrub_count = 0;
+scrub_timer = 0;
+
+
 scrubKey1 = "E";
 scrubKey2 = "Q";
 scrubKey3 = "F";
