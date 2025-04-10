@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Playing it SAFE",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -21,11 +21,11 @@
     {"$GMFolder":"","%Name":"minigames","folderPath":"folders/Objects/minigames.yy","name":"minigames","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"dragAndDrop","folderPath":"folders/Objects/minigames/dragAndDrop.yy","name":"dragAndDrop","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"falling_chicken","folderPath":"folders/Objects/minigames/falling_chicken.yy","name":"falling_chicken","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"chopping_boards","folderPath":"folders/Objects/minigames/falling_chicken/chopping_boards.yy","name":"chopping_boards","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"food","folderPath":"folders/Objects/minigames/falling_chicken/food.yy","name":"food","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"chicken","folderPath":"folders/Objects/minigames/falling_chicken/food/chicken.yy","name":"chicken","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"meat","folderPath":"folders/Objects/minigames/falling_chicken/food/meat.yy","name":"meat","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"vegetables","folderPath":"folders/Objects/minigames/falling_chicken/food/vegetables.yy","name":"vegetables","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"chopping_boards","folderPath":"folders/Objects/minigames/falling_chicken/chopping_boards.yy","name":"chopping_boards","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"player","folderPath":"folders/Objects/player.yy","name":"player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"oScripts","folderPath":"folders/oScripts.yy","name":"oScripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"minigames","folderPath":"folders/oScripts/minigames.yy","name":"minigames","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -48,11 +48,12 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.13.0.190",
   },
   "name":"Playing it SAFE",
   "resources":[
