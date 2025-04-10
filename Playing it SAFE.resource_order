@@ -66,6 +66,7 @@
     {"name":"spr_pausedText_temp","order":5,"path":"sprites/spr_pausedText_temp/spr_pausedText_temp.yy",},
     {"name":"spr_player","order":2,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_plus","order":4,"path":"sprites/spr_plus/spr_plus.yy",},
+    {"name":"spr_testSprite","order":5,"path":"sprites/spr_testSprite/spr_testSprite.yy",},
     {"name":"spr_volume","order":2,"path":"sprites/spr_volume/spr_volume.yy",},
     {"name":"spr_wall","order":3,"path":"sprites/spr_wall/spr_wall.yy",},
   ],
