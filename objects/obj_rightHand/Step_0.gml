@@ -59,7 +59,7 @@ switch (hand_state)
 	
 	case HandState.SCRUB4:
 	{
-		if (keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
 			print("Hands are rinsed")
 		}
