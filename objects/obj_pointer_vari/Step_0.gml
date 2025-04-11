@@ -3,11 +3,11 @@ x = mouse_x
 y = mouse_y
 
 if (inHand.mouseHeld){
-	if place_meeting(x,y,obj_dragAndDrop_item) {		//if click & hold on item
+	if place_meeting(x,y,obj_dragAndDrop_item_vari) {		//if click & hold on item
 		if !holding && !place_meeting(x,y,obj_doors){	
 			var heldObjectList = ds_list_create()
 			var lowestDepth = 999999;
-			instance_place_list(x,y,obj_dragAndDrop_item, heldObjectList, 0);
+			instance_place_list(x,y,obj_dragAndDrop_item_vari, heldObjectList, 0);
 			for (var i = 0; i < ds_list_size(heldObjectList); i++) {
 				var value = heldObjectList[| i];
 				if value.depth < lowestDepth{
