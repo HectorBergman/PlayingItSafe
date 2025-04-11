@@ -1,7 +1,6 @@
 // Initialization statements
 cook_timer = 0;
-thermometer = 10;
-points = 100;
+check_timer = 0;
 
 random1 = irandom_range(50, 200);
 random2 = irandom_range(50, 200);

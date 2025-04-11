@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_food",
+  "%Name":"obj_thermo",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_food",
+  "name":"obj_thermo",
   "overriddenProperties":[],
   "parent":{
     "name":"fryFood",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_raw",
-    "path":"sprites/spr_raw/spr_raw.yy",
+    "name":"spr_thermo",
+    "path":"sprites/spr_thermo/spr_thermo.yy",
   },
   "spriteMaskId":null,
   "visible":true,
