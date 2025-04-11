@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_dragAndDrop_variant",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_dragAndDrop_variant",
+  "parent":{
+    "name":"minigames",
+    "path":"folders/oScripts/minigames.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

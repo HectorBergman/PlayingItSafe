@@ -16,9 +16,6 @@ if !complete{
 		}
 	timeNotHeld++ //increases time the longer item is not held
 	}else{
-		if (image_index != 1 && wonky){
-			y += 5;
-		}
 		image_index = 1;
 		timeNotHeld = 0;
 	}
