@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_clearCheckHitbox_variant",
+  "%Name":"obj_shelf",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_clearCheckHitbox_variant",
+  "name":"obj_shelf",
   "overriddenProperties":[],
   "parent":{
     "name":"dnd_variation",
@@ -26,15 +26,15 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"image_index","filters":[],"listItems":[],"multiselect":false,"name":"image_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"isTop","filters":[],"listItems":[],"multiselect":false,"name":"isTop","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dnd_variant_shelfhitbox",
-    "path":"sprites/spr_dnd_variant_shelfhitbox/spr_dnd_variant_shelfhitbox.yy",
+    "name":"spr_dnd_fridge_shelf_top",
+    "path":"sprites/spr_dnd_fridge_shelf_top/spr_dnd_fridge_shelf_top.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

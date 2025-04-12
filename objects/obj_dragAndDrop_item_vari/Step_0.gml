@@ -1,3 +1,7 @@
+debugTime++
+
+//print(inPosition);
+
 depth = -y;
 if (global.pause && held){
 	x = startCoords[0];
@@ -29,25 +33,20 @@ if !complete{
 	
 	}
 	var area = noone;
+
 	if (!held && place_meeting(x,y,obj_clearCheckHitbox_variant)){
-		if (correctArea != -1){
-			area = instance_place(x,y,obj_clearCheckHitbox_variant);
-			if area.area == correctArea{ //area.area is the area code for each clearCheckHitbox, 0 for fridge,1 for freezer
-				inPosition = true;		 //basically, checks if item is in the right place
-			}else{
-				inPosition = false;
-			}
+		area = instance_place(x,y,obj_clearCheckHitbox_variant);
+		if area.area == correctArea{ //area.area is the area code for each clearCheckHitbox, 0 for fridge,1 for freezer
+			inPosition = true;		 //basically, checks if item is in the right place
+			print("hej");
 		}else{
 			inPosition = false;
 		}
+		
 	}else{
-		if (correctArea != -1){
-			inPosition = false;
-		}else{
-			inPosition = true;
-		}
+		inPosition = false;
 	}
-	/*if (area != noone){
-		print(string(area.area) + string(correctArea) + "  " + string(inPosition));
-	}*/
+	if (held){
+		depth = -3
+	}
 }

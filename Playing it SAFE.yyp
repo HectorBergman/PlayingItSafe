@@ -69,6 +69,7 @@
     {"id":{"name":"obj_pointer_vari","path":"objects/obj_pointer_vari/obj_pointer_vari.yy",},},
     {"id":{"name":"obj_pointer","path":"objects/obj_pointer/obj_pointer.yy",},},
     {"id":{"name":"obj_scoreHandler","path":"objects/obj_scoreHandler/obj_scoreHandler.yy",},},
+    {"id":{"name":"obj_shelf","path":"objects/obj_shelf/obj_shelf.yy",},},
     {"id":{"name":"obj_volumeBar","path":"objects/obj_volumeBar/obj_volumeBar.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"rm_dragAndDrop_variation","path":"rooms/rm_dragAndDrop_variation/rm_dragAndDrop_variation.yy",},},
