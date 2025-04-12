@@ -16,6 +16,7 @@
     {"name":"miniHand","path":"rooms/rm_kitchen/rm_kitchen.yy",},
     {"name":"inst_4F92F0D","path":"rooms/rm_kitchen/rm_kitchen.yy",},
     {"name":"inst_C3A8DCF","path":"rooms/rm_kitchen/rm_kitchen.yy",},
+    {"name":"mainGameHand","path":"rooms/rm_kitchen/rm_kitchen.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -40,6 +41,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactableEvent","path":"objects/obj_interactableEvent/obj_interactableEvent.yy",},"propertyId":{"name":"chosenMinigame","path":"objects/obj_interactableEvent/obj_interactableEvent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"dragAndDropFridgeLevels",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_interactableEvent","path":"objects/obj_interactableEvent/obj_interactableEvent.yy",},"propertyId":{"name":"minigameRoom","path":"objects/obj_interactableEvent/obj_interactableEvent.yy",},"resource":{"name":"rm_dragAndDrop_variation","path":"rooms/rm_dragAndDrop_variation/rm_dragAndDrop_variation.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_dragAndDrop_variation",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":288.0,},
+        {"$GMRInstance":"v2","%Name":"mainGameHand","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"mainGameHand","objectId":{"name":"obj_mainGameHandler","path":"objects/obj_mainGameHandler/obj_mainGameHandler.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":9.0,"scaleY":7.0,"x":576.0,"y":-160.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

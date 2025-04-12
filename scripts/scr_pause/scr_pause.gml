@@ -40,7 +40,6 @@ function pause_settings_brandNew(){
 }
 function pause_settings_old(){
 	if (keyboard_check_pressed(vk_escape) && global.pausable){
-		print("hej");
 		mouseCoordsOnPause = [mouse_x,mouse_y];
 		screenState = screenStates.brandNew
 		currentScreen = pauseScreen.notPaused;

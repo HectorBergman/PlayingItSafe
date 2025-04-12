@@ -38,7 +38,6 @@ if !complete{
 		area = instance_place(x,y,obj_clearCheckHitbox_variant);
 		if area.area == correctArea{ //area.area is the area code for each clearCheckHitbox, 0 for fridge,1 for freezer
 			inPosition = true;		 //basically, checks if item is in the right place
-			print("hej");
 		}else{
 			inPosition = false;
 		}

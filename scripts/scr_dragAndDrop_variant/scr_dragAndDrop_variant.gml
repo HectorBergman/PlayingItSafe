@@ -27,9 +27,9 @@ function minigame_dragAndDrop_variant_create(){
 	    var inst = instance_find(obj_dragAndDrop_item_vari, i);
 	    itemsArray[i] = inst;
 		highestI = i;
-		print(inst.sprite_index);
+
 	}
-	print(highestI);
+
 	itemsArray[highestI + 1] = noone; //lazy crash prevention for for-loops
 	//here goes any code you need to start the minigame
 
@@ -47,15 +47,14 @@ function minigame_dragAndDrop_variant_step(){
 
 	//or alternatively just have it be false and set to true when conditions met
 	for (var i = 0; itemsArray[i] != noone; i++;) {
-		print(itemsArray[i].sprite_index);
-		print(itemsArray[i].inPosition);
+
 		if itemsArray[i].inPosition{ //for every item in it's right place,
 										//give 30 points
 			//scoreHand.currentScore += 30
-			print("we made it");
+
 		}else{
 			minigameComplete = false;
-			print("damn");
+
 			break;
 		}
 	}

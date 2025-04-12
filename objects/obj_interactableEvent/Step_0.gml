@@ -1,6 +1,12 @@
 PAUSE
 
 if interactable && alert == noone{
-	alert = summonObject(obj_alert,[["x", x+alertXOffset], ["y", y+alertYOffset], 
-									["minigame", minigameRoom], ["minigameEnum", chosenMinigame], ["difficulty", difficulty]]);
+	timer++
+	print("timer: " + string(timer))
+	if timer == usedInterval{
+		print("usedInterval : " + string(usedInterval))
+		alert = createAlert(); //see: scr_alertFunctions
+		timer = 0
+		usedInterval = generateNewInterval(interval,intervalSpread);
+	}
 }

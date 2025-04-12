@@ -226,8 +226,11 @@ function stringToEnum(str) {
     switch (str) {
         case "dragAndDrop": return minigame.dragAndDrop;
 		case "dragAndDropFridgeLevels": return minigame.dragAndDropFridgeLevels;
+		case "moreMinigamesHere": return minigame.moreMinigamesHere;
         case "none": return minigame.none;
         default: exception_unhandled_handler(str + " is not an existing enemy type!") //this crashes but
 																					  //not a custom crash
     }
 }
+
+

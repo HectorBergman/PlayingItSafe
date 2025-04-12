@@ -46,7 +46,6 @@ function minigame_dragAndDrop_create(){
 
 
 function minigame_dragAndDrop_step(){
-	print("lol");
 	var minigameComplete = true;
 	
 	for (var i = 0; doorsArray[i] != noone; i++;) {
