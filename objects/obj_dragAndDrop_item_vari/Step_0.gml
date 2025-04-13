@@ -46,6 +46,6 @@ if !complete{
 		inPosition = false;
 	}
 	if (held){
-		depth = -3
+		depth = -999
 	}
 }
