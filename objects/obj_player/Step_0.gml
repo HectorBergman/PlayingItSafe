@@ -9,6 +9,7 @@ if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby 
 		miniHand.minigameStatus = status.started;
 		miniHand.playerPosition = [x,y];
 		miniHand.difficulty = nearestAlert.difficulty
+		mainGameHand.activeIndex = findCurrentIndex(nearestAlert);
 		if (nearestAlert.minigameEnum != "moreMinigamesHere"){
 			room_goto(nearestAlert.minigame); //enter minigame if path from player to alert isnt blocked
 		}

@@ -1,18 +1,17 @@
 
 for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	var currentStation = ds_list_find_value(stationsAndAlerts, i);
+	updateAlert(i);	
 	switch (miniHand.currentMinigame){
 	    case minigame.none: {
-
-			updateAlert(i);	
-		
+			
 		} break;
 		default:{ 
 		} break;
 	}
-
-	if miniHand.currentMinigame != minigame.none && currentStation.alert == noone{
-		var info = currentStation.stationInfoStruct
+	
+	if currentStation.alert == noone{
+		var info = currentStation.stationInfostruct
 		info.timer++
 		print("timer: " + string(info.timer))
 		if info.timer == info.usedInterval{
@@ -21,5 +20,7 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 			info.timer = 0
 			info.usedInterval = generateNewInterval(info.interval,info.intervalSpread);
 		}
+	}else if room == rm_kitchen && currentStation.alert == undefined{
+		summonCurrentAlert(i);
 	}
 }
