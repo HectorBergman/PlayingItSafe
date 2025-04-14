@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_mushroom","order":1,"path":"objects/obj_mushroom/obj_mushroom.yy",},
+    {"name":"spr_mushroom","order":1,"path":"sprites/spr_mushroom/spr_mushroom.yy",},
+  ],
 }
