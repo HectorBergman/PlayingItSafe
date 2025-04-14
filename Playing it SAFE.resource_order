@@ -1,7 +1,15 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"chopping_boards","order":2,"path":"folders/Objects/minigames/falling_chicken/chopping_boards.yy",},
+    {"name":"food","order":3,"path":"folders/Objects/minigames/falling_chicken/food.yy",},
+  ],
   "ResourceOrderSettings":[
-    {"name":"obj_mushroom","order":1,"path":"objects/obj_mushroom/obj_mushroom.yy",},
-    {"name":"spr_mushroom","order":1,"path":"sprites/spr_mushroom/spr_mushroom.yy",},
+    {"name":"obj_checkmark","order":5,"path":"objects/obj_checkmark/obj_checkmark.yy",},
+    {"name":"obj_chopping_board_parent","order":4,"path":"objects/obj_chopping_board_parent/obj_chopping_board_parent.yy",},
+    {"name":"obj_food_dropper","order":1,"path":"objects/obj_food_dropper/obj_food_dropper.yy",},
+    {"name":"obj_wrongmark","order":6,"path":"objects/obj_wrongmark/obj_wrongmark.yy",},
+    {"name":"scr_food_drop","order":1,"path":"scripts/scr_food_drop/scr_food_drop.yy",},
+    {"name":"spr_checkmark","order":2,"path":"sprites/spr_checkmark/spr_checkmark.yy",},
+    {"name":"spr_wrongmark","order":1,"path":"sprites/spr_wrongmark/spr_wrongmark.yy",},
   ],
 }

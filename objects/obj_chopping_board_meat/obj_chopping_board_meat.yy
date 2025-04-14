@@ -9,7 +9,10 @@
     "name":"chopping_boards",
     "path":"folders/Objects/minigames/falling_chicken/chopping_boards.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_chopping_board_parent",
+    "path":"objects/obj_chopping_board_parent/obj_chopping_board_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

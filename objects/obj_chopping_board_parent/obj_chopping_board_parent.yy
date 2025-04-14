@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_food_dropper",
+  "%Name":"obj_chopping_board_parent",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_food_parent","path":"objects/obj_food_parent/obj_food_parent.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_food_dropper",
+  "name":"obj_chopping_board_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"falling_chicken",
