@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_beef_raw",
+  "%Name":"spr_wrongmark",
   "bboxMode":0,
   "bbox_bottom":63,
   "bbox_left":0,
@@ -12,28 +12,28 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"560c39da-d5ac-4967-bb46-7cf8d62a4e1d","name":"560c39da-d5ac-4967-bb46-7cf8d62a4e1d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5993c885-0b2d-42b0-aca5-be86e34bb00f","name":"5993c885-0b2d-42b0-aca5-be86e34bb00f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"80ad750c-84b5-4eef-a698-37a8e693eab0","blendMode":0,"displayName":"default","isLocked":false,"name":"80ad750c-84b5-4eef-a698-37a8e693eab0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"1adab796-9c32-4101-bcd7-ac753261b0f3","blendMode":0,"displayName":"default","isLocked":false,"name":"1adab796-9c32-4101-bcd7-ac753261b0f3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_beef_raw",
+  "name":"spr_wrongmark",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"meat",
-    "path":"folders/Sprites/falling_chicken/food/meat.yy",
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_beef_raw",
+    "%Name":"spr_wrongmark",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_beef_raw",
+    "name":"spr_wrongmark",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -71,8 +71,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"560c39da-d5ac-4967-bb46-7cf8d62a4e1d","path":"sprites/spr_beef_raw/spr_beef_raw.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3962e635-cf57-4684-b7bb-039df9fc7656","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5993c885-0b2d-42b0-aca5-be86e34bb00f","path":"sprites/spr_wrongmark/spr_wrongmark.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3a4bf6bf-7b0b-4773-aecf-af1485cb5949","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
