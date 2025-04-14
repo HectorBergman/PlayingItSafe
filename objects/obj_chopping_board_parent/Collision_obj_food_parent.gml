@@ -35,7 +35,7 @@ with (obj_food_dropper) {
     // Cancel the scheduled alarm
     alarm[1] = -1;
     // Execute an immediate drop
-    scr_drop_food();
+    scr_food_drop();
     // Reset the alarm for the next drop
     alarm[1] = drop_cooldown;
 }
