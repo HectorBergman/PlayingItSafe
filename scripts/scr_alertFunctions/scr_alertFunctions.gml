@@ -43,16 +43,18 @@ function removeAlert(structs,index){
 
 function updateAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
-	var currentAlert = currentStructs.alert;
-	if currentAlert != noone{
-		if room != rm_kitchen{
-			currentAlert = undefined;
-		}
+	if !currentStructs.paused{
+		var currentAlert = currentStructs.alert;
+		if currentAlert != noone{
+			if room != rm_kitchen{
+				currentAlert = undefined;
+			}
 	
-		currentStructs.alertInfo.age++ //(increase age)
-		if currentStructs.alertInfo.lifetime == currentStructs.alertInfo.age{
-			scoreHand.currentScore -= 30;
-			removeAlert(currentStructs, index);
+			currentStructs.alertInfo.age++ //(increase age)
+			if currentStructs.alertInfo.lifetime == currentStructs.alertInfo.age{
+				scoreHand.currentScore -= 30;
+				removeAlert(currentStructs, index);
+			}
 		}
 	}
 }
@@ -63,5 +65,10 @@ function findCurrentIndex(alert){
 	return index;
 }
 
+function cancelAlert(index){
+	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
+	
+	
+}
 
 

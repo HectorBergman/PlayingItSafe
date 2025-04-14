@@ -22,5 +22,9 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 		}
 	}else if room == rm_kitchen && currentStation.alert == undefined{
 		summonCurrentAlert(i);
+	}else if room != rm_kitchen{
+		if currentStation.stationInfostruct.minigameRoom == room {
+			currentStation.paused = true;
+		}
 	}
 }
