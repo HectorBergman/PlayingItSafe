@@ -7,7 +7,7 @@ debugTime++ //for debugging only
 switch (currentMinigame){
     case minigame.none: minigame_none_control(); break;
 	case minigame.dragAndDrop: minigame_dragAndDrop_control(); break;
-	case minigame.dragAndDropFridgeLevels: minigame_dragAndDrop_variant_control(); print("lollll"); break;
+	case minigame.dragAndDropFridgeLevels: minigame_dragAndDrop_variant_control(); break;
 }
 
 

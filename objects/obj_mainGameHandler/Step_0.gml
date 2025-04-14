@@ -4,7 +4,6 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	updateAlert(i);	
 	switch (miniHand.currentMinigame){
 	    case minigame.none: {
-			
 		} break;
 		default:{ 
 		} break;
@@ -13,9 +12,10 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	if currentStation.alert == noone{
 		var info = currentStation.stationInfostruct
 		info.timer++
-		print("timer: " + string(info.timer))
+		//print("timer: " + string(info.timer))
 		if info.timer == info.usedInterval{
-			print("usedInterval : " + string(info.usedInterval))
+			//print("usedInterval : " + string(info.usedInterval))
+			print(currentStation);
 			currentStation.alert = createAlert(currentStation); //see: scr_alertFunctions
 			info.timer = 0
 			info.usedInterval = generateNewInterval(info.interval,info.intervalSpread);

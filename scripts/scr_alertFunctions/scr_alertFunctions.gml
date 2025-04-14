@@ -32,8 +32,7 @@ function summonCurrentAlert(index){
 
 /// @desc deletes an alert
 /// @param {any} structs entry in stationsAndAlerts to remove
-/// @param {real} index index of entry to remove in list
-function removeAlert(structs,index){
+function removeAlert(structs){
 	var alert = structs.alert
 	if alert != undefined{
 		instance_destroy(alert);
@@ -43,8 +42,16 @@ function removeAlert(structs,index){
 
 function updateAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
+	
+	
+
+		
+	var currentAlert = currentStructs.alert;
+	try{
+		print(string(currentStructs.station) + ":  " + string(currentStructs.alertInfo.age));
+	}catch(e){
+	}
 	if !currentStructs.paused{
-		var currentAlert = currentStructs.alert;
 		if currentAlert != noone{
 			if room != rm_kitchen{
 				currentAlert = undefined;
@@ -52,17 +59,28 @@ function updateAlert(index){
 	
 			currentStructs.alertInfo.age++ //(increase age)
 			if currentStructs.alertInfo.lifetime == currentStructs.alertInfo.age{
+				print("deleted");
 				scoreHand.currentScore -= 30;
 				removeAlert(currentStructs, index);
 			}
+		}
+	}else{
+		if room == rm_kitchen{
+			
+			removeAlert(currentStructs);
+			generateNewInterval(currentStructs.stationInfostruct.interval,currentStructs.stationInfostruct.intervalSpread);
 		}
 	}
 }
 
 
 function findCurrentIndex(alert){
-	var index = ds_list_find_index(mainGameHand.stationsAndAlerts, alert);
-	return index;
+	for (var i = 0; i < ds_list_size(mainGameHand.stationsAndAlerts); i++){
+		if (ds_list_find_value(mainGameHand.stationsAndAlerts,i).alert == alert){
+
+		return i;
+		}
+	}
 }
 
 function cancelAlert(index){
@@ -70,5 +88,6 @@ function cancelAlert(index){
 	
 	
 }
+
 
 
