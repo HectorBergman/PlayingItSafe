@@ -1,7 +1,8 @@
 // Event timer
 // timer = 0;
-//drop_interval = 280; // in frames, so 60 frames on 60 fps is 1 second.
-drop_counter = 0;
+global.drop_interval = 10; // in frames, so 60 frames on 60 fps is 1 second.
+global.drop_counter = 0;
+global.drop_score = 0;
 
 drop_cooldown = 280;
 alarm[1] = drop_cooldown;

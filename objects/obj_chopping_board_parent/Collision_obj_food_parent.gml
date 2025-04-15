@@ -12,6 +12,7 @@ if (!category_set)
 	instance_create_layer(x, y - 32, "Instances", obj_checkmark);
 	
 	category_set = true;
+	global.drop_score += 1;
 }
 
 else
@@ -19,10 +20,12 @@ else
 	if (other.food_category == allowed_category)
 	{
 		instance_create_layer(x, y - 32, "Instances", obj_checkmark);
+		global.drop_score += 1;
 	}
 	else
 	{
 		instance_create_layer(x, y - 32, "Instances", obj_wrongmark);
+		global.drop_score -= 1;
 	}
 }
 

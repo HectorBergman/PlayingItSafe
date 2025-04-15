@@ -2,8 +2,10 @@
 //@description Spawns random food objects 
 
 function scr_food_drop()
-{	
-	// Randomly assign a category of food 
+{	 
+	
+	// Randomly assign a category of food
+	
 	var food_category = food_options[irandom(array_length(food_options) - 1)];
 	
 	var food_objects_array = [];
@@ -32,6 +34,8 @@ function scr_food_drop()
 	var food_obj = instance_create_layer(x_pos, -32, "Instances", food_object); // Hard coded the y-position. Could be changed later 
 	food_obj.is_active = true;
 	
+	global.drop_counter += 1;
+	
 	
 	// Deactivate other parent object 
 	// TODO: fix 
@@ -42,4 +46,10 @@ function scr_food_drop()
 			is_active = false;
 		}
 	}
+	if (global.drop_counter >= global.drop_interval) 
+	{
+		room_goto(rm_falling_chicken_end);
+		return;
+	}
+	
 }
