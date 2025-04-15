@@ -24,4 +24,7 @@ switch (object_index)
 	case obj_tomato:
 		food_category = "vegetables";
 		break;
+	case obj_mushroom:
+		food_category = "vegetables";
+		break;
 }
