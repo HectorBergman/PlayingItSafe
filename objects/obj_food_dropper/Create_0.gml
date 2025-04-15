@@ -1,6 +1,6 @@
 // Event timer
 // timer = 0;
-global.drop_interval = 10; // in frames, so 60 frames on 60 fps is 1 second.
+global.drop_interval = 11; // in frames, so 60 frames on 60 fps is 1 second.
 global.drop_counter = 0;
 global.drop_score = 0;
 
