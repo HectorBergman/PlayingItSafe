@@ -1,4 +1,5 @@
 PAUSE
+
 timer++
 var time = timer mod totalTime
 if time <= fadingTime {
@@ -6,3 +7,4 @@ if time <= fadingTime {
 }else if time >= totalTime-fadingTime{
 	image_alpha= ((totalTime-time)/(fadingTime));
 }
+
