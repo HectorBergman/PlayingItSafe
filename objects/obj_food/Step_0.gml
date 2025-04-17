@@ -1,15 +1,15 @@
 cook_timer++;
-if cook_timer == time_medium
+if keyboard_check_pressed(vk_space)
 {
 	sprite_index = spr_partial;	
 }
-else if cook_timer == time_cook
+else if keyboard_check_pressed(vk_alt)
 {
 	sprite_index = spr_done;
 	check_timer++;
 }
-else if cook_timer == time_burn
-{
-	sprite_index = spr_burn;
-	check_timer++;
-}
+//else if cook_timer == time_burn
+//{
+//	sprite_index = spr_burn;
+//	check_timer++;
+//}
