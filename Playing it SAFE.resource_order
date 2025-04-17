@@ -3,6 +3,7 @@
     {"name":"dnd_variation","order":1,"path":"folders/Objects/minigames/dnd_variation.yy",},
     {"name":"chopping_boards","order":2,"path":"folders/Objects/minigames/falling_chicken/chopping_boards.yy",},
     {"name":"food","order":3,"path":"folders/Objects/minigames/falling_chicken/food.yy",},
+    {"name":"draw","order":4,"path":"folders/oScripts/minigames/draw.yy",},
     {"name":"temp","order":1,"path":"folders/Sprites/dragAndDrop/temp.yy",},
   ],
   "ResourceOrderSettings":[
@@ -25,6 +26,7 @@
     {"name":"rm_kitchen_backup","order":2,"path":"rooms/rm_kitchen_backup/rm_kitchen_backup.yy",},
     {"name":"scr_alertFunctions","order":1,"path":"scripts/scr_alertFunctions/scr_alertFunctions.yy",},
     {"name":"scr_dragAndDrop_variant","order":1,"path":"scripts/scr_dragAndDrop_variant/scr_dragAndDrop_variant.yy",},
+    {"name":"scr_fallingChicken","order":2,"path":"scripts/scr_fallingChicken/scr_fallingChicken.yy",},
     {"name":"scr_food_drop","order":1,"path":"scripts/scr_food_drop/scr_food_drop.yy",},
     {"name":"spr_checkmark","order":2,"path":"sprites/spr_checkmark/spr_checkmark.yy",},
     {"name":"spr_dnd_fridge_shelf_bot","order":3,"path":"sprites/spr_dnd_fridge_shelf_bot/spr_dnd_fridge_shelf_bot.yy",},

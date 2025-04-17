@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_fallingChicken_draw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_fallingChicken_draw",
+  "parent":{
+    "name":"draw",
+    "path":"folders/oScripts/minigames/draw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

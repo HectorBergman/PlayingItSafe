@@ -4,6 +4,7 @@ enum minigame{
 	none,
 	dragAndDrop,
 	dragAndDropFridgeLevels,
+	fallingChicken,
 	moreMinigamesHere,
 }
 
