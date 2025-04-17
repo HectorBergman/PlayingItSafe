@@ -112,6 +112,7 @@
     {"id":{"name":"spr_settings","path":"sprites/spr_settings/spr_settings.yy",},},
     {"id":{"name":"spr_stoveControl","path":"sprites/spr_stoveControl/spr_stoveControl.yy",},},
     {"id":{"name":"spr_thermo","path":"sprites/spr_thermo/spr_thermo.yy",},},
+    {"id":{"name":"spr_thermo2","path":"sprites/spr_thermo2/spr_thermo2.yy",},},
     {"id":{"name":"spr_volume","path":"sprites/spr_volume/spr_volume.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
   ],

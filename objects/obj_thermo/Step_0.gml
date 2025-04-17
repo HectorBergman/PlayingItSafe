@@ -1,32 +1,7 @@
 x = mouse_x;
 y = mouse_y;
 
-if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_raw
-{
-	print("Food is raw, you still have to wait");
-}
-
-if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_partial
-{
-	print("Food is cooking, Getting closer");
-	state = 1;
-}
-
-if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_done
-{
-	print("Food has reached temperature, but has it been enough time");
-	state = 2;
-	if obj_food.check_timer <= 100 and mouse_check_button_pressed(mb_left)
-	{
-		print("Still not enough time");
-		state = 3;
-	}
-	else
-	{
-		print("Done");
-	}
-}
-
+// Stove mechanic, turning on and off the stove, includes four states
 
 
 if place_meeting(x, y, obj_stoveControl)
@@ -49,5 +24,39 @@ if place_meeting(x, y, obj_stoveControl)
 			obj_stoveControl.state = 0;
 			print("The stove is off, you can't turn it any lower");
 		}
+	}
+}
+
+if place_meeting(x, y, obj_food)
+{
+	
+	
+	
+	if keyboard_check_pressed(vk_enter)
+	{
+		print("Game is complete");
+	}
+}
+
+
+if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_raw
+{
+	print("Food is raw, you still have to wait");
+}
+
+if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_partial
+{
+	print("Food is cooking, Getting closer");
+	state = 1;
+}
+
+if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_done
+{
+	print("Food has reached temperature, but has it been enough time");
+	state = 2;
+	if mouse_check_button_pressed(mb_left)
+	{
+		sprite_index = spr_thermo2;
+		print("Done");
 	}
 }

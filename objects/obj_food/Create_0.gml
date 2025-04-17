@@ -1,10 +1,7 @@
 // Initialization statements
-cook_timer = 0;
-check_timer = 0;
-
-random1 = irandom_range(50, 200);
-random2 = irandom_range(50, 200);
-random3 = irandom_range(50, 200);
-time_medium = random1;
-time_cook = time_medium + random2;
-time_burn = time_cook + random3;
+time = 0;
+cook_speed = 0;
+state = 0;
+a0 = false;
+a1 = false;
+a2 = false;
