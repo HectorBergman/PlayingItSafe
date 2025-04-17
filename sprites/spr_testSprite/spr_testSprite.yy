@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_testSprite",
+    "%Name":"spr_dragAndDrop_bg_temp",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,

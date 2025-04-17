@@ -186,8 +186,7 @@ function isCovered(instanceChecked, covering){
 	var mask_right = instanceChecked.bbox_right; // right
 	var mask_top = instanceChecked.bbox_top; // top
 	var mask_bottom = instanceChecked.bbox_bottom; // bottom
-    var check_x = covering.x;
-    var check_y = covering.y;
+
 	/*
     print("mask_left x: " + string(check_x+mask_left) + " mask_top y: " + string(check_y+mask_top) );
 	print("mask_right x: " + string(check_x+mask_right) + " mask_top y: " + string(check_y+mask_top) );
@@ -197,19 +196,23 @@ function isCovered(instanceChecked, covering){
   
     
     // Check each potential covering instance
-    for (var i = 0; instance_find(covering, i) != noone; i++) {
-        var inst_cover = instance_find(covering, i)
+	try{
+	    for (var i = 0; instance_find(covering, i) != noone; i++) {
+	        var inst_cover = instance_find(covering, i)
+
+	        // Fast corner check
+	        if (!position_meeting(mask_left,   mask_top,    inst_cover)) continue;
+	        if (!position_meeting(mask_right, mask_top,    inst_cover)) continue;
+	        if (!position_meeting(mask_left,  mask_bottom, inst_cover)) continue;
+	        if (!position_meeting(mask_right, mask_bottom, inst_cover)) continue;
         
-        // Fast corner check
-        if (!position_meeting(check_x + mask_left,  check_y + mask_top,    inst_cover)) continue;
-        if (!position_meeting(check_x + mask_right, check_y + mask_top,    inst_cover)) continue;
-        if (!position_meeting(check_x + mask_left,  check_y + mask_bottom, inst_cover)) continue;
-        if (!position_meeting(check_x + mask_right, check_y + mask_bottom, inst_cover)) continue;
         
-        
-        // If we get here, this instance provides full coverage
-        return true;
-    }
+	        // If we get here, this instance provides full coverage
+	        return true;
+	    }
+	}catch(e){
+		return false;
+	}
     
     // No covering instance found
     return false;
@@ -222,8 +225,12 @@ function isCovered(instanceChecked, covering){
 function stringToEnum(str) {
     switch (str) {
         case "dragAndDrop": return minigame.dragAndDrop;
+		case "dragAndDropFridgeLevels": return minigame.dragAndDropFridgeLevels;
+		case "moreMinigamesHere": return minigame.moreMinigamesHere;
         case "none": return minigame.none;
         default: exception_unhandled_handler(str + " is not an existing enemy type!") //this crashes but
 																					  //not a custom crash
     }
 }
+
+

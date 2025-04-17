@@ -9,6 +9,21 @@ function minigame_dragAndDrop_control(){
 
 
 function minigame_dragAndDrop_create(){
+	
+	//correctArea, sprite
+	//spr_bananas = -1, spr_milk = 0, spr_pizza = 1;
+	for (var i = 0; i < difficulty; i++){
+		var randomInt = irandom_range(-1,1);
+		var sprite = noone;
+		if randomInt == -1{
+			sprite = spr_bananas
+		}else if randomInt == 0{
+			sprite = spr_milk
+		}else if randomInt == 1{
+			sprite = spr_pizza
+		}
+		summonObject(obj_dragAndDrop_item, [["x", i*60], ["y", 318], ["correctArea", randomInt], ["sprite", sprite]]);
+	}
 	var highestI = 0;
 	for (var i = 0; i < instance_number(obj_dragAndDrop_item); i++) {
 	    var inst = instance_find(obj_dragAndDrop_item, i);
@@ -25,7 +40,6 @@ function minigame_dragAndDrop_create(){
 	doorsArray[highestI + 1] = noone;
 
 	//the above code puts all items and doors into arrays
-
 
 	minigameStatus = status.ongoing;
 }

@@ -1,0 +1,2 @@
+
+area = image_index;
