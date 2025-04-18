@@ -15,7 +15,7 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 		//print("timer: " + string(info.timer))
 		if info.timer == info.usedInterval{
 			//print("usedInterval : " + string(info.usedInterval))
-			print(currentStation);
+			//print(currentStation);
 			currentStation.alert = createAlert(currentStation); //see: scr_alertFunctions
 			info.timer = 0
 			info.usedInterval = generateNewInterval(info.interval,info.intervalSpread);

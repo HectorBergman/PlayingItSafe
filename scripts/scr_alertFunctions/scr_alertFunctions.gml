@@ -48,7 +48,7 @@ function updateAlert(index){
 		
 	var currentAlert = currentStructs.alert;
 	try{
-		print(string(currentStructs.station) + ":  " + string(currentStructs.alertInfo.age));
+		//print(string(currentStructs.station) + ":  " + string(currentStructs.alertInfo.age));
 	}catch(e){
 	}
 	if !currentStructs.paused{
@@ -59,7 +59,7 @@ function updateAlert(index){
 	
 			currentStructs.alertInfo.age++ //(increase age)
 			if currentStructs.alertInfo.lifetime == currentStructs.alertInfo.age{
-				print("deleted");
+				//print("deleted");
 				scoreHand.currentScore -= 30;
 				removeAlert(currentStructs, index);
 			}
