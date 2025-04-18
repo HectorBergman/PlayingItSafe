@@ -5,6 +5,7 @@ enum minigame{
 	dragAndDrop,
 	dragAndDropFridgeLevels,
 	fallingChicken,
+	washingHands,
 	moreMinigamesHere,
 }
 
@@ -35,5 +36,12 @@ function miniHandRefresh(){
 	//dragAndDrop
 	itemsArray = [];
 	doorsArray = [];
+	
+	//washing hands
+    // letters
+    letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+           "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    lettersArrayLength = array_length(letters)
+    print(generateRandomLetter())
 }
 miniHandRefresh();
