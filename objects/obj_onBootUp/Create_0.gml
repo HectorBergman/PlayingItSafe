@@ -13,3 +13,5 @@ summonObject(obj_cam, [["swag", true], ["x", 100]])
 
 var seed = (date_current_datetime()) * 1000000;
 random_set_seed(seed);
+
+scribble_font_set_default("fnt_fibberish");
