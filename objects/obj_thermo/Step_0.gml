@@ -31,7 +31,6 @@ if place_meeting(x, y, obj_food)
 {
 	
 	
-	
 	if keyboard_check_pressed(vk_enter)
 	{
 		print("Game is complete");
@@ -59,4 +58,9 @@ if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_done
 		sprite_index = spr_thermo2;
 		print("Done");
 	}
+}
+
+if obj_food.after_done_timer == 60
+{
+	sprite_index = spr_thermo2;
 }

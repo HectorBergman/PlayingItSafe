@@ -8,10 +8,6 @@ else
 	if obj_stoveControl.state == 1
 	{
 		alarm[0] = 2 * room_speed;
-		if state == 3
-		{
-			obj_stoveControl.state = 4;
-		}
 	}
 	else if obj_stoveControl.state == 2
 	{
@@ -23,7 +19,7 @@ else
 	}
 	else
 	{
-		print("State other, can be debugging");
+		print("Stove state other, might need debugging");
 	}
 }
 
@@ -39,12 +35,14 @@ else if state == 1
 else if state == 2
 {
 	sprite_index = spr_done;
+	after_done_timer++;
 }
 else if state == 3
 {
 	sprite_index = spr_burn;
+	after_done_timer++;
 }
 else
 {
-	print("Debugging required, something went wrong");	
+	print("Food state other, might need debugging");	
 }

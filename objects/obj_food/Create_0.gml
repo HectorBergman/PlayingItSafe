@@ -5,3 +5,6 @@ state = 0;
 a0 = false;
 a1 = false;
 a2 = false;
+
+
+after_done_timer = 0;
