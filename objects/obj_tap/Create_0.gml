@@ -1,2 +1,6 @@
 tap_on = false; // Tap starts off
 image_index = 0; // Ensure correct sprite frame
+
+
+// Start in OFF state
+global.tap_state = tapState.OFF;

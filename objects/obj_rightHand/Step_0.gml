@@ -5,7 +5,7 @@ switch (hand_state)
 {
 	case HandState.DIRTY:
 	{
-		if (place_meeting(x, y, obj_tap) && (keyboard_check_pressed(ord("E")))) {
+		if (place_meeting(x, y, obj_tap) && (keyboard_check_pressed(ord("E"))) && global.tap_state == tapState.ON) {
 			hand_state = HandState.WET;
 			print("Hands are wet")
 		}
@@ -70,7 +70,7 @@ switch (hand_state)
 	
 	case HandState.SCRUB4:
 	{
-		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E") &&  global.tap_state == tapState.ON) ) {
 			hand_state = HandState.RINSE;
 			print("Hands are rinsed")
 		}
@@ -88,7 +88,7 @@ switch (hand_state)
 	
 	case HandState.DRY:
 	{
-		if (keyboard_check_pressed(ord("E"))) {
+		if (keyboard_check_pressed(ord("E")) &&  global.tap_state == tapState.OFF) {
 			print("Nicely washed hands boi")
 			miniHand.minigameStatus = status.finished;
 		}
