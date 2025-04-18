@@ -38,7 +38,12 @@ with (obj_food_dropper) {
     // Cancel the scheduled alarm
     alarm[1] = -1;
     // Execute an immediate drop
-    scr_food_drop();
-    // Reset the alarm for the next drop
-    alarm[1] = drop_cooldown;
+	if (global.drop_counter < global.drop_interval-1){
+
+		scr_food_drop();
+		// Reset the alarm for the next drop
+		alarm[1] = drop_cooldown;
+	}else{
+		miniHand.minigameStatus = status.finished;
+	}
 }
