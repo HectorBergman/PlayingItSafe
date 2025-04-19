@@ -16,6 +16,8 @@ enum status{
 	finished,
 	none,
 }
+
+
 playerPosition = [416,224];
 //call this + minigameComplete when done with minigame,
 //add in any required variables here
