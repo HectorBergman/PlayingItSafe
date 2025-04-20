@@ -23,14 +23,27 @@ switch (hand_state)
 	
 	case HandState.SOAP:
 	{
+		if (!instance_exists(scrubBar)) {
+	        scrubBar = instance_create_layer(x, y, "Instances", obj_progressBar);
+	    }
+		
 		if (scrub_timer <= 0 && keyboard_check_pressed(ord(scrubKey1))) {
 	        scrub_count++;
 	        scrub_timer = room_speed * 0.4; // 0.4 seconds in frames (assuming 60 FPS)
-	        print("Scrub " + string(scrub_count));
+	        print("Scrub 1 (Iteration: " + string(scrub_count)+ ")");
         
+			if (instance_exists(scrubBar)) {
+	            scrubBar.image_index = scrub_count;
+	        }
+		
 	        if (scrub_count >= 5) {
 	            hand_state = HandState.SCRUB1;
 	            print("Scrub 1 completed!");
+				
+				if (instance_exists(scrubBar)) {
+	                instance_destroy(scrubBar);
+	                scrubBar = noone;
+	            }
 	        }
 		}
 
@@ -70,7 +83,7 @@ switch (hand_state)
 	
 	case HandState.SCRUB4:
 	{
-		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E") &&  global.tap_state == tapState.ON) ) {
+		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E")) &&  global.tap_state == tapState.ON) {
 			hand_state = HandState.RINSE;
 			print("Hands are rinsed")
 		}

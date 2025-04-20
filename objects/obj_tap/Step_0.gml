@@ -10,14 +10,14 @@ switch (global.tap_state)
 	case tapState.ON:
 		if (place_meeting(200, 100, obj_rightHand) && (keyboard_check_pressed(ord("A")))) {
 			global.tap_state = tapState.OFF;
-			print("Tap on")
+			print("Tap off")
 		}
 	break;
 	
 	case tapState.OFF:
 		if (place_meeting(200, 100, obj_rightHand) && (keyboard_check_pressed(ord("A")))) {
 			global.tap_state = tapState.ON;
-			print("Tap off")
+			print("Tap on")
 		}
 	break;
 }
