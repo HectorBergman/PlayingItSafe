@@ -16,6 +16,8 @@ scrubKey2 = "Q";
 scrubKey3 = "F";
 scrubKey4 = "H";
 
+scrubBar = noone;
+
 // Define hand states
 enum HandState {
     DIRTY,
