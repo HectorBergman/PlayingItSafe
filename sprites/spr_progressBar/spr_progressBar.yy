@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_progressBar",
   "bboxMode":0,
-  "bbox_bottom":55,
+  "bbox_bottom":53,
   "bbox_left":12,
   "bbox_right":115,
   "bbox_top":36,
