@@ -119,5 +119,10 @@
     {"name":"__shd_scribble_bake_outline_8dir","order":1,"path":"shaders/__shd_scribble_bake_outline_8dir/__shd_scribble_bake_outline_8dir.yy",},
     {"name":"__shd_scribble_bake_shadow","order":3,"path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},
     {"name":"scribble_fallback_bulletpoint","order":15,"path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},
+    {"name":"spr_chopping_board","order":2,"path":"sprites/spr_chopping_board/spr_chopping_board.yy",},
+    {"name":"spr_kitchen","order":1,"path":"sprites/spr_kitchen/spr_kitchen.yy",},
+    {"name":"spr_main_kitchen","order":2,"path":"sprites/spr_main_kitchen/spr_main_kitchen.yy",},
+    {"name":"spr_oven","order":3,"path":"sprites/spr_oven/spr_oven.yy",},
+    {"name":"spr_sink","order":1,"path":"sprites/spr_sink/spr_sink.yy",},
   ],
 }
