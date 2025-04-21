@@ -124,5 +124,6 @@
     {"name":"spr_main_kitchen","order":2,"path":"sprites/spr_main_kitchen/spr_main_kitchen.yy",},
     {"name":"spr_oven","order":3,"path":"sprites/spr_oven/spr_oven.yy",},
     {"name":"spr_sink","order":1,"path":"sprites/spr_sink/spr_sink.yy",},
+    {"name":"spr_washingHands_bg","order":3,"path":"sprites/spr_washingHands_bg/spr_washingHands_bg.yy",},
   ],
 }
