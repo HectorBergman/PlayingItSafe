@@ -23,7 +23,7 @@
   ],
   "name":"spr_chopping_board_meat",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"chopping_boards",
     "path":"folders/Sprites/falling_chicken/chopping_boards.yy",
@@ -78,7 +78,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":25,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
