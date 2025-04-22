@@ -60,7 +60,7 @@ function updateAlert(index){
 			currentStructs.alertInfo.age++ //(increase age)
 			if currentStructs.alertInfo.lifetime == currentStructs.alertInfo.age{
 				//print("deleted");
-				scoreHand.currentScore -= 30;
+				scoreHand.totalScore -= 30;
 				removeAlert(currentStructs, index);
 			}
 		}

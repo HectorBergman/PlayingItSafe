@@ -35,7 +35,7 @@
     {"$GMObjectProperty":"v1","%Name":"alertYOffset","filters":[],"listItems":[],"multiselect":false,"name":"alertYOffset","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"chosenMinigame","filters":[],"listItems":[],"multiselect":false,"name":"chosenMinigame","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"dragAndDrop","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"minigameRoom","filters":[],"listItems":[],"multiselect":false,"name":"minigameRoom","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_dragAndDrop","path":"rooms/rm_dragAndDrop/rm_dragAndDrop.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_dragAndDrop","varType":5,},
-    {"$GMObjectProperty":"v1","%Name":"sprite_index","filters":[],"listItems":[],"multiselect":false,"name":"sprite_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_fridge","path":"sprites/spr_fridge/spr_fridge.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_fridge","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"sprite_index","filters":[],"listItems":[],"multiselect":false,"name":"sprite_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_interactable","path":"sprites/spr_interactable/spr_interactable.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_interactable","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"image_angle","filters":[],"listItems":[],"multiselect":false,"name":"image_angle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"interval","filters":[],"listItems":[],"multiselect":false,"name":"interval","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"intervalSpread","filters":[],"listItems":[],"multiselect":false,"name":"intervalSpread","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"50","varType":0,},
@@ -50,5 +50,5 @@
     "path":"sprites/spr_interactable/spr_interactable.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
