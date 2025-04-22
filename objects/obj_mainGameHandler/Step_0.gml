@@ -13,7 +13,7 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 		var info = currentStation.stationInfostruct
 		info.timer++
 		//print("timer: " + string(info.timer))
-		if info.timer == info.usedInterval{
+		if info.summonCondition(info){
 			//print("usedInterval : " + string(info.usedInterval))
 			//print(currentStation);
 			currentStation.alert = createAlert(currentStation); //see: scr_alertFunctions

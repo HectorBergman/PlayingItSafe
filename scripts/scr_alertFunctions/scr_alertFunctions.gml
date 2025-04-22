@@ -7,10 +7,7 @@ function createAlert(element){
 	var alertInfo = {age : 0, lifetime : info.alertLifetime}
 	var alert = undefined;
 	if miniHand.currentMinigame == minigame.none{
-		alert = summonObject(obj_alert,
-							[["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
-							 ["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
-							 ["difficulty", info.difficulty], ["lifetime", info.alertLifetime]]);
+		alert = summonObject(obj_alert, getAlertInfo(info));
 	}
 	
 	element.identity = alert
@@ -18,14 +15,18 @@ function createAlert(element){
 	return alert								
 }
 
+function getAlertInfo(info){
+	return [["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
+			["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
+			["difficulty", info.difficulty], ["lifetime", info.alertLifetime], 
+			["summonCondition", info.summonCondition],["deletionCondition", info.deletionCondition]]
+}
+
 
 function summonCurrentAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
 	var info = currentStructs.stationInfostruct
-	var alert = summonObject(obj_alert,
-							[["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
-							 ["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
-							 ["difficulty", info.difficulty], ["lifetime", info.alertLifetime]]);
+	var alert = summonObject(obj_alert, getAlertInfo(info));
 							 
 	currentStructs.alert = alert;
 }
@@ -58,7 +59,7 @@ function updateAlert(index){
 			}
 	
 			currentStructs.alertInfo.age++ //(increase age)
-			if currentStructs.alertInfo.lifetime == currentStructs.alertInfo.age{
+			if currentStructs.stationInfostruct.deletionCondition(currentStructs){
 				//print("deleted");
 				scoreHand.totalScore -= 30;
 				removeAlert(currentStructs, index);
@@ -88,6 +89,21 @@ function cancelAlert(index){
 	
 	
 }
+function defaultSummonCondition(info){
+	return info.timer == info.usedInterval
+}
 
+function washingHandsSummonCondition(info){
+	var m = miniHand
+	return m.minigameStatus == status.started && m.currentMinigame == minigame.none &&
+	(m.lastMinigame == minigame.fallingChicken || m.lastMinigame == minigame.dragAndDropFridgeLevels
+	|| m.lastMinigame == minigame.none);
+}
+function defaultDeletionCondition(info){
+	return info.alertInfo.lifetime == info.alertInfo.age
+}
 
+function washingHandsDeletionCondition(info){
+	return room != rm_kitchen;
+}
 

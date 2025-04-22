@@ -41,6 +41,8 @@
     {"$GMObjectProperty":"v1","%Name":"intervalSpread","filters":[],"listItems":[],"multiselect":false,"name":"intervalSpread","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"50","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"alertLifetime","filters":[],"listItems":[],"multiselect":false,"name":"alertLifetime","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"300","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"difficulty","filters":[],"listItems":[],"multiselect":false,"name":"difficulty","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"3","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"summonCondition","filters":[],"listItems":[],"multiselect":false,"name":"summonCondition","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"defaultSummonCondition","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"deletionCondition","filters":[],"listItems":[],"multiselect":false,"name":"deletionCondition","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"defaultDeletionCondition","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

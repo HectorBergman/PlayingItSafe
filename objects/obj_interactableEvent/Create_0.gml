@@ -21,6 +21,8 @@ infoStruct = {
 	intervalSpread : intervalSpread, 
 	alertLifetime : alertLifetime,
 	difficulty : difficulty,// todo: make this ramp up
+	summonCondition : summonCondition,
+	deletionCondition : deletionCondition,
 }
 
 
