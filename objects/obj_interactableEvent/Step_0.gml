@@ -1,6 +1,8 @@
-/// @description Insert description here
-// You can write your code in this editor
-if interactable && alert == noone{
-	alert = summonObject(obj_alert,[["x", x+alertXOffset], ["y", y+alertYOffset], 
-									["minigame", minigameRoom], ["minigameEnum", chosenMinigame]]);
+PAUSE
+if (room != originalRoom){
+	x = -99;
+	y = -99;
+}else{
+	x = originalCoords[0];
+	y = originalCoords[1];
 }

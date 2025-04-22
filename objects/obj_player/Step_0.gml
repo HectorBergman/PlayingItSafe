@@ -1,5 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+PAUSE
+
 collision_circle_list(x,y,interactRadius, obj_alert, false, true, nearbyAlerts, true)
 if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby alerts,
 											   //and the player hits the interact button
@@ -9,7 +9,16 @@ if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby 
 		miniHand.currentMinigame = stringToEnum(nearestAlert.minigameEnum);
 		miniHand.minigameStatus = status.started;
 		miniHand.playerPosition = [x,y];
-		room_goto(nearestAlert.minigame); //enter minigame if path from player to alert isnt blocked
+		miniHand.difficulty = nearestAlert.difficulty
+		mainGameHand.activeIndex = findCurrentIndex(nearestAlert);
+		
+		if (nearestAlert.minigameEnum != "moreMinigamesHere"){
+			room_goto(nearestAlert.minigame); //enter minigame if path from player to alert isnt blocked
+		}
+		with(mainGameHand){
+			var alert = ds_list_find_value(stationsAndAlerts, findCurrentIndex(nearestAlert))
+			alert.toBeDestroyed = true;
+		}
 	}
 }
 switch (state){

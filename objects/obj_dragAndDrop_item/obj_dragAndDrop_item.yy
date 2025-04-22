@@ -28,6 +28,8 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"correctArea","filters":[],"listItems":[],"multiselect":false,"name":"correctArea","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"sprite","filters":[],"listItems":[],"multiselect":false,"name":"sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_milk","path":"sprites/spr_milk/spr_milk.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_milk","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"wonky","filters":[],"listItems":[],"multiselect":false,"name":"wonky","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

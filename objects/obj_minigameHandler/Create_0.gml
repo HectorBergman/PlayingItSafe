@@ -3,6 +3,8 @@
 enum minigame{
 	none,
 	dragAndDrop,
+	dragAndDropFridgeLevels,
+	fallingChicken,
 	washingHands,
 	moreMinigamesHere,
 }
@@ -17,7 +19,9 @@ enum status{
 playerPosition = [416,224];
 //call this + minigameComplete when done with minigame,
 //add in any required variables here
-function miniHandRefresh(){ 
+function miniHandRefresh(){
+	difficulty = 1;
+	
 	currentMinigame = minigame.none
 	minigameStatus = status.started
 

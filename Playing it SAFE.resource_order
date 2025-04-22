@@ -54,7 +54,6 @@
     {"name":"scr_playerStates_normal","order":1,"path":"scripts/scr_playerStates_normal/scr_playerStates_normal.yy",},
     {"name":"scr_washingHands","order":3,"path":"scripts/scr_washingHands/scr_washingHands.yy",},
     {"name":"spr_correct","order":11,"path":"sprites/spr_correct/spr_correct.yy",},
-    {"name":"spr_dragAndDrop_bg_temp","order":2,"path":"sprites/spr_dragAndDrop_bg_temp/spr_dragAndDrop_bg_temp.yy",},
     {"name":"spr_dragAndDrop_completion_hitbox","order":5,"path":"sprites/spr_dragAndDrop_completion_hitbox/spr_dragAndDrop_completion_hitbox.yy",},
     {"name":"spr_dragAndDrop_doors_fridge","order":1,"path":"sprites/spr_dragAndDrop_doors_fridge/spr_dragAndDrop_doors_fridge.yy",},
     {"name":"spr_dragAndDrop","order":1,"path":"sprites/spr_dragAndDrop/spr_dragAndDrop.yy",},
