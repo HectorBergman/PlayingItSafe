@@ -57,17 +57,22 @@ function updateAlert(index){
 			if room != rm_kitchen{
 				currentAlert = undefined;
 			}
-	
-			currentStructs.alertInfo.age++ //(increase age)
+			if miniHand.currentMinigame == minigame.none{
+				currentStructs.alertInfo.age++ //(increase age)
+			}else{
+				currentStructs.alertInfo.age += 0.2 //slowed progression if inside minigame
+			}
 			if currentStructs.stationInfostruct.deletionCondition(currentStructs){
-				//print("deleted");
+				print("penis");
+				if currentStructs.stationInfostruct.chosenMinigame == minigame.washingHands{
+					print("im washing here");
+				}
 				scoreHand.totalScore -= 30;
 				removeAlert(currentStructs, index);
 			}
 		}
 	}else{
 		if room == rm_kitchen{
-			
 			removeAlert(currentStructs);
 			generateNewInterval(currentStructs.stationInfostruct.interval,currentStructs.stationInfostruct.intervalSpread);
 		}
@@ -100,10 +105,11 @@ function washingHandsSummonCondition(info){
 	|| m.lastMinigame == minigame.none);
 }
 function defaultDeletionCondition(info){
-	return info.alertInfo.lifetime == info.alertInfo.age
+	return info.alertInfo.lifetime <= info.alertInfo.age
 }
 
 function washingHandsDeletionCondition(info){
+	print(room != rm_kitchen);
 	return room != rm_kitchen;
 }
 

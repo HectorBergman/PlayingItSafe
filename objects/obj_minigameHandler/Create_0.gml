@@ -22,8 +22,8 @@ playerPosition = [592,736];
 //call this + minigameComplete when done with minigame,
 //add in any required variables here
 currentMinigame = minigame.none;
+lastMinigame = minigame.none;
 function miniHandRefresh(){
-	lastMinigame = currentMinigame
 	difficulty = 1;
 	
 	currentMinigame = minigame.none
