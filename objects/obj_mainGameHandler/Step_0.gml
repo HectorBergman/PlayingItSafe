@@ -1,4 +1,4 @@
-
+print(alertsActive);
 for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	var currentStation = ds_list_find_value(stationsAndAlerts, i);
 	updateAlert(i);	
@@ -11,7 +11,12 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	
 	if currentStation.alert == noone{
 		var info = currentStation.stationInfostruct
-		info.timer++
+		print(info.timer);
+		info.timer += -alertsActive/totalStations/2 + 0.5 //For some reason, alertsActive is inverted, so -4
+														  //means no alerts, and 0 means 4 alerts active
+														  //probably easy to fix but idc
+														  // /2 and +0.5 to make having a lot of alerts active
+														  // not stop alert spawning as hard!
 		//print("timer: " + string(info.timer))
 		if info.summonCondition(info){
 			//print("usedInterval : " + string(info.usedInterval))

@@ -12,6 +12,7 @@ function createAlert(element){
 	
 	element.identity = alert
 	element.alertInfo = alertInfo
+	mainGameHand.alertsActive++;
 	return alert								
 }
 
@@ -39,15 +40,11 @@ function removeAlert(structs){
 		instance_destroy(alert);
 	}
 	structs.alert = noone;
+	mainGameHand.alertsActive--;
 }
 
 function updateAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
-	if currentStructs.stationInfostruct.chosenMinigame == "dragAndDropFridgeLevels"{
-		print(currentStructs.alert)
-	}
-	
-
 		
 	var currentAlert = currentStructs.alert;
 	try{
@@ -93,7 +90,7 @@ function cancelAlert(index){
 	
 }
 function defaultSummonCondition(info){
-	return info.timer == info.usedInterval
+	return info.timer >= info.usedInterval
 }
 
 function washingHandsSummonCondition(info){
