@@ -43,7 +43,9 @@ function removeAlert(structs){
 
 function updateAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
-	
+	if currentStructs.stationInfostruct.chosenMinigame == "dragAndDropFridgeLevels"{
+		print(currentStructs.alert)
+	}
 	
 
 		
@@ -63,10 +65,6 @@ function updateAlert(index){
 				currentStructs.alertInfo.age += 0.2 //slowed progression if inside minigame
 			}
 			if currentStructs.stationInfostruct.deletionCondition(currentStructs){
-				print("penis");
-				if currentStructs.stationInfostruct.chosenMinigame == minigame.washingHands{
-					print("im washing here");
-				}
 				scoreHand.totalScore -= 30;
 				removeAlert(currentStructs, index);
 			}
@@ -109,7 +107,6 @@ function defaultDeletionCondition(info){
 }
 
 function washingHandsDeletionCondition(info){
-	print(room != rm_kitchen);
 	return room != rm_kitchen;
 }
 
