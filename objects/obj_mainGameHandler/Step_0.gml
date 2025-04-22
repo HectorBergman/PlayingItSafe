@@ -17,6 +17,11 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 														  //probably easy to fix but idc
 														  // /2 and +0.5 to make having a lot of alerts active
 														  // not stop alert spawning as hard!
+														  //0 alerts active = 1
+														  //1 alert active = 0.875
+														  //2 alerts active = 0.75
+														  //3 alerts active = 0.625
+														  //4 alerts active = 0.5 this case isnt relevant at time of writing
 		//print("timer: " + string(info.timer))
 		if info.summonCondition(info){
 			//print("usedInterval : " + string(info.usedInterval))
