@@ -120,6 +120,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_pointer_vari","path":"objects/obj_pointer_vari/obj_pointer_vari.yy",},},
     {"id":{"name":"obj_pointer","path":"objects/obj_pointer/obj_pointer.yy",},},
+    {"id":{"name":"obj_pulseHandler","path":"objects/obj_pulseHandler/obj_pulseHandler.yy",},},
     {"id":{"name":"obj_rightHand","path":"objects/obj_rightHand/obj_rightHand.yy",},},
     {"id":{"name":"obj_scoreHandler","path":"objects/obj_scoreHandler/obj_scoreHandler.yy",},},
     {"id":{"name":"obj_shelf","path":"objects/obj_shelf/obj_shelf.yy",},},
