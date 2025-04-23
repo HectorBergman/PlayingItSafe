@@ -9,7 +9,7 @@ if (!category_set)
 	// Sets the category to be that of the category of food_object collided 
 	allowed_category = other.food_category
 	
-	instance_create_layer(x, y - 32, "Instances", obj_checkmark);
+	instance_create_layer(x+sprite_width/2, y - 32, "Instances", obj_checkmark);
 	
 	category_set = true;
 	global.drop_score += 1;
@@ -19,12 +19,12 @@ else
 {
 	if (other.food_category == allowed_category)
 	{
-		instance_create_layer(x, y - 32, "Instances", obj_checkmark);
+		instance_create_layer(x+sprite_width/2, y - 32, "Instances", obj_checkmark);
 		global.drop_score += 1;
 	}
 	else
 	{
-		instance_create_layer(x, y - 32, "Instances", obj_wrongmark);
+		instance_create_layer(x+sprite_width/2, y - 32, "Instances", obj_wrongmark);
 		global.drop_score -= 1;
 	}
 }

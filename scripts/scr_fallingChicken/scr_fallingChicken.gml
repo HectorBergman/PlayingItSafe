@@ -30,6 +30,7 @@ function minigame_fallingChicken_step(){
 		checkmark = 1;
 		minigameStatus = status.finished;
 	}
+	scoreHand.currentScore = global.drop_score;
 }
 
 //template for minigames completed, doesnt have to look like this ofc

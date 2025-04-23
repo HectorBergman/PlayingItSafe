@@ -1,7 +1,8 @@
 
 fall_speed = 1;
 is_active = false;
-
+image_xscale = 2;
+image_yscale = 2;
 // Sets food_category to each object 
 
 switch (object_index)

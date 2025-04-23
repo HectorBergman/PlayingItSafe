@@ -50,7 +50,7 @@ function minigame_dragAndDrop_variant_step(){
 
 		if itemsArray[i].inPosition{ //for every item in it's right place,
 										//give 30 points
-			//scoreHand.currentScore += 30
+			//scoreHand.totalScore += 30
 
 		}else{
 			minigameComplete = false;
