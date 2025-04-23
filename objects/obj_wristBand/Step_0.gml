@@ -11,7 +11,7 @@ if (place_meeting(x, y, obj_vanityTray) && (keyboard_check_pressed(ord("E")))) {
     x = 1680;
     y = 800;
 	
-	if(depth == 1001) {
-		depth = 999;
+	if(depth == -1001) {
+		depth = -999;
 	}
 }
