@@ -10,18 +10,20 @@ recencyGrabbedDepth = 999;
 scrub_count = 0;
 scrub_timer = 0;
 
+scrubPoint = instance_find(obj_scrubPoint, 0);
+scrubDirX = 0;
+scrubDirY = 0;
 
 scrubKey1 = "E";
 scrubKey2 = "Q";
 scrubKey3 = "F";
 scrubKey4 = "H";
 
-scrubBar = noone;
-
 // Define hand states
 enum HandState {
     DIRTY,
     WET,
+	scrubStart,
     SOAP,
 	SCRUB1,
 	SCRUB2,
@@ -31,8 +33,17 @@ enum HandState {
 	DRY,
 }
 
+enum movability {
+	movable,
+	unmovable,
+	halfmovable,
+}
+movabilityState = movability.movable
+
+scrubTween = noone;
 // Start in dirty state
 hand_state = HandState.DIRTY;
+leftHand = noone;
 
 
 
