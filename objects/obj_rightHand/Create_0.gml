@@ -10,6 +10,12 @@ recencyGrabbedDepth = 999;
 scrub_count = 0;
 scrub_timer = 0;
 
+bejeweled = true;
+jewel_rand = irandom_range(1, 4);
+ring = noone;
+wristBand = noone;
+
+
 
 
 //washing hands
@@ -29,6 +35,7 @@ scrubBar = noone;
 // Define hand states
 enum HandState {
     DIRTY,
+	JEWELRY,
     WET,
     SOAP,
 	SCRUB1,

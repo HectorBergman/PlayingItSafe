@@ -5,6 +5,24 @@ switch (hand_state)
 {
 	case HandState.DIRTY:
 	{
+		if (jewel_rand < 5 && !instance_exists(ring) && !instance_exists(wristBand)) {
+			ring = instance_create_layer(x, y, "Instances", obj_ring);
+			wristBand = instance_create_layer(x, y, "Instances", obj_wristBand);
+		}
+		
+		if (jewel_rand > 5 || place_meeting(x, y, obj_vanityTray) && (keyboard_check_pressed(ord("E")))) {
+			bejeweled = false;
+		}
+		
+		if (!bejeweled){
+			hand_state = HandState.JEWELRY;
+			print("Hands are un-bejeweld")
+		}
+	}
+	break;
+	
+	case HandState.JEWELRY:
+	{
 		if (place_meeting(x, y, obj_water) && (keyboard_check_pressed(ord("E")))){
 			hand_state = HandState.WET;
 			print("Hands are wet")
