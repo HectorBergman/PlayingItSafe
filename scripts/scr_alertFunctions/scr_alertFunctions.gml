@@ -56,7 +56,9 @@ function updateAlert(index){
 			if room != rm_kitchen{
 				currentAlert = undefined;
 			}
-			if miniHand.currentMinigame == minigame.none{
+			if miniHand.minigameStatus == status.finished{
+				//pause alert aging when checkmark is shown
+			}else if miniHand.currentMinigame == minigame.none{
 				currentStructs.alertInfo.age++ //(increase age)
 			}else{
 				currentStructs.alertInfo.age += 0.2 //slowed progression if inside minigame
