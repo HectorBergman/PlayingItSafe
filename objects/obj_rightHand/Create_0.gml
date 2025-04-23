@@ -11,10 +11,18 @@ scrub_count = 0;
 scrub_timer = 0;
 
 
-scrubKey1 = "E";
-scrubKey2 = "Q";
-scrubKey3 = "F";
-scrubKey4 = "H";
+
+//washing hands
+// letters
+letters = ["B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+       "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+lettersArrayLength = array_length(letters)
+
+
+scrubKey1 = generateRandomLetter();
+scrubKey2 = generateRandomLetter();
+scrubKey3 = generateRandomLetter();
+scrubKey4 = generateRandomLetter();
 
 scrubBar = noone;
 
@@ -42,6 +50,55 @@ function washingHandsText(newText){
 	var text = ""
 	text = "[scale,4][$eee7e7]"+string(newText); //$eee7e7 is color in hexadecimal, change this to change text color
 	var toDraw = scribble(text).wrap(wrapWidth);
-	toDraw.draw(10, 10); //x and y coordinate where text will be drawn
+	
+    var approxWidth = string_width(newText) * 4 * 1; //4 is scale. 0.6 is a fudge factor
+	var centerX = (1920 - approxWidth) / 2;
+	toDraw.draw(centerX, 10); //x and y coordinate where text will be drawn
 	//fråga Hector om ni undrar något mer
+}
+
+
+/// @function handle_scrubbing(scrubKey1, scrubBar, scrub_timer, scrub_count, hand_state);
+/// @description Manages the scrubbing mechanic (progress bar, timer, and state changes).
+/// @param {string} scrubKey1 The keyboard key to check for scrubbing (e.g., "E").
+/// @param {number} scrub_count Counter for scrubs (modified by reference).
+/// @param {real} hand_state Hand state enum (modified by reference)..
+function handle_scrubbing(_scrubKey, _scrubRep, _nextHandState) {
+	
+    if (!instance_exists(scrubBar)) {
+        scrubBar = instance_create_layer(x, y, "Instances", obj_progressBar);
+    }
+
+    // Check for scrub input and timer
+    if (scrub_timer <= 0 && keyboard_check_pressed(ord(_scrubKey))) {
+        // Increment scrub count and reset timer
+        scrub_count++;
+        scrub_timer = room_speed * 0.4; // 0.4 seconds cooldown
+        print("Scrub (Iteration: " + string(scrub_count) + ")");
+
+        // Update progress bar if it exists
+        if (instance_exists(scrubBar)) {
+            scrubBar.image_index = scrub_count;
+        }
+
+        // Check if scrubbing is complete
+        if (scrub_count >= _scrubRep) {
+            hand_state = _nextHandState;
+            print("Scrub completed!");
+
+            // Clean up progress bar and reset variables
+            if (instance_exists(scrubBar)) {
+                instance_destroy(scrubBar);
+                scrubBar = noone;
+				scrub_count = 0;
+				scrub_timer = 0;
+            }
+        }
+    }
+    
+    // Timer countdown
+    if (scrub_timer > 0) {
+        scrub_timer--;
+    }
+	
 }

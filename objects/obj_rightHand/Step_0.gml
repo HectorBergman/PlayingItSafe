@@ -5,7 +5,7 @@ switch (hand_state)
 {
 	case HandState.DIRTY:
 	{
-		if (place_meeting(x, y, obj_tap) && (keyboard_check_pressed(ord("E"))) && global.tap_state == tapState.ON) {
+		if (place_meeting(x, y, obj_water) && (keyboard_check_pressed(ord("E")))){
 			hand_state = HandState.WET;
 			print("Hands are wet")
 		}
@@ -23,67 +23,31 @@ switch (hand_state)
 	
 	case HandState.SOAP:
 	{
-		if (!instance_exists(scrubBar)) {
-	        scrubBar = instance_create_layer(x, y, "Instances", obj_progressBar);
-	    }
-		
-		if (scrub_timer <= 0 && keyboard_check_pressed(ord(scrubKey1))) {
-	        scrub_count++;
-	        scrub_timer = room_speed * 0.4; // 0.4 seconds in frames (assuming 60 FPS)
-	        print("Scrub 1 (Iteration: " + string(scrub_count)+ ")");
-        
-			if (instance_exists(scrubBar)) {
-	            scrubBar.image_index = scrub_count;
-	        }
-		
-	        if (scrub_count >= 5) {
-	            hand_state = HandState.SCRUB1;
-	            print("Scrub 1 completed!");
-				
-				if (instance_exists(scrubBar)) {
-	                instance_destroy(scrubBar);
-	                scrubBar = noone;
-	            }
-	        }
-		}
-
-	    // Reduce the timer every frame
-	    if (scrub_timer > 0) {
-	        scrub_timer--;
-	    }
+		handle_scrubbing(scrubKey1, 5, HandState.SCRUB1);
 	}
 	break;
 	
 	case HandState.SCRUB1:
 	{
-		if (keyboard_check_pressed(ord(scrubKey2))) {
-			hand_state = HandState.SCRUB2;
-			print("Scrub 2")
-		}
+		handle_scrubbing(scrubKey2, 5, HandState.SCRUB2);
 	}
 	break;
 	
 	case HandState.SCRUB2:
 	{
-		if (keyboard_check_pressed(ord(scrubKey3))) {
-			hand_state = HandState.SCRUB3;
-			print("Scrub 3")
-		}
+		handle_scrubbing(scrubKey3, 5, HandState.SCRUB3);
 	}
 	break;
 	
 	case HandState.SCRUB3:
 	{
-		if (keyboard_check_pressed(ord(scrubKey4))) {
-			hand_state = HandState.SCRUB4;
-			print("Scrub 4")
-		}
+		handle_scrubbing(scrubKey4, 5, HandState.SCRUB4);
 	}
 	break;
 	
 	case HandState.SCRUB4:
 	{
-		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E")) &&  global.tap_state == tapState.ON) {
+		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
 			print("Hands are rinsed")
 		}
