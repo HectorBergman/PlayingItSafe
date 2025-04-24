@@ -11,6 +11,7 @@
     {"name":"inst_39D1F35A","path":"rooms/rm_washingHands/rm_washingHands.yy",},
     {"name":"inst_E9C6E7","path":"rooms/rm_washingHands/rm_washingHands.yy",},
     {"name":"inst_664E4D3D","path":"rooms/rm_washingHands/rm_washingHands.yy",},
+    {"name":"inst_1E19B6BA","path":"rooms/rm_washingHands/rm_washingHands.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -20,6 +21,7 @@
         {"$GMRInstance":"v2","%Name":"inst_39D1F35A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":2.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_39D1F35A","objectId":{"name":"obj_tap","path":"objects/obj_tap/obj_tap.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.9,"scaleY":1.0,"x":352.0,"y":32.0,},
         {"$GMRInstance":"v2","%Name":"inst_E9C6E7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_E9C6E7","objectId":{"name":"obj_towl","path":"objects/obj_towl/obj_towl.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":608.0,},
         {"$GMRInstance":"v2","%Name":"inst_664E4D3D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_664E4D3D","objectId":{"name":"obj_vanityTray","path":"objects/obj_vanityTray/obj_vanityTray.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1440.0,"y":640.0,},
+        {"$GMRInstance":"v2","%Name":"inst_1E19B6BA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1E19B6BA","objectId":{"name":"obj_scrubPoint","path":"objects/obj_scrubPoint/obj_scrubPoint.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":608.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_washingHands_bg","path":"sprites/spr_washingHands_bg/spr_washingHands_bg.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

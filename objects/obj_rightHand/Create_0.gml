@@ -18,6 +18,8 @@ jewel_rand = irandom_range(1, 4);
 ring = noone;
 wristBand = noone;
 
+scrubBar = noone;
+
 
 
 
@@ -83,40 +85,64 @@ function washingHandsText(newText){
 /// @param {real} hand_state Hand state enum (modified by reference)..
 function handle_scrubbing(_scrubKey, _scrubRep, _nextHandState) {
 	
+
+	    // Reduce the timer every frame
+	var isDone = false;
+	   
     if (!instance_exists(scrubBar)) {
         scrubBar = instance_create_layer(x, y, "Instances", obj_progressBar);
     }
+	if (scrub_timer <= 0 && keyboard_check_pressed(ord(_scrubKey))) {
+		// Increment scrub count and reset timer
+		scrub_count++;
+		scrub_timer = 48 + irandom_range(-6,6); // 0.4 seconds cooldown
+		print("Scrub (Iteration: " + string(scrub_count) + ")");
 
-    // Check for scrub input and timer
-    if (scrub_timer <= 0 && keyboard_check_pressed(ord(_scrubKey))) {
-        // Increment scrub count and reset timer
-        scrub_count++;
-        scrub_timer = room_speed * 0.4; // 0.4 seconds cooldown
-        print("Scrub (Iteration: " + string(scrub_count) + ")");
+		// Update progress bar if it exists
+		if (instance_exists(scrubBar)) {
+		    scrubBar.image_index = scrub_count;
+		}
 
-        // Update progress bar if it exists
-        if (instance_exists(scrubBar)) {
-            scrubBar.image_index = scrub_count;
-        }
+		// Check if scrubbing is complete
+		if (scrub_count >= _scrubRep) {
+		    hand_state = _nextHandState;
+		    print("Scrub completed!");
 
-        // Check if scrubbing is complete
-        if (scrub_count >= _scrubRep) {
-            hand_state = _nextHandState;
-            print("Scrub completed!");
-
-            // Clean up progress bar and reset variables
-            if (instance_exists(scrubBar)) {
-                instance_destroy(scrubBar);
-                scrubBar = noone;
+		    // Clean up progress bar and reset variables
+		    if (instance_exists(scrubBar)) {
+				isDone = true;
+		        instance_destroy(scrubBar);
+		        scrubBar = noone;
 				scrub_count = 0;
 				scrub_timer = 0;
-            }
-        }
-    }
+		    }
+		}
+	}
     
-    // Timer countdown
-    if (scrub_timer > 0) {
-        scrub_timer--;
-    }
-	
+		// Timer countdown
+	if (scrub_timer > 0) {
+		print("x: " + string(x) + " y: " + string(y) + " scrubPointx,y : " + string(scrubPoint.x) + "," + string(scrubPoint.y));
+		if scrubTween == noone || !TweenIsPlaying(scrubTween){
+			var yDifference = 80;
+			var tweenTime = irandom_range(6,8);
+			var highDestination = scrubPoint.y+yDifference+irandom_range(-30,10);
+			var lowDestination = scrubPoint.y-yDifference+irandom_range(-30,10);
+			var xDifference = irandom_range(-12,12);
+			var leftHand_scrubHigh = false; //if rightHand scrubs low, leftHand scrubs high
+			if point_distance(0,y,0,highDestination) > point_distance(0,y,0,lowDestination){
+				scrubTween = TweenEasyMove(x,y,scrubPoint.x+xDifference,highDestination,0,tweenTime,EaseInOutQuint);
+			}else{
+				scrubTween = TweenEasyMove(x,y,scrubPoint.x+xDifference,lowDestination,0,tweenTime,EaseInOutQuint);
+				leftHand_scrubHigh = true;
+			}
+			var scrubby = scrubPoint
+			//Do this if you want the leftHand to move as well, but it looked kind of shit
+			//but maybe it can work if you tweak some numbers
+			/*with (leftHand){
+				scrubbyDubby(leftHand_scrubHigh, scrubby, xDifference);
+			}*/
+		}
+		scrub_timer--;
+	}
+	return isDone
 }

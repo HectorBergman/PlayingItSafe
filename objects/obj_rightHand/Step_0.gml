@@ -69,43 +69,6 @@ switch (hand_state)
 	}
 	case HandState.SOAP:
 	{
-		if (scrub_timer <= 0 && keyboard_check_pressed(ord(scrubKey1))) {
-	        scrub_count++;
-	        scrub_timer = 48 + irandom_range(-6,6); //room_speed * 0.4; // 0.4 seconds in frames (assuming 60 FPS)
-	        print("Scrub " + string(scrub_count));
-        
-	        if (scrub_count >= 5) {
-	            hand_state = HandState.SCRUB1;
-	            print("Scrub 1 completed!");
-	        }
-		}
-
-	    // Reduce the timer every frame
-		
-	    if (scrub_timer > 0) {
-			print("x: " + string(x) + " y: " + string(y) + " scrubPointx,y : " + string(scrubPoint.x) + "," + string(scrubPoint.y));
-			if scrubTween == noone || !TweenIsPlaying(scrubTween){
-				var yDifference = 80;
-				var tweenTime = irandom_range(6,8);
-				var highDestination = scrubPoint.y+yDifference+irandom_range(-30,10);
-				var lowDestination = scrubPoint.y-yDifference+irandom_range(-30,10);
-				var xDifference = irandom_range(-12,12);
-				var leftHand_scrubHigh = false; //if rightHand scrubs low, leftHand scrubs high
-				if point_distance(0,y,0,highDestination) > point_distance(0,y,0,lowDestination){
-					scrubTween = TweenEasyMove(x,y,scrubPoint.x+xDifference,highDestination,0,tweenTime,EaseInOutQuint);
-				}else{
-					scrubTween = TweenEasyMove(x,y,scrubPoint.x+xDifference,lowDestination,0,tweenTime,EaseInOutQuint);
-					leftHand_scrubHigh = true;
-				}
-				var scrubby = scrubPoint
-				//Do this if you want the leftHand to move as well, but it looked kind of shit
-				//but maybe it can work if you tweak some numbers
-				/*with (leftHand){
-					scrubbyDubby(leftHand_scrubHigh, scrubby, xDifference);
-				}*/
-			}
-	        scrub_timer--;
-	    }
 		handle_scrubbing(scrubKey1, 5, HandState.SCRUB1);
 	}
 	break;
@@ -124,12 +87,8 @@ switch (hand_state)
 	
 	case HandState.SCRUB3:
 	{
-		if (keyboard_check_pressed(ord(scrubKey4))) {
-			hand_state = HandState.SCRUB4;
-			print("Scrub 4")
-			movabilityState = movability.halfmovable;
-		}
-		handle_scrubbing(scrubKey4, 5, HandState.SCRUB4);
+			
+		handle_scrubbing(scrubKey4, 5, HandState.SCRUB4)
 	}
 	break;
 	
@@ -137,6 +96,7 @@ switch (hand_state)
 	{
 		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
+			movabilityState = movability.halfmovable;
 			print("Hands are rinsed")
 		}
 	}
