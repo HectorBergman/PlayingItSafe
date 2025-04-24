@@ -1,4 +1,4 @@
-print(alertsActive);
+
 for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	var currentStation = ds_list_find_value(stationsAndAlerts, i);
 	updateAlert(i);	
@@ -11,7 +11,6 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	
 	if currentStation.alert == noone{
 		var info = currentStation.stationInfostruct
-		print(info.timer);
 		info.timer += -alertsActive/totalStations/2 + 0.5 //For some reason, alertsActive is inverted, so -4
 														  //means no alerts, and 0 means 4 alerts active
 														  //probably easy to fix but idc

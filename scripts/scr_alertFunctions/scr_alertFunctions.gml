@@ -64,7 +64,8 @@ function updateAlert(index){
 				currentStructs.alertInfo.age += 0.2 //slowed progression if inside minigame
 			}
 			if currentStructs.stationInfostruct.deletionCondition(currentStructs){
-				scoreHand.totalScore -= 30;
+				print("Removed alert of minigame: " + string(currentStructs.stationInfostruct.chosenMinigame));
+				
 				removeAlert(currentStructs, index);
 			}
 		}
@@ -104,10 +105,24 @@ function washingHandsSummonCondition(info){
 	|| m.lastMinigame == minigame.none);
 }
 function defaultDeletionCondition(info){
-	return info.alertInfo.lifetime <= info.alertInfo.age
+	var deletion = false;
+	if info.alertInfo.lifetime <= info.alertInfo.age{
+		scoreHand.totalScore -= 30;
+		deletion = true;
+	}
+	
+	return deletion
 }
 
 function washingHandsDeletionCondition(info){
-	return room != rm_kitchen;
+	var deletion = false;
+	if room != rm_kitchen{
+		if (miniHand.currentMinigame != minigame.washingHands){
+			print("washing hands minus 30");
+			scoreHand.totalScore -= 30;
+		}
+		deletion = true;
+	}
+	return deletion
 }
 
