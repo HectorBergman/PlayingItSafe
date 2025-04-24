@@ -5,13 +5,17 @@ if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby 
 											   //and the player hits the interact button
 	var nearestAlert = ds_list_find_value(nearbyAlerts, 0);
 	if (!collision_line(x,y,nearestAlert.x,nearestAlert.y, [obj_wall], 0, 1)){
-		print("xd");
 		miniHand.currentMinigame = stringToEnum(nearestAlert.minigameEnum);
 		miniHand.minigameStatus = status.started;
 		miniHand.playerPosition = [x,y];
 		miniHand.difficulty = nearestAlert.difficulty
 		mainGameHand.activeIndex = findCurrentIndex(nearestAlert);
-		
+		for (var i = 0; i < ds_list_size(mainGameHand.stationsAndAlerts); i++){
+			var currentStation = ds_list_find_value(mainGameHand.stationsAndAlerts, i);
+			if currentStation.alert != nearestAlert{
+				//currentStation.alert = undefined;
+			}
+		}
 		if (nearestAlert.minigameEnum != "moreMinigamesHere"){
 			room_goto(nearestAlert.minigame); //enter minigame if path from player to alert isnt blocked
 		}

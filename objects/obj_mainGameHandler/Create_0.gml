@@ -6,4 +6,5 @@ function generateNewInterval(interval,spread){
 }
 badOrderingWorkaround = true;
 
-
+alertsActive = 0;
+totalStations = 0;
