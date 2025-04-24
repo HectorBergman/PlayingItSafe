@@ -1,12 +1,24 @@
 image_index = 2;
 
-depth = parent.depth+1
+depth = parent.depth+2
 xOffset = -20;
 yOffset = 20;
 found = false;
 firstTime = true;
 leaving = false;
 scrubPoint = instance_find(obj_scrubPoint, 0);
+icePoint = instance_find(obj_icePoint,0);
+ring = summonObject(obj_ice, [["x" , x], ["y", y], ["parent", id], ["rightHand", parent.id], ["image_index", 1],["depth", depth-1]]);
+wristBand = summonObject(obj_ice, [["x" , x], ["y", y], ["parent", id], ["rightHand", parent.id], ["image_index", 0],["depth", depth-1]])
+			
+TweenEasyMove(x,y,icePoint.x,icePoint.y,0,30,EaseOutSine);
+
+enum leftHandState{
+	iceCheck,
+	scrubbing,
+	waiting,
+}
+state = leftHandState.iceCheck;
 
 function scrubbyDubby(scrubHigh, scrubPoint, xDifference){
 	var yDifference = 20;

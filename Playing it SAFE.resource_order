@@ -1,4 +1,8 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_ice","order":1,"path":"objects/obj_ice/obj_ice.yy",},
+    {"name":"obj_icePoint","order":2,"path":"objects/obj_icePoint/obj_icePoint.yy",},
+    {"name":"spr_ice","order":1,"path":"sprites/spr_ice/spr_ice.yy",},
+  ],
 }

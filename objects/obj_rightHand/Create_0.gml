@@ -21,8 +21,10 @@ wristBand = noone;
 
 scrubBar = noone;
 
+firstGrab = false;
 
 
+leftHand = summonObject(obj_leftHand,[["x", room_width/4], ["y", room_height*1.3], ["parent", id]]);
 
 //washing hands
 // letters
@@ -60,8 +62,8 @@ movabilityState = movability.movable
 
 scrubTween = noone;
 // Start in dirty state
-hand_state = HandState.DIRTY;
-leftHand = noone;
+hand_state = HandState.DIRTY
+
 
 
 

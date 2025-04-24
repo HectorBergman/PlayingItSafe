@@ -1,4 +1,9 @@
 if (inHand.mouseHeld){
+	if (image_index == 0){
+		firstGrab = true;
+	}else{
+		firstGrab = false;
+	}
 	image_index = 1;
 }else{
 	image_index = 0;
@@ -26,11 +31,15 @@ switch (hand_state)
 {
 	case HandState.DIRTY:
 	{
-		if (jewel_rand < 5 && !instance_exists(ring) && !instance_exists(wristBand)) {
-			ring = instance_create_layer(x, y, "Instances", obj_ring);
-			wristBand = instance_create_layer(x, y, "Instances", obj_wristBand);
+		if (jewel_rand < 5 ) {
+			print(instance_exists(leftHand));
+			ring = leftHand.ring
+			wristBand = leftHand.wristBand
+			//rename watch
 		}
-		
+		if (ring.on_tray&& wristBand.on_tray){
+			bejeweled = false
+		}
 		if (jewel_rand > 5 || place_meeting(x, y, obj_vanityTray) && (keyboard_check_pressed(ord("E")))) {
 			bejeweled = false;
 		}
@@ -57,7 +66,6 @@ switch (hand_state)
 			hand_state = HandState.scrubStart;
 			print("Hands are soapy")
 			movabilityState = movability.unmovable;
-			leftHand = summonObject(obj_leftHand,[["x", room_width/4], ["y", room_height*1.3], ["parent", id]]);
 		}
 	}
 	break;
