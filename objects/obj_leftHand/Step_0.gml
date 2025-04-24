@@ -1,10 +1,10 @@
 if !found{
-	firstTimeTimer++
 	if point_distance(x,y,parent.x+xOffset,parent.y+yOffset) < 8{
 		found = true;
 	}
-	if firstTimeTimer == firstTimeTime{
-		TweenEasyMove(x,y,parent.x+xOffset,parent.y+yOffset,0,30,EaseOutSine);
+	if firstTime{
+		TweenEasyMove(x,y,scrubPoint.x+xOffset,scrubPoint.y+yOffset,0,40,EaseOutSine);
+		firstTime = false;
 	}
 }
 	

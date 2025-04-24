@@ -4,10 +4,9 @@ depth = parent.depth+1
 xOffset = -20;
 yOffset = 20;
 found = false;
-firstTimeTimer = 0;
-firstTimeTime = 65;
+firstTime = true;
 leaving = false;
-
+scrubPoint = instance_find(obj_scrubPoint, 0);
 
 function scrubbyDubby(scrubHigh, scrubPoint, xDifference){
 	var yDifference = 20;

@@ -9,6 +9,7 @@ recencyGrabbedDepth = 999;
 
 scrub_count = 0;
 scrub_timer = 0;
+currentScrubTime = 0;
 
 scrubPoint = instance_find(obj_scrubPoint, 0);
 scrubDirX = 0;
@@ -95,7 +96,16 @@ function handle_scrubbing(_scrubKey, _scrubRep, _nextHandState) {
 	if (scrub_timer <= 0 && keyboard_check_pressed(ord(_scrubKey))) {
 		// Increment scrub count and reset timer
 		scrub_count++;
-		scrub_timer = 48 + irandom_range(-6,6); // 0.4 seconds cooldown
+		scrub_timer = 18 + irandom_range(-6,6); // 0.4 seconds cooldown
+		if scrub_timer mod 3 != 0{
+			if scrub_timer mod 3 == 1{
+				scrub_timer += 2;
+			}else{
+				scrub_timer++;
+			}
+		}
+		currentScrubTime = scrub_timer;
+		print(scrub_timer);
 		print("Scrub (Iteration: " + string(scrub_count) + ")");
 
 		// Update progress bar if it exists
@@ -124,7 +134,8 @@ function handle_scrubbing(_scrubKey, _scrubRep, _nextHandState) {
 		print("x: " + string(x) + " y: " + string(y) + " scrubPointx,y : " + string(scrubPoint.x) + "," + string(scrubPoint.y));
 		if scrubTween == noone || !TweenIsPlaying(scrubTween){
 			var yDifference = 80;
-			var tweenTime = irandom_range(6,8);
+			var tweenTime = currentScrubTime/3
+			print(tweenTime);
 			var highDestination = scrubPoint.y+yDifference+irandom_range(-30,10);
 			var lowDestination = scrubPoint.y-yDifference+irandom_range(-30,10);
 			var xDifference = irandom_range(-12,12);

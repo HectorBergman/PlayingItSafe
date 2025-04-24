@@ -87,8 +87,9 @@ switch (hand_state)
 	
 	case HandState.SCRUB3:
 	{
-			
-		handle_scrubbing(scrubKey4, 5, HandState.SCRUB4)
+		if handle_scrubbing(scrubKey4, 5, HandState.SCRUB4){
+			movabilityState = movability.halfmovable;
+		}
 	}
 	break;
 	
@@ -96,7 +97,7 @@ switch (hand_state)
 	{
 		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
-			movabilityState = movability.halfmovable;
+			
 			print("Hands are rinsed")
 		}
 	}
