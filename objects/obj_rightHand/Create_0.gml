@@ -1,4 +1,4 @@
-depth = -1000
+depth = -100
 holding = false;
 heldObject = noone;
 

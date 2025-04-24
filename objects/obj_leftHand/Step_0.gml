@@ -32,7 +32,7 @@ switch (state){
 		image_xscale = -1;
 		if parent.hand_state != HandState.DIRTY{
 			TweenEasyMove(x,y,room_width/3,room_height*1.3,0,40,EaseOutSine);
-			state =leftHandState.waiting
+			state = leftHandState.waiting
 		}
 	}break;
 	case leftHandState.waiting:{
