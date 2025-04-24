@@ -7,10 +7,10 @@ draw_set_valign(fa_middle);
 
 switch (global.tap_state) {
     case tapState.ON:
-        draw_text(200, 100, "Press [A] to turn tap off");
+        tapText("Press [[A] to turn tap off");
         break;
 		
 	case tapState.OFF:
-        draw_text(200, 100, "Press [A] to turn tap on");
+        tapText("Press [[A] to turn tap on");
         break;
 }

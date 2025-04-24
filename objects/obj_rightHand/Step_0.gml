@@ -26,7 +26,25 @@ switch (hand_state)
 {
 	case HandState.DIRTY:
 	{
-		if (place_meeting(x, y, obj_tap) && (keyboard_check_pressed(ord("E")))) {
+		if (jewel_rand < 5 && !instance_exists(ring) && !instance_exists(wristBand)) {
+			ring = instance_create_layer(x, y, "Instances", obj_ring);
+			wristBand = instance_create_layer(x, y, "Instances", obj_wristBand);
+		}
+		
+		if (jewel_rand > 5 || place_meeting(x, y, obj_vanityTray) && (keyboard_check_pressed(ord("E")))) {
+			bejeweled = false;
+		}
+		
+		if (!bejeweled){
+			hand_state = HandState.JEWELRY;
+			print("Hands are un-bejeweld")
+		}
+	}
+	break;
+	
+	case HandState.JEWELRY:
+	{
+		if (place_meeting(x, y, obj_water) && (keyboard_check_pressed(ord("E")))){
 			hand_state = HandState.WET;
 			print("Hands are wet")
 		}
@@ -88,25 +106,19 @@ switch (hand_state)
 			}
 	        scrub_timer--;
 	    }
+		handle_scrubbing(scrubKey1, 5, HandState.SCRUB1);
 	}
 	break;
 	
 	case HandState.SCRUB1:
 	{
-		if (keyboard_check_pressed(ord(scrubKey2))) {
-			hand_state = HandState.SCRUB2;
-			print("Scrub 2")
-		}
+		handle_scrubbing(scrubKey2, 5, HandState.SCRUB2);
 	}
 	break;
 	
 	case HandState.SCRUB2:
 	{
-		if (keyboard_check_pressed(ord(scrubKey3))) {
-			hand_state = HandState.SCRUB3;
-			print("Scrub 3")
-			
-		}
+		handle_scrubbing(scrubKey3, 5, HandState.SCRUB3);
 	}
 	break;
 	
@@ -117,12 +129,13 @@ switch (hand_state)
 			print("Scrub 4")
 			movabilityState = movability.halfmovable;
 		}
+		handle_scrubbing(scrubKey4, 5, HandState.SCRUB4);
 	}
 	break;
 	
 	case HandState.SCRUB4:
 	{
-		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
 			print("Hands are rinsed")
 		}
