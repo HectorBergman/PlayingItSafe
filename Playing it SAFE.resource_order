@@ -123,6 +123,7 @@
     {"name":"spr_chopping_board","order":2,"path":"sprites/spr_chopping_board/spr_chopping_board.yy",},
     {"name":"spr_kitchen","order":1,"path":"sprites/spr_kitchen/spr_kitchen.yy",},
     {"name":"spr_main_kitchen","order":2,"path":"sprites/spr_main_kitchen/spr_main_kitchen.yy",},
+    {"name":"spr_mainMenu_temp","order":4,"path":"sprites/spr_mainMenu_temp/spr_mainMenu_temp.yy",},
     {"name":"spr_oven","order":3,"path":"sprites/spr_oven/spr_oven.yy",},
     {"name":"spr_sink","order":1,"path":"sprites/spr_sink/spr_sink.yy",},
     {"name":"spr_washingHands_bg","order":3,"path":"sprites/spr_washingHands_bg/spr_washingHands_bg.yy",},
