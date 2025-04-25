@@ -1,7 +1,6 @@
 //This will run every time game is booted, if some other object is needed on bootup,
 //please summon using this object.
 timer = 0;
-draw_set_font(fnt_bitmap);
 global.masterVolume = 1; //todo: add sfx and music volume
 
 window_set_cursor(cr_none); //hide pc cursor todo: replace cursor with something fun :))
