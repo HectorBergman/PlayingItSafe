@@ -10,3 +10,8 @@ room_goto(rm_kitchen); //change this when we want menu
 window_set_size(display_get_width(),display_get_height());
 
 summonObject(obj_cam, [["swag", true], ["x", 100]])
+
+var seed = (date_current_datetime()) * 1000000;
+random_set_seed(seed);
+scribble_font_bake_outline_4dir("fnt_fibberish", "fnt_fibberish_outline",$000023, false)
+scribble_font_set_default("fnt_fibberish_outline");

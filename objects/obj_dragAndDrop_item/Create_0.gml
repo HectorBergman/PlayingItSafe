@@ -7,3 +7,5 @@ timeNotHeld = 0;
 inPosition = false; //if in gamewinning position
 
 complete = false;
+
+sprite_index = sprite;

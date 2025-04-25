@@ -8,7 +8,21 @@ if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby 
 		miniHand.currentMinigame = stringToEnum(nearestAlert.minigameEnum);
 		miniHand.minigameStatus = status.started;
 		miniHand.playerPosition = [x,y];
-		room_goto(nearestAlert.minigame); //enter minigame if path from player to alert isnt blocked
+		miniHand.difficulty = nearestAlert.difficulty
+		mainGameHand.activeIndex = findCurrentIndex(nearestAlert);
+		for (var i = 0; i < ds_list_size(mainGameHand.stationsAndAlerts); i++){
+			var currentStation = ds_list_find_value(mainGameHand.stationsAndAlerts, i);
+			if currentStation.alert != nearestAlert{
+				//currentStation.alert = undefined;
+			}
+		}
+		if (nearestAlert.minigameEnum != "moreMinigamesHere"){
+			room_goto(nearestAlert.minigame); //enter minigame if path from player to alert isnt blocked
+		}
+		with(mainGameHand){
+			var alert = ds_list_find_value(stationsAndAlerts, findCurrentIndex(nearestAlert))
+			alert.toBeDestroyed = true;
+		}
 	}
 }
 switch (state){
