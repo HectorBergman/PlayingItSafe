@@ -122,7 +122,7 @@ switch (hand_state)
 	
 	case HandState.DRY:
 	{
-		if (keyboard_check_pressed(ord("E"))) {
+		if (keyboard_check_pressed(ord("E")) && global.tap_state == tapState.OFF) {
 			print("Nicely washed hands boi")
 			miniHand.minigameStatus = status.finished;
 		}
