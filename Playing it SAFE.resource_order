@@ -20,6 +20,8 @@
   ],
   "ResourceOrderSettings":[
     {"name":"scribble_fallback_font","order":16,"path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},
+    {"name":"obj_menuHandler","order":2,"path":"objects/obj_menuHandler/obj_menuHandler.yy",},
+    {"name":"obj_pointer_menu","order":1,"path":"objects/obj_pointer_menu/obj_pointer_menu.yy",},
     {"name":"obj_pulseHandler","order":1,"path":"objects/obj_pulseHandler/obj_pulseHandler.yy",},
     {"name":"__scribble_class_event","order":1,"path":"scripts/__scribble_class_event/__scribble_class_event.yy",},
     {"name":"__scribble_class_font","order":2,"path":"scripts/__scribble_class_font/__scribble_class_font.yy",},

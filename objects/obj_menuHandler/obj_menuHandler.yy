@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_volumeBar",
+  "%Name":"obj_menuHandler",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_volumeBar",
+  "name":"obj_menuHandler",
   "overriddenProperties":[],
   "parent":{
-    "name":"menu",
-    "path":"folders/Objects/menu.yy",
+    "name":"handlers",
+    "path":"folders/Objects/handlers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -25,16 +25,11 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v1","%Name":"type","filters":[],"listItems":[],"multiselect":false,"name":"type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"master","varType":2,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_volume",
-    "path":"sprites/spr_volume/spr_volume.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

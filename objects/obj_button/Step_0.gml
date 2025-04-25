@@ -18,6 +18,8 @@ if (position_meeting(mouse_x, mouse_y, id)){ //hover over button
 			button_plus();
 		}else if action == 4{
 			button_minus();
+		}else if action == 5{
+			room_goto(rm_kitchen);
 		}
 	}
 }else{

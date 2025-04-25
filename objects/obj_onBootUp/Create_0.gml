@@ -5,7 +5,7 @@ timer = 0;
 global.masterVolume = 1; //todo: add sfx and music volume
 
 window_set_cursor(cr_none); //hide pc cursor todo: replace cursor with something fun :))
-room_goto(rm_kitchen); //change this when we want menu
+//room_goto(rm_kitchen); //change this when we want menu
 
 window_set_size(display_get_width(),display_get_height());
 
