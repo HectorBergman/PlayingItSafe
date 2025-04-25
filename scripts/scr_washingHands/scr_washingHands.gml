@@ -51,3 +51,8 @@ function generateRandomLetter(){
     return letters[randLetter]
 }
 
+
+enum tapState {
+    OFF,
+    ON
+}

@@ -1,11 +1,59 @@
-x = mouse_x
-y = mouse_y
+if (inHand.mouseHeld){
+	if (image_index == 0){
+		firstGrab = true;
+	}else{
+		firstGrab = false;
+	}
+	image_index = 1;
+}else{
+	image_index = 0;
+}
+
+switch (movabilityState)
+{
+	case movability.movable:{
+		x = mouse_x;
+		y = mouse_y;
+	}
+	break;
+	case movability.unmovable:{
+	}break;
+	case movability.halfmovable:{
+		if point_distance(x,y,mouse_x,mouse_y) < 8{
+			movabilityState = movability.movable;
+		}else{
+			TweenEasyMove(x,y,mouse_x,mouse_y,0,10,EaseOutSine);
+		}
+	}break;
+}
 
 switch (hand_state)
 {
 	case HandState.DIRTY:
 	{
-		if (place_meeting(x, y, obj_tap) && (keyboard_check_pressed(ord("E")))) {
+		if (jewel_rand < 5 ) {
+			print(instance_exists(leftHand));
+			ring = leftHand.ring
+			wristBand = leftHand.wristBand
+			//rename watch
+		}
+		if (ring.on_tray&& wristBand.on_tray){
+			bejeweled = false
+		}
+		if (jewel_rand > 5 || place_meeting(x, y, obj_vanityTray) && (keyboard_check_pressed(ord("E")))) {
+			bejeweled = false;
+		}
+		
+		if (!bejeweled){
+			hand_state = HandState.JEWELRY;
+			print("Hands are un-bejeweld")
+		}
+	}
+	break;
+	
+	case HandState.JEWELRY:
+	{
+		if (place_meeting(x, y, obj_water) && (keyboard_check_pressed(ord("E")))){
 			hand_state = HandState.WET;
 			print("Hands are wet")
 		}
@@ -15,63 +63,49 @@ switch (hand_state)
 	case HandState.WET:
 	{
 		if (place_meeting(x, y, obj_soap) && (keyboard_check_pressed(ord("E")))) {
-			hand_state = HandState.SOAP;
+			hand_state = HandState.scrubStart;
 			print("Hands are soapy")
+			movabilityState = movability.unmovable;
 		}
 	}
 	break;
-	
+	case HandState.scrubStart:
+	{
+		TweenEasyMove(x,y,scrubPoint.x,scrubPoint.y,0,60,EaseOutSine);
+		hand_state = HandState.SOAP
+		
+	}
 	case HandState.SOAP:
 	{
-		if (scrub_timer <= 0 && keyboard_check_pressed(ord(scrubKey1))) {
-	        scrub_count++;
-	        scrub_timer = room_speed * 0.4; // 0.4 seconds in frames (assuming 60 FPS)
-	        print("Scrub " + string(scrub_count));
-        
-	        if (scrub_count >= 5) {
-	            hand_state = HandState.SCRUB1;
-	            print("Scrub 1 completed!");
-	        }
-		}
-
-	    // Reduce the timer every frame
-	    if (scrub_timer > 0) {
-	        scrub_timer--;
-	    }
+		handle_scrubbing(scrubKey1, 5, HandState.SCRUB1);
 	}
 	break;
 	
 	case HandState.SCRUB1:
 	{
-		if (keyboard_check_pressed(ord(scrubKey2))) {
-			hand_state = HandState.SCRUB2;
-			print("Scrub 2")
-		}
+		handle_scrubbing(scrubKey2, 5, HandState.SCRUB2);
 	}
 	break;
 	
 	case HandState.SCRUB2:
 	{
-		if (keyboard_check_pressed(ord(scrubKey3))) {
-			hand_state = HandState.SCRUB3;
-			print("Scrub 3")
-		}
+		handle_scrubbing(scrubKey3, 5, HandState.SCRUB3);
 	}
 	break;
 	
 	case HandState.SCRUB3:
 	{
-		if (keyboard_check_pressed(ord(scrubKey4))) {
-			hand_state = HandState.SCRUB4;
-			print("Scrub 4")
+		if handle_scrubbing(scrubKey4, 5, HandState.SCRUB4){
+			movabilityState = movability.halfmovable;
 		}
 	}
 	break;
 	
 	case HandState.SCRUB4:
 	{
-		if (place_meeting(x, y, obj_tap) && keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
+			
 			print("Hands are rinsed")
 		}
 	}
@@ -88,7 +122,7 @@ switch (hand_state)
 	
 	case HandState.DRY:
 	{
-		if (keyboard_check_pressed(ord("E"))) {
+		if (keyboard_check_pressed(ord("E")) && global.tap_state == tapState.OFF) {
 			print("Nicely washed hands boi")
 			miniHand.minigameStatus = status.finished;
 		}

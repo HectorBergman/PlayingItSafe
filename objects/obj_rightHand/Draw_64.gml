@@ -6,6 +6,10 @@ draw_set_valign(fa_middle);
 
 switch (hand_state) {
     case HandState.DIRTY:
+        washingHandsText("Remove jewelry and accessories");
+        break;
+		
+	 case HandState.JEWELRY:
         washingHandsText("Rub hands under water [[E]");
         break;
         
@@ -38,6 +42,6 @@ switch (hand_state) {
         break;
         
     case HandState.DRY:
-        washingHandsText("Exit [[E]");
+        washingHandsText("Exit [[E], (Tap needs to be turned off!)");
         break;
 }
