@@ -1,4 +1,8 @@
 
+if pausable{
+	PAUSE
+}
+
 try{
 	if (!instance_exists(parent)){
 		instance_destroy();
@@ -20,6 +24,10 @@ if (position_meeting(mouse_x, mouse_y, id)){ //hover over button
 			button_minus();
 		}else if action == 5{
 			room_goto(rm_kitchen);
+		}else if action == 6{
+			global.pause = true;
+			pauseHand.currentScreen = pauseScreen.menuSettings
+			pauseHand.screenState = screenStates.brandNew
 		}
 	}
 }else{

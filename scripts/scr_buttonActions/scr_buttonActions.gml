@@ -10,6 +10,7 @@ function button_back(){
 	switch (parent.currentScreen){ //go to main pause screen if in settings, else unpause
 		case pauseScreen.paused: parent.currentScreen = pauseScreen.notPaused; break;
 		case pauseScreen.settings: parent.currentScreen = pauseScreen.paused; with(parent){unravelSettings();} break;
+		case pauseScreen.menuSettings: parent.currentScreen = pauseScreen.notPaused; with (parent){unravelSettings();} break;
 	}
 }
 function button_plus(){

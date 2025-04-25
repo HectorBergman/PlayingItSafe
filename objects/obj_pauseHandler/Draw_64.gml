@@ -13,7 +13,6 @@ if (global.pause){
 		volumeBarDrawer(volumeBar.child);
 		drawButton(volumeBar.plusButton);
 		drawButton(volumeBar.minusButton);
-		
 	}
 	draw_sprite_ext(spr_hand, 0,mouse_x,mouse_y,scale,scale,0,c_white,1);
 	//check if centered:

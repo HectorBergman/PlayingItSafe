@@ -72,11 +72,12 @@ function pause_notPaused_old(){
 
 
 function pause_menuSettings_brandNew(){
-	volumeBar = summonObject(obj_volumeBar,	  [["parent", id], ["type", "master"], ["x", window_get_width()/2], ["y", 64*6]])
+	volumeBar = summonObject(obj_volumeBar,	  [["parent", id], ["type", "master"], ["x", window_get_width()/2], ["y", 64*7],["scale", scale]])
+	backButton = summonObject(obj_button,	  [["x", window_get_width()/2],["y", 64*10],["sprite", spr_back], ["parent", id], ["action", 2], ["scale", scale]]);
 	screenState = screenStates.old
 }
 function pause_menuSettings_old(){
-	if (keyboard_check_pressed(vk_escape) && global.pausable){
+	if (keyboard_check_pressed(vk_escape)){
 		mouseCoordsOnPause = [mouse_x,mouse_y];
 		screenState = screenStates.brandNew
 		currentScreen = pauseScreen.notPaused;
