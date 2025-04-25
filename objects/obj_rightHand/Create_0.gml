@@ -72,10 +72,9 @@ function washingHandsText(newText){
 	var wrapWidth = 1200;
 	var text = ""
 	text = "[scale,4][$eee7e7]"+string(newText); //$eee7e7 is color in hexadecimal, change this to change text color
-	var toDraw = scribble(text).wrap(wrapWidth);
+	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
 	
-    var approxWidth = string_width(newText) * 4 * 1; //4 is scale. 0.6 is a fudge factor
-	var centerX = (1920 - approxWidth) / 2;
+	var centerX = room_width/ 2;
 	toDraw.draw(centerX, 10); //x and y coordinate where text will be drawn
 	//fråga Hector om ni undrar något mer
 }
