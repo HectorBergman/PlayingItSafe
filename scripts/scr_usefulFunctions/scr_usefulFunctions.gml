@@ -14,14 +14,14 @@
 function scoreResults(totalScore, arguments = [[noone]]){
 	var wrapWidth = 1200;
 	var text = ""
-	text = "[scale,4][$eee7e7]Tjänade poäng: " + string(totalScore); 
+	text = "[scale,1][$eee7e7]Tjänade poäng: " + string(totalScore); 
 	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
 	toDraw.draw(window_get_width()/2, 750);
 	
 	
 	if arguments != noone{
 		for (var i = 0; arguments[i] != noone; i++;) {
-			text = "[scale,2][$eee7e7]" + string(arguments[i][0]) + ": " + string(arguments[i][1]);
+			text = "[scale,1][$eee7e7]" + string(arguments[i][0]) + ": " + string(arguments[i][1]);
 			toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
 			toDraw.draw(window_get_width() / 2, 850+50*i);
 		}

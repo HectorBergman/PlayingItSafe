@@ -1,7 +1,7 @@
 //This will run every time game is booted, if some other object is needed on bootup,
 //please summon using this object.
 timer = 0;
-
+draw_set_font(fnt_bitmap);
 global.masterVolume = 1; //todo: add sfx and music volume
 
 window_set_cursor(cr_none); //hide pc cursor todo: replace cursor with something fun :))
@@ -13,5 +13,5 @@ summonObject(obj_cam, [["swag", true], ["x", 100]])
 
 var seed = (date_current_datetime()) * 1000000;
 random_set_seed(seed);
-scribble_font_bake_outline_4dir("fnt_fibberish", "fnt_fibberish_outline",$000023, false)
-scribble_font_set_default("fnt_fibberish_outline");
+scribble_font_bake_outline_4dir("fnt_bitmap", "fnt_bitmap_outline",$000023, false)
+scribble_font_set_default("fnt_bitmap_outline");

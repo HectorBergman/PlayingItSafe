@@ -19,6 +19,7 @@
     {"name":"Superfonts","order":10,"path":"folders/Scribble/Superfonts.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_bitmap","order":1,"path":"fonts/fnt_bitmap/fnt_bitmap.yy",},
     {"name":"scribble_fallback_font","order":16,"path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},
     {"name":"obj_menuHandler","order":2,"path":"objects/obj_menuHandler/obj_menuHandler.yy",},
     {"name":"obj_pointer_menu","order":1,"path":"objects/obj_pointer_menu/obj_pointer_menu.yy",},

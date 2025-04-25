@@ -83,6 +83,7 @@
   },
   "name":"Playing it SAFE",
   "resources":[
+    {"id":{"name":"fnt_bitmap","path":"fonts/fnt_bitmap/fnt_bitmap.yy",},},
     {"id":{"name":"fnt_fibberish","path":"fonts/fnt_fibberish/fnt_fibberish.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"obj_alert","path":"objects/obj_alert/obj_alert.yy",},},
