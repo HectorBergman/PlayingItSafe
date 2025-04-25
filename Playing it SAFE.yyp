@@ -136,6 +136,7 @@
     {"id":{"name":"obj_pointer_vari","path":"objects/obj_pointer_vari/obj_pointer_vari.yy",},},
     {"id":{"name":"obj_pointer","path":"objects/obj_pointer/obj_pointer.yy",},},
     {"id":{"name":"obj_progressBar","path":"objects/obj_progressBar/obj_progressBar.yy",},},
+    {"id":{"name":"obj_pulseHandler","path":"objects/obj_pulseHandler/obj_pulseHandler.yy",},},
     {"id":{"name":"obj_rightHand","path":"objects/obj_rightHand/obj_rightHand.yy",},},
     {"id":{"name":"obj_ring","path":"objects/obj_ring/obj_ring.yy",},},
     {"id":{"name":"obj_scoreHandler","path":"objects/obj_scoreHandler/obj_scoreHandler.yy",},},

@@ -7,25 +7,27 @@ function createAlert(element){
 	var alertInfo = {age : 0, lifetime : info.alertLifetime}
 	var alert = undefined;
 	if miniHand.currentMinigame == minigame.none{
-		alert = summonObject(obj_alert,
-							[["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
-							 ["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
-							 ["difficulty", info.difficulty], ["lifetime", info.alertLifetime]]);
+		alert = summonObject(obj_alert, getAlertInfo(info));
 	}
 	
 	element.identity = alert
 	element.alertInfo = alertInfo
+	mainGameHand.alertsActive++;
 	return alert								
+}
+
+function getAlertInfo(info){
+	return [["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
+			["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
+			["difficulty", info.difficulty], ["lifetime", info.alertLifetime], 
+			["summonCondition", info.summonCondition],["deletionCondition", info.deletionCondition]]
 }
 
 
 function summonCurrentAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
 	var info = currentStructs.stationInfostruct
-	var alert = summonObject(obj_alert,
-							[["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
-							 ["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
-							 ["difficulty", info.difficulty], ["lifetime", info.alertLifetime]]);
+	var alert = summonObject(obj_alert, getAlertInfo(info));
 							 
 	currentStructs.alert = alert;
 }
@@ -38,13 +40,11 @@ function removeAlert(structs){
 		instance_destroy(alert);
 	}
 	structs.alert = noone;
+	mainGameHand.alertsActive--;
 }
 
 function updateAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
-	
-	
-
 		
 	var currentAlert = currentStructs.alert;
 	try{
@@ -56,22 +56,28 @@ function updateAlert(index){
 			if room != rm_kitchen{
 				currentAlert = undefined;
 			}
-	
-			currentStructs.alertInfo.age++ //(increase age)
-			if currentStructs.alertInfo.lifetime == currentStructs.alertInfo.age{
-				//print("deleted");
-				scoreHand.totalScore -= 30;
+			if miniHand.minigameStatus == status.finished{
+				//pause alert aging when checkmark is shown
+			}else if miniHand.currentMinigame == minigame.none{
+				currentStructs.alertInfo.age++ //(increase age)
+			}else{
+				currentStructs.alertInfo.age += 0.2 //slowed progression if inside minigame
+			}
+			if currentStructs.stationInfostruct.deletionCondition(currentStructs){
+				print("Removed alert of minigame: " + string(currentStructs.stationInfostruct.chosenMinigame));
+				
 				removeAlert(currentStructs, index);
 			}
 		}
 	}else{
 		if room == rm_kitchen{
-			
 			removeAlert(currentStructs);
 			generateNewInterval(currentStructs.stationInfostruct.interval,currentStructs.stationInfostruct.intervalSpread);
 		}
 	}
 }
+
+     
 
 
 function findCurrentIndex(alert){
@@ -88,6 +94,35 @@ function cancelAlert(index){
 	
 	
 }
+function defaultSummonCondition(info){
+	return info.timer >= info.usedInterval
+}
 
+function washingHandsSummonCondition(info){
+	var m = miniHand
+	return m.minigameStatus == status.started && m.currentMinigame == minigame.none &&
+	(m.lastMinigame == minigame.fallingChicken || m.lastMinigame == minigame.dragAndDropFridgeLevels
+	|| m.lastMinigame == minigame.none);
+}
+function defaultDeletionCondition(info){
+	var deletion = false;
+	if info.alertInfo.lifetime <= info.alertInfo.age{
+		scoreHand.totalScore -= 30;
+		deletion = true;
+	}
+	
+	return deletion
+}
 
+function washingHandsDeletionCondition(info){
+	var deletion = false;
+	if room != rm_kitchen{
+		if (miniHand.currentMinigame != minigame.washingHands){
+			print("washing hands minus 30");
+			scoreHand.totalScore -= 30;
+		}
+		deletion = true;
+	}
+	return deletion
+}
 
