@@ -28,6 +28,9 @@ if !complete{
 		//if it's not currently held and either not completely inside the fridge 
 		//(e.g. half the item is outside the freezer)
 		//or if item was just dropped on a door (to prevent placing items inside closed doors)
+		
+		//TODO: add code so this doesnt snap back to starting position, but instead snap inside of
+		//closest valid area
 		x = startCoords[0]
 		y = startCoords[1];
 	
