@@ -39,7 +39,6 @@ temperatureTickTimeRange = [-3,3]
 temperatureTickTime = temperatureTickTimeMiddle;
 function findAllTemperatureAreas(){
 	for (var i = 0; i < instance_number(obj_clearCheckHitbox_variant); i++){
-		print("hek");
 		var tempZone = instance_find(obj_clearCheckHitbox_variant, i);
 		ds_list_add(temperatureZones, tempZone);
 	}

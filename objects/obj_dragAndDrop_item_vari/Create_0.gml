@@ -20,10 +20,10 @@ sprite_index = sprite;
 
 
 function correctTemperature(area){
-	print("-------");
+	/*print("-------");
 	print(area.temperature);
 	print(lowestTemperature);
-	print(highestTemperature);
+	print(highestTemperature);*/
 	if area.temperature >= lowestTemperature && area.temperature <= highestTemperature{
 		winValue = winValues.justRight
 	}

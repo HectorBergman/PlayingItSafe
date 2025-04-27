@@ -1,4 +1,4 @@
-
+print(state);
 switch (state){
 	case pannerStates.left:{
 		hoverLogic();
