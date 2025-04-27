@@ -8,67 +8,57 @@ function minigame_dragAndDrop_variant_control(){
 }
 
 function minigame_dragAndDrop_variant_create(){
-	//correctArea, sprite
-	//spr_bananas = -1, spr_milk = 0, spr_pizza = 1;
-	for (var i = 0; i < difficulty; i++){
-		var randomInt = irandom_range(0,2);
-		var sprite = noone;
-		if randomInt == 0{
-			sprite = spr_fish
-		}else if randomInt == 1{
-			sprite = spr_milk
-		}else if randomInt == 2{
-			sprite = spr_foodbox
-		}
-		summonObject(obj_dragAndDrop_item_vari, [["x", i*60], ["y", 318], ["correctArea", randomInt], ["sprite", sprite]]);
-	}
 	var highestI = 0;
-	for (var i = 0; i < instance_number(obj_dragAndDrop_item_vari); i++) {
-	    var inst = instance_find(obj_dragAndDrop_item_vari, i);
-	    itemsArray[i] = inst;
+	for (var i = 0; i < difficulty; i++){
+		itemsArray[i] = summonDnDItem(i);
 		highestI = i;
-
 	}
 
 	itemsArray[highestI + 1] = noone; //lazy crash prevention for for-loops
-	//here goes any code you need to start the minigame
-
-	//this could also have a requirement in-case you want to have an animation or something b4 minigame start
+	
 	minigameStatus = status.ongoing;
 }
 
-//template for ongoing minigame handler actions. You can also control the minigame via this
-//but I chose to do it via the minigame items instead (obj_dnd_item, obj_doors)
+
 function minigame_dragAndDrop_variant_step(){
-
-	var minigameComplete = true;
-	
-	//if requirements for minigame completion not met:
-
-	//or alternatively just have it be false and set to true when conditions met
-	for (var i = 0; itemsArray[i] != noone; i++;) {
-
-		if itemsArray[i].inPosition{ //for every item in it's right place,
-										//give 30 points
-			//scoreHand.totalScore += 30
-
-		}else{
-			minigameComplete = false;
-
-			break;
-		}
-	}
-	if minigameComplete{ 
-		minigameStatus = status.finished;
-	}
 }
 
-//template for minigames completed, doesnt have to look like this ofc
+
 function minigame_dragAndDrop_variant_finish(){
+	perfect = true;
 	if checkmark == noone{
-		perfect = true;
+		var pointsEarned = 0;
+		var itemPoints = 0;
+		for (var i = 0; itemsArray[i] != noone; i++;) {
+			print(itemsArray[i].winValue);
+			if !(itemsArray[i].winValue == winValues.noWin || itemsArray[i].winValue == winValues.tooHot){ 
+				if itemsArray[i].winValue == winValues.tooCold{
+					//having items stored too cold can be bad for food quality,
+					//but generally not harmful, so award points for staying safe,
+					//but not as much as having a perfect temperature.
+					itemPoints = 10;
+					pointsEarned += itemPoints
+					perfect = false;
+					summonItemText(itemsArray[i],"$eece5d",itemPoints);
+				}else{
+					print("hejsan");
+					itemPoints = 30;
+					pointsEarned += itemPoints
+					summonItemText(itemsArray[i],"$bed6ae",itemPoints);
+				}
+
+			}else{//storing food at too high temperatures should be more punishing
+				  //than storing them at correct temperatures is rewarding
+				itemPoints = -60
+				pointsEarned += itemPoints;
+				summonItemText(itemsArray[i],"$9c0000",itemPoints);
+				perfect = false;
+			}
+		}
+		scoreHand.totalScore += pointsEarned
+		
+		
 		checkmark = summonObject(obj_correct, [[]]);
-		//code for checking if perfect or not goes here
 		if !perfect{
 			checkmark.visible = false;
 		}
@@ -79,4 +69,32 @@ function minigame_dragAndDrop_variant_finish(){
 		}
 	}
 
+}
+
+
+function summonItemText(item, color, points){
+	summonObject(obj_itemFinisherText, [["x", item.x+item.sprite_width/2],["y", item.y-item.sprite_height/2],["color", color],["points", points]])
+}
+
+function summonDnDItem(index){
+	var randomInt = irandom_range(0,2)
+	var lowestTemp = 0;
+	var highestTemp = 0;
+	var sprite = noone;
+	//todo: change numbers
+	if randomInt == 0{
+		sprite = spr_fish
+		lowestTemp = -20;
+		highestTemp = 4;
+	}else if randomInt == 1{
+		lowestTemp = 5;
+		highestTemp = 7;
+		sprite = spr_milk
+	}else if randomInt == 2{
+		lowestTemp = 4;
+		highestTemp = 6;
+		sprite = spr_foodbox
+	}
+	return summonObject(obj_dragAndDrop_item_vari, [["x", index*60], ["y", 318], ["lowestTemperature", lowestTemp],
+	["highestTemperature", highestTemp], ["sprite", sprite]]);
 }

@@ -41,6 +41,10 @@ function miniHandRefresh(){
 	itemsArray = [];
 	doorsArray = [];
 	
+	dragAndDropIndexer = 0;
+	dragAndDropAnimationTimer = 0;
+	dragAndDropAnimationTime = 20;
+	
 	//washing hands
     // letters
     letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",

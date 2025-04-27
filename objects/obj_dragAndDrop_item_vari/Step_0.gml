@@ -39,14 +39,15 @@ if !complete{
 
 	if (!held && place_meeting(x,y,obj_clearCheckHitbox_variant)){
 		area = instance_place(x,y,obj_clearCheckHitbox_variant);
-		if area.area == correctArea{ //area.area is the area code for each clearCheckHitbox, 0 for fridge,1 for freezer
+		/*if area.area == correctArea{ //area.area is the area code for each clearCheckHitbox, 0 for fridge,1 for freezer
 			inPosition = true;		 //basically, checks if item is in the right place
 		}else{
 			inPosition = false;
-		}
+		}*/
+		correctTemperature(area);
 		
 	}else{
-		inPosition = false;
+		winValue = winValues.noWin
 	}
 	if (held){
 		depth = -999

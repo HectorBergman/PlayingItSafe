@@ -1,7 +1,2 @@
 
-
-print(".---------")
-print(bbox_left);
-print(bbox_right);
-print(bbox_top);
-print(bbox_bottom);
+temperature += random_range(-0.5,0.5);
