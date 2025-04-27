@@ -40,10 +40,15 @@ function miniHandRefresh(){
 	//dragAndDrop
 	itemsArray = [];
 	doorsArray = [];
+	itemsArrayLength = 0;
 	
 	dragAndDropIndexer = 0;
 	dragAndDropAnimationTimer = 0;
-	dragAndDropAnimationTime = 20;
+	dragAndDropAnimationTime = 30;
+	
+	dragAndDropAnimationTimer = 0;
+	dragAndDropAnimationDelay = 60;
+	
 	
 	//washing hands
     // letters

@@ -15,6 +15,7 @@ function minigame_dragAndDrop_variant_create(){
 	}
 
 	itemsArray[highestI + 1] = noone; //lazy crash prevention for for-loops
+	itemsArrayLength = highestI+1;
 	
 	minigameStatus = status.ongoing;
 }
@@ -25,12 +26,13 @@ function minigame_dragAndDrop_variant_step(){
 
 
 function minigame_dragAndDrop_variant_finish(){
-	perfect = true;
-	if checkmark == noone{
+	//states would have been good to use here lol
+	if dragAndDropIndexer < itemsArrayLength{
 		var pointsEarned = 0;
 		var itemPoints = 0;
-		for (var i = 0; itemsArray[i] != noone; i++;) {
-			print(itemsArray[i].winValue);
+		if dragAndDropAnimationTimer mod dragAndDropAnimationTime == 0{
+		
+			var i = dragAndDropIndexer;
 			if !(itemsArray[i].winValue == winValues.noWin || itemsArray[i].winValue == winValues.tooHot){ 
 				if itemsArray[i].winValue == winValues.tooCold{
 					//having items stored too cold can be bad for food quality,
@@ -42,30 +44,39 @@ function minigame_dragAndDrop_variant_finish(){
 					summonItemText(itemsArray[i],"$eece5d",itemPoints);
 				}else{
 					print("hejsan");
-					itemPoints = 30;
+					itemPoints = 20;
 					pointsEarned += itemPoints
 					summonItemText(itemsArray[i],"$bed6ae",itemPoints);
 				}
 
 			}else{//storing food at too high temperatures should be more punishing
-				  //than storing them at correct temperatures is rewarding
-				itemPoints = -60
+					//than storing them at correct temperatures is rewarding
+				itemPoints = -50
 				pointsEarned += itemPoints;
 				summonItemText(itemsArray[i],"$9c0000",itemPoints);
 				perfect = false;
 			}
+			scoreHand.totalScore += pointsEarned
+			dragAndDropIndexer++;
+	
 		}
-		scoreHand.totalScore += pointsEarned
-		
-		
-		checkmark = summonObject(obj_correct, [[]]);
-		if !perfect{
-			checkmark.visible = false;
-		}
+		dragAndDropAnimationTimer++;
+		perfect = true;
+	
 	}else{
-		if checkmark.life == checkmark.lifeTime{
-			exitMinigame();
-			miniHandRefresh();
+		dragAndDropAnimationTimer++
+		if dragAndDropAnimationTimer > dragAndDropAnimationDelay{
+			if checkmark == noone{
+				checkmark = summonObject(obj_correct, [[]]);
+				if !perfect{
+					checkmark.visible = false;
+				}
+			}else{
+				if checkmark.life == checkmark.lifeTime{
+					exitMinigame();
+					miniHandRefresh();
+				}
+			}
 		}
 	}
 
