@@ -41,12 +41,12 @@ function minigame_dragAndDrop_variant_finish(){
 					itemPoints = 10;
 					pointsEarned += itemPoints
 					perfect = false;
-					summonItemText(itemsArray[i],"$eece5d",itemPoints);
+					summonItemText(itemsArray[i],"$b0c5ff",itemPoints);
 				}else{
 					print("hejsan");
 					itemPoints = 20;
 					pointsEarned += itemPoints
-					summonItemText(itemsArray[i],"$bed6ae",itemPoints);
+					summonItemText(itemsArray[i],"$61cc14",itemPoints);
 				}
 
 			}else{//storing food at too high temperatures should be more punishing
@@ -106,6 +106,6 @@ function summonDnDItem(index){
 		highestTemp = 6;
 		sprite = spr_foodbox
 	}
-	return summonObject(obj_dragAndDrop_item_vari, [["x", index*60], ["y", 318], ["lowestTemperature", lowestTemp],
+	return summonObject(obj_dragAndDrop_item_vari, [["x", 120+index*60], ["y", 318], ["lowestTemperature", lowestTemp],
 	["highestTemperature", highestTemp], ["sprite", sprite]]);
 }
