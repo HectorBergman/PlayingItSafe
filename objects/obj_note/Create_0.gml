@@ -17,24 +17,26 @@ hoveredCoords = [x+64,y];
 
 pannerIsHovered = false;
 
+tweenOfChoice = EaseOutQuart
+
 
 function activateTransitionCheck(reverse){
 	
 	if panner.hover{
 		if !pannerIsHovered{
 			if !reverse{
-				TweenEasyMove(originCoords[0],originCoords[1],hoveredCoords[0],hoveredCoords[1],0,20,EaseOutQuint);
+				TweenEasyMove(originCoords[0],originCoords[1],hoveredCoords[0],hoveredCoords[1],0,20,tweenOfChoice);
 			}else{	
-				TweenEasyMove(hoveredCoords[0],hoveredCoords[1],originCoords[0],originCoords[1],0,20,EaseOutQuint);
+				TweenEasyMove(hoveredCoords[0],hoveredCoords[1],originCoords[0],originCoords[1],0,20,tweenOfChoice);
 			}
 		}
 		pannerIsHovered = true;
 	}else{
 		if pannerIsHovered{
 			if !reverse{
-				TweenEasyMove(hoveredCoords[0],hoveredCoords[1],originCoords[0],originCoords[1],0,20,EaseOutQuint);
+				TweenEasyMove(hoveredCoords[0],hoveredCoords[1],originCoords[0],originCoords[1],0,20,tweenOfChoice);
 			}else{	
-				TweenEasyMove(originCoords[0],originCoords[1],hoveredCoords[0],hoveredCoords[1],0,20,EaseOutQuint);
+				TweenEasyMove(originCoords[0],originCoords[1],hoveredCoords[0],hoveredCoords[1],0,20,tweenOfChoice);
 			}
 			
 		}
@@ -49,8 +51,9 @@ function activateTransitionCheck(reverse){
 				targetCoords = [0,0]
 			}
 			var tTime = transitionTime;
+			var tween = tweenOfChoice
 			with cam{
-				panToCoord(targetCoords[0],targetCoords[1], tTime);
+				panToCoord(targetCoords[0],targetCoords[1], tTime, tween);
 			}
 			panner.state = pannerStates.transition;
 			if !reverse{

@@ -1,4 +1,4 @@
-print(state);
+
 switch (state){
 	case pannerStates.left:{
 		hoverLogic();
@@ -7,6 +7,8 @@ switch (state){
 		hoverLogic();
 	}break;
 	case pannerStates.transition:{
+		image_alpha = 0;
+		hover = false;
 		transitionLogic()
 	}break;
 }

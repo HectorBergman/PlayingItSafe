@@ -1,3 +1,4 @@
+print(pannerIsHovered);
 switch (stateOfNote){
 	case noteStates.normal:{
 		activateTransitionCheck(false);
@@ -7,6 +8,7 @@ switch (stateOfNote){
 		activateTransitionCheck(true);
 	} break;
 	case noteStates.transition:{
+		pannerIsHovered = false;
 		transitionTimer++;
 		if (transitionTimer == transitionTime){
 			if transitionDestination == noteStates.reading{

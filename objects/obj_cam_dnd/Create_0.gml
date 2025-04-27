@@ -23,7 +23,7 @@ x = 0
 y = 0
 
 
-function panToCoord(_x,_y,time = 60){
-	TweenEasyMove(x,y,_x,_y,0,time,EaseOutQuart);
+function panToCoord(_x,_y,time = 60, tween = EaseOutQuart){
+	TweenEasyMove(x,y,_x,_y,0,time,tween);
 }
 
