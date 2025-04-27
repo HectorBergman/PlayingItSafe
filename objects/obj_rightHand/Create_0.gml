@@ -23,6 +23,9 @@ scrubBar = noone;
 
 firstGrab = false;
 
+waterDrop = noone;
+soapBubble = noone;
+
 
 leftHand = summonObject(obj_leftHand,[["x", room_width/4], ["y", room_height*1.3], ["parent", id]]);
 

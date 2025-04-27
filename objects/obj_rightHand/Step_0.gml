@@ -62,6 +62,10 @@ switch (hand_state)
 	
 	case HandState.WET:
 	{
+		if (!instance_exists(waterDrop)) {
+	        waterDrop = instance_create_layer(x, y, "Instances", obj_waterDrop);
+	    }
+		
 		if (place_meeting(x, y, obj_soap) && (keyboard_check_pressed(ord("E")))) {
 			hand_state = HandState.scrubStart;
 			print("Hands are soapy")
@@ -71,6 +75,13 @@ switch (hand_state)
 	break;
 	case HandState.scrubStart:
 	{
+		instance_destroy(waterDrop);
+		waterDrop = noone;
+		
+		if (!instance_exists(obj_soapBubble)) {
+	        soapBubble = instance_create_layer(x, y, "Instances", obj_soapBubble);
+	    }
+		
 		TweenEasyMove(x,y,scrubPoint.x,scrubPoint.y,0,60,EaseOutSine);
 		hand_state = HandState.SOAP
 		
@@ -106,6 +117,13 @@ switch (hand_state)
 		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
 			
+			instance_destroy(soapBubble);
+			soapBubble = noone;
+			
+			if (!instance_exists(waterDrop)) {
+		        waterDrop = instance_create_layer(x, y, "Instances", obj_waterDrop);
+		    }
+			
 			print("Hands are rinsed")
 		}
 	}
@@ -115,6 +133,10 @@ switch (hand_state)
 	{
 		if (place_meeting(x, y, obj_towl) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.DRY;
+			
+			instance_destroy(waterDrop);
+			waterDrop = noone;
+			
 			print("Hands are dried")
 		}
 	}
