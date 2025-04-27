@@ -16,13 +16,20 @@ switch (stateOfNote){
 		if place_meeting(x,y,pointer){
 			if inHand.mouseClick{
 				var targetCoords = [hoveredCoords[0],hoveredCoords[1]]
+				var tTime = transitionTime;
 				with cam{
-					panToCoord(targetCoords[0],targetCoords[1]);
+					panToCoord(targetCoords[0],targetCoords[1], tTime);
 				}
+				panner.state = pannerStates.transition;
+				panner.transitionState = transitionStates.flip;
 				stateOfNote = noteStates.reading;
 			}
 		}
 	} break;
 	case noteStates.reading:{
+		transitionTimer++;
+		if (transitionTimer == transitionTime){
+			panner.state = pannerStates.right;
+		}
 	}
 }
