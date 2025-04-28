@@ -16,6 +16,8 @@ camHeight = 540;
 windowWidth = 1920
 windowHeight = 1080
 
+panDestination = [0,0];
+
 
 view_camera[0] = camera_create_view(0, 0, camWidth, camHeight);
 
@@ -24,6 +26,7 @@ y = 0
 
 
 function panToCoord(_x,_y,time = 60, tween = EaseOutQuart){
+	panDestination = [x,y];
 	TweenEasyMove(x,y,_x,_y,0,time,tween);
 }
 

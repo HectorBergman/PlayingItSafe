@@ -19,6 +19,11 @@ pannerIsHovered = false;
 
 tweenOfChoice = EaseOutQuart
 
+itemHandler = noone;
+
+
+temperatureText = noone;
+
 
 function activateTransitionCheck(reverse){
 	
@@ -52,6 +57,7 @@ function activateTransitionCheck(reverse){
 			}
 			var tTime = transitionTime;
 			var tween = tweenOfChoice
+			panner.panCoords = [targetCoords[0],targetCoords[1]];
 			with cam{
 				panToCoord(targetCoords[0],targetCoords[1], tTime, tween);
 			}
@@ -70,3 +76,25 @@ function activateTransitionCheck(reverse){
 		}
 	}
 }
+
+function getTemperatureListText(){
+	
+	var itemsListText = "";
+	var lowestTempText = "";
+	var highestTempText = "";
+	for (var i = 0; itemHandler.itemInfoArray[i] != noone; i++){
+		var iArray = itemHandler.itemInfoArray[i];
+		itemsListText +=  iArray._name + ":" + "\n";
+		var number = real(iArray.lowestTemperature);
+		var padding = "";
+		if number >= 0{
+			padding = " ";
+		}
+		lowestTempText += padding + string(iArray.lowestTemperature) + "\n";
+		
+		highestTempText += string(iArray.highestTemperature) + "\n";
+	}
+	return [itemsListText, lowestTempText, highestTempText];
+}
+
+

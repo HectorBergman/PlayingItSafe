@@ -89,23 +89,15 @@ function summonItemText(item, color, points){
 
 function summonDnDItem(index){
 	var randomInt = irandom_range(0,2)
-	var lowestTemp = 0;
-	var highestTemp = 0;
-	var sprite = noone;
+	var itemHandler = instance_find(obj_itemHandler, 0);
 	//todo: change numbers
-	if randomInt == 0{
-		sprite = spr_fish
-		lowestTemp = -20;
-		highestTemp = 4;
-	}else if randomInt == 1{
-		lowestTemp = 5;
-		highestTemp = 7;
-		sprite = spr_milk
-	}else if randomInt == 2{
-		lowestTemp = 4;
-		highestTemp = 6;
-		sprite = spr_foodbox
-	}
+	var name = itemHandler.itemInfoArray[randomInt]._name
+	var sprite = itemHandler.itemInfoArray[randomInt].sprite
+	var lowestTemp = itemHandler.itemInfoArray[randomInt].lowestTemperature
+	var highestTemp = itemHandler.itemInfoArray[randomInt].highestTemperature
+	var itemIndex = randomInt;
+
+
 	return summonObject(obj_dragAndDrop_item_vari, [["x", 120+index*60], ["y", 318], ["lowestTemperature", lowestTemp],
-	["highestTemperature", highestTemp], ["sprite", sprite]]);
+	["highestTemperature", highestTemp], ["sprite", sprite], ["itemIndex", itemIndex], ["_name", name]]);
 }

@@ -16,6 +16,7 @@
     {"name":"obj_ice","order":1,"path":"objects/obj_ice/obj_ice.yy",},
     {"name":"obj_icePoint","order":2,"path":"objects/obj_icePoint/obj_icePoint.yy",},
     {"name":"obj_itemFinisherText","order":6,"path":"objects/obj_itemFinisherText/obj_itemFinisherText.yy",},
+    {"name":"obj_itemHandler","order":11,"path":"objects/obj_itemHandler/obj_itemHandler.yy",},
     {"name":"obj_menuHandler","order":2,"path":"objects/obj_menuHandler/obj_menuHandler.yy",},
     {"name":"obj_note","order":7,"path":"objects/obj_note/obj_note.yy",},
     {"name":"obj_notePanner","order":10,"path":"objects/obj_notePanner/obj_notePanner.yy",},
