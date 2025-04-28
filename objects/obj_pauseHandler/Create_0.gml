@@ -23,8 +23,10 @@ volumeBar = noone;
 
 
 
-function drawButton(button){
+function pauseMenu_drawButton(button){
+	
 	draw_sprite_ext(button.sprite_index, button.image_index, button.x,button.y,scale,scale,0,c_white,1);
+	drawButton(button)
 }
 
 function volumeBarDrawer(bar){
