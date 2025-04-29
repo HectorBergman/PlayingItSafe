@@ -9,8 +9,8 @@
   "name":"obj_dragAndDrop_item_vari",
   "overriddenProperties":[],
   "parent":{
-    "name":"dnd_variation",
-    "path":"folders/Objects/minigames/dnd_variation.yy",
+    "name":"item",
+    "path":"folders/Objects/minigames/dnd_variation/item.yy",
   },
   "parentObjectId":{
     "name":"obj_holdable_parent",

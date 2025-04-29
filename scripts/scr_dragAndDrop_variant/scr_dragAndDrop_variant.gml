@@ -96,8 +96,11 @@ function summonDnDItem(index){
 	var lowestTemp = itemHandler.itemInfoArray[randomInt].lowestTemperature
 	var highestTemp = itemHandler.itemInfoArray[randomInt].highestTemperature
 	var itemIndex = randomInt;
+	
+	var randomX = irandom_range(120,290);
+	var randomY = irandom_range(128,450);
 
 
-	return summonObject(obj_dragAndDrop_item_vari, [["x", 120+index*60], ["y", 318], ["lowestTemperature", lowestTemp],
+	return summonObject(obj_dragAndDrop_item_vari, [["x", randomX], ["y", randomY], ["lowestTemperature", lowestTemp],
 	["highestTemperature", highestTemp], ["sprite", sprite], ["itemIndex", itemIndex], ["_name", name]]);
 }

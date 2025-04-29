@@ -3,7 +3,7 @@ scale = 0.5
 image_xscale = scale
 image_yscale = scale
 temperatureZones = ds_list_create();
-
+depth = -998;
 //cleaner to do a list and then sort it
 //but that takes more time
 

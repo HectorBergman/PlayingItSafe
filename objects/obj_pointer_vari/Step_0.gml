@@ -27,10 +27,14 @@ if (inHand.mouseHeld){
 	image_index = 1;
 }else{
 	if (heldObject != noone){
-		heldObject.depth = recencyGrabbedDepth	//maybe fix this so depth doesnt get messed up
-												//after 2k clicks....
-												//but basically what it does is give objects more
-												//recently interacted with lower depth.
+		if (heldObject.object_index != obj_thermometer){
+			heldObject.depth = recencyGrabbedDepth	//maybe fix this so depth doesnt get messed up
+													//after 2k clicks....
+													//but basically what it does is give objects more
+													//recently interacted with lower depth.
+		}else{
+			heldObject.depth = -998
+		}
 		heldObject.held = false;
 	}
 	image_index = 0

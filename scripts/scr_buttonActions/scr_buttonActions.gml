@@ -36,7 +36,7 @@ function drawButton(button){
 			color = $000023;
 		}
 		text += button.buttonText;
-		var toDraw = scribble(text).align(fa_center, fa_middle).fit_to_box(button.sprite_width-32, button.sprite_height-32).outline(color)
+		var toDraw = scribble(text).align(fa_center, fa_middle).fit_to_box(button.sprite_width-16*scale, button.sprite_height-16*scale).outline(color)
 		toDraw.draw(button.x, button.y+button.sprite_height/2);
 	}
 }

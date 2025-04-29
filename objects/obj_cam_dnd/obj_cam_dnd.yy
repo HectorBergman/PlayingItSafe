@@ -10,8 +10,8 @@
   "name":"obj_cam_dnd",
   "overriddenProperties":[],
   "parent":{
-    "name":"dnd_variation",
-    "path":"folders/Objects/minigames/dnd_variation.yy",
+    "name":"note",
+    "path":"folders/Objects/minigames/dnd_variation/note.yy",
   },
   "parentObjectId":null,
   "persistent":false,
