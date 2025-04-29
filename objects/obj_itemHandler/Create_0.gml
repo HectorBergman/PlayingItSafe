@@ -1,25 +1,33 @@
-fishStruct = {
-	_name : "Fisk",
-	sprite : spr_fish, 
-	lowestTemperature : -20,
-	highestTemperature : 4,
+
+
+enum shelves{
+	topShelf,
+	midShelf,
+	botShelf,
+	outside,
 }
-milkStruct = {
-	_name : "Mjölk",
-	sprite : spr_milk, 
-	lowestTemperature : 5,
-	highestTemperature : 7,
-}
-lunchBoxStruct = {
-	_name : "Matlådor",
-	sprite : spr_foodbox, 
-	lowestTemperature : 4,
-	highestTemperature : 6,
+
+fishStruct = createFoodItemStruct("Fisk", spr_fish, -20, 4, shelves.midShelf);
+milkStruct = createFoodItemStruct("Mjölk", spr_milk, 0, 8, shelves.topShelf);
+lunchBoxStruct = createFoodItemStruct("Matlåda", spr_foodbox, 0, 8, shelves.topShelf);
+bananaStruct = createFoodItemStruct("Banan", spr_bananas, 10, 25, shelves.outside);
+mincedMeatStruct = createFoodItemStruct("Köttfärs", spr_malet, -20, 4, shelves.midShelf);
+breadStruct = createFoodItemStruct("Bröd", noone, 10, 20, shelves.outside);
+carrotStruct = createFoodItemStruct("Morot", noone, 0, 5, shelves.botShelf);
+
+
+function createFoodItemStruct(name, sprite, lowestTemp, highestTemp, bestShelf){
+	return {
+		_name : name,
+		sprite : sprite,
+		lowestTemperature : lowestTemp,
+		highestTemperature : highestTemp,
+		bestShelf : bestShelf,
+	}
 }
 
 
-
-itemInfoArray = [fishStruct, milkStruct, lunchBoxStruct, noone];
+itemInfoArray = [mincedMeatStruct, fishStruct, milkStruct, lunchBoxStruct, bananaStruct, noone];
 
 
 

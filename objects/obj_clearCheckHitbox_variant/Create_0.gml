@@ -1,6 +1,6 @@
 holding = 0;
 holdingList = ds_list_create();
-temperature += random_range(-0.5,0.5);
+temperature += random_range(-0.3,0.3);
 enum textStates {
 	normal,
 	angryStart,
@@ -10,6 +10,8 @@ textState = textStates.normal;
 angryTimer = 0;
 angryTime = 30;
 depth = -1500
+
+
 
 function drawTextNormal(){
 	//TweenFire(id,EaseInOutQuad, 2,false,0,10,"angryAlpha",1);

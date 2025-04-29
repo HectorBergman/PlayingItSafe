@@ -13,6 +13,10 @@ function minigame_dragAndDrop_variant_create(){
 		itemsArray[i] = summonDnDItem(i);
 		highestI = i;
 	}
+	for (var i = 0; i < instance_number(obj_clearCheckHitbox_variant); i++){
+		var hitbox = instance_find(obj_clearCheckHitbox_variant, i);
+		
+	}
 
 	itemsArray[highestI + 1] = noone; //lazy crash prevention for for-loops
 	itemsArrayLength = highestI+1;
@@ -88,7 +92,7 @@ function summonItemText(item, color, points){
 }
 
 function summonDnDItem(index){
-	var randomInt = irandom_range(0,2)
+	var randomInt = irandom_range(0,4)
 	var itemHandler = instance_find(obj_itemHandler, 0);
 	//todo: change numbers
 	var name = itemHandler.itemInfoArray[randomInt]._name
@@ -99,7 +103,19 @@ function summonDnDItem(index){
 	
 	var randomX = irandom_range(120,290);
 	var randomY = irandom_range(128,450);
-
+	
+	var shelf = itemHandler.itemInfoArray[randomInt].bestShelf;
+	if shelf != 3{
+		if shelf == 0{
+			if irandom_range(0,2) == 2{
+				shelfItemsAmount[shelf+2]++;
+			}else{
+				shelfItemsAmount[shelf]++;
+			}
+		}else{
+			shelfItemsAmount[shelf]++;
+		}
+	}
 
 	return summonObject(obj_dragAndDrop_item_vari, [["x", randomX], ["y", randomY], ["lowestTemperature", lowestTemp],
 	["highestTemperature", highestTemp], ["sprite", sprite], ["itemIndex", itemIndex], ["_name", name]]);

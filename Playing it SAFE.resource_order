@@ -1,7 +1,7 @@
 {
   "FolderOrderSettings":[
-    {"name":"note","order":2,"path":"folders/Objects/minigames/dnd_variation/note.yy",},
     {"name":"item","order":1,"path":"folders/Objects/minigames/dnd_variation/item.yy",},
+    {"name":"note","order":2,"path":"folders/Objects/minigames/dnd_variation/note.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_cam_dnd","order":2,"path":"objects/obj_cam_dnd/obj_cam_dnd.yy",},
