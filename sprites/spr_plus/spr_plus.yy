@@ -27,7 +27,7 @@
   "origin":4,
   "parent":{
     "name":"menu",
-    "path":"folders/Sprites/tempSprites/menu.yy",
+    "path":"folders/Sprites/menu.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
