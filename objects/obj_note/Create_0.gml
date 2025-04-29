@@ -21,6 +21,8 @@ tweenOfChoice = EaseOutQuart
 
 itemHandler = noone;
 
+outlineColor = $000034;
+
 
 temperatureText = noone;
 
@@ -82,6 +84,7 @@ function getTemperatureListText(){
 	var itemsListText = "";
 	var lowestTempText = "";
 	var highestTempText = "";
+	var dashes = "";
 	for (var i = 0; itemHandler.itemInfoArray[i] != noone; i++){
 		var iArray = itemHandler.itemInfoArray[i];
 		itemsListText +=  iArray._name + ":" + "\n";
@@ -91,10 +94,11 @@ function getTemperatureListText(){
 			padding = " ";
 		}
 		lowestTempText += padding + string(iArray.lowestTemperature) + "\n";
+		dashes += "-\n";
 		
 		highestTempText += string(iArray.highestTemperature) + "\n";
 	}
-	return [itemsListText, lowestTempText, highestTempText];
+	return [itemsListText, lowestTempText, highestTempText, dashes];
 }
 
 

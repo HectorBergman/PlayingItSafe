@@ -37,6 +37,11 @@ temperatureTick = 0;
 temperatureTickTimeMiddle = 10;
 temperatureTickTimeRange = [-3,3]
 temperatureTickTime = temperatureTickTimeMiddle;
+
+
+originPoint = [x,y];
+held = false;
+
 function findAllTemperatureAreas(){
 	for (var i = 0; i < instance_number(obj_clearCheckHitbox_variant); i++){
 		var tempZone = instance_find(obj_clearCheckHitbox_variant, i);

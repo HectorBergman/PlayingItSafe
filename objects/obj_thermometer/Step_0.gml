@@ -163,4 +163,10 @@ if (currentTemperature != goalTemperature) {
 	}
 }
 
+if (!held && (x < 96 || x > room_width || y < 0 || y > room_width) ){
+	x = originPoint[0];
+	y = originPoint[1];
+	
+}
+
 

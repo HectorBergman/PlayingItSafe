@@ -4,7 +4,7 @@ y = mouse_y
 
 if (inHand.mouseHeld){
 	if place_meeting(x,y,obj_holdable_parent) {		//if click & hold on item
-		if !holding && !place_meeting(x,y,obj_doors){	
+		if !holding{	
 			var heldObjectList = ds_list_create()
 			var lowestDepth = 999999;
 			instance_place_list(x,y,obj_holdable_parent, heldObjectList, 0);
