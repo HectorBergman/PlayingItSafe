@@ -26,9 +26,9 @@ function pause_menuSettings_control(){ //when game is on the settings page of th
 
 function pause_paused_brandNew(){	
 	global.pause = true;
-	settingsButton = summonObject(obj_button, [["x", window_get_width()/2],["y", 64*6],["sprite", spr_settings], ["parent", id], ["action", 1],["scale", scale]]);
+	settingsButton = summonObject(obj_button, [["x", window_get_width()/2],["y", 64*6], ["parent", id], ["action", 1],["scale", scale], ["buttonText", "Inställningar"]]);
 	if (!instance_exists(backButton)){
-		backButton = summonObject(obj_button,	  [["x", window_get_width()/2],["y", 64*10],["sprite", spr_back], ["parent", id], ["action", 2], ["scale", scale]]);
+		backButton = summonObject(obj_button,	  [["x", window_get_width()/2],["y", 64*10], ["parent", id], ["action", 2], ["scale", scale],["buttonText", "Återvänd"]]);
 	}
 	screenState = screenStates.old
 
@@ -73,7 +73,7 @@ function pause_notPaused_old(){
 
 function pause_menuSettings_brandNew(){
 	volumeBar = summonObject(obj_volumeBar,	  [["parent", id], ["type", "master"], ["x", window_get_width()/2], ["y", 64*7],["scale", scale]])
-	backButton = summonObject(obj_button,	  [["x", window_get_width()/2],["y", 64*10],["sprite", spr_back], ["parent", id], ["action", 2], ["scale", scale]]);
+	backButton = summonObject(obj_button,	  [["x", window_get_width()/2],["y", 64*10], ["parent", id], ["action", 2], ["scale", scale],["buttonText", "Återvänd"]])
 	screenState = screenStates.old
 }
 function pause_menuSettings_old(){
