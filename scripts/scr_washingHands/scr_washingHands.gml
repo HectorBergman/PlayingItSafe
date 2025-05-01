@@ -65,8 +65,8 @@ function create_water_drops() {
     // Create new drops if we have room
     if (array_length(waterDrops) < maxWaterDrops && waterDropTimer <= 0) {
         // Random position on hand (adjust these values based on your hand sprite)
-        var dropX = x + irandom_range(-sprite_width/2, sprite_width/2);
-        var dropY = y + irandom_range(-sprite_height/2, sprite_height/2);
+        var dropX = x + irandom_range(-sprite_width/2, sprite_width);
+        var dropY = y + irandom_range(-sprite_height, sprite_height/2);
         
         // Create drop and add to array
         var drop = instance_create_layer(dropX, dropY, "Instances", obj_waterDrop);
@@ -111,8 +111,8 @@ function create_soap_bubbles() {
     // Create new drops if we have room
     if (array_length(soapBubbles) < maxSoapBubbles && soapBubbleTimer <= 0) {
         // Random position on hand (adjust these values based on your hand sprite)
-        var dropX = x + irandom_range(-sprite_width/2, sprite_width/2);
-        var dropY = y + irandom_range(-sprite_height/2, sprite_height/2);
+        var dropX = x + irandom_range(-sprite_width/2, sprite_width);
+        var dropY = y + irandom_range(-sprite_height, sprite_height/2);
         
         // Create drop and add to array
         var bubble = instance_create_layer(dropX, dropY, "Instances", obj_soapBubble);
