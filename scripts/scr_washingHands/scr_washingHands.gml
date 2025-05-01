@@ -52,6 +52,99 @@ function generateRandomLetter(){
     return letters[randLetter]
 }
 
+/// @function create_water_drops()
+/// @description Creates water drops on the hand
+function create_water_drops() {
+    // Clean up destroyed drops first
+    for (var i = array_length(waterDrops) - 1; i >= 0; i--) {
+        if (!instance_exists(waterDrops[i])) {
+            array_delete(waterDrops, i, 1);
+        }
+    }
+    
+    // Create new drops if we have room
+    if (array_length(waterDrops) < maxWaterDrops && waterDropTimer <= 0) {
+        // Random position on hand (adjust these values based on your hand sprite)
+        var dropX = x + irandom_range(-sprite_width/2, sprite_width/2);
+        var dropY = y + irandom_range(-sprite_height/2, sprite_height/2);
+        
+        // Create drop and add to array
+        var drop = instance_create_layer(dropX, dropY, "Instances", obj_waterDrop);
+        array_push(waterDrops, drop);
+        
+        // Set random lifetime (around 4 seconds)
+        drop.lifetime = room_speed * 4 + irandom(room_speed);
+        
+        // Reset timer for next drop creation
+        waterDropTimer = room_speed * 0.5; // Create new drop every 0.5 seconds
+    }
+    
+    // Decrement timer if it's active
+    if (waterDropTimer > 0) {
+        waterDropTimer--;
+    }
+    
+    // Update lifetimes and destroy expired drops
+    for (var i = array_length(waterDrops) - 1; i >= 0; i--) {
+        var drop = waterDrops[i];
+        if (instance_exists(drop)) {
+            drop.lifetime--;
+            if (drop.lifetime <= 0) {
+                instance_destroy(drop);
+                array_delete(waterDrops, i, 1);
+            }
+        } else {
+            array_delete(waterDrops, i, 1);
+        }
+    }
+}
+
+
+function create_soap_bubbles() {
+    // Clean up destroyed bubbles first
+    for (var i = array_length(soapBubbles) - 1; i >= 0; i--) {
+        if (!instance_exists(soapBubbles[i])) {
+            array_delete(soapBubbles, i, 1);
+        }
+    }
+    
+    // Create new drops if we have room
+    if (array_length(soapBubbles) < maxSoapBubbles && soapBubbleTimer <= 0) {
+        // Random position on hand (adjust these values based on your hand sprite)
+        var dropX = x + irandom_range(-sprite_width/2, sprite_width/2);
+        var dropY = y + irandom_range(-sprite_height/2, sprite_height/2);
+        
+        // Create drop and add to array
+        var bubble = instance_create_layer(dropX, dropY, "Instances", obj_soapBubble);
+        array_push(soapBubbles, bubble);
+        
+        // Set random lifetime (around 4 seconds)
+        bubble.lifetime = room_speed * 4 + irandom(room_speed);
+        
+        // Reset timer for next drop creation
+        soapBubbleTimer = room_speed * 0.5; // Create new drop every 0.5 seconds
+    }
+    
+    // Decrement timer if it's active
+    if (soapBubbleTimer > 0) {
+        soapBubbleTimer--;
+    }
+    
+    // Update lifetimes and destroy expired drops
+    for (var i = array_length(soapBubbles) - 1; i >= 0; i--) {
+        var bubble = soapBubbles[i];
+        if (instance_exists(bubble)) {
+            bubble.lifetime--;
+            if (bubble.lifetime <= 0) {
+                instance_destroy(bubble);
+                array_delete(soapBubbles, i, 1);
+            }
+        } else {
+            array_delete(soapBubbles, i, 1);
+        }
+    }
+}
+
 
 enum tapState {
     OFF,

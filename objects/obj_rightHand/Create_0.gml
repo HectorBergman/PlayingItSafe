@@ -24,7 +24,16 @@ scrubBar = noone;
 firstGrab = false;
 
 waterDrop = noone;
+
+waterDrops = []; // Array to store water drop instances
+waterDropTimer = 0; // Timer for creating new drops
+maxWaterDrops = 8; // Maximum number of drops visible at once
+
 soapBubble = noone;
+
+soapBubbles = []; // Array to store water drop instances
+soapBubbleTimer = 0; // Timer for creating new drops
+maxSoapBubbles = 12; // Maximum number of drops visible at once
 
 
 leftHand = summonObject(obj_leftHand,[["x", room_width/4], ["y", room_height*1.3], ["parent", id]]);

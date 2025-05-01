@@ -62,50 +62,54 @@ switch (hand_state)
 	
 	case HandState.WET:
 	{
-		if (!instance_exists(waterDrop)) {
-	        waterDrop = instance_create_layer(x, y, "Instances", obj_waterDrop);
-	    }
+		create_water_drops();
 		
 		if (place_meeting(x, y, obj_soap) && (keyboard_check_pressed(ord("E")))) {
 			hand_state = HandState.scrubStart;
 			print("Hands are soapy")
 			movabilityState = movability.unmovable;
+			
+			// Destroy all water drops when leaving WET state
+	        for (var i = 0; i < array_length(waterDrops); i++) {
+	            if (instance_exists(waterDrops[i])) {
+	                instance_destroy(waterDrops[i]);
+	            }
+	        }
+	        waterDrops = [];
 		}
 	}
 	break;
+	
 	case HandState.scrubStart:
 	{
-		instance_destroy(waterDrop);
-		waterDrop = noone;
-		
-		if (!instance_exists(obj_soapBubble)) {
-	        soapBubble = instance_create_layer(x, y, "Instances", obj_soapBubble);
-	    }
-		
 		TweenEasyMove(x,y,scrubPoint.x,scrubPoint.y,0,60,EaseOutSine);
 		hand_state = HandState.SOAP
 		
 	}
 	case HandState.SOAP:
 	{
+		create_soap_bubbles();
 		handle_scrubbing(scrubKey1, 5, HandState.SCRUB1);
 	}
 	break;
 	
 	case HandState.SCRUB1:
 	{
+		create_soap_bubbles();
 		handle_scrubbing(scrubKey2, 5, HandState.SCRUB2);
 	}
 	break;
 	
 	case HandState.SCRUB2:
 	{
+		create_soap_bubbles();
 		handle_scrubbing(scrubKey3, 5, HandState.SCRUB3);
 	}
 	break;
 	
 	case HandState.SCRUB3:
 	{
+		create_soap_bubbles();
 		if handle_scrubbing(scrubKey4, 5, HandState.SCRUB4){
 			movabilityState = movability.halfmovable;
 		}
@@ -114,15 +118,18 @@ switch (hand_state)
 	
 	case HandState.SCRUB4:
 	{
+		create_soap_bubbles();
 		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;
 			
-			instance_destroy(soapBubble);
-			soapBubble = noone;
+			// Destroy all water drops when leaving WET state
+	        for (var i = 0; i < array_length(soapBubbles); i++) {
+	            if (instance_exists(soapBubbles[i])) {
+	                instance_destroy(soapBubbles[i]);
+	            }
+	        }
+	        soapBubbles = [];
 			
-			if (!instance_exists(waterDrop)) {
-		        waterDrop = instance_create_layer(x, y, "Instances", obj_waterDrop);
-		    }
 			
 			print("Hands are rinsed")
 		}
@@ -131,11 +138,18 @@ switch (hand_state)
 	
 	case HandState.RINSE:
 	{
+		create_water_drops();
+		
 		if (place_meeting(x, y, obj_towl) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.DRY;
 			
-			instance_destroy(waterDrop);
-			waterDrop = noone;
+			// Destroy all water drops when leaving WET state
+	        for (var i = 0; i < array_length(waterDrops); i++) {
+	            if (instance_exists(waterDrops[i])) {
+	                instance_destroy(waterDrops[i]);
+	            }
+	        }
+	        waterDrops = [];
 			
 			print("Hands are dried")
 		}
