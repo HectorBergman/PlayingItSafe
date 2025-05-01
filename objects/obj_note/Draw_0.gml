@@ -4,10 +4,10 @@ var title = ""
 title = "[scale,2][$eee7e7]" + "Chilling \n"
 
 var body = "";
-body = "[scale,1][$eee7e7]Sortera objekten på deras rätta plats\nDu har begränsat med utrymme, så prioritera det viktigaste!\n[scale,0.8]Nedanför ser du en lista på matvaror och deras rekommenderade temperatur:"; 
+body = "[scale,1][$eee7e7]Sortera objekten på deras rätta plats\nDu har begränsat med utrymme, så prioritera det viktigaste!\n[scale,0.8]Se till att varorna är förvarade i deras rätta temperatur, du kan mäta temperaturen med termometern: [scale,0.125][spr_thermometer][scale,0.8] och du kan justera temperaturen i kylen genom att klicka på: [scale,0.5][spr_fridgeButtons_display][scale,0.8]\nNedanför ser du en lista på matvaror och deras rekommenderade temperaturer:"; 
 
 var bodyHeight = 0;
-bodyHeight += scribble(title).get_height()*1.2;
+bodyHeight += scribble(title).get_height()*1.4;
 bodyHeight += scribble(body).get_height();
 var toDraw = scribble(title+body).wrap(bbox_right-bbox_left, bbox_bottom-bbox_top).outline(outlineColor);
 toDraw.draw(x+96, y+48);
@@ -53,7 +53,7 @@ toDraw.draw(x+96+extraWidth,y+48+bodyHeight);
 extraWidth += listHighestTempWidth + 24;
 
 
-toDraw = scribble("[scale,1][$eee7e7]°C\n°C\n°C\n°C\n°C\n").wrap(bbox_right-bbox_left, bbox_bottom-bbox_top).outline(outlineColor);
+toDraw = scribble("[scale,1][$eee7e7]°C\n°C\n°C\n°C\n°C\n°C\n°C").wrap(bbox_right-bbox_left, bbox_bottom-bbox_top).outline(outlineColor);
 toDraw.draw(x+96+extraWidth,y+48+bodyHeight);
 
 

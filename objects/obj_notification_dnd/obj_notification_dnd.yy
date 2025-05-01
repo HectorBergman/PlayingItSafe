@@ -1,23 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_thermometer",
+  "%Name":"obj_notification_dnd",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_thermometer",
+  "name":"obj_notification_dnd",
   "overriddenProperties":[],
   "parent":{
     "name":"dnd_variation",
     "path":"folders/Objects/minigames/dnd_variation.yy",
   },
-  "parentObjectId":{
-    "name":"obj_holdable_parent",
-    "path":"objects/obj_holdable_parent/obj_holdable_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -36,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_thermometer",
-    "path":"sprites/spr_thermometer/spr_thermometer.yy",
+    "name":"spr_notifPillar",
+    "path":"sprites/spr_notifPillar/spr_notifPillar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

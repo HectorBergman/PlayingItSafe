@@ -1,6 +1,7 @@
-if area != -1{
+if area != -1 && dndHand.shelfLimit{
 	maxHolding = miniHand.shelfItemsAmount[area];
 }
+
 
 for (var i = 0; i < ds_list_size(holdingList); i++){
 	var val = ds_list_find_value(holdingList,i);

@@ -23,8 +23,10 @@ playerPosition = [592,736];
 //add in any required variables here
 currentMinigame = minigame.none;
 lastMinigame = minigame.none;
+difficulty = 1;
+
+dndRead = [false,false,false];
 function miniHandRefresh(){
-	difficulty = 1;
 	
 	currentMinigame = minigame.none
 	minigameStatus = status.started

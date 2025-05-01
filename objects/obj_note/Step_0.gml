@@ -9,6 +9,7 @@ switch (stateOfNote){
 		activateTransitionCheck(true);
 	} break;
 	case noteStates.transition:{
+		readNote(); //store data that note has been read for current difficulty
 		pannerIsHovered = false;
 		transitionTimer++;
 		if (transitionTimer == transitionTime){

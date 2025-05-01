@@ -3,6 +3,8 @@ depth = -100;
 temperatureLimits = [-5,5];
 temperatureDifference = irandom_range(-5,5);
 
+dndHand = noone;
+
 coldButton = summonObject(obj_fridgeButton, [["isCold", true], ["parent", id], ["depth", depth-1], ["x", x], ["y", y]]);
 hotButton = summonObject(obj_fridgeButton, [["isCold", false], ["parent", id], ["depth", depth-1], ["x", x], ["y", y]]);
 

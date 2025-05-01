@@ -18,12 +18,8 @@ if !complete{
 		exit;
 	}
 	if (!held){
-		if !place_meeting(x,y,obj_clearCheckHitbox_variant){
-			image_index = 0;
-		}
 		timeNotHeld++ //increases time the longer item is not held
 	}else{
-		image_index = 1;
 		timeNotHeld = 0;
 	}
 	if (!held && (!isCovered(id, obj_clearCheckHitbox_variant))){

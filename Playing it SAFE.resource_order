@@ -6,6 +6,7 @@
   "ResourceOrderSettings":[
     {"name":"obj_cam_dnd","order":2,"path":"objects/obj_cam_dnd/obj_cam_dnd.yy",},
     {"name":"obj_clearCheckHitbox_variant","order":1,"path":"objects/obj_clearCheckHitbox_variant/obj_clearCheckHitbox_variant.yy",},
+    {"name":"obj_dndHandler","order":11,"path":"objects/obj_dndHandler/obj_dndHandler.yy",},
     {"name":"obj_fridge_tile","order":2,"path":"objects/obj_fridge_tile/obj_fridge_tile.yy",},
     {"name":"obj_fridgeButton","order":10,"path":"objects/obj_fridgeButton/obj_fridgeButton.yy",},
     {"name":"obj_fridgeHandler","order":8,"path":"objects/obj_fridgeHandler/obj_fridgeHandler.yy",},
@@ -13,12 +14,15 @@
     {"name":"obj_itemFinisherText","order":1,"path":"objects/obj_itemFinisherText/obj_itemFinisherText.yy",},
     {"name":"obj_itemHandler","order":2,"path":"objects/obj_itemHandler/obj_itemHandler.yy",},
     {"name":"obj_notePanner","order":1,"path":"objects/obj_notePanner/obj_notePanner.yy",},
+    {"name":"obj_notification_dnd","order":12,"path":"objects/obj_notification_dnd/obj_notification_dnd.yy",},
     {"name":"obj_pointer_vari","order":3,"path":"objects/obj_pointer_vari/obj_pointer_vari.yy",},
     {"name":"obj_thermometer","order":5,"path":"objects/obj_thermometer/obj_thermometer.yy",},
     {"name":"spr_bread","order":1,"path":"sprites/spr_bread/spr_bread.yy",},
     {"name":"spr_dndCarrot","order":2,"path":"sprites/spr_dndCarrot/spr_dndCarrot.yy",},
     {"name":"spr_fridgeButtons_coldPressed","order":2,"path":"sprites/spr_fridgeButtons_coldPressed/spr_fridgeButtons_coldPressed.yy",},
+    {"name":"spr_fridgeButtons_display","order":4,"path":"sprites/spr_fridgeButtons_display/spr_fridgeButtons_display.yy",},
     {"name":"spr_fridgeButtons_hotPressed","order":3,"path":"sprites/spr_fridgeButtons_hotPressed/spr_fridgeButtons_hotPressed.yy",},
     {"name":"spr_fridgeButtons","order":1,"path":"sprites/spr_fridgeButtons/spr_fridgeButtons.yy",},
+    {"name":"spr_notifPillar","order":3,"path":"sprites/spr_notifPillar/spr_notifPillar.yy",},
   ],
 }

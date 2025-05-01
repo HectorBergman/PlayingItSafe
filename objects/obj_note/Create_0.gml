@@ -9,6 +9,8 @@ transitionDestination = noteStates.reading;
 panner = noone;
 pointer = noone;
 cam = noone;
+dndHand = noone;
+notification = noone;
 transitionTimer = 0;
 transitionTime = 60;
 
@@ -101,4 +103,44 @@ function getTemperatureListText(){
 	return [itemsListText, lowestTempText, highestTempText, dashes];
 }
 
+function readNote(){
+	if notification != noone{
+		with (notification){
+			selfDestruct();
+		}
+	}
+	if miniHand.difficulty >= 4{
+		if !miniHand.dndRead[0]{
+			miniHand.dndRead[0] = true;
+		}
+	}
+	else if miniHand.difficulty >= 8{
+		if !miniHand.dndRead[1]{
+			miniHand.dndRead[1] = true;
+		}
+	}
+	else if miniHand.difficulty >= 12{
+		if !miniHand.dndRead[2]{
+			miniHand.dndRead[2] = true;
+		}
+	}
+}
 
+function isRead(){
+	if miniHand.difficulty >= 4{
+		if !miniHand.dndRead[0]{
+			return false;
+		}
+	}
+	else if miniHand.difficulty >= 8{
+		if !miniHand.dndRead[1]{
+			return false;
+		}
+	}
+	else if miniHand.difficulty >= 12{
+		if !miniHand.dndRead[2]{
+			return false;
+		}
+	}
+	return true;
+}

@@ -7,6 +7,8 @@ depth = -998;
 //cleaner to do a list and then sort it
 //but that takes more time
 
+dndHand = noone;
+
 //if this code needs to be expanded to be more general ill do it
 closestZone = noone;
 secondClosestZone = noone;

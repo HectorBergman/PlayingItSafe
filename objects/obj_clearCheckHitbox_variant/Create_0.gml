@@ -1,6 +1,6 @@
 holding = 0;
 holdingList = ds_list_create();
-temperature += random_range(-0.3,0.3);
+
 defaultTemp = temperature;
 enum textStates {
 	normal,
@@ -11,7 +11,7 @@ textState = textStates.normal;
 angryTimer = 0;
 angryTime = 30;
 depth = -1500
-
+dndHand = noone;
 
 
 function drawTextNormal(){
