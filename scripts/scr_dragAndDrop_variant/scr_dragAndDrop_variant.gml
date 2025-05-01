@@ -47,7 +47,6 @@ function minigame_dragAndDrop_variant_finish(){
 					perfect = false;
 					summonItemText(itemsArray[i],"$b0c5ff",itemPoints);
 				}else{
-					print("hejsan");
 					itemPoints = 20;
 					pointsEarned += itemPoints
 					summonItemText(itemsArray[i],"$61cc14",itemPoints);
@@ -92,7 +91,7 @@ function summonItemText(item, color, points){
 }
 
 function summonDnDItem(index){
-	var randomInt = irandom_range(0,4)
+	var randomInt = irandom_range(0,6)
 	var itemHandler = instance_find(obj_itemHandler, 0);
 	//todo: change numbers
 	var name = itemHandler.itemInfoArray[randomInt]._name
@@ -115,6 +114,9 @@ function summonDnDItem(index){
 		}else{
 			shelfItemsAmount[shelf]++;
 		}
+	}
+	if irandom_range(0,2) == 2{
+		shelfItemsAmount[irandom_range(0,2)]++;
 	}
 
 	return summonObject(obj_dragAndDrop_item_vari, [["x", randomX], ["y", randomY], ["lowestTemperature", lowestTemp],

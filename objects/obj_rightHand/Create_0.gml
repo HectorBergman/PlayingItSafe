@@ -137,7 +137,6 @@ function handle_scrubbing(_scrubKey, _scrubRep, _nextHandState) {
 		if scrubTween == noone || !TweenIsPlaying(scrubTween){
 			var yDifference = 80;
 			var tweenTime = currentScrubTime/3
-			print(tweenTime);
 			var highDestination = scrubPoint.y+yDifference+irandom_range(-30,10);
 			var lowDestination = scrubPoint.y-yDifference+irandom_range(-30,10);
 			var xDifference = irandom_range(-12,12);

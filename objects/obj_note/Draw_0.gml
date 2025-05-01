@@ -53,7 +53,7 @@ toDraw.draw(x+96+extraWidth,y+48+bodyHeight);
 extraWidth += listHighestTempWidth + 24;
 
 
-toDraw = scribble("[scale,1][$eee7e7]°C\n°C\n°C\n").wrap(bbox_right-bbox_left, bbox_bottom-bbox_top).outline(outlineColor);
+toDraw = scribble("[scale,1][$eee7e7]°C\n°C\n°C\n°C\n°C\n").wrap(bbox_right-bbox_left, bbox_bottom-bbox_top).outline(outlineColor);
 toDraw.draw(x+96+extraWidth,y+48+bodyHeight);
 
 

@@ -1,6 +1,7 @@
 holding = 0;
 holdingList = ds_list_create();
 temperature += random_range(-0.3,0.3);
+defaultTemp = temperature;
 enum textStates {
 	normal,
 	angryStart,
