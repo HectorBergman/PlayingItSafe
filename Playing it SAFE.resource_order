@@ -17,6 +17,7 @@
     {"name":"obj_notification_dnd","order":12,"path":"objects/obj_notification_dnd/obj_notification_dnd.yy",},
     {"name":"obj_pointer_vari","order":3,"path":"objects/obj_pointer_vari/obj_pointer_vari.yy",},
     {"name":"obj_thermometer","order":5,"path":"objects/obj_thermometer/obj_thermometer.yy",},
+    {"name":"snd_Im_Just_Chillin","order":1,"path":"sounds/snd_Im_Just_Chillin/snd_Im_Just_Chillin.yy",},
     {"name":"spr_bread","order":1,"path":"sprites/spr_bread/spr_bread.yy",},
     {"name":"spr_dndCarrot","order":2,"path":"sprites/spr_dndCarrot/spr_dndCarrot.yy",},
     {"name":"spr_fridgeButtons_coldPressed","order":2,"path":"sprites/spr_fridgeButtons_coldPressed/spr_fridgeButtons_coldPressed.yy",},
