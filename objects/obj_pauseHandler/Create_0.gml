@@ -23,8 +23,10 @@ volumeBar = noone;
 
 
 
-function drawButton(button){
+function pauseMenu_drawButton(button){
+	
 	draw_sprite_ext(button.sprite_index, button.image_index, button.x,button.y,scale,scale,0,c_white,1);
+	drawButton(button)
 }
 
 function volumeBarDrawer(bar){
@@ -47,6 +49,6 @@ function volumeBarDrawer(bar){
 }
 
 
-#macro PAUSEVARS prePauseSpeed = sprite_get_speed(sprite_index)
+#macro PAUSEVARS try{prePauseSpeed = sprite_get_speed(sprite_index)}catch(e){}
 #macro PAUSE if (global.pause) exit//{sprite_set_speed(sprite_index, 0, spritespeed_framespersecond); exit}else{  
 

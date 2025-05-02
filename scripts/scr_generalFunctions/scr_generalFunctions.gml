@@ -237,3 +237,24 @@ function stringToEnum(str) {
 }
 
 
+/// @function pointToBBoxDistance(px, py, x1, y1, x2, y2)
+/// @description Returns the closest distance from point (px, py) to a bounding box (x1, y1, x2, y2).
+/// @param {real} px, py - The point's coordinates.
+/// @param {real} x1, y1 - Top-left corner of the box.
+/// @param {real} x2, y2 - Bottom-right corner of the box.
+/// Deepseek generated
+
+function pointToBBoxDistance(px, py, x1, y1, x2, y2) {
+    // Find the closest point on the box to (px, py)
+    var closestX = clamp(px, x1, x2);
+    var closestY = clamp(py, y1, y2);
+    
+    // If the point is inside the box, distance is 0
+    if (closestX == px && closestY == py) {
+        return 0;
+    }
+    
+    // Otherwise, calculate Euclidean distance
+    return point_distance(px, py, closestX, closestY);
+}
+
