@@ -30,6 +30,8 @@ if place_meeting(x, y, obj_stoveControl)
 if place_meeting(x, y, obj_food)
 {
 	
+
+	//I draw event, space bar så ser man temperatur på maten	
 	
 	if keyboard_check_pressed(vk_enter)
 	{

@@ -2,6 +2,7 @@
 time = 0;
 cook_speed = 0;
 age = 0;
+temp = 20;
 
 
 timer = 60;
