@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_food",
+  "%Name":"obj_fryingPan_bg",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_food",
+  "name":"obj_fryingPan_bg",
   "overriddenProperties":[],
   "parent":{
     "name":"fryFood",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_patty",
-    "path":"sprites/spr_patty/spr_patty.yy",
+    "name":"spr_pan",
+    "path":"sprites/spr_pan/spr_pan.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -27,23 +27,23 @@ else
 if age < 60
 {
 	state = 0;
-	sprite_index = spr_raw;
+	image_index = 0;
 }
 else if age <= 120
 {
 	state = 1;
-	sprite_index = spr_partial;
+	image_index = 1;
 }
 else if age <= 180
 {
 	state = 2;
-	sprite_index = spr_done;
+	image_index = 2;
 	after_done_counter++;
 }
 else if age > 180
 {
 	state = 3;
-	sprite_index = spr_burn;
+	image_index = 3;
 	after_done_counter++;
 }
 else
