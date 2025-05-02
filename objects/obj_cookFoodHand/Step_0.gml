@@ -1,8 +1,8 @@
 if stoveValue < -200{
 	stoveControl.state = stoveState.off
-}else if stoveValue < 100{
+}else if stoveValue < 0{
 	stoveControl.state = stoveState.low
-}else if stoveValue < 300{
+}else if stoveValue < 200{
 	stoveControl.state = stoveState.medium
 }else{
 	stoveControl.state = stoveState.high
@@ -43,7 +43,7 @@ switch fryFoodState{
 			if inHand.mouseHeld{
 				fryFoodState = fryFoodStates.changingTemp;
 				movabilityState = movability.unmovable;
-				TweenEasyMove(x,y,stoveControl.x+stoveControl.sprite_width/2,stoveControl.y+stoveControl.sprite_height/2,0,5,EaseOutQuint);
+				TweenEasyMove(x,y,stoveControl.x,stoveControl.y,0,5,EaseOutQuint);
 				turnPoint = [x,y];
 				preTurnStoveValue = stoveValue
 			}
@@ -61,7 +61,8 @@ switch fryFoodState{
 			value = stoveRanges[1]-preTurnStoveValue
 		}
 		stoveValue = clamp(preTurnStoveValue + value, stoveRanges[0], stoveRanges[1]);
-		image_angle = -mapRange(value, stoveRanges[0], stoveRanges[1], -90, 90);
+		image_angle = -mapRange(value, stoveRanges[0], stoveRanges[1], -120, 120);
+		stoveControl.image_angle = -mapRange(stoveValue, stoveRanges[0],stoveRanges[1],-120,120);
 		if !inHand.mouseHeld{
 			fryFoodState = fryFoodStates.normal;
 			movabilityState = movability.halfmovable;

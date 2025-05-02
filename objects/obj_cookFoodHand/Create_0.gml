@@ -3,11 +3,11 @@ holding = false;
 heldObject = noone;
 
 stoveControl = noone;
-stoveValue = -400;
+stoveValue = -300;
 preTurnStoveValue = stoveValue
 
 
-stoveRanges = [-400,400];
+stoveRanges = [-300,300];
 
 enum fryFoodStates{
 	normal,
