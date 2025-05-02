@@ -26,30 +26,30 @@ else
 
 if age == 0
 {
-	obj_thermo.temp = 0;
+	temp = 20;
 }
-else if age < 144
+else if age < 260
 {
-	obj_thermo.temp += 0.25;
+	temp += 0.1;
 	state = 0;
 	sprite_index = spr_raw;
 }
-else if age <= 288
+else if age <= 520
 {
-	obj_thermo.temp += 0.25;
+	temp += 0.1;
 	state = 1;
 	sprite_index = spr_partial;
 }
-else if age <= 432
+else if age <= 780
 {
-	obj_thermo.temp = 72;
+	temp += 0.01;
 	state = 2;
 	sprite_index = spr_done;
 	after_done_counter++;
 }
-else if age > 432
+else if age > 780
 {
-	obj_thermo.temp = 72;
+	temp += 0.01;
 	state = 3;
 	sprite_index = spr_burn;
 	after_done_counter++;
