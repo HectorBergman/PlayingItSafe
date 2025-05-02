@@ -1,7 +1,8 @@
 // Initialization statements
 time = 0;
 cook_speed = 0;
-state = 0;
+age = 0;
+
 
 timer = 60;
 

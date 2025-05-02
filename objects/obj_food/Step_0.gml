@@ -7,16 +7,15 @@ else
 {
 	if obj_stoveControl.state == stoveState.low
 	{
-		print("On low setting check")
-		alarm[0] = 3 * timer;
+		age += 1;
 	}
 	else if obj_stoveControl.state == stoveState.medium
 	{
-		alarm[1] = 2 * timer;
+		age += 2;
 	}
 	else if obj_stoveControl.state == stoveState.high
 	{
-		alarm[2] = 1 * timer;
+		age += 3;
 	}
 	else
 	{
@@ -25,21 +24,25 @@ else
 }
 
 
-if state == 0
+if age < 60
 {
+	state = 0;
 	sprite_index = spr_raw;
 }
-else if state == 1
+else if age <= 120
 {
+	state = 1;
 	sprite_index = spr_partial;
 }
-else if state == 2
+else if age <= 180
 {
+	state = 2;
 	sprite_index = spr_done;
 	after_done_counter++;
 }
-else if state == 3
+else if age > 180
 {
+	state = 3;
 	sprite_index = spr_burn;
 	after_done_counter++;
 }
