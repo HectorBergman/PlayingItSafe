@@ -359,6 +359,7 @@
     {"id":{"name":"spr_oven","path":"sprites/spr_oven/spr_oven.yy",},},
     {"id":{"name":"spr_pan","path":"sprites/spr_pan/spr_pan.yy",},},
     {"id":{"name":"spr_partial","path":"sprites/spr_partial/spr_partial.yy",},},
+    {"id":{"name":"spr_patty","path":"sprites/spr_patty/spr_patty.yy",},},
     {"id":{"name":"spr_pauseBg","path":"sprites/spr_pauseBg/spr_pauseBg.yy",},},
     {"id":{"name":"spr_pizza","path":"sprites/spr_pizza/spr_pizza.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},

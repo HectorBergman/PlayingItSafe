@@ -188,6 +188,7 @@
     {"name":"spr_oven","order":3,"path":"sprites/spr_oven/spr_oven.yy",},
     {"name":"spr_pan","order":7,"path":"sprites/spr_pan/spr_pan.yy",},
     {"name":"spr_partial","order":1,"path":"sprites/spr_partial/spr_partial.yy",},
+    {"name":"spr_patty","order":9,"path":"sprites/spr_patty/spr_patty.yy",},
     {"name":"spr_pauseBg","order":1,"path":"sprites/spr_pauseBg/spr_pauseBg.yy",},
     {"name":"spr_player","order":2,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_plus","order":4,"path":"sprites/spr_plus/spr_plus.yy",},

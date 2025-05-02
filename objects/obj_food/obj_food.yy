@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_raw",
-    "path":"sprites/spr_raw/spr_raw.yy",
+    "name":"spr_patty",
+    "path":"sprites/spr_patty/spr_patty.yy",
   },
   "spriteMaskId":null,
   "visible":true,
