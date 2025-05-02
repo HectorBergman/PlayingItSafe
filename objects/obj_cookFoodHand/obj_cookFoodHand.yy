@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Hands",
-    "path":"sprites/spr_Hands/spr_Hands.yy",
+    "name":"spr_Hands_cookFood",
+    "path":"sprites/spr_Hands_cookFood/spr_Hands_cookFood.yy",
   },
   "spriteMaskId":null,
   "visible":true,

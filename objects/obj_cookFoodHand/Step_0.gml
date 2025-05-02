@@ -43,17 +43,17 @@ switch fryFoodState{
 			if inHand.mouseHeld{
 				fryFoodState = fryFoodStates.changingTemp;
 				movabilityState = movability.unmovable;
-				TweenEasyMove(x,y,stoveControl.x,stoveControl.y,0,5,EaseOutQuint);
-				turnPoint = [stoveControl.x, stoveControl.y];
+				TweenEasyMove(x,y,stoveControl.x+stoveControl.sprite_width/2,stoveControl.y+stoveControl.sprite_height/2,0,5,EaseOutQuint);
+				turnPoint = [stoveControl.x+ stoveControl.sprite_width/2, stoveControl.y+ stoveControl.sprite_height/2];
 			}
 		}
 	}break;
 	case fryFoodStates.changingTemp:{
 		var inverse = 1
-		if mouse_x < stoveControl.x{
+		if mouse_x < stoveControl.x+ stoveControl.sprite_width/2{
 			inverse = -1;
 		}
-		var value = clamp(inverse*point_distance(mouse_x,0,stoveControl.x,0), stoveRanges[0], stoveRanges[1]);
+		var value = clamp(inverse*point_distance(mouse_x,0,stoveControl.x+stoveControl.sprite_width/2,0), stoveRanges[0], stoveRanges[1]);
 		stoveValue = value;
 		image_angle = mapRange(value, stoveRanges[0], stoveRanges[1], -90, 90);
 		if !inHand.mouseHeld{
