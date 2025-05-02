@@ -1,4 +1,10 @@
-
+if hasBeenRead{
+	readTimer++
+	if readTimer == readTime{
+		TweenStop(tween);
+		TweenFire(id, EaseInOutQuad, TWEEN_MODE_ONCE, false, 0, 20,"glowTween",glowTween,0);
+	}
+}
 
 switch (stateOfNote){
 	case noteStates.normal:{

@@ -30,6 +30,7 @@ if (position_meeting(mouse_x, mouse_y, id)){ //hover over button
 			pauseHand.screenState = screenStates.brandNew
 		}else if action == 7{
 			miniHand.minigameStatus = status.finished;
+			miniHand.perfect = true;
 		}
 	}
 }else{

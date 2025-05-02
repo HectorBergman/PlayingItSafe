@@ -9,7 +9,7 @@ function minigame_dragAndDrop_variant_control(){
 
 function minigame_dragAndDrop_variant_create(){
 	var highestI = 0;
-	for (var i = 0; i < difficulty; i++){
+	for (var i = 0; i < floor(difficulty/2)+2; i++){
 		itemsArray[i] = summonDnDItem(i);
 		highestI = i;
 	}
@@ -31,6 +31,7 @@ function minigame_dragAndDrop_variant_step(){
 
 function minigame_dragAndDrop_variant_finish(){
 	//states would have been good to use here lol
+	
 	if dragAndDropIndexer < itemsArrayLength{
 		var pointsEarned = 0;
 		var itemPoints = 0;
@@ -64,15 +65,17 @@ function minigame_dragAndDrop_variant_finish(){
 	
 		}
 		dragAndDropAnimationTimer++;
-		perfect = true;
 	
 	}else{
 		dragAndDropAnimationTimer++
 		if dragAndDropAnimationTimer > dragAndDropAnimationDelay{
 			if checkmark == noone{
+				var note = instance_find(obj_note,0);
+				dndRead = note.ownDndRead;
 				checkmark = summonObject(obj_correct, [[]]);
 				if !perfect{
 					checkmark.visible = false;
+					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty -= 1;
 				}
 			}else{
 				if checkmark.life == checkmark.lifeTime{
