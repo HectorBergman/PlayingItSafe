@@ -1,7 +1,11 @@
+if obj_stoveControl != stoveState.low{
+			alarm[1] = -1;
+}
+
 obj_food.state++;
 if state == 3
 {
-	a1 = true;
+	alarm[1] = -1;
 }
 else
 {
