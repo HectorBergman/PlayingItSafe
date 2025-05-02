@@ -1,3 +1,4 @@
+print("Alarm 0 activated")
 obj_food.state++;
 if state == 3
 {
@@ -5,5 +6,5 @@ if state == 3
 }
 else
 {
-	alarm[0] = 2 * room_speed;
+	alarm[0] = 3 * timer;
 }

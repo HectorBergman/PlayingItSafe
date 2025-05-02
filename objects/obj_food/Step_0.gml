@@ -1,21 +1,22 @@
-if obj_stoveControl.state == 0
+if obj_stoveControl.state == stoveState.off
 {
 	cook_speed = 0;
 	print("Currently empty, print is for debugging.");
 }
 else
 {
-	if obj_stoveControl.state == 1
+	if obj_stoveControl.state == stoveState.low
 	{
-		alarm[0] = 2 * room_speed;
+		print("On low setting check")
+		alarm[0] = 3 * timer;
 	}
-	else if obj_stoveControl.state == 2
+	else if obj_stoveControl.state == stoveState.medium
 	{
-		alarm[1] = 2 * room_speed;
+		alarm[1] = 2 * timer;
 	}
-	else if obj_stoveControl.state == 3
+	else if obj_stoveControl.state == stoveState.high
 	{
-		alarm[2] = 2 * room_speed;
+		alarm[2] = 1 * timer;
 	}
 	else
 	{
@@ -35,12 +36,12 @@ else if state == 1
 else if state == 2
 {
 	sprite_index = spr_done;
-	after_done_timer++;
+	after_done_counter++;
 }
 else if state == 3
 {
 	sprite_index = spr_burn;
-	after_done_timer++;
+	after_done_counter++;
 }
 else
 {

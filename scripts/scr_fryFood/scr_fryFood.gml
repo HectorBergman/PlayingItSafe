@@ -29,11 +29,20 @@ function minigame_fryFood_step(){
 }
 
 //template for minigames completed, doesnt have to look like this ofc
-function minigame_fryFood_finish(){
+function minigame_fryFood_finish(){	
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
-		//code for checking if perfect or not goes here
+		
+		// Check if perfect or not
+		if obj_food.after_done_counter >= obj_food.after_done_timer{
+			scoreHand.currentScore += 15; // Don't know if this should be worth more
+			
+		} else {
+			perfect = false;
+		}
+		
+		
 		if !perfect{
 			checkmark.visible = false;
 		}

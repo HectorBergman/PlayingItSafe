@@ -33,34 +33,31 @@ if place_meeting(x, y, obj_food)
 	
 	if keyboard_check_pressed(vk_enter)
 	{
+		miniHand.minigameStatus = status.finished;
 		print("Game is complete");
 	}
 }
 
 
-if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_raw
+if place_meeting(x, y, obj_food) && obj_food.state == 0
 {
 	print("Food is raw, you still have to wait");
 }
 
-if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_partial
+if place_meeting(x, y, obj_food) && obj_food.state == 1
 {
 	print("Food is cooking, Getting closer");
 	state = 1;
 }
 
-if place_meeting(x, y, obj_food) && obj_food.sprite_index == spr_done
+if place_meeting(x, y, obj_food) && obj_food.state == 2
 {
 	print("Food has reached temperature, but has it been enough time");
 	state = 2;
-	if mouse_check_button_pressed(mb_left)
-	{
-		sprite_index = spr_thermo2;
-		print("Done");
-	}
+	
 }
 
-if obj_food.after_done_timer == 60
+if obj_food.after_done_counter >= obj_food.after_done_timer
 {
 	sprite_index = spr_thermo2;
 }

@@ -5,5 +5,5 @@ if state == 3
 }
 else
 {
-	alarm[1] = 2 * room_speed;
+	alarm[1] = 2 * timer;
 }
