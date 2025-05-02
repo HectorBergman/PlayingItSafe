@@ -197,6 +197,7 @@
     {"name":"spr_fridgeButtons_display","order":4,"path":"sprites/spr_fridgeButtons_display/spr_fridgeButtons_display.yy",},
     {"name":"spr_fridgeButtons_hotPressed","order":3,"path":"sprites/spr_fridgeButtons_hotPressed/spr_fridgeButtons_hotPressed.yy",},
     {"name":"spr_fridgeButtons","order":1,"path":"sprites/spr_fridgeButtons/spr_fridgeButtons.yy",},
+    {"name":"spr_fryFood_bg","order":5,"path":"sprites/spr_fryFood_bg/spr_fryFood_bg.yy",},
     {"name":"spr_hand","order":2,"path":"sprites/spr_hand/spr_hand.yy",},
     {"name":"spr_ice","order":1,"path":"sprites/spr_ice/spr_ice.yy",},
     {"name":"spr_interactable","order":4,"path":"sprites/spr_interactable/spr_interactable.yy",},

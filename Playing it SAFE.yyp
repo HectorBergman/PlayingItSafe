@@ -371,6 +371,7 @@
     {"id":{"name":"spr_fridgeButtons_display","path":"sprites/spr_fridgeButtons_display/spr_fridgeButtons_display.yy",},},
     {"id":{"name":"spr_fridgeButtons_hotPressed","path":"sprites/spr_fridgeButtons_hotPressed/spr_fridgeButtons_hotPressed.yy",},},
     {"id":{"name":"spr_fridgeButtons","path":"sprites/spr_fridgeButtons/spr_fridgeButtons.yy",},},
+    {"id":{"name":"spr_fryFood_bg","path":"sprites/spr_fryFood_bg/spr_fryFood_bg.yy",},},
     {"id":{"name":"spr_hand","path":"sprites/spr_hand/spr_hand.yy",},},
     {"id":{"name":"spr_Hands","path":"sprites/spr_Hands/spr_Hands.yy",},},
     {"id":{"name":"spr_ice","path":"sprites/spr_ice/spr_ice.yy",},},
