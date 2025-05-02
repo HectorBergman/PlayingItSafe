@@ -95,6 +95,8 @@ switch (hand_state)
 	
 	case HandState.SCRUB1:
 	{
+		// Changed to closed hand for this specific scrubstate
+		image_index = 1;
 		create_soap_bubbles();
 		handle_scrubbing(scrubKey2, 5, HandState.SCRUB2);
 	}
@@ -102,6 +104,8 @@ switch (hand_state)
 	
 	case HandState.SCRUB2:
 	{
+		// Changed to closed hand for this specific scrubstate
+		image_index = 1;
 		create_soap_bubbles();
 		handle_scrubbing(scrubKey3, 5, HandState.SCRUB3);
 	}
@@ -109,6 +113,7 @@ switch (hand_state)
 	
 	case HandState.SCRUB3:
 	{
+		image_angle = 30;
 		create_soap_bubbles();
 		if handle_scrubbing(scrubKey4, 5, HandState.SCRUB4){
 			movabilityState = movability.halfmovable;
@@ -118,6 +123,7 @@ switch (hand_state)
 	
 	case HandState.SCRUB4:
 	{
+		image_angle = 0;
 		create_soap_bubbles();
 		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.RINSE;

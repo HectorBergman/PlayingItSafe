@@ -98,75 +98,110 @@ function washingHandsText(newText){
 /// @param {number} scrub_count Counter for scrubs (modified by reference).
 /// @param {real} hand_state Hand state enum (modified by reference)..
 function handle_scrubbing(_scrubKey, _scrubRep, _nextHandState) {
-	
-
-	    // Reduce the timer every frame
-	var isDone = false;
-	   
+    var isDone = false;
+    
+    // Initialize default tween parameters (important!)
+    var yDifference = 80;  // Default value
+    var tweenTime = currentScrubTime/3;
+    var xDifference = irandom_range(-12,12);
+    var easeType = EaseInOutQuint;
+    var highDestination, lowDestination;
+    
     if (!instance_exists(scrubBar)) {
         scrubBar = instance_create_layer(x, y, "Instances", obj_progressBar);
     }
-	if (scrub_timer <= 0 && keyboard_check_pressed(ord(_scrubKey))) {
-		// Increment scrub count and reset timer
-		scrub_count++;
-		scrub_timer = 18 + irandom_range(-6,6); // 0.4 seconds cooldown
-		if scrub_timer mod 3 != 0{
-			if scrub_timer mod 3 == 1{
-				scrub_timer += 2;
-			}else{
-				scrub_timer++;
-			}
-		}
-		currentScrubTime = scrub_timer;
-		print(scrub_timer);
-		print("Scrub (Iteration: " + string(scrub_count) + ")");
-
-		// Update progress bar if it exists
-		if (instance_exists(scrubBar)) {
-		    scrubBar.image_index = scrub_count;
-		}
-
-		// Check if scrubbing is complete
-		if (scrub_count >= _scrubRep) {
-		    hand_state = _nextHandState;
-		    print("Scrub completed!");
-
-		    // Clean up progress bar and reset variables
-		    if (instance_exists(scrubBar)) {
-				isDone = true;
-		        instance_destroy(scrubBar);
-		        scrubBar = noone;
-				scrub_count = 0;
-				scrub_timer = 0;
-		    }
-		}
-	}
     
-		// Timer countdown
-	if (scrub_timer > 0) {
-		print("x: " + string(x) + " y: " + string(y) + " scrubPointx,y : " + string(scrubPoint.x) + "," + string(scrubPoint.y));
-		if scrubTween == noone || !TweenIsPlaying(scrubTween){
-			var yDifference = 80;
-			var tweenTime = currentScrubTime/3
-			print(tweenTime);
-			var highDestination = scrubPoint.y+yDifference+irandom_range(-30,10);
-			var lowDestination = scrubPoint.y-yDifference+irandom_range(-30,10);
-			var xDifference = irandom_range(-12,12);
-			var leftHand_scrubHigh = false; //if rightHand scrubs low, leftHand scrubs high
-			if point_distance(0,y,0,highDestination) > point_distance(0,y,0,lowDestination){
-				scrubTween = TweenEasyMove(x,y,scrubPoint.x+xDifference,highDestination,0,tweenTime,EaseInOutQuint);
-			}else{
-				scrubTween = TweenEasyMove(x,y,scrubPoint.x+xDifference,lowDestination,0,tweenTime,EaseInOutQuint);
-				leftHand_scrubHigh = true;
-			}
-			var scrubby = scrubPoint
-			//Do this if you want the leftHand to move as well, but it looked kind of shit
-			//but maybe it can work if you tweak some numbers
-			/*with (leftHand){
-				scrubbyDubby(leftHand_scrubHigh, scrubby, xDifference);
-			}*/
-		}
-		scrub_timer--;
-	}
-	return isDone
+    if (scrub_timer <= 0 && keyboard_check_pressed(ord(_scrubKey))) {
+        scrub_count++;
+        scrub_timer = 18 + irandom_range(-6,6);
+        if scrub_timer mod 3 != 0 {
+            if scrub_timer mod 3 == 1 {
+                scrub_timer += 2;
+            } else {
+                scrub_timer++;
+            }
+        }
+        currentScrubTime = scrub_timer;
+        print("Scrub (Iteration: " + string(scrub_count) + ")");
+
+        if (instance_exists(scrubBar)) {
+            scrubBar.image_index = scrub_count;
+        }
+
+        if (scrub_count >= _scrubRep) {
+            hand_state = _nextHandState;
+            print("Scrub completed!");
+            
+            if (instance_exists(scrubBar)) {
+                isDone = true;
+                instance_destroy(scrubBar);
+                scrubBar = noone;
+                scrub_count = 0;
+                scrub_timer = 0;
+            }
+        }
+    }
+    
+    if (scrub_timer > 0) {
+        if (scrubTween == noone || !TweenIsPlaying(scrubTween)) {
+            // State-specific tween parameters
+            switch (hand_state) {
+                case HandState.SCRUB1: // Basic scrub
+                    yDifference = 80;
+                    tweenTime = currentScrubTime/3;
+                    xDifference = irandom_range(-12,12);
+                    easeType = EaseInOutQuint;
+                    break;
+                    
+                case HandState.SCRUB2: // More vigorous scrub
+                    yDifference = 30;
+                    tweenTime = currentScrubTime/4;
+                    xDifference = irandom_range(-10,10);
+                    easeType = EaseInOutBack;
+                    break;
+                    
+                case HandState.SCRUB3: // Circular motion
+                    yDifference = 30;
+                    tweenTime = currentScrubTime/2.5;
+                    xDifference = irandom_range(-10,10);
+                    easeType = EaseInOutElastic;
+                    break;
+                    
+                case HandState.SCRUB4: // Most intense scrub
+                    yDifference = 120;
+                    tweenTime = currentScrubTime/5;
+                    xDifference = irandom_range(-10,10);
+                    easeType = EaseInOutBounce;
+                    break;
+            }
+
+            // Calculate destinations with safety checks
+            if (instance_exists(scrubPoint)) {
+                highDestination = scrubPoint.y + yDifference + irandom_range(-30,10);
+                lowDestination = scrubPoint.y - yDifference + irandom_range(-30,10);
+                
+                var leftHand_scrubHigh = false;
+				if (point_distance(0, y, 0, highDestination) > point_distance(0, y, 0, lowDestination)) {
+	                scrubTween = TweenEasyMove(x, y, scrubPoint.x + xDifference, highDestination, 0, tweenTime, easeType);
+	            } else {
+	                scrubTween = TweenEasyMove(x, y, scrubPoint.x + xDifference, lowDestination, 0, tweenTime, easeType);
+	                leftHand_scrubHigh = true;
+				}
+				
+                // Add rotation for states 3-4
+                if (hand_state == HandState.SCRUB2 || hand_state == HandState.SCRUB3) {
+                    var rotAmount = (hand_state == HandState.SCRUB2) ? 15 : 25;
+                    var rotTweenTime = tweenTime * 2;
+                    TweenEasyRotate(image_angle, 
+                        leftHand_scrubHigh ? -rotAmount : rotAmount, 
+                        0, rotTweenTime, EaseInOutQuad);
+                }
+            } else {
+                show_debug_message("Scrub point missing!");
+            }
+        }
+        scrub_timer--;
+    }
+    
+    return isDone;
 }
