@@ -228,6 +228,7 @@ function stringToEnum(str) {
 		case "dragAndDropFridgeLevels": return minigame.dragAndDropFridgeLevels;
 		case "fallingChicken": return minigame.fallingChicken;
 		case "moreMinigamesHere": return minigame.moreMinigamesHere;
+		case "fryFood" : return minigame.fryFood;
         case "washingHands": return minigame.washingHands;
         case "none": return minigame.none;
         default: exception_unhandled_handler(str + " is not an existing enemy type!") //this crashes but

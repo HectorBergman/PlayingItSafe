@@ -30,6 +30,7 @@ function minigame_fryFood_step(){
 
 //template for minigames completed, doesnt have to look like this ofc
 function minigame_fryFood_finish(){	
+	print("hej");
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);

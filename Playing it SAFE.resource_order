@@ -176,6 +176,7 @@
     {"name":"spr_dragAndDrop_completion_hitbox","order":5,"path":"sprites/spr_dragAndDrop_completion_hitbox/spr_dragAndDrop_completion_hitbox.yy",},
     {"name":"spr_dragAndDrop_doors_fridge","order":1,"path":"sprites/spr_dragAndDrop_doors_fridge/spr_dragAndDrop_doors_fridge.yy",},
     {"name":"spr_dragAndDrop","order":1,"path":"sprites/spr_dragAndDrop/spr_dragAndDrop.yy",},
+    {"name":"spr_fryFood_bg","order":5,"path":"sprites/spr_fryFood_bg/spr_fryFood_bg.yy",},
     {"name":"spr_hand","order":2,"path":"sprites/spr_hand/spr_hand.yy",},
     {"name":"spr_ice","order":1,"path":"sprites/spr_ice/spr_ice.yy",},
     {"name":"spr_interactable","order":4,"path":"sprites/spr_interactable/spr_interactable.yy",},

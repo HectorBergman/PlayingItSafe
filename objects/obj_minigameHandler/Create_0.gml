@@ -6,6 +6,7 @@ enum minigame{
 	dragAndDropFridgeLevels,
 	fallingChicken,
 	washingHands,
+	fryFood,
 	moreMinigamesHere,
 }
 
