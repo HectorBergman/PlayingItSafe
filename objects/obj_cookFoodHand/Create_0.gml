@@ -4,6 +4,8 @@ heldObject = noone;
 
 stoveControl = noone;
 stoveValue = -400;
+preTurnStoveValue = stoveValue
+
 
 stoveRanges = [-400,400];
 

@@ -30,11 +30,11 @@ function minigame_fryFood_step(){
 
 //template for minigames completed, doesnt have to look like this ofc
 function minigame_fryFood_finish(){	
-	print("hej");
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
-		
+		var note = instance_find(obj_note_1,0);
+		FFRead = note.FFDndRead;
 		// Check if perfect or not
 		if obj_food.after_done_counter >= obj_food.after_done_timer{
 			scoreHand.currentScore += 15; // Don't know if this should be worth more

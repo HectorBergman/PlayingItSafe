@@ -44,25 +44,33 @@ switch fryFoodState{
 				fryFoodState = fryFoodStates.changingTemp;
 				movabilityState = movability.unmovable;
 				TweenEasyMove(x,y,stoveControl.x+stoveControl.sprite_width/2,stoveControl.y+stoveControl.sprite_height/2,0,5,EaseOutQuint);
-				turnPoint = [stoveControl.x+ stoveControl.sprite_width/2, stoveControl.y+ stoveControl.sprite_height/2];
+				turnPoint = [x,y];
+				preTurnStoveValue = stoveValue
 			}
 		}
 	}break;
 	case fryFoodStates.changingTemp:{
 		var inverse = 1
-		if mouse_x < stoveControl.x+ stoveControl.sprite_width/2{
+		if mouse_x < turnPoint[0]{
 			inverse = -1;
 		}
-		var value = clamp(inverse*point_distance(mouse_x,0,stoveControl.x+stoveControl.sprite_width/2,0), stoveRanges[0], stoveRanges[1]);
-		stoveValue = value;
-		image_angle = mapRange(value, stoveRanges[0], stoveRanges[1], -90, 90);
+		var value = inverse*point_distance(mouse_x,0,turnPoint[0],0);
+		if preTurnStoveValue+value < stoveRanges[0]{
+			value = stoveRanges[0]-preTurnStoveValue
+		}else if preTurnStoveValue+value > stoveRanges[1]{
+			value = stoveRanges[1]-preTurnStoveValue
+		}
+		stoveValue = clamp(preTurnStoveValue + value, stoveRanges[0], stoveRanges[1]);
+		image_angle = -mapRange(value, stoveRanges[0], stoveRanges[1], -90, 90);
 		if !inHand.mouseHeld{
 			fryFoodState = fryFoodStates.normal;
 			movabilityState = movability.halfmovable;
 			TweenFire(id,EaseOutQuad,0, false, 0, 24, "image_angle", image_angle, 0);
+			stoveValue = preTurnStoveValue + value;
 		}
 	}break;
 }
+print(stoveValue);
 
 if place_meeting(x, y, obj_stoveControl)
 {

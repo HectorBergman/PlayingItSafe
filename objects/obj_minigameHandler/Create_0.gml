@@ -27,6 +27,8 @@ lastMinigame = minigame.none;
 difficulty = 1;
 
 dndRead = [false,false,false];
+FFRead = [false];
+
 function miniHandRefresh(){
 	
 	currentMinigame = minigame.none
