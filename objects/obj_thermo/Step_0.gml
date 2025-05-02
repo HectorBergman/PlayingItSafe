@@ -30,6 +30,11 @@ if place_meeting(x, y, obj_stoveControl)
 if place_meeting(x, y, obj_food)
 {
 	
+	if keyboard_check_pressed(vk_space)
+	{
+		draw_text(32, 32, temp)
+	}
+	
 	
 	if keyboard_check_pressed(vk_enter)
 	{
