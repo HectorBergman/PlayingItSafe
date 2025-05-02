@@ -3,6 +3,8 @@
 timer = 0;
 global.masterVolume = 1; //todo: add sfx and music volume
 
+gpu_set_texfilter(false);
+
 window_set_cursor(cr_none); //hide pc cursor todo: replace cursor with something fun :))
 
 

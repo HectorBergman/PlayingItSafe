@@ -13,8 +13,7 @@ function minigame_none_create(){
 	
 
 	player = instance_find(obj_player, 0);
-	player.x = playerPosition[0];
-	player.y = playerPosition[1];
+	
 	
 	for (var i = 0; i < ds_list_size(mainGameHand.stationsAndAlerts); i++){
 		var currentStation = ds_list_find_value(mainGameHand.stationsAndAlerts, i);

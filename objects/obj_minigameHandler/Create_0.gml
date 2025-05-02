@@ -23,8 +23,10 @@ playerPosition = [592,736];
 //add in any required variables here
 currentMinigame = minigame.none;
 lastMinigame = minigame.none;
+difficulty = 1;
+
+dndRead = [false,false,false];
 function miniHandRefresh(){
-	difficulty = 1;
 	
 	currentMinigame = minigame.none
 	minigameStatus = status.started
@@ -40,6 +42,21 @@ function miniHandRefresh(){
 	//dragAndDrop
 	itemsArray = [];
 	doorsArray = [];
+	itemsArrayLength = 0;
+	
+	dragAndDropIndexer = 0;
+	dragAndDropAnimationTimer = 0;
+	dragAndDropAnimationTime = 30;
+	
+	dragAndDropAnimationTimer = 0;
+	dragAndDropAnimationDelay = 60;
+	
+	shelfLimitTightnessUpperLimit = 10; //at difficulty 10, there will be
+										//no room for inefficiency on the shelves
+										//example: if there are 4 items that should go
+										//onto the middle shelf, middle shelf will have
+										//an item limit of exactly 4.
+	shelfItemsAmount = [0,0,0];
 	
 	//washing hands
     // letters
