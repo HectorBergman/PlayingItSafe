@@ -2,7 +2,7 @@ if obj_stoveControl != stoveState.low{
 			alarm[0] = -1;
 }
 
-print("Alarm 0 activated")
+print("Alarm 0 triggered")
 obj_food.state++;
 if state == 3
 {
