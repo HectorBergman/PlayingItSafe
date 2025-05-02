@@ -42,14 +42,14 @@ else if age <= 520
 }
 else if age <= 780
 {
-	temp += 0.01;
+	temp += 0.1;
 	state = 2;
 	sprite_index = spr_done;
 	after_done_counter++;
 }
 else if age > 780
 {
-	temp += 0.01;
+	temp += 0.1;
 	state = 3;
 	sprite_index = spr_burn;
 	after_done_counter++;
