@@ -39,14 +39,13 @@ switch (movabilityState)
 
 switch fryFoodState{
 	case fryFoodStates.normal:{
-		if place_meeting(x, y, obj_stoveControl){
-			if inHand.mouseHeld{
-				fryFoodState = fryFoodStates.changingTemp;
-				movabilityState = movability.unmovable;
-				TweenEasyMove(x,y,stoveControl.x,stoveControl.y,0,5,EaseOutQuint);
-				turnPoint = [x,y];
-				preTurnStoveValue = stoveValue
-			}
+		if place_meeting(x, y, obj_stoveControl) && inHand.mouseHeld && firstGrab && note.stateOfNote != noteStates.reading{
+			fryFoodState = fryFoodStates.changingTemp;
+			movabilityState = movability.unmovable;
+			TweenEasyMove(x,y,stoveControl.x,stoveControl.y,0,5,EaseOutQuint);
+			turnPoint = [x,y];
+			preTurnStoveValue = stoveValue
+
 		}
 	}break;
 	case fryFoodStates.changingTemp:{

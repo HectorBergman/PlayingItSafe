@@ -6,7 +6,7 @@ stoveControl = noone;
 stoveValue = -300;
 preTurnStoveValue = stoveValue
 
-
+note = noone;
 stoveRanges = [-300,300];
 
 enum fryFoodStates{
