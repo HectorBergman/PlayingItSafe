@@ -126,21 +126,11 @@ function readNote(){ //update note to know which text has been read
 }
 
 function isRead(){ //check if difficulty text has been read
-	if miniHand.difficulty >= 4{
-		if !ownFFRead[0]{
-			return false;
-		}
+
+	if !ownFFRead[0]{
+		return false;
 	}
-	if miniHand.difficulty >= 8{
-		if !ownFFRead[1]{
-			return false;
-		}
-	}
-	if miniHand.difficulty >= 12{
-		if !ownFFRead[2]{
-			return false;
-		}
-	}
+	
 	return true;
 }
 
