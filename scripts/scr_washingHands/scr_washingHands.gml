@@ -64,27 +64,48 @@ function create_water_drops() {
     
     // Create new drops if we have room
     if (array_length(waterDrops) < maxWaterDrops && waterDropTimer <= 0) {
-        // Random position on hand (adjust these values based on your hand sprite)
-        var dropX = x + irandom_range(-sprite_width/2, sprite_width);
-        var dropY = y + irandom_range(-sprite_height, sprite_height/2);
+        var attempts = 0;
+        var dropCreated = false;
         
-        // Create drop and add to array
-        var drop = instance_create_layer(dropX, dropY, "Instances", obj_waterDrop);
-        array_push(waterDrops, drop);
+        // Try to find valid position (up to 20 attempts)
+        while (attempts < 20 && !dropCreated) {
+            attempts++;
+            
+            // Get random position within sprite bounds
+            var randX = x + irandom_range(-sprite_width/2, sprite_width/3);
+            var randY = y + irandom_range(-sprite_height/2, sprite_height/3);
+            
+            // Check if position collides with hand's mask
+            if (position_meeting(randX, randY, id)) {
+                // Create drop at valid position
+                var drop = instance_create_layer(randX, randY, "Instances", obj_waterDrop);
+                
+                // Store parent reference
+                drop.parentHand = id;
+                drop.initialX = randX - x; // Store relative position
+                drop.initialY = randY - y;
+                
+                // Random movement properties
+                drop.driftSpeedX = 0;
+                drop.driftSpeedY = 0.1 + random(0.2);
+                drop.wiggleAmount = 0.5;
+                drop.offsetX = 0;
+                drop.offsetY = 0;
+                
+                // Set random lifetime
+                drop.lifetime = room_speed * 4 + irandom(room_speed);
+                
+                array_push(waterDrops, drop);
+                dropCreated = true;
+            }
+        }
         
-        // Set random lifetime (around 4 seconds)
-        drop.lifetime = room_speed * 4 + irandom(room_speed);
-        
-        // Reset timer for next drop creation
-        waterDropTimer = room_speed * 0.5; // Create new drop every 0.5 seconds
+        waterDropTimer = room_speed * 0.5; // Reset creation timer
     }
     
-    // Decrement timer if it's active
-    if (waterDropTimer > 0) {
-        waterDropTimer--;
-    }
+    // Timer and lifetime management (keep existing code)
+    if (waterDropTimer > 0) waterDropTimer--;
     
-    // Update lifetimes and destroy expired drops
     for (var i = array_length(waterDrops) - 1; i >= 0; i--) {
         var drop = waterDrops[i];
         if (instance_exists(drop)) {
@@ -99,7 +120,6 @@ function create_water_drops() {
     }
 }
 
-
 function create_soap_bubbles() {
     // Clean up destroyed bubbles first
     for (var i = array_length(soapBubbles) - 1; i >= 0; i--) {
@@ -108,29 +128,50 @@ function create_soap_bubbles() {
         }
     }
     
-    // Create new drops if we have room
+    // Create new bubbles if we have room
     if (array_length(soapBubbles) < maxSoapBubbles && soapBubbleTimer <= 0) {
-        // Random position on hand (adjust these values based on your hand sprite)
-        var dropX = x + irandom_range(-sprite_width/2, sprite_width);
-        var dropY = y + irandom_range(-sprite_height, sprite_height/2);
+        var attempts = 0;
+        var bubbleCreated = false;
         
-        // Create drop and add to array
-        var bubble = instance_create_layer(dropX, dropY, "Instances", obj_soapBubble);
-        array_push(soapBubbles, bubble);
+        // Try to find valid position (up to 20 attempts)
+        while (attempts < 20 && !bubbleCreated) {
+            attempts++;
+            
+            // Get random position within sprite bounds
+            var randX = x + irandom_range(-sprite_width, sprite_width/4);
+            var randY = y + irandom_range(-sprite_height, sprite_height/4);
+            
+            // Check if position collides with hand's mask
+            if (position_meeting(randX, randY, id)) {
+                // Create bubble at valid position
+                var bubble = instance_create_layer(randX, randY, "Instances", obj_soapBubble);
+                
+                // Use EXACTLY the same attachment system as water drops
+                bubble.parentHand = id;
+                bubble.initialX = randX - x; // Store relative position
+                bubble.initialY = randY - y;
+                
+                //// Same movement properties as water drops
+                //bubble.driftSpeedX = 0;
+                //bubble.driftSpeedY = 0.1 + random(0.2);
+                //bubble.wiggleAmount = 0;
+                //bubble.offsetX = 0;
+                //bubble.offsetY = 0;
+                
+                // Same lifetime as water drops
+                bubble.lifetime = room_speed * 4 + irandom(room_speed);
+                
+                array_push(soapBubbles, bubble);
+                bubbleCreated = true;
+            }
+        }
         
-        // Set random lifetime (around 4 seconds)
-        bubble.lifetime = room_speed * 4 + irandom(room_speed);
-        
-        // Reset timer for next drop creation
-        soapBubbleTimer = room_speed * 0.5; // Create new drop every 0.5 seconds
+        soapBubbleTimer = room_speed * 0.5; // Same spawn rate as water drops
     }
     
-    // Decrement timer if it's active
-    if (soapBubbleTimer > 0) {
-        soapBubbleTimer--;
-    }
+    // Timer and lifetime management (identical to water drops)
+    if (soapBubbleTimer > 0) soapBubbleTimer--;
     
-    // Update lifetimes and destroy expired drops
     for (var i = array_length(soapBubbles) - 1; i >= 0; i--) {
         var bubble = soapBubbles[i];
         if (instance_exists(bubble)) {

@@ -1,4 +1,4 @@
-depth = -100
+depth = -100;
 holding = false;
 heldObject = noone;
 
@@ -33,7 +33,9 @@ soapBubble = noone;
 
 soapBubbles = []; // Array to store water drop instances
 soapBubbleTimer = 0; // Timer for creating new drops
-maxSoapBubbles = 12; // Maximum number of drops visible at once
+maxSoapBubbles = 20; // Maximum number of drops visible at once
+
+scrub4VerticalOffset = 200;
 
 
 leftHand = summonObject(obj_leftHand,[["x", room_width/4], ["y", room_height*1.3], ["parent", id]]);
@@ -49,6 +51,7 @@ scrubKey1 = generateRandomLetter();
 scrubKey2 = generateRandomLetter();
 scrubKey3 = generateRandomLetter();
 scrubKey4 = generateRandomLetter();
+
 
 // Define hand states
 enum HandState {
@@ -179,6 +182,12 @@ function handle_scrubbing(_scrubKey, _scrubRep, _nextHandState) {
             if (instance_exists(scrubPoint)) {
                 highDestination = scrubPoint.y + yDifference + irandom_range(-30,10);
                 lowDestination = scrubPoint.y - yDifference + irandom_range(-30,10);
+				
+				// Apply SCRUB4-specific offset
+			    if (hand_state == HandState.SCRUB3) {
+			        highDestination += scrub4VerticalOffset;
+			        lowDestination += scrub4VerticalOffset;
+			    }
                 
                 var leftHand_scrubHigh = false;
 				if (point_distance(0, y, 0, highDestination) > point_distance(0, y, 0, lowDestination)) {
