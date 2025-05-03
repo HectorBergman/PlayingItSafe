@@ -30,26 +30,50 @@ if age == 0
 }
 else if age < 260
 {
-	temp += 0.1;
+	if obj_stoveControl.state = stoveState.off
+	{
+		temp += 0;
+	} else
+	{
+		temp += 0.1;
+	}
 	state = 0;
 	image_index = 0;
 }
 else if age <= 520
 {
-	temp += 0.1;
+	if obj_stoveControl.state = stoveState.off
+	{
+		temp += 0;
+	} else
+	{
+		temp += 0.1;
+	}
 	state = 1;
 	image_index = 1;
 }
 else if age <= 780
 {
-	temp += 0.1;
+	if obj_stoveControl.state = stoveState.off
+	{
+		temp += 0;
+	} else
+	{
+		temp += 0.1;
+	}
 	state = 2;
 	image_index = 2;
 	after_done_counter++;
 }
 else if age > 780
 {
-	temp += 0.1;
+	if obj_stoveControl.state = stoveState.off
+	{
+		temp += 0;
+	} else
+	{
+		temp += 0.1;
+	}
 	state = 3;
 	image_index = 3;
 	after_done_counter++;
