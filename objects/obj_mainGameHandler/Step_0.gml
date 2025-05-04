@@ -1,9 +1,9 @@
+
 if (global.alertsPaused) {exit};
+
+
 for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	var currentStation = ds_list_find_value(stationsAndAlerts, i);
-	if currentStation.stationInfostruct.chosenMinigame = "fallingChicken"{
-		print(currentStation.alert);
-	}
 	updateAlert(i);	
 	switch (miniHand.currentMinigame){
 	    case minigame.none: {
