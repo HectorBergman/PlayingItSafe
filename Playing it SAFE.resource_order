@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"obj_alarmText","order":2,"path":"objects/obj_alarmText/obj_alarmText.yy",},
     {"name":"obj_eggAlarm","order":1,"path":"objects/obj_eggAlarm/obj_eggAlarm.yy",},
     {"name":"spr_eggTimer","order":1,"path":"sprites/spr_eggTimer/spr_eggTimer.yy",},
   ],

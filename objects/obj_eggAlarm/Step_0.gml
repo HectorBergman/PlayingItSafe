@@ -16,6 +16,9 @@ switch (eggState){
 	}break;
 	case eggStates.alarming:{
 		time++
+		if time mod 11 == 0{
+			summonObject(obj_alarmText, [["parent", id]]);
+		}
 		if time >= alarmTime{
 			eggState = eggStates.idle;
 			time = 0;

@@ -105,6 +105,7 @@
     {"id":{"name":"TGMX_Terms_of_Use","path":"notes/TGMX_Terms_of_Use/TGMX_Terms_of_Use.yy",},},
     {"id":{"name":"TGMX_Update_Log","path":"notes/TGMX_Update_Log/TGMX_Update_Log.yy",},},
     {"id":{"name":"o_SharedTweener","path":"objects/o_SharedTweener/o_SharedTweener.yy",},},
+    {"id":{"name":"obj_alarmText","path":"objects/obj_alarmText/obj_alarmText.yy",},},
     {"id":{"name":"obj_alert","path":"objects/obj_alert/obj_alert.yy",},},
     {"id":{"name":"obj_bacon_raw","path":"objects/obj_bacon_raw/obj_bacon_raw.yy",},},
     {"id":{"name":"obj_beef_raw","path":"objects/obj_beef_raw/obj_beef_raw.yy",},},

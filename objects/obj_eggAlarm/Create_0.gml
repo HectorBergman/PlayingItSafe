@@ -8,4 +8,4 @@ eggState = eggStates.idle;
 time = 0;
 timer = miniHand.fryFoodTime;
 
-alarmTime = 20;
+alarmTime = 40;

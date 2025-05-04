@@ -12,9 +12,12 @@ time = 0;
 cook_speed = 0;
 age = 0;
 
+tweenTick = 0;
+tweenTickTime = 10;
 
-smoothingFactorHeating = 0.003; //for the temp approaching goaltemp
-smoothingFactorCooling = 0.001;
+
+smoothingFactorHeating = 0.002; //for the temp approaching goaltemp
+smoothingFactorCooling = 0.00075;
 smoothingFactor = smoothingFactorHeating;
 
 tempRange = [20,100];
