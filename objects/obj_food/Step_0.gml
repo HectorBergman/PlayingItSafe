@@ -12,27 +12,30 @@ age+= 2*mapRange(temp, tempRange[0],tempRange[1],0,100)/tempRange[1];
 //2*(0 to 1 depending on how hot the food is)
 
 image_index = state
-if temp >= miniHand.fryFoodDesiredTemp{
-	after_done_counter++;
-}
-if age < stateAge[0]
-{
-	state = foodState.raw;
-}
-else if age <= stateAge[1]
-{
-	state = foodState.partiallyDone;
-}
-else if age <= stateAge[2]
-{
-	state = foodState.done;
-	
-}
-else if age > stateAge[2]
+if temp > 85
 {
 	state = foodState.burned;
 	
 }
+if temp >= miniHand.fryFoodDesiredTemp{
+	after_done_counter++;
+}
+if state != foodState.burned{
+	if age < stateAge[0]
+	{
+		state = foodState.raw;
+	}
+	else if age <= stateAge[1]
+	{
+		state = foodState.partiallyDone;
+	}
+	else if age <= stateAge[2]
+	{
+		state = foodState.done;
+	
+	}
+}
+
 else
 {
 	print("Food state other, might need debugging");	
