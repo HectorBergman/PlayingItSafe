@@ -8,3 +8,5 @@ enum stoveState{
 }
 
 state = stoveState.off;
+
+image_angle = 120;
