@@ -1,9 +1,9 @@
 switch (global.tap_state) {
     case tapState.ON:
-        tapText("Press [[A] to turn tap off");
+        tapText("Tryck [[A] för att stänga av kranen");
         break;
 		
 	case tapState.OFF:
-        tapText("Press [[A] to turn tap on");
+        tapText("Tryck [[A] för att sätta på kranen");
         break;
 }

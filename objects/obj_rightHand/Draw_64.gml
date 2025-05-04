@@ -6,42 +6,42 @@ draw_set_valign(fa_middle);
 
 switch (hand_state) {
     case HandState.DIRTY:
-        washingHandsText("Remove jewelry and accessories");
+        washingHandsText("Ta av smycken och accessoarer");
         break;
 		
 	 case HandState.JEWELRY:
-        washingHandsText("Rub hands under water [[E]");
+        washingHandsText("Skölj händerna under vattnet [[E]");
         break;
         
     case HandState.WET:
-        washingHandsText("Apply soap [[E]");
+        washingHandsText("Ta tvål [[E]");
         break;
         
     case HandState.SOAP:
-        washingHandsText("Scrub hands [[" + scrubKey1 + "]");
+        washingHandsText("Gnugga handflatorna [[" + scrubKey1 + "]");
         break;
         
     case HandState.SCRUB1:
-        washingHandsText("Scrub hands [[" + scrubKey2 + "]");
+        washingHandsText("Gnugga ovansidorna och mellan fingrarna [[" + scrubKey2 + "]");
         break;
 		
 	 case HandState.SCRUB2:
-        washingHandsText("Scrub hands [[" + scrubKey3 + "]");
+        washingHandsText("Gnugga tummarna [[" + scrubKey3 + "]");
         break;
 		
 	 case HandState.SCRUB3:
-        washingHandsText("Scrub hands [[" + scrubKey4 + "]");
+        washingHandsText("Gnugga fingrarna i handflatan [[" + scrubKey4 + "]");
         break;
 		
 	 case HandState.SCRUB4:
-        washingHandsText("Rinse under water [[E]");
+        washingHandsText("Skölj av händerna [[E]");
         break;
 		
     case HandState.RINSE:
-        washingHandsText("Use towel [[E]");
+        washingHandsText("Torka händerna på handduken [[E]");
         break;
         
     case HandState.DRY:
-        washingHandsText("Exit [[E], (Tap needs to be turned off!)");
+        washingHandsText("Avsluta [[E], (Kranen måste vara avstängd!)");
         break;
 }
