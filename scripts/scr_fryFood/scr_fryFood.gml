@@ -36,8 +36,9 @@ function minigame_fryFood_finish(){
 		var note = instance_find(obj_note_1,0);
 		FFRead = note.FFDndRead;
 		// Check if perfect or not
-		if obj_food.after_done_counter >= obj_food.after_done_timer{
+		if obj_food.after_done_counter >= fryFoodTime{
 			scoreHand.currentScore += 15; // Don't know if this should be worth more
+			print("youdidit");
 			
 		} else {
 			perfect = false;

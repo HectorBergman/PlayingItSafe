@@ -70,27 +70,3 @@ switch fryFoodState{
 		}
 	}break;
 }
-print(stoveValue);
-
-if place_meeting(x, y, obj_stoveControl)
-{
-	if keyboard_check_pressed(vk_up)
-	{
-		obj_stoveControl.state++;
-		if obj_stoveControl.state >= 3
-		{
-			obj_stoveControl.state = 3;
-			print("The stove can't be turned any higher");
-			
-		}
-	}
-	else if keyboard_check_pressed(vk_down)
-	{
-		obj_stoveControl.state--;
-		if obj_stoveControl.state <= 0
-		{
-			obj_stoveControl.state = 0;
-			print("The stove is off, you can't turn it any lower");
-		}
-	}
-}

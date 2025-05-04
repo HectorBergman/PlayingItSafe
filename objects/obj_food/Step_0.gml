@@ -1,82 +1,37 @@
-if obj_stoveControl.state == stoveState.off
-{
-	cook_speed = 0;
-	print("Currently empty, print is for debugging.");
-}
-else
-{
-	if obj_stoveControl.state == stoveState.low
-	{
-		age += 1;
-	}
-	else if obj_stoveControl.state == stoveState.medium
-	{
-		age += 2;
-	}
-	else if obj_stoveControl.state == stoveState.high
-	{
-		age += 3;
-	}
-	else
-	{
-		print("Stove state other, might need debugging");
-	}
+goalTemp = mapRange(obj_stoveControl.image_angle, 120,-120,tempRange[0],tempRange[1]);
+if goalTemp > temp{
+	smoothingFactor = smoothingFactorHeating;
+}else{
+	smoothingFactor = smoothingFactorCooling;
 }
 
+temp = temp + (goalTemp - temp) * smoothingFactor;
 
-if age == 0
-{
-	temp = 20;
-}
-else if age < 260
-{
-	if obj_stoveControl.state = stoveState.off
-	{
-		temp += 0;
-	} else
-	{
-		temp += 0.1;
-	}
-	state = 0;
-	image_index = 0;
-}
-else if age <= 520
-{
-	if obj_stoveControl.state = stoveState.off
-	{
-		temp += 0;
-	} else
-	{
-		temp += 0.1;
-	}
-	state = 1;
-	image_index = 1;
-}
-else if age <= 780
-{
-	if obj_stoveControl.state = stoveState.off
-	{
-		temp += 0;
-	} else
-	{
-		temp += 0.1;
-	}
-	state = 2;
-	image_index = 2;
+
+age+= 2*mapRange(temp, tempRange[0],tempRange[1],0,100)/tempRange[1];
+//2*(0 to 1 depending on how hot the food is)
+
+image_index = state
+if temp >= miniHand.fryFoodDesiredTemp{
 	after_done_counter++;
 }
-else if age > 780
+if age < stateAge[0]
 {
-	if obj_stoveControl.state = stoveState.off
-	{
-		temp += 0;
-	} else
-	{
-		temp += 0.1;
-	}
-	state = 3;
-	image_index = 3;
-	after_done_counter++;
+	state = foodState.raw;
+}
+else if age <= stateAge[1]
+{
+	state = foodState.partiallyDone;
+}
+else if age <= stateAge[2]
+{
+	state = foodState.done;
+	
+}
+else if age > stateAge[2]
+{
+	state = foodState.burned;
+	
 }
 else
 {

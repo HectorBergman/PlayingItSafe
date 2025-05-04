@@ -7,6 +7,5 @@ function tweenHeat(target){
 	var k = 30;
 	var difference = abs(heat - target)
 	var duration = k * sqrt(difference)
-	print(duration);
 	TweenFire(id, EaseOutQuad, 0, false, 0, duration, "heat", heat, target)
 }

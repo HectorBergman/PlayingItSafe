@@ -1,21 +1,30 @@
 // Initialization statements
+
+enum foodState{
+	raw,
+	partiallyDone,
+	done,
+	burned,
+}
+state = foodState.raw;
+
 time = 0;
 cook_speed = 0;
 age = 0;
+
+
+smoothingFactorHeating = 0.003; //for the temp approaching goaltemp
+smoothingFactorCooling = 0.001;
+smoothingFactor = smoothingFactorHeating;
+
+tempRange = [20,100];
+stateAge = [100,520,1200];
+
+
+goalTemp = mapRange(obj_stoveControl.image_angle, 120,-120,tempRange[0],tempRange[1]);
 temp = 20;
 
 
-timer = 60;
-
-
-
-// States:
-// 0 = raw
-// 1 = partially done
-// 2 = done
-// 3 = burned
-// 4 = this shouldn't happen, something mught have gone wrong
-state = 0;
 
 
 
