@@ -1,9 +1,11 @@
 {
-  "FolderOrderSettings":[
-    {"name":"item","order":6,"path":"folders/Objects/minigames/dnd_variation/item.yy",},
-    {"name":"note","order":7,"path":"folders/Objects/minigames/dnd_variation/note.yy",},
-  ],
+  "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"obj_alarmText","order":2,"path":"objects/obj_alarmText/obj_alarmText.yy",},
+    {"name":"obj_eggAlarm","order":1,"path":"objects/obj_eggAlarm/obj_eggAlarm.yy",},
+    {"name":"spr_eggTimer_full","order":2,"path":"sprites/spr_eggTimer_full/spr_eggTimer_full.yy",},
+    {"name":"spr_eggTimer","order":1,"path":"sprites/spr_eggTimer/spr_eggTimer.yy",},
+    {"name":"spr_pauseText","order":1,"path":"sprites/spr_pauseText/spr_pauseText.yy",},
     {"name":"scribble_fallback_font","order":16,"path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},
     {"name":"obj_cam_dnd","order":2,"path":"objects/obj_cam_dnd/obj_cam_dnd.yy",},
     {"name":"obj_clearCheckHitbox_variant","order":1,"path":"objects/obj_clearCheckHitbox_variant/obj_clearCheckHitbox_variant.yy",},

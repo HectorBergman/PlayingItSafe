@@ -10,7 +10,7 @@ switch (currentMinigame){
 	case minigame.dragAndDropFridgeLevels: minigame_dragAndDrop_variant_control(); break;
 	case minigame.fallingChicken: minigame_fallingChicken_control(); break;
 	case minigame.washingHands: minigame_washingHands_control(); break;
-	
+	case minigame.fryFood: minigame_fryFood_control(); break;
 }
 
 
