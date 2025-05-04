@@ -28,7 +28,9 @@ function scr_food_drop()
 		food_object = food_objects_array[irandom(array_length(food_objects_array) - 1)];
 	
 		// Create random x position in which food object falls 
-		var x_pos = random_range(room_width/3, room_width/3*2);
+		// var x_pos = random_range(room_width/3, room_width/3*2);
+		var margin = room_width / 8;
+		var x_pos = random_range(room_width / 2 - margin, room_width / 2 + margin);
 	
 		// Create instance of this food object
 		var food_obj = instance_create_layer(x_pos, -32, "Instances", food_object); // Hard coded the y-position. Could be changed later 
