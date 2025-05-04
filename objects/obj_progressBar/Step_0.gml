@@ -1,4 +1,4 @@
-if (instance_exists(obj_rightHand)) {
-    x = obj_rightHand.x;
-    y = obj_rightHand.y - 175;
+if (instance_exists(obj_leftHand)) {
+    x = obj_leftHand.x;
+    y = obj_leftHand.y - 400;
 }
