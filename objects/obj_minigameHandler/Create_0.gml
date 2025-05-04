@@ -6,6 +6,7 @@ enum minigame{
 	dragAndDropFridgeLevels,
 	fallingChicken,
 	washingHands,
+	fryFood,
 	moreMinigamesHere,
 }
 
@@ -26,7 +27,11 @@ lastMinigame = minigame.none;
 difficulty = 1;
 
 dndRead = [false,false,false];
+FFRead = [false];
+
 function miniHandRefresh(){
+	fryFoodTime = 180;
+	fryFoodDesiredTemp = 72;
 	
 	currentMinigame = minigame.none
 	minigameStatus = status.started

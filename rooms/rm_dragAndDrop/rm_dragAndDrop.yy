@@ -29,8 +29,8 @@
   ],
   "name":"rm_dragAndDrop",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Playing it SAFE",
+    "path":"Playing it SAFE.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{

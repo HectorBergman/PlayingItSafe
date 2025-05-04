@@ -1,0 +1,1 @@
+cam = instance_find(obj_cam_dnd, 0);
