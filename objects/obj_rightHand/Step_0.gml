@@ -32,7 +32,6 @@ switch (hand_state)
 	case HandState.DIRTY:
 	{
 		if (jewel_rand < 5 ) {
-			print(instance_exists(leftHand));
 			ring = leftHand.ring
 			wristBand = leftHand.wristBand
 			//rename watch

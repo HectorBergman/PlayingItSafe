@@ -86,8 +86,8 @@ function washingHandsText(newText){
 	//todo: customize
 	var wrapWidth = 1200;
 	var text = ""
-	text = "[scale,4][$eee7e7]"+string(newText); //$eee7e7 is color in hexadecimal, change this to change text color
-	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
+	text = "[scale,2][$eee7e7]"+string(newText); //$eee7e7 is color in hexadecimal, change this to change text color
+	var toDraw = scribble(text).wrap(wrapWidth);
 	
 	var centerX = room_width/ 2;
 	toDraw.draw(centerX, 10); //x and y coordinate where text will be drawn

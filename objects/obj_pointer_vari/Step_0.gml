@@ -3,11 +3,11 @@ x = mouse_x
 y = mouse_y
 
 if (inHand.mouseHeld){
-	if place_meeting(x,y,obj_dragAndDrop_item_vari) {		//if click & hold on item
-		if !holding && !place_meeting(x,y,obj_doors){	
+	if place_meeting(x,y,obj_holdable_parent) {		//if click & hold on item
+		if !holding{	
 			var heldObjectList = ds_list_create()
 			var lowestDepth = 999999;
-			instance_place_list(x,y,obj_dragAndDrop_item_vari, heldObjectList, 0);
+			instance_place_list(x,y,obj_holdable_parent, heldObjectList, 0);
 			for (var i = 0; i < ds_list_size(heldObjectList); i++) {
 				var value = heldObjectList[| i];
 				if value.depth < lowestDepth{
@@ -27,10 +27,14 @@ if (inHand.mouseHeld){
 	image_index = 1;
 }else{
 	if (heldObject != noone){
-		heldObject.depth = recencyGrabbedDepth	//maybe fix this so depth doesnt get messed up
-												//after 2k clicks....
-												//but basically what it does is give objects more
-												//recently interacted with lower depth.
+		if (heldObject.object_index != obj_thermometer){
+			heldObject.depth = recencyGrabbedDepth	//maybe fix this so depth doesnt get messed up
+													//after 2k clicks....
+													//but basically what it does is give objects more
+													//recently interacted with lower depth.
+		}else{
+			heldObject.depth = -998
+		}
 		heldObject.held = false;
 	}
 	image_index = 0
