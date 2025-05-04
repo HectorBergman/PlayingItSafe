@@ -95,8 +95,7 @@ switch (hand_state)
 	
 	case HandState.SCRUB1:
 	{
-		// Changed to closed hand for this specific scrubstate
-		image_index = 1;
+		image_angle = 20;
 		create_soap_bubbles();
 		handle_scrubbing(scrubKey2, 5, HandState.SCRUB2);
 	}

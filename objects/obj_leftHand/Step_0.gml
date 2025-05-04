@@ -11,6 +11,12 @@ switch (state){
 				firstTime = false;
 			}
 		}
+		
+		if parent.hand_state == HandState.SCRUB1{
+			image_index = 0;
+			image_xscale = -1;
+		}
+		
 		// Tvättat tummen
 		if parent.hand_state == HandState.SCRUB2{
 			image_index = 0;
