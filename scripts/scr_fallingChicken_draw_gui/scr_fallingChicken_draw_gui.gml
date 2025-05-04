@@ -22,7 +22,7 @@ function minigame_fallingChicken_step_draw_gui(){
 function minigame_fallingChicken_finish_draw_gui(){
 	
 
-	scoreResults(scoreHand.currentScore, [scoreResults_generateArray("Backflips done: ", 10, "2", "$eee7e7"), noone]);
+	scoreResults(scoreHand.currentScore, [noone]);
 
 	// TODO: fler options
 

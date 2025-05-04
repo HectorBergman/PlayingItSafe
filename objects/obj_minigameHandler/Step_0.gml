@@ -1,7 +1,6 @@
 PAUSE
 debugTime++ //for debugging only
 
-
 //follow dragAndDrop's example when creating minigames. See: scr_dragAndDrop
 //also see: scr_minigameTemplate
 switch (currentMinigame){

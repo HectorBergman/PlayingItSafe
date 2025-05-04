@@ -1,0 +1,1 @@
+summonObject(obj_obnoxiousNote, [["x", 0], ["y",0]]);

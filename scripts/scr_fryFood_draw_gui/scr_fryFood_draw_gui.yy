@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_fryFood_draw_gui",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_fryFood_draw_gui",
+  "parent":{
+    "name":"draw",
+    "path":"folders/oScripts/minigames/draw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
