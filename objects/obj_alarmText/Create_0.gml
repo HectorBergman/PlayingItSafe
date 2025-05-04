@@ -7,3 +7,6 @@ for (var i = 0; i < irandom_range(3,9); i++;){
 	}
 }
 ringText += "ng!" + exclamation
+
+lifetime = 120;
+life = 0;

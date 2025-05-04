@@ -28,7 +28,9 @@ outlineColor = $000034;
 ownFFRead = [miniHand.FFRead[0]];
 temperatureText = noone;
 tipsArray = [
-"Cooking food is sooooo fun"]
+"Stek köttfärsen tills den är färdig.\n" +
+"Bakterier och virus som orsakar matförgiftning dör om livsmedlet värms upp till 72 °C under minst två minuter." +
+"]
 
 glowTween = 0;
 tween = TweenFire(id, EaseInOutQuad, TWEEN_MODE_PATROL, false, 0, 40,"glowTween",0,0.35);

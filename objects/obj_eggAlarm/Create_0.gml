@@ -9,3 +9,5 @@ time = 0;
 timer = miniHand.fryFoodTime;
 
 alarmTime = 40;
+
+rings = 0;
