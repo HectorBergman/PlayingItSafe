@@ -1,7 +1,7 @@
 //This will run every time game is booted, if some other object is needed on bootup,
 //please summon using this object.
 timer = 0;
-global.masterVolume = 1; //todo: add sfx and music volume
+global.masterVolume = 0.3; //todo: add sfx and music volume
 
 gpu_set_texfilter(false);
 
