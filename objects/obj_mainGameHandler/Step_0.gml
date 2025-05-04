@@ -1,4 +1,7 @@
 
+if (global.alertsPaused) {exit};
+
+
 for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	var currentStation = ds_list_find_value(stationsAndAlerts, i);
 	updateAlert(i);	
@@ -29,7 +32,7 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 			info.timer = 0
 			info.usedInterval = generateNewInterval(info.interval,info.intervalSpread);
 		}
-	}else if room == rm_kitchen && currentStation.alert == undefined{
+	}else if room == rm_kitchen && currentStation.alert == undefined {
 		summonCurrentAlert(i);
 	}else if room != rm_kitchen{
 		if currentStation.stationInfostruct.minigameRoom == room {

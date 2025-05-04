@@ -31,6 +31,14 @@ if (position_meeting(mouse_x, mouse_y, id)){ //hover over button
 		}else if action == 7{
 			miniHand.minigameStatus = status.finished;
 			miniHand.perfect = true;
+		}else if action == 8{
+			global.alertsPaused = false;
+			var note = instance_find(obj_obnoxiousNote,0);
+			note.hasBeenRead = true;
+			var pointer = instance_find(obj_pointer_menu,0);
+			instance_destroy(pointer);
+			instance_destroy(self);
+			
 		}
 	}
 }else{

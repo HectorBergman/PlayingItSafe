@@ -24,15 +24,14 @@ playerPosition = [592,736];
 //add in any required variables here
 currentMinigame = minigame.none;
 lastMinigame = minigame.none;
-difficulty = 1;
+
 
 dndRead = [false,false,false];
 FFRead = [false];
 
 function miniHandRefresh(){
-	fryFoodTime = 180;
-	fryFoodDesiredTemp = 72;
 	
+	difficulty = 1;
 	currentMinigame = minigame.none
 	minigameStatus = status.started
 
@@ -42,6 +41,10 @@ function miniHandRefresh(){
 	
 	player = instance_find(obj_player, 0);
 	debugTime = 0;
+	
+	pointsEarned = 0; //pointsEarned in that specific minigame, not used super often
+					  //but should be used more to allow for more dynamic score displays
+					  //at end of minigame
 	
 
 	//dragAndDrop
@@ -61,6 +64,10 @@ function miniHandRefresh(){
 										//example: if there are 4 items that should go
 										//onto the middle shelf, middle shelf will have
 										//an item limit of exactly 4.
+										
+										//actually i scrapped this lol
+										
+										
 	shelfItemsAmount = [0,0,0];
 	
 	//washing hands
@@ -69,5 +76,12 @@ function miniHandRefresh(){
            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     lettersArrayLength = array_length(letters)
     print(generateRandomLetter())
+	
+	//fryFood
+	
+	fryFoodTime = 180;
+	fryFoodDesiredTemp = 72;
+	meatOutside = 0;
+	meatInside = false;
 }
 miniHandRefresh();

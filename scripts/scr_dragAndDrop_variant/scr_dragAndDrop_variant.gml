@@ -76,6 +76,8 @@ function minigame_dragAndDrop_variant_finish(){
 				if !perfect{
 					checkmark.visible = false;
 					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty -= 1;
+				}else{
+					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 4;
 				}
 			}else{
 				if checkmark.life == checkmark.lifeTime{

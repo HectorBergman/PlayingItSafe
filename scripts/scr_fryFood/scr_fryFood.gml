@@ -1,8 +1,8 @@
 function minigame_fryFood_control(){
 	switch (minigameStatus){
-		case status.started: minigameTemplate_create(); break;
-		case status.ongoing: minigameTemplate_step(); break;
-		case status.finished: minigameTemplate_finish(); break;
+		case status.started: minigame_fryFood_create(); break;
+		case status.ongoing: minigame_fryFood_step(); break;
+		case status.finished: minigame_fryFood_finish(); break;
 		case status.none: break;
 	}
 }
@@ -28,23 +28,33 @@ function minigame_fryFood_step(){
 	}
 }
 
-//template for minigames completed, doesnt have to look like this ofc
+
 function minigame_fryFood_finish(){	
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
-		var note = instance_find(obj_note_1,0);
-		FFRead = note.FFDndRead;
+		//var note = instance_find(obj_note_1,0);
+		//FFRead = note.FFRead;
 		// Check if perfect or not
-		if obj_food.after_done_counter >= fryFoodTime{
-			scoreHand.currentScore += 15; // Don't know if this should be worth more
-			print("youdidit");
-			
-		} else {
+		if obj_food.after_done_counter >= fryFoodTime {
+			scoreHand.currentScore += 30;
+			meatInside = true;
+		}else{
+			scoreHand.currentScore += -30;
+			meatInside = false;
 			perfect = false;
 		}
-		
-		
+		if obj_food.image_index == 2{
+			scoreHand.currentScore += 30;
+			meatOutside = 1;
+		} else if obj_food.image_index == 3{
+			meatOutside = 2;
+			perfect = false;
+		}else{
+			scoreHand.currentScore += -30;
+			meatOutside = 0;
+			perfect = false;
+		}
 		if !perfect{
 			checkmark.visible = false;
 		}

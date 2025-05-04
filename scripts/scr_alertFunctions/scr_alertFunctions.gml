@@ -25,6 +25,7 @@ function getAlertInfo(info){
 
 
 function summonCurrentAlert(index){
+	print("haiii");
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
 	var info = currentStructs.stationInfostruct
 	var alert = summonObject(obj_alert, getAlertInfo(info));

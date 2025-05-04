@@ -1,17 +1,17 @@
 function playerInput(){
-	if keyboard_check(ord("W"))
+	if keyboard_check(ord("W")) || keyboard_check(vk_up)
 	{
 		moveUp = true;
 	}
-	if keyboard_check(ord("S"))
+	if keyboard_check(ord("S")) || keyboard_check(vk_down)
 	{
 		moveDown = true;
 	}
-	if keyboard_check(ord("A"))
+	if keyboard_check(ord("A")) || keyboard_check(vk_left)
 	{
 		moveLeft = true;
 	}
-	if keyboard_check(ord("D"))
+	if keyboard_check(ord("D")) || keyboard_check(vk_right)
 	{
 		moveRight = true;
 	}
