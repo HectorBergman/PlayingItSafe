@@ -2,7 +2,7 @@
 draw_self();
 
 var title = ""
-title = "[scale,2][$eee7e7][fnt_bitmap_outline_big]" + "Cooking \n"
+title = "[scale,4][$eee7e7]" + "Cooking \n"
 
 var body = "";
 
@@ -38,7 +38,7 @@ if miniHand.difficulty >= 12{
 		newText += "\n"+tipsArray[tipsArrayIndex];
 	}
 }*/
-body = "[scale,1][$eee7e7][fnt_bitmap_outline_big]" + finalText;
+body = "[scale,2][$eee7e7]" + finalText;
 var bodyHeight = 0;
 bodyHeight += scribble(title).wrap(bbox_right-bbox_left, bbox_bottom-bbox_top).outline(outlineColor).get_height();
 bodyHeight += scribble(body).wrap(bbox_right-bbox_left, bbox_bottom-bbox_top).outline(outlineColor).get_height();
