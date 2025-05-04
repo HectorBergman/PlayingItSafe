@@ -26,4 +26,3 @@ switch (stove.state){
 }
 
 sprite_set_speed(sprite_index, baseSpriteSpeed*heat/100, spritespeed_framespersecond);
-print(sprite_get_speed(sprite_index));

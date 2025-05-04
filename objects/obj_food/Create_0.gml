@@ -21,7 +21,7 @@ smoothingFactorCooling = 0.00075;
 smoothingFactor = smoothingFactorHeating;
 
 tempRange = [20,100];
-stateAge = [100,520,1200];
+stateAge = [100,350,1100];
 
 
 goalTemp = mapRange(obj_stoveControl.image_angle, 120,-120,tempRange[0],tempRange[1]);

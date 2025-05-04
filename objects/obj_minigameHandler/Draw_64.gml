@@ -6,6 +6,7 @@ draw_text(40,20,dndRead[1]);
 draw_text(50,20,dndRead[2]);*/
 switch (currentMinigame){
     case minigame.fallingChicken: minigame_fallingChicken_control_draw_gui(); break;
+	case minigame.fryFood: minigame_fryFood_control_draw_gui(); break;
 	default: break;
 }
 

@@ -12,7 +12,7 @@ if (!ds_list_empty(nearbyAlerts) && inHand.interact){ //if there are any nearby 
 		mainGameHand.activeIndex = findCurrentIndex(nearestAlert);
 		for (var i = 0; i < ds_list_size(mainGameHand.stationsAndAlerts); i++){
 			var currentStation = ds_list_find_value(mainGameHand.stationsAndAlerts, i);
-			currentStation.stationInfostruct.difficulty += 2;
+			currentStation.stationInfostruct.difficulty += 4;
 			if currentStation.alert != nearestAlert{
 				//currentStation.alert = undefined;
 			}
