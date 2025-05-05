@@ -9,9 +9,21 @@ function minigame_fallingChicken_control(){
 function minigame_fallingChicken_create(){
 
 	//here goes any code you need to start the minigame
-	if (keyboard_check_pressed(vk_enter)) {
-		minigameStatus = status.ongoing;
-	}
+	// if (keyboard_check_pressed(vk_enter)) {
+	// 	minigameStatus = status.ongoing;
+	// }
+	
+	if (keyboard_check_pressed(vk_enter) || keyboard_check(vk_space)) {
+        minigameStatus = status.ongoing;
+    }
+	
+	// if (room != rm_falling_chicken_start) {
+		// global.fallingChickenIntroShown = true;
+	//	room_goto(rm_falling_chicken_start);
+	//	return;
+	// }
+	
+
 	//this could also have a requirement in-case you want to have an animation or something b4 minigame start
 	
 }
@@ -35,8 +47,9 @@ function minigame_fallingChicken_step(){
 
 //template for minigames completed, doesnt have to look like this ofc
 function minigame_fallingChicken_finish(){
-	
+
 	if (keyboard_check_pressed(ord("R"))) {
+		// global.fallingChickenIntroShown = false; // Reset for next round
 		room_goto(rm_kitchen); // Change this to your actual gameplay room
 	}
 	if checkmark == noone{

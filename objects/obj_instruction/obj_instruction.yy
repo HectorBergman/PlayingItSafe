@@ -1,20 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_chopping_board_meat",
+  "%Name":"obj_instruction",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_chopping_board_meat",
+  "name":"obj_instruction",
   "overriddenProperties":[],
   "parent":{
-    "name":"chopping_boards",
-    "path":"folders/Objects/minigames/falling_chicken/chopping_boards.yy",
+    "name":"falling_chicken",
+    "path":"folders/Objects/minigames/falling_chicken.yy",
   },
-  "parentObjectId":{
-    "name":"obj_chopping_board_parent",
-    "path":"objects/obj_chopping_board_parent/obj_chopping_board_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chopping_board_meat",
-    "path":"sprites/spr_chopping_board_meat/spr_chopping_board_meat.yy",
+    "name":"spr_instruction",
+    "path":"sprites/spr_instruction/spr_instruction.yy",
   },
   "spriteMaskId":null,
   "visible":true,

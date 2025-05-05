@@ -1,0 +1,1 @@
+minigameStatus = status.started;
