@@ -94,6 +94,40 @@ function washingHandsText(newText){
 	//fråga Hector om ni undrar något mer
 }
 
+function pulsatingCharacterDisplay(_char) {
+    var scale = 6;
+    var colorHex = "$eee7e7";
+    var displayText = "[scale,5," + string(scale) + "][" + colorHex + "]" + string(_char);
+    var toDraw = scribble(displayText).align(fa_center);
+
+    var posX = 100;
+    var posY = 50;
+
+    // --- Manually assigned width/height ---
+    var charWidth = 16 * scale;  // adjust if font is wider/narrower
+    var charHeight = 16 * scale; // adjust to fit your font
+    var padding = 20;
+
+    // --- Pulsating background ---
+    var pulseSpeed = 0.005;
+    var alpha = 0.5 + 0.5 * sin(current_time * pulseSpeed);
+    var bgColor = make_color_rgb(255, 255, 200); // light yellow
+
+    draw_set_alpha(alpha);
+    draw_set_color(bgColor);
+    draw_rectangle(
+        posX - charWidth / 2 - padding,
+        posY - padding + 15,
+        posX + charWidth / 2 + padding,
+        posY + charHeight + padding + 15,
+        false
+    );
+    draw_set_alpha(1);
+
+    // Draw the character on top
+    toDraw.draw(posX, posY);
+}
+
 
 /// @function handle_scrubbing(scrubKey1, scrubBar, scrub_timer, scrub_count, hand_state);
 /// @description Manages the scrubbing mechanic (progress bar, timer, and state changes).

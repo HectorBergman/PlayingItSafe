@@ -123,7 +123,7 @@ switch (hand_state)
 	{
 		image_angle = 0;
 		create_soap_bubbles();
-		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_water)) {
 			hand_state = HandState.RINSE;
 			
 			// Destroy all water drops when leaving WET state
