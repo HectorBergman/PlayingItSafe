@@ -14,7 +14,7 @@ function dndState_none_control(){
 }
 
 function dndState_none_start(){
-	yapper.dialogueNo = 0;
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 0;
 	var mainX = 1400;
 	var mainY = 700;
 	//ds_list_add(childrenList,summonObject(obj_key, [["x", mainX+keyWidth], ["y", mainY], ["scale", 1], ["key", "D"], ["depth", -1]]))
@@ -27,7 +27,7 @@ function dndState_none_ongoing(){
 	}
 	print(mouseDistanceMoved);
 	prevMousePosition = [mouse_x,mouse_y];
-	if mouseDistanceMoved > 3000{
+	if mouseDistanceMoved > 1500{
 		destroyChildren();
 		tStatus = tutorialStatus.start;
 		dndState = dndStates.mouseMoved;
@@ -42,12 +42,8 @@ function dndState_mouseMoved_control(){
 }
 
 function dndState_mouseMoved_start(){
-	print("hello");
-	yapper.dialogueNo = 1;
-	/*var mainX = 1400;
-	var mainY = 700;
-	ds_list_add(childrenList,summonObject(obj_key, [["x", mainX], ["y", mainY], ["scale", 1], ["key", "E"], ["depth", -1]]))
-	tStatus = tutorialStatus.ongoing;*/
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 1;
+	tStatus = tutorialStatus.ongoing;
 }
 
 function dndState_mouseMoved_ongoing(){
@@ -60,6 +56,16 @@ function dndState_mouseMoved_ongoing(){
 }
 
 function dndState_hasDragged_control(){
-	yapper.dialogueNo = 2;
-	
+	switch (tStatus){
+		case tutorialStatus.start: dndState_hasDragged_start(); break;
+		case tutorialStatus.ongoing: dndState_hasDragged_ongoing(); break;
+	}	
+}
+
+function dndState_hasDragged_start(){
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 2;
+	tStatus = tutorialStatus.ongoing;
+}
+
+function dndState_hasDragged_ongoing(){
 }

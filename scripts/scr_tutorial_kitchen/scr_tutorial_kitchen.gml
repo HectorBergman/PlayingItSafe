@@ -13,7 +13,7 @@ function kitchenState_none_control(){
 }
 
 function kitchenState_none_start(){
-	yapper.dialogueNo = 0;
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 0;
 	var mainX = 1400;
 	var mainY = 700;
 	ds_list_add(childrenList,summonObject(obj_key, [["x", mainX], ["y", mainY], ["scale", 1], ["key", "S"], ["depth", -2]]))
@@ -52,7 +52,7 @@ function kitchenState_hasMoved_control(){
 }
 
 function kitchenState_hasMoved_start(){
-	yapper.dialogueNo = 1;
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 1;
 	var mainX = 1400;
 	var mainY = 700;
 	ds_list_add(childrenList,summonObject(obj_key, [["x", mainX], ["y", mainY], ["scale", 1], ["key", "E"], ["depth", -1]]))
@@ -64,10 +64,12 @@ function kitchenState_hasMoved_ongoing(){
 		destroyChildren();
 		tStatus = tutorialStatus.start;
 		kitchenState = kitchenStates.hasInteracted;
+		yapper.dialogueNoArray[miniHand.currentMinigame] = 2;
 	}
 }
 
 function kitchenState_hasInteracted_control(){
-	yapper.dialogueNo = 2;
+	print("hej");
+	
 	
 }

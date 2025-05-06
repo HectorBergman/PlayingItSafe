@@ -12,11 +12,13 @@ dialogueArray[minigame.kitchen] = createDialogueArray(
 
 dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 "Använd musen för att röra runt pekaren",
-"Klicka och håll ner på en vara för att dra runt den"
+"Håll ner musknappen över en vara för att dra runt den",
+"Stoppa in rätt varor i kylen!",
 );
 
-currentNo = 0;
-dialogueNo = 0;
+dialogueNoArray = [0,0,0,0,0,0,0,0,0,0,0];
+
+
 skip = false;
 prevText = "";
 currentText = "";
@@ -38,7 +40,10 @@ function createDialogueArray(){
 
 
 function yapper_drawGUI(){
-	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNo];
+	print("----");
+	print(miniHand.currentMinigame);
+	print(dialogueNoArray[miniHand.currentMinigame]);
+	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNoArray[miniHand.currentMinigame]];
 	toDraw = scribble(text).align(fa_center).outline($000034);
 	toDraw.draw(room_width/2,70,typist);
 }
