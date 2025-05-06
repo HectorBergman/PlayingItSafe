@@ -17,12 +17,18 @@ function createAlert(element){
 }
 
 function getAlertInfo(info){
+	
+	if (info.chosenMinigame == "fallingChicken") {
+        info.minigameRoom = rm_falling_chicken_start; // override
+    }
+	
+	show_debug_message("Assigning minigame room: " + string(info.minigameRoom));
+
 	return [["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
 			["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
 			["difficulty", info.difficulty], ["lifetime", info.alertLifetime], 
 			["summonCondition", info.summonCondition],["deletionCondition", info.deletionCondition]]
 }
-
 
 function summonCurrentAlert(index){
 	print("haiii");
@@ -126,4 +132,3 @@ function washingHandsDeletionCondition(info){
 	}
 	return deletion
 }
-

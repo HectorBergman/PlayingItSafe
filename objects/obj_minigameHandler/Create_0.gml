@@ -31,6 +31,9 @@ FFRead = [false];
 
 function miniHandRefresh(){
 	
+	// Added to handle falling_chicken_start frame
+	global.drop_score = 0;
+	
 	difficulty = 1;
 	currentMinigame = minigame.none
 	minigameStatus = status.started

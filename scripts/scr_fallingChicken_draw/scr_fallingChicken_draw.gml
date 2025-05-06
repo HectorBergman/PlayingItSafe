@@ -9,14 +9,14 @@ function minigame_fallingChicken_control_draw(){
 function minigame_fallingChicken_create_draw(){
 
 
-	draw_set_color(c_white);
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_middle);
-	var wrapWidth = 1200;
-	var text = ""
-	text = "[scale,4][$eee7e7]Press Enter to Start";
-	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center).align(fa_middle);
-	toDraw.draw(display_get_width()/2, display_get_height()/2);
+	// draw_set_color(c_white);
+	// draw_set_halign(fa_center);
+	// draw_set_valign(fa_middle);
+	// var wrapWidth = 1200;
+	// var text = ""
+	// text = "[scale,4][$eee7e7]Press Enter to Start";
+	// var toDraw = scribble(text).wrap(wrapWidth).align(fa_center).align(fa_middle);
+	// toDraw.draw(display_get_width()/2, display_get_height()/2);
 	//draw_text(room_width / 2, room_height / 2, "Press Enter to Start");
 
 	
