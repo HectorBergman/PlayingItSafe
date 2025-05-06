@@ -12,9 +12,12 @@
 /// followed by a smaller text saying Avklarade bakåtvoltar: 10 in white
 
 function scoreResults(totalScore, arguments = [[noone]]){
+	
+	show_debug_message("Score just before drawing: " + string(totalScore));
+	
 	var wrapWidth = 1200;
 	var text = ""
-	text = "[scale,3][$eee7e7]Tjänade poäng: " + string(totalScore); 
+	text = "[scale,3][$eee7e7]Tjänade poäng: " + string(totalScore +1); 
 	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
 	toDraw.draw(window_get_width()/2, 750);
 	
