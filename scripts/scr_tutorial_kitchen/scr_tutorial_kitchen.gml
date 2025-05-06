@@ -13,6 +13,7 @@ function kitchenState_none_control(){
 }
 
 function kitchenState_none_start(){
+	yapper.dialogueNo = 0;
 	var mainX = 1400;
 	var mainY = 700;
 	ds_list_add(childrenList,summonObject(obj_key, [["x", mainX], ["y", mainY], ["scale", 1], ["key", "S"], ["depth", -2]]))
@@ -51,6 +52,7 @@ function kitchenState_hasMoved_control(){
 }
 
 function kitchenState_hasMoved_start(){
+	yapper.dialogueNo = 1;
 	var mainX = 1400;
 	var mainY = 700;
 	ds_list_add(childrenList,summonObject(obj_key, [["x", mainX], ["y", mainY], ["scale", 1], ["key", "E"], ["depth", -1]]))
@@ -66,5 +68,6 @@ function kitchenState_hasMoved_ongoing(){
 }
 
 function kitchenState_hasInteracted_control(){
+	yapper.dialogueNo = 2;
 	
 }
