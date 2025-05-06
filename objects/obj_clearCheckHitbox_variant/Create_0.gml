@@ -1,5 +1,5 @@
 holding = 0;
-holdingList = ds_list_create();
+holdingList = ds_list_create(); //memory leak btw lol
 
 defaultTemp = temperature;
 enum textStates {

@@ -1,15 +1,15 @@
 
-function minigame_none_control(){
+function minigame_kitchen_control(){
 
 	switch (minigameStatus){
-		case status.started: minigame_none_create(); break;
-		case status.ongoing: minigame_none_step(); break;
-		case status.finished: minigame_none_finish(); break;
+		case status.started: minigame_kitchen_create(); break;
+		case status.ongoing: minigame_kitchen_step(); break;
+		case status.finished: minigame_kitchen_finish(); break;
 		case status.none: break;
 	}
 }
 
-function minigame_none_create(){
+function minigame_kitchen_create(){
 	
 
 	player = instance_find(obj_player, 0);
@@ -23,11 +23,11 @@ function minigame_none_create(){
 }
 
 
-function minigame_none_step(){
+function minigame_kitchen_step(){
 
 }
 
 
-function minigame_none_finish(){
+function minigame_kitchen_finish(){
 
 }

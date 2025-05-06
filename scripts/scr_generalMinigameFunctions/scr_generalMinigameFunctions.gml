@@ -5,6 +5,6 @@ function exitMinigame(){
 	scoreHand.currentScore = 0;
 	minigameStatus = status.started;
 	lastMinigame = currentMinigame;
-	currentMinigame = minigame.none;
+	currentMinigame = minigame.kitchen;
 	room_goto(rm_kitchen);
 }

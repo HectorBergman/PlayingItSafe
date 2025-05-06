@@ -1,4 +1,4 @@
-hitboxList = ds_list_create()
+hitboxList = ds_list_create() //memory leak
 depth = -100;
 temperatureLimits = [-5,5];
 temperatureDifference = irandom_range(-5,5);
