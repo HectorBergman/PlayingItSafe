@@ -13,8 +13,6 @@
 
 function scoreResults(totalScore, arguments = [[noone]]){
 	
-	show_debug_message("Score just before drawing: " + string(totalScore));
-	
 	var wrapWidth = 1200;
 	var text = ""
 	text = "[scale,3][$eee7e7]Tjänade poäng: " + string(totalScore +1); 
