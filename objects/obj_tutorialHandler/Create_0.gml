@@ -20,6 +20,7 @@ enum dndStates{
 	none,
 	mouseMoved,
 	hasDragged,
+	finishFound,
 	difficulty4,
 	hasUsedThermometer,
 	difficulty8,

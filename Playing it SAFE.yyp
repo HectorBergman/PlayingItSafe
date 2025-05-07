@@ -262,7 +262,6 @@
     {"id":{"name":"scr_playerInputs","path":"scripts/scr_playerInputs/scr_playerInputs.yy",},},
     {"id":{"name":"scr_playerStates_normal","path":"scripts/scr_playerStates_normal/scr_playerStates_normal.yy",},},
     {"id":{"name":"scr_playerVariables_movement","path":"scripts/scr_playerVariables_movement/scr_playerVariables_movement.yy",},},
-    {"id":{"name":"scr_tutorial_dnd_1","path":"scripts/scr_tutorial_dnd_1/scr_tutorial_dnd_1.yy",},},
     {"id":{"name":"scr_tutorial_dnd","path":"scripts/scr_tutorial_dnd/scr_tutorial_dnd.yy",},},
     {"id":{"name":"scr_tutorial_kitchen_drawGUI","path":"scripts/scr_tutorial_kitchen_drawGUI/scr_tutorial_kitchen_drawGUI.yy",},},
     {"id":{"name":"scr_tutorial_kitchen","path":"scripts/scr_tutorial_kitchen/scr_tutorial_kitchen.yy",},},

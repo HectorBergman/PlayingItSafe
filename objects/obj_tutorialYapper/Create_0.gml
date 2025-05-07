@@ -14,6 +14,10 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 "Använd musen för att röra runt pekaren",
 "Håll ner musknappen över en vara för att dra runt den",
 "Stoppa in rätt varor i kylen!",
+"",
+"Dra termometern till kylen för att mäta temperaturen!",
+"",
+"Test"
 );
 
 dialogueNoArray = [0,0,0,0,0,0,0,0,0,0,0];

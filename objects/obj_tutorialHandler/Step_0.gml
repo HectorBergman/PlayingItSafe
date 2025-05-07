@@ -1,3 +1,4 @@
+PAUSE
 tutorialState = miniHand.currentMinigame;
 switch (tutorialState){
 	case minigame.kitchen: tutorial_kitchen_control(); break;
