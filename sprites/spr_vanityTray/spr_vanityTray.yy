@@ -19,6 +19,7 @@
   "height":512,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"05692bcf-547e-48df-99e3-8d66166e9534","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"05692bcf-547e-48df-99e3-8d66166e9534","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"677632c8-b149-4e7e-9214-906e2109681c","blendMode":0,"displayName":"default","isLocked":false,"name":"677632c8-b149-4e7e-9214-906e2109681c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_vanityTray",

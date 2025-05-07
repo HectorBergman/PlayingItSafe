@@ -1,4 +1,4 @@
-if (place_meeting(x, y, obj_rightHand) && (keyboard_check_pressed(ord("E")))) {
+if  !instance_exists(soap) && (place_meeting(x, y, obj_rightHand) && (keyboard_check_pressed(ord("E")))) {
 	soap = instance_create_layer(1545, 64, "Instances", obj_soapSquirt);
 }
 
