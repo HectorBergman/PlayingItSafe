@@ -7,7 +7,7 @@ enum bubbleStates{
 	fadingOut,
 }
 
-image_alpha = 0;
+baseAlpha = 0;
 imageAlphaMult = 1;
 bubbleState = bubbleStates.notVisible
 bubbleHoverState = bubbleStates.isVisible

@@ -12,3 +12,5 @@ switch (circleState){
 	case circleStates.contracting: if !TweenIsPlaying(tween){circleState = circleStates.invisible}; break;
 	case circleStates.donezo: break;
 }
+
+image_alpha = phone.image_alpha;
