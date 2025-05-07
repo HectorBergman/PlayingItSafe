@@ -20,7 +20,12 @@ function dnd_ongoing_func(dndState){
 		case dndStates.hasDragged: return dndState_hasDragged_ongoing();
 		case dndStates.finishFound: return dndState_finishFound_ongoing();
 		case dndStates.difficulty4: return dndState_difficulty4_ongoing();
+		case dndStates.thermoInfo: return dndState_thermoInfo_ongoing();
 		case dndStates.hasUsedThermometer: return dndState_hasUsedThermometer_ongoing();
+		case dndStates.difficulty8: return dndState_difficulty8_ongoing();
+		case dndStates.finishFound2: return dndState_finishFound2_ongoing();
+		case dndStates.difficulty12: return dndState_difficulty12_ongoing();
+		case dndStates.hasChangedTemperature: return dndState_hasChangedTemperature_ongoing();
 	}
 }
 
@@ -85,13 +90,38 @@ function dndState_difficulty4_ongoing(){
 	return truth;
 }
 
+function dndState_thermoInfo_ongoing(){
+	thermoTimer++
+	if dnd_ongoing_func(dndState+1){
+		dndState++
+		yapper.dialogueNoArray[miniHand.currentMinigame]++
+		return true;
+	}else if thermoTimer >= thermoTime{
+		return true;
+	}
+	return false;
+}
+
 function dndState_hasUsedThermometer_ongoing(){
 	return miniHand.difficulty >= 8
 }
 
 function dndState_difficulty8_ongoing(){
-
+	return miniHand.minigameStatus = status.finished
 }
+
+function dndState_finishFound2_ongoing(){
+	return miniHand.difficulty >= 12
+}
+function dndState_difficulty12_ongoing(){
+	var button1 = instance_find(obj_fridgeButton,0);
+	var button2 = instance_find(obj_fridgeButton,1);
+	return button1.clicked || button2.clicked;
+}
+function dndState_hasChangedTemperature_ongoing(){
+	
+}
+
 
 /*hasUsedThermometer,
 	difficulty8,

@@ -5,6 +5,8 @@ depth = -10000
 
 //Very short text: no overcomplications. Just explain the basics quickly.
 scale = room_width/1920
+paddingX = 180*scale;
+
 dialogueArray[minigame.kitchen] = createDialogueArray(
 "Använd WASD eller piltangenterna för att röra på dig.",
 "Tryck på E nära en [scale,1][spr_alert][scale,1] för att interagera och starta spelet"
@@ -16,8 +18,12 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 "Stoppa in rätt varor i kylen!",
 "",
 "Dra termometern till kylen för att mäta temperaturen!",
+"något om termometern här",
 "",
-"Test"
+"Det finns begränsat med utrymme i kylen. Prioritera de mest temperaturkänsliga livsmedlena först!",
+"",
+"Någon har rört på termostaten i kylen! Använd [spr_fridgeButtons_display] för att justera temperaturen inne i kylen.",
+""
 );
 
 dialogueNoArray = [0,0,0,0,0,0,0,0,0,0,0];
@@ -45,6 +51,6 @@ function createDialogueArray(){
 
 function yapper_drawGUI(){
 	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNoArray[miniHand.currentMinigame]];
-	toDraw = scribble(text).align(fa_center).outline($000034);
+	toDraw = scribble(text).align(fa_center).outline($000034).wrap(room_width-paddingX);
 	toDraw.draw(room_width/2,70,typist);
 }

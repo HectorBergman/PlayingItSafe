@@ -22,9 +22,10 @@ enum dndStates{
 	hasDragged,
 	finishFound,
 	difficulty4,
+	thermoInfo,
 	hasUsedThermometer,
 	difficulty8,
-	timeHasPassed,
+	finishFound2,
 	difficulty12,
 	hasChangedTemperature,
 }
@@ -50,6 +51,9 @@ hasMovedAllDirectionsArray = [0,0,0,0];
 
 mouseDistanceMoved = 0;
 prevMousePosition = [-99,-99];
+
+thermoTimer = 0;
+thermoTime = 600;
 
 //washingHands variables
 
