@@ -69,7 +69,6 @@ function kitchenState_hasMoved_ongoing(){
 }
 
 function kitchenState_hasInteracted_control(){
-	print("hej");
 	
 	
 }

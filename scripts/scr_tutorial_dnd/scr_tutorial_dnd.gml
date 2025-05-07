@@ -1,4 +1,4 @@
-function tutorial_dnd_control(){
+/*function tutorial_dnd_control(){
 	switch (dndState){
 		case dndStates.none: dndState_none_control(); break;
 		case dndStates.mouseMoved: dndState_mouseMoved_control(); break;
@@ -68,4 +68,76 @@ function dndState_hasDragged_start(){
 }
 
 function dndState_hasDragged_ongoing(){
+	if difficulty >= 4{
+
+		tStatus = tutorialStatus.start;
+		dndState = dndStates.difficulty4
+	}
 }
+
+function dndState_difficulty4_control(){
+	switch (tStatus){
+		case tutorialStatus.start: dndState_difficulty4_start(); break;
+		case tutorialStatus.ongoing: dndState_difficulty4_ongoing(); break;
+	}	
+}
+
+function dndState_difficulty4_start(){
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 3;
+	tStatus = tutorialStatus.ongoing;
+}
+
+function dndState_difficulty4_ongoing(){
+	var thermo = instance_find(obj_thermometer,0);
+	if thermo.held{
+		tStatus = tutorialStatus.start;
+		dndState = dndStates.hasUsedThermometer
+	}
+}
+
+function dndState_hasUsedThermometer_control(){
+	switch (tStatus){
+		case tutorialStatus.start: dndState_hasUsedThermometer_start(); break;
+		case tutorialStatus.ongoing: dndState_hasUsedThermometer_ongoing(); break;
+	}	
+}
+
+function dndState_hasUsedThermometer_start(){
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 4;
+	tStatus = tutorialStatus.ongoing;
+}
+
+function dndState_hasUsedThermometer_ongoing(){
+	if difficulty >= 8{
+
+		tStatus = tutorialStatus.start;
+		dndState = dndStates.difficulty8
+	}
+}
+
+function dndState_difficulty8_control(){
+	switch (tStatus){
+		case tutorialStatus.start: dndState_difficulty4_start(); break;
+		case tutorialStatus.ongoing: dndState_difficulty4_ongoing(); break;
+	}	
+}
+
+function dndState_difficulty8_start(){
+	yapper.dialogueNoArray[miniHand.currentMinigame] = 5;
+	tStatus = tutorialStatus.ongoing;
+}
+
+function dndState_difficulty8_ongoing(){
+	var thermo = instance_find(obj_thermometer,0);
+	if thermo.held{
+		tStatus = tutorialStatus.start;
+		dndState = dndStates.hasUsedThermometer
+	}
+}
+
+/*hasUsedThermometer,
+	difficulty8,
+	timeHasPassed,
+	difficulty12,
+	hasChangedTemperature,*/
+	

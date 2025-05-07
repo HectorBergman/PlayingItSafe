@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_tutorial_dnd_1",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_tutorial_dnd_1",
+  "parent":{
+    "name":"tutorial",
+    "path":"folders/Objects/tutorial.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

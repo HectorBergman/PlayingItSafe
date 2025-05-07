@@ -40,9 +40,6 @@ function createDialogueArray(){
 
 
 function yapper_drawGUI(){
-	print("----");
-	print(miniHand.currentMinigame);
-	print(dialogueNoArray[miniHand.currentMinigame]);
 	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNoArray[miniHand.currentMinigame]];
 	toDraw = scribble(text).align(fa_center).outline($000034);
 	toDraw.draw(room_width/2,70,typist);

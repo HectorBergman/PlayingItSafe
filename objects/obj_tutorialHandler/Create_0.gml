@@ -20,6 +20,12 @@ enum dndStates{
 	none,
 	mouseMoved,
 	hasDragged,
+	difficulty4,
+	hasUsedThermometer,
+	difficulty8,
+	timeHasPassed,
+	difficulty12,
+	hasChangedTemperature,
 }
 
 childrenList = ds_list_create();
