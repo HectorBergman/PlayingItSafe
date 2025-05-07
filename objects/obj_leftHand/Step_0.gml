@@ -1,5 +1,6 @@
 switch (state){
 	case leftHandState.scrubbing:{
+			create_soap_bubbles();
 		image_xscale = 1;
 		image_index = 2;
 		if !found{
@@ -24,6 +25,14 @@ switch (state){
 		}
 		
 		if parent.hand_state == HandState.RINSE || parent.hand_state == HandState.SCRUB4{
+			// Destroy all water drops when leaving WET state
+	        for (var i = 0; i < array_length(soapBubbles); i++) {
+	            if (instance_exists(soapBubbles[i])) {
+	                instance_destroy(soapBubbles[i]);
+	            }
+	        }
+	        soapBubbles = [];
+			create_water_drops()
 			var heightLimit = room_height/8*3
 			var easeTime = 20;
 			if parent.y > heightLimit{

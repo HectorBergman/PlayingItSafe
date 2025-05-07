@@ -52,7 +52,7 @@ switch (hand_state)
 	
 	case HandState.JEWELRY:
 	{
-		if (place_meeting(x, y, obj_water) && (keyboard_check_pressed(ord("E")))){
+		if (place_meeting(x, y, obj_water)){
 			hand_state = HandState.WET;
 			print("Hands are wet")
 		}
@@ -142,7 +142,8 @@ switch (hand_state)
 	
 	case HandState.RINSE:
 	{
-		create_water_drops();
+		create_water_drops()
+		image_angle = 0;
 		
 		if (place_meeting(x, y, obj_towl) && keyboard_check_pressed(ord("E"))) {
 			hand_state = HandState.DRY;

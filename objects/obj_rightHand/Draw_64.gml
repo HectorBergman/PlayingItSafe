@@ -11,8 +11,7 @@ switch (hand_state) {
         break;
 		
 	 case HandState.JEWELRY:
-        washingHandsText("Skölj händerna under vattnet [[E]");
-		pulsatingCharacterDisplay("E");
+        washingHandsText("Skölj händerna under vattnet");
         break;
         
     case HandState.WET:
@@ -41,8 +40,7 @@ switch (hand_state) {
         break;
 		
 	 case HandState.SCRUB4:
-        washingHandsText("Skölj av händerna [[E]");
-		pulsatingCharacterDisplay("E");
+        washingHandsText("Skölj av händerna");
         break;
 		
     case HandState.RINSE:

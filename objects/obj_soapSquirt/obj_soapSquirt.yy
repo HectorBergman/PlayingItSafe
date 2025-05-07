@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_soap",
+  "%Name":"obj_soapSquirt",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_soap",
+  "name":"obj_soapSquirt",
   "overriddenProperties":[],
   "parent":{
     "name":"washingHands",
@@ -31,9 +31,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_soap",
-    "path":"sprites/spr_soap/spr_soap.yy",
+    "name":"spr_soapSquirt",
+    "path":"sprites/spr_soapSquirt/spr_soapSquirt.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_soapSquirt",
+    "path":"sprites/spr_soapSquirt/spr_soapSquirt.yy",
+  },
   "visible":true,
 }
