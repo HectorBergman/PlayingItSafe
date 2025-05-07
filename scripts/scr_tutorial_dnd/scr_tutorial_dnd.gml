@@ -70,7 +70,19 @@ function dndState_finishFound_ongoing(){
 
 function dndState_difficulty4_ongoing(){
 	var thermo = instance_find(obj_thermometer,0);
-	return thermo.held
+	var truth = false;
+	if !thermo.held{ //if the thermometer is placed down inside the fridge, return true
+		with thermo{
+			var area = noone
+			area = instance_place(x,y,obj_clearCheckHitbox_variant);
+			if area != noone{
+				if area.area != -1{
+					truth = true;
+				}
+			}
+		}
+	}
+	return truth;
 }
 
 function dndState_hasUsedThermometer_ongoing(){
