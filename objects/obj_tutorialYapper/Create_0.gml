@@ -1,11 +1,14 @@
 dialogueArray = []
-depth = -10000
+depth = 20
 //Create a dialogue array for your minigame and the tutorialYapper and tutorialHandler will scroll through it for
 //each step if the handler is set up properly, see examples below on how to set up the dialogueArray for your minigame
 
 //Very short text: no overcomplications. Just explain the basics quickly.
+
+
 scale = room_width/1920
 paddingX = 180*scale;
+phoneCircle = summonObject(obj_phoneCircle, [["x", room_width-90], ["y", 490], ["depth", depth+10]]);
 
 dialogueArray[minigame.kitchen] = createDialogueArray(
 "Använd WASD eller piltangenterna för att röra på dig.",
@@ -51,6 +54,13 @@ function createDialogueArray(){
 
 function yapper_drawGUI(){
 	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNoArray[miniHand.currentMinigame]];
-	toDraw = scribble(text).align(fa_center).outline($000034).wrap(room_width-paddingX);
+	toDraw = scribble(text).align(fa_center).outline($000034).wrap(900);
 	toDraw.draw(room_width/2,70,typist);
+}
+
+
+function yapper_drawGUI2(){
+	text = "[scale,1][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNoArray[miniHand.currentMinigame]];
+	toDraw = scribble(text).align(fa_center).outline($000034).wrap(900);
+	toDraw.draw(1400,70,typist);
 }

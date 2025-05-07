@@ -29,6 +29,8 @@ enum dndStates{
 	difficulty12,
 	hasChangedTemperature,
 }
+startSummonTimer = 0;
+startSummonTime = 30;
 
 childrenList = ds_list_create();
 
