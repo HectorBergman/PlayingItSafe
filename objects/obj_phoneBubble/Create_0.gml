@@ -11,7 +11,11 @@ baseAlpha = 0;
 imageAlphaMult = 1;
 bubbleState = bubbleStates.notVisible
 bubbleHoverState = bubbleStates.isVisible
-
+baseX = x
+baseY = y
+hitboxX = baseX*room_width/1920
+hitboxY = baseY*room_height/1080
+baseBBox = [bbox_left,bbox_right,bbox_top,bbox_bottom];
 tween = noone;
 
 function shouldFadeBubble(){

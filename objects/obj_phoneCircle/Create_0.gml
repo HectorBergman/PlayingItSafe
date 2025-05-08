@@ -19,6 +19,11 @@ circleState = circleStates.invisible;
 circleScale = 0;
 image_xscale = circleScale
 image_yscale = circleScale;
+baseX = x
+baseY = y
+hitboxX = x*room_width/1920
+hitboxY = y*room_height/1080
+baseBBox = [bbox_left,bbox_right,bbox_top,bbox_bottom];
 
 phone = summonObject(obj_phone, [["x", 200], ["y", 0], ["depth", depth-1]])
 

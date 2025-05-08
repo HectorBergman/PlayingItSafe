@@ -14,6 +14,11 @@ phoneHoverState = bubbleStates.isVisible
 imageAlphaMult = 1;
 
 bubble = summonObject(obj_phoneBubble, [["x",0], ["y",0]]);
+baseX = x
+baseY = y
+hitboxX = baseX*room_width/1920
+hitboxY = baseY*room_height/1080
+baseBBox = [bbox_left,bbox_right,bbox_top,bbox_bottom];
 
 
 function shouldFadePhone(){

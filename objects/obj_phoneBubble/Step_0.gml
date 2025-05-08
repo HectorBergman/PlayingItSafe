@@ -16,3 +16,8 @@ switch (bubbleHoverState){
 	case bubbleStates.fadingOut: if !TweenIsPlaying(tween){bubbleHoverState = bubbleStates.notVisible}; break;
 }
 image_alpha = baseAlpha*imageAlphaMult
+hitboxX = baseX*room_width/1920
+hitboxY = baseY*room_height/1080
+x = hitboxX;
+y = hitboxY;
+sprite_set_bbox(sprite_index,baseBBox[0]*room_width/1920,baseBBox[2]*room_height/1080,baseBBox[1]*room_width/1920,baseBBox[3]*room_height/1080);
