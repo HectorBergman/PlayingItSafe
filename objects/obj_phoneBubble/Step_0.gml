@@ -2,9 +2,9 @@ switch (bubbleState){
 	case bubbleStates.notVisible: break;
 	case bubbleStates.startFadeIn: tween = TweenFire(id, EaseOutQuad,0,false,0,20,"baseAlpha",0,1); bubbleState = bubbleStates.fadingIn;
 	case bubbleStates.fadingIn: if !TweenIsPlaying(tween){bubbleState = bubbleStates.isVisible}; break;
-	case bubbleStates.isVisible: break;
+	case bubbleStates.isVisible: if parent.parent.parent.currentString == "" {bubbleState = bubbleStates.startFadeOut} break;
 	case bubbleStates.startFadeOut: tween = TweenFire(id, EaseOutQuad,0,false,0,20,"baseAlpha",1,0); bubbleState = bubbleStates.fadingOut;
-	case bubbleStates.fadingOut: if !TweenIsPlaying(tween){bubbleState = bubbleStates.notVisible}; break;
+	case bubbleStates.fadingOut: if !TweenIsPlaying(tween){bubbleState = bubbleStates.notVisible; parent.phoneState = phoneStates.startRollOut;}; break;
 }
 
 switch (bubbleHoverState){

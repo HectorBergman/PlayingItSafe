@@ -8,7 +8,7 @@ depth = 20
 
 scale = room_width/1920
 paddingX = 180*scale;
-phoneCircle = summonObject(obj_phoneCircle, [["x", room_width-90], ["y", 490], ["depth", depth+10]]);
+phoneCircle = summonObject(obj_phoneCircle, [["x", room_width-90], ["y", 490], ["depth", depth+10], ["parent", id]]);
 
 dialogueArray[minigame.kitchen] = createDialogueArray(
 "Använd WASD eller piltangenterna för att röra på dig.",
@@ -30,11 +30,10 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 );
 
 dialogueNoArray = [0,0,0,0,0,0,0,0,0,0,0];
-
+currentString = "";
 
 skip = false;
-prevText = "";
-currentText = "";
+
 
 typist = scribble_typist()//.sound(snd_speak_1, 0, 0.95, 1.05);
 typist.in(1, 0);
@@ -53,14 +52,14 @@ function createDialogueArray(){
 
 
 function yapper_drawGUI(){
-	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNoArray[miniHand.currentMinigame]];
+	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + currentString;
 	toDraw = scribble(text).align(fa_center).outline($000034).wrap(900);
 	toDraw.draw(room_width/2,70,typist);
 }
 
 
 function yapper_drawGUI2(){
-	text = "[scale,1][$eee7e7][fnt_bitmap_outline_big]" + dialogueArray[miniHand.currentMinigame][dialogueNoArray[miniHand.currentMinigame]];
+	text = "[scale,1][$eee7e7][fnt_bitmap_outline_big]" + currentString;
 	toDraw = scribble(text).align(fa_center).outline($000034).wrap(900);
 	toDraw.draw(1400,70,typist);
 }

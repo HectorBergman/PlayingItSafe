@@ -1,4 +1,5 @@
 enum bubbleStates{
+	init,
 	notVisible,
 	startFadeIn,
 	fadingIn,
@@ -9,7 +10,7 @@ enum bubbleStates{
 
 baseAlpha = 0;
 imageAlphaMult = 1;
-bubbleState = bubbleStates.notVisible
+bubbleState = bubbleStates.init
 bubbleHoverState = bubbleStates.isVisible
 baseX = x
 baseY = y
@@ -19,7 +20,7 @@ baseBBox = [bbox_left,bbox_right,bbox_top,bbox_bottom];
 tween = noone;
 
 function shouldFadeBubble(){
-	return shouldFade(obj_player,obj_pointer_vari,obj_pointer,obj_pointer_menu,obj_rightHand, obj_cookFoodHand)
+	return shouldFade(obj_player,obj_pointer_vari,obj_pointer,obj_pointer_menu,obj_rightHand, obj_cookFoodHand, obj_thermometer, obj_dragAndDrop_item_vari)
 }
 
 	

@@ -4,7 +4,7 @@ switch (phoneState){
 	case phoneStates.rollingIn: if !TweenIsPlaying(tween){phoneState = phoneStates.onScreen; bubble.bubbleState = bubbleStates.startFadeIn}; break;
 	case phoneStates.onScreen: break;
 	case phoneStates.startRollOut: tween = TweenFire(id, EaseOutQuad,0,false,0,40,"baseX",0,offScreenX); phoneState = phoneStates.rollingOut;
-	case phoneStates.rollingOut: if !TweenIsPlaying(tween){phoneState = phoneStates.offScreen; }; break;
+	case phoneStates.rollingOut: if !TweenIsPlaying(tween){phoneState = phoneStates.offScreen; parent.circleState = circleStates.startContract;}; break;
 }
 
 switch (phoneHoverState){
@@ -16,7 +16,7 @@ switch (phoneHoverState){
 	case bubbleStates.fadingOut: if !TweenIsPlaying(tween){phoneHoverState = bubbleStates.notVisible}; break;
 }
 image_alpha = imageAlphaMult
-hitboxX = baseX*room_width/1920
+hitboxX = (baseX-200)*room_width/1920
 hitboxY = baseY*room_height/1080
 x = hitboxX;
 y = hitboxY;
