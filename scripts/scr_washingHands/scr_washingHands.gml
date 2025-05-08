@@ -12,6 +12,9 @@ function minigame_washingHands_create(){
 
 	//this could also have a requirement in-case you want to have an animation or something b4 minigame start
 	minigameStatus = status.ongoing;
+	if difficulty >= 4 {
+		hasJewelry = true
+	}
 }
 
 //template for ongoing minigame handler actions. You can also control the minigame via this
@@ -35,6 +38,7 @@ function minigame_washingHands_finish(){
 		checkmark = summonObject(obj_correct, [[]]);
 		scoreHand.currentScore += 30
 		//code for checking if perfect or not goes here
+		ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 1;
 		if !perfect{
 			checkmark.visible = false;
 		}

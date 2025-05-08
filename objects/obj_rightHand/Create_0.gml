@@ -55,6 +55,7 @@ scrubKey4 = generateRandomLetter();
 
 // Define hand states
 enum HandState {
+	START,
     DIRTY,
 	JEWELRY,
     WET,
@@ -77,7 +78,7 @@ movabilityState = movability.movable
 
 scrubTween = noone;
 // Start in dirty state
-hand_state = HandState.DIRTY
+hand_state = HandState.START
 
 
 
@@ -94,14 +95,11 @@ function washingHandsText(newText){
 	//fråga Hector om ni undrar något mer
 }
 
-function pulsatingCharacterDisplay(_char) {
+function pulsatingCharacterDisplay(_char, posX, posY) {
     var scale = 6;
     var colorHex = "$eee7e7";
     var displayText = "[scale,5," + string(scale) + "][" + colorHex + "]" + string(_char);
     var toDraw = scribble(displayText).align(fa_center);
-
-    var posX = 100;
-    var posY = 50;
 
     // --- Manually assigned width/height ---
     var charWidth = 16 * scale;  // adjust if font is wider/narrower

@@ -76,6 +76,7 @@ function miniHandRefresh(){
            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     lettersArrayLength = array_length(letters)
     print(generateRandomLetter())
+	hasJewelry = false;
 	
 	//fryFood
 	

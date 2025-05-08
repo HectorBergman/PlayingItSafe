@@ -16,27 +16,27 @@ switch (hand_state) {
         
     case HandState.WET:
         washingHandsText("Ta tvål [[E]");
-		pulsatingCharacterDisplay("E");
+		pulsatingCharacterDisplay("E", 1730, 330);
         break;
         
     case HandState.SOAP:
         washingHandsText("Gnugga handflatorna [[" + scrubKey1 + "]");
-		pulsatingCharacterDisplay(scrubKey1);
+		pulsatingCharacterDisplay(scrubKey1, 100, 50);
         break;
         
     case HandState.SCRUB1:
         washingHandsText("Gnugga ovansidorna och mellan fingrarna [[" + scrubKey2 + "]");
-		pulsatingCharacterDisplay(scrubKey2);
+		pulsatingCharacterDisplay(scrubKey2, 100, 50);
         break;
 		
 	 case HandState.SCRUB2:
         washingHandsText("Gnugga tummarna [[" + scrubKey3 + "]");
-		pulsatingCharacterDisplay(scrubKey3);
+		pulsatingCharacterDisplay(scrubKey3, 100, 50);
         break;
 		
 	 case HandState.SCRUB3:
         washingHandsText("Gnugga fingrarna i handflatan [[" + scrubKey4 + "]");
-		pulsatingCharacterDisplay(scrubKey4);
+		pulsatingCharacterDisplay(scrubKey4, 100, 50);
         break;
 		
 	 case HandState.SCRUB4:
@@ -45,11 +45,11 @@ switch (hand_state) {
 		
     case HandState.RINSE:
         washingHandsText("Torka händerna på handduken [[E]");
-		pulsatingCharacterDisplay("E");
+		pulsatingCharacterDisplay("E", 330, 770);
         break;
         
     case HandState.DRY:
-        washingHandsText("Avsluta [[E], (Kranen måste vara avstängd!)");
-		pulsatingCharacterDisplay("E");
+        washingHandsText("Avsluta [[Enter]");
+		//pulsatingCharacterDisplay("Enter", 100, 50);
         break;
 }

@@ -50,7 +50,7 @@ switch (state){
 	case leftHandState.iceCheck:{
 		image_index = 0;
 		image_xscale = -1;
-		if parent.hand_state != HandState.DIRTY{
+		if !(parent.hand_state == HandState.DIRTY || parent.hand_state == HandState.START){
 			TweenEasyMove(x,y,room_width/3,room_height*1.3,0,40,EaseOutSine);
 			state = leftHandState.waiting
 		}

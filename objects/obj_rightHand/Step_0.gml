@@ -29,6 +29,18 @@ switch (movabilityState)
 
 switch (hand_state)
 {
+	case HandState.START:
+	{
+		print(miniHand.difficulty)
+		if !miniHand.hasJewelry {
+			hand_state = HandState.JEWELRY;
+		}
+		else {
+			hand_state = HandState.DIRTY;
+		}
+	}
+	break;
+		
 	case HandState.DIRTY:
 	{
 		if (jewel_rand < 5 ) {
@@ -163,7 +175,8 @@ switch (hand_state)
 	
 	case HandState.DRY:
 	{
-		if (keyboard_check_pressed(ord("E")) && global.tap_state == tapState.OFF) {
+		if (keyboard_check_pressed(vk_enter)) || (keyboard_check_pressed(vk_space)){
+			global.tap_state = tapState.OFF;
 			print("Nicely washed hands boi")
 			miniHand.minigameStatus = status.finished;
 		}
