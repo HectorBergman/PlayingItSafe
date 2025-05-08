@@ -29,6 +29,15 @@ enum dndStates{
 	difficulty12,
 	hasChangedTemperature,
 }
+enum FCStates{ //fallingChicken
+	none
+}
+enum FFStates{ //fryFood
+	none
+}
+enum WHStates{ //washHands
+	none
+}
 startSummonTimer = 0;
 startSummonTime = 30;
 
@@ -42,7 +51,12 @@ yapper = summonObject(obj_tutorialYapper);
 tStatus = tutorialStatus.start
 tutorialState = miniHand.currentMinigame;
 kitchenState = kitchenStates.none;
+
 dndState = dndStates.none;
+FFState = FFStates.none;
+FCState = FCStates.none;
+WHState = WHStates.none;
+
 
 
 //kitchen variables

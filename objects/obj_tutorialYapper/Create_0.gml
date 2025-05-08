@@ -29,6 +29,16 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 ""
 );
 
+dialogueArray[minigame.fallingChicken] = createDialogueArray(
+"Text om fallande kyckling här"
+);
+dialogueArray[minigame.washingHands] = createDialogueArray(
+"Text om tvätta händer här"
+);
+dialogueArray[minigame.fryFood] = createDialogueArray(
+"Text om steka kött här"
+);
+
 dialogueNoArray = [0,0,0,0,0,0,0,0,0,0,0];
 currentString = "";
 
@@ -53,13 +63,13 @@ function createDialogueArray(){
 
 function yapper_drawGUI(){
 	text = "[scale," + string(scale) + "][$eee7e7][fnt_bitmap_outline_big]" + currentString;
-	toDraw = scribble(text).align(fa_center).outline($000034).wrap(900);
-	toDraw.draw(room_width/2,70,typist);
+	toDraw = scribble(text).align(fa_center).outline($000034).wrap(800);
+	toDraw.draw(room_width/2,40,typist);
 }
 
 
 function yapper_drawGUI2(){
 	text = "[scale,1][$eee7e7][fnt_bitmap_outline_big]" + currentString;
-	toDraw = scribble(text).align(fa_center).outline($000034).wrap(900);
-	toDraw.draw(1400,70,typist);
+	toDraw = scribble(text).align(fa_center, fa_middle).outline($000034).wrap(800);
+	toDraw.draw(1400,130,typist);
 }
