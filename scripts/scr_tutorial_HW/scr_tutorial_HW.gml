@@ -33,6 +33,10 @@ function WH_ongoing_func(WHState){ //remember to add new states to the WHStates 
 								   //it work. It's easy, but it's on a case-by-case basis.
 	switch (WHState){
 		case WHStates.none: return WHState_none_ongoing();
+		case WHStates.mouseMoved: return WHState_mousePressed_ongoing();
+		case WHStates.keyPressed: return WHState_keyPressed_ongoing();
+		case WHStates.icy: return WHState_icy_ongoing();
+		case WHStates.finished: return WHState_finished_ongoing();
 	}
 }
 
@@ -61,5 +65,24 @@ function WHState_none_ongoing(){ //return true to progress to next state,
 								 //like if you're instructing them to click on the soap to soap your hands,
 								 //check for when soap has been clicked
 								 //(then they likely understood the instruction)
-	return false
+	return true
 }
+
+
+function WHState_mousePressed_ongoing(){
+	return mouse_check_button_pressed(1);
+}
+
+
+function WHState_keyPressed_ongoing(){
+	return keyboard_check_pressed(vk_anykey);
+}
+
+function WHState_icy_ongoing(){
+	return miniHand.difficulty >= 4;
+}
+
+function WHState_finished_ongoing(){
+	return mouse_check_button_pressed(1);
+}
+

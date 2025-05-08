@@ -33,7 +33,12 @@ dialogueArray[minigame.fallingChicken] = createDialogueArray(
 "Text om fallande kyckling här"
 );
 dialogueArray[minigame.washingHands] = createDialogueArray(
-"Text om tvätta händer här"
+"",
+"Använd musen för att använda handen",
+"Följ instruktioneran ovan och använd tangenterna som anges för att tvätta händerna!",
+"",
+"Ta av assesoarer från handen innan du börjar tvätta händerna!",
+""
 );
 dialogueArray[minigame.fryFood] = createDialogueArray(
 "Text om steka kött här"
