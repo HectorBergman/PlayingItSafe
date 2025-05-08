@@ -21,7 +21,7 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 "Stoppa in rätt varor i kylen!",
 "",
 "Dra termometern till kylen för att mäta temperaturen!",
-"något om termometern här",
+"Animalistiska produkter rekommenderas att förvaras under 4°C",
 "",
 "Det finns begränsat med utrymme i kylen. Prioritera de mest temperaturkänsliga livsmedlena först!",
 "",

@@ -9,10 +9,10 @@ switch (bubbleState){
 
 switch (bubbleHoverState){
 	case bubbleStates.isVisible: if shouldFadeBubble(){bubbleHoverState = bubbleStates.startFadeOut}break;
-	case bubbleStates.startFadeIn: tween = TweenFire(id, EaseOutQuad,0,false,0,10,"imageAlphaMult",0.4,1); bubbleHoverState = bubbleStates.fadingIn;
+	case bubbleStates.startFadeIn: tween = TweenFire(id, EaseOutQuad,0,false,0,10,"imageAlphaMult",0.3,1); bubbleHoverState = bubbleStates.fadingIn;
 	case bubbleStates.fadingIn: if !TweenIsPlaying(tween){bubbleHoverState = bubbleStates.isVisible}; break;
 	case bubbleStates.notVisible: if !shouldFadeBubble(){bubbleHoverState = bubbleStates.startFadeIn} break;
-	case bubbleStates.startFadeOut: tween = TweenFire(id, EaseOutQuad,0,false,0,10,"imageAlphaMult",1,0.4); bubbleHoverState = bubbleStates.fadingOut;
+	case bubbleStates.startFadeOut: tween = TweenFire(id, EaseOutQuad,0,false,0,10,"imageAlphaMult",1,0.3); bubbleHoverState = bubbleStates.fadingOut;
 	case bubbleStates.fadingOut: if !TweenIsPlaying(tween){bubbleHoverState = bubbleStates.notVisible}; break;
 }
 image_alpha = baseAlpha*imageAlphaMult
