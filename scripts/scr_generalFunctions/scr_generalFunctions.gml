@@ -230,7 +230,7 @@ function stringToEnum(str) {
 		case "moreMinigamesHere": return minigame.moreMinigamesHere;
 		case "fryFood" : return minigame.fryFood;
         case "washingHands": return minigame.washingHands;
-        case "none": return minigame.none;
+        case "none": return minigame.kitchen
         default: exception_unhandled_handler(str + " is not an existing enemy type!") //this crashes but
 																					  //not a custom crash
     }

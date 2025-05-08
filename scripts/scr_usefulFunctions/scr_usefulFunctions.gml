@@ -44,3 +44,13 @@ function scoreResults_generateArray(text, displayScore, scale = "2", color = "$e
 	
 	return [text, string(displayScore), string(scale), string(color)];
 }
+
+
+function shouldFade(){
+	for (var i = 0; i < argument_count; i++) {
+        if place_meeting(x,y,argument[i]){
+			return true;
+		}
+	}
+	return false;
+}
