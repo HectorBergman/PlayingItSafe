@@ -47,12 +47,8 @@ function minigame_fallingChicken_step(){
 
 //template for minigames completed, doesnt have to look like this ofc
 function minigame_fallingChicken_finish(){
-
-	if (keyboard_check_pressed(ord("R"))) {
-		// global.fallingChickenIntroShown = false; // Reset for next round
-		room_goto(rm_kitchen); // Change this to your actual gameplay room
-	}
 	if checkmark == noone{
+		scoreHand.currentScore = global.drop_score;
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
 		//code for checking if perfect or not goes here

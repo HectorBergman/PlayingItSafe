@@ -15,7 +15,7 @@ function scoreResults(totalScore, arguments = [[noone]]){
 	
 	var wrapWidth = 1200;
 	var text = ""
-	text = "[scale,3][$eee7e7]Tjänade poäng: " + string(totalScore +1); 
+	text = "[scale,3][$eee7e7]Tjänade poäng: " + string(totalScore); 
 	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
 	toDraw.draw(window_get_width()/2, 750);
 	
