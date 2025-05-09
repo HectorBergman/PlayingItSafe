@@ -28,7 +28,7 @@ outlineColor = $000034;
 ownFFRead = [miniHand.FFRead[0]];
 temperatureText = noone;
 tipsArray = [
-"Stek köttfärsen tills den är färdiglagad.\n" +
+"Stek maten tills den är färdiglagad.\n" +
 "Bakterier och virus som orsakar matförgiftning dör om livsmedlet värms upp till 72 °C under minst två minuter.\n" +
 "Klicka på äggtimern: [scale,0.5][spr_eggTimer_full][scale,2] för att ställa in den på 2 minuter. När timern ringer har 2 minuter gått.\n" +
 "Se också till att köttet får en fin brun färg och att du inte bränner det."]

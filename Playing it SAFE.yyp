@@ -182,6 +182,7 @@
     {"id":{"name":"obj_stoveControl","path":"objects/obj_stoveControl/obj_stoveControl.yy",},},
     {"id":{"name":"obj_tap","path":"objects/obj_tap/obj_tap.yy",},},
     {"id":{"name":"obj_thermo","path":"objects/obj_thermo/obj_thermo.yy",},},
+    {"id":{"name":"obj_thermoHandler","path":"objects/obj_thermoHandler/obj_thermoHandler.yy",},},
     {"id":{"name":"obj_thermometer","path":"objects/obj_thermometer/obj_thermometer.yy",},},
     {"id":{"name":"obj_tomato","path":"objects/obj_tomato/obj_tomato.yy",},},
     {"id":{"name":"obj_towl","path":"objects/obj_towl/obj_towl.yy",},},

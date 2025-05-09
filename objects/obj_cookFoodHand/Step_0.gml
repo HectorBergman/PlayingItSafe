@@ -19,6 +19,12 @@ if (inHand.mouseHeld){
 	image_index = 0;
 }
 
+if miniHand.difficulty >= 6
+{
+	miniHand.movableThermo = true;
+}
+
+
 switch (movabilityState)
 {
 	case movability.movable:{
@@ -69,4 +75,14 @@ switch fryFoodState{
 			stoveValue = preTurnStoveValue + value;
 		}
 	}break;
+}
+
+
+if obj_thermoHandler.movableThermo
+{
+	if place_meeting(x, y, obj_thermo) && inHand.mouseHeld
+	{
+		obj_thermo.x = mouse_x;
+		obj_thermo.y = mouse_y;
+	}
 }

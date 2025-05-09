@@ -4,12 +4,9 @@
 // Stove mechanic, turning on and off the stove, includes four states
 
 
-
 if place_meeting(x, y, obj_food)
 {
 	
-
-	//I draw event, space bar så ser man temperatur på maten	
 	
 	if keyboard_check_pressed(vk_enter)
 	{
@@ -45,3 +42,4 @@ if obj_stoveControl.state != stoveState.off
 	
 	}
 }
+
