@@ -1,7 +1,7 @@
 
 //add in new minigames here
 enum minigame{
-	none,
+	kitchen,
 	dragAndDrop,
 	dragAndDropFridgeLevels,
 	fallingChicken,
@@ -22,8 +22,8 @@ enum status{
 playerPosition = [592,736];
 //call this + minigameComplete when done with minigame,
 //add in any required variables here
-currentMinigame = minigame.none;
-lastMinigame = minigame.none;
+currentMinigame = minigame.kitchen;
+lastMinigame = minigame.kitchen;
 
 
 dndRead = [false,false,false];
@@ -32,7 +32,7 @@ FFRead = [false];
 function miniHandRefresh(){
 	
 	difficulty = 1;
-	currentMinigame = minigame.none
+	currentMinigame = minigame.kitchen
 	minigameStatus = status.started
 
 	minigameScore = 0;

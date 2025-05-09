@@ -6,7 +6,7 @@ function createAlert(element){
 	var info = element.stationInfostruct
 	var alertInfo = {age : 0, lifetime : info.alertLifetime}
 	var alert = undefined;
-	if miniHand.currentMinigame == minigame.none{
+	if miniHand.currentMinigame == minigame.kitchen{
 		alert = summonObject(obj_alert, getAlertInfo(info));
 	}
 	
@@ -25,7 +25,6 @@ function getAlertInfo(info){
 
 
 function summonCurrentAlert(index){
-	print("haiii");
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
 	var info = currentStructs.stationInfostruct
 	var alert = summonObject(obj_alert, getAlertInfo(info));
@@ -59,7 +58,7 @@ function updateAlert(index){
 			}
 			if miniHand.minigameStatus == status.finished{
 				//pause alert aging when checkmark is shown
-			}else if miniHand.currentMinigame == minigame.none{
+			}else if miniHand.currentMinigame == minigame.kitchen{
 				currentStructs.alertInfo.age++ //(increase age)
 			}else{
 				currentStructs.alertInfo.age += 0.2 //slowed progression if inside minigame
@@ -101,9 +100,9 @@ function defaultSummonCondition(info){
 
 function washingHandsSummonCondition(info){
 	var m = miniHand
-	return m.minigameStatus == status.started && m.currentMinigame == minigame.none &&
+	return m.minigameStatus == status.started && m.currentMinigame == minigame.kitchen &&
 	(m.lastMinigame == minigame.fallingChicken || m.lastMinigame == minigame.dragAndDropFridgeLevels
-	|| m.lastMinigame == minigame.none);
+	|| m.lastMinigame == minigame.kitchen);
 }
 function defaultDeletionCondition(info){
 	var deletion = false;
