@@ -33,6 +33,10 @@ function FF_ongoing_func(FFState){ //remember to add new states to the FFStates 
 								   //it work. It's easy, but it's on a case-by-case basis.
 	switch (FFState){
 		case FFStates.none: return FFState_none_ongoing();
+		case FFStates.hasTurnedStove: return FFState_hasTurnedStove_ongoing();
+		case FFStates.timerActivated: return FFState_timerActivated_ongoing();
+		case FFStates.difficultyHigh: return FFState_difficultyHigh_ongoing();
+		case FFStates.moveThermo: return FFState_moveThermo_ongoing();
 	}
 }
 
@@ -61,5 +65,21 @@ function FFState_none_ongoing(){ //return true to progress to next state,
 								 //like if you're instructing them to move the thermometer
 								 //check for if thermometer has been moved,
 								 //(then they likely understood the instruction)
+	return false
+}
+
+function FFState_hasTurnedStove_ongoing(){
+	return false
+}
+
+function FFState_timerActivated_ongoing(){
+	return false
+}
+
+function FFState_difficultyHigh_ongoing(){
+	return false
+}
+
+function FFState_moveThermo_ongoing(){
 	return false
 }

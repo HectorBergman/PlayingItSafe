@@ -33,7 +33,11 @@ enum FCStates{ //fallingChicken
 	none
 }
 enum FFStates{ //fryFood
-	none
+	none,
+	hasTurnedStove,
+	timerActivated,
+	difficultyHigh,
+	moveThermo,
 }
 enum WHStates{ //washHands
 	none
