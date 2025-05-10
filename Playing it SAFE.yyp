@@ -274,6 +274,7 @@
     {"id":{"name":"scr_tutorial_kitchen","path":"scripts/scr_tutorial_kitchen/scr_tutorial_kitchen.yy",},},
     {"id":{"name":"scr_usefulFunctions","path":"scripts/scr_usefulFunctions/scr_usefulFunctions.yy",},},
     {"id":{"name":"scr_washingHands","path":"scripts/scr_washingHands/scr_washingHands.yy",},},
+    {"id":{"name":"scr_WH_draw_gui","path":"scripts/scr_WH_draw_gui/scr_WH_draw_gui.yy",},},
     {"id":{"name":"scribble_add_macro","path":"scripts/scribble_add_macro/scribble_add_macro.yy",},},
     {"id":{"name":"scribble_anim_blink","path":"scripts/scribble_anim_blink/scribble_anim_blink.yy",},},
     {"id":{"name":"scribble_anim_cycle","path":"scripts/scribble_anim_cycle/scribble_anim_cycle.yy",},},

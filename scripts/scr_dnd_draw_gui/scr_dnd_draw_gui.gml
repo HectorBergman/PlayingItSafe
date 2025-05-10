@@ -20,14 +20,51 @@ function minigame_dnd_step_draw_gui(){
 
 
 function minigame_dnd_finish_draw_gui(){
+	if justRightAmnt > 0{
+	}
+	var results = [];
 
-	scoreResults(scoreHand.currentScore, 
-	[scoreResults_generateArray(string(justRightAmnt) + " varor vid rätt temperatur", string(justRightAmnt*20), "2", "$eee7e7"),
-	scoreResults_generateArray(string(tooColdAmnt) + " varor vid för kall temperatur", string(tooColdAmnt*10), "2", "$eee7e7"), 
-	scoreResults_generateArray(string(tooHotAmnt) + " varor vid för varm temperatur", string(tooHotAmnt*-50), "2", "$eee7e7"),
-	noone]);
-	// TODO: fler options
-//"$61cc14" green
-//"$9c0000" red
+	if (justRightAmnt > 0) {
+		var plural = "varor"
+		if justRightAmnt == 1{
+			plural = "vara";
+		}
+	    array_push(results, scoreResults_generateArray(
+	        string(justRightAmnt) + " " + plural + " vid rätt temperatur",
+	        "[$61cc14]+" + string(justRightAmnt*20) + " poäng",
+	        "2",
+	        "$eee7e7"
+	    ));
+	}
+
+	if (tooColdAmnt > 0) {
+		var plural = "varor"
+		if tooColdAmnt == 1{
+			plural = "vara";
+		}
+	    array_push(results, scoreResults_generateArray(
+	        string(tooColdAmnt) + " " + plural + " vid för kall temperatur",
+	        "[$b0c5ff]+" + string(tooColdAmnt*10) + " poäng",
+	        "2",
+	        "$eee7e7"
+	    ));
+	}
+
+	if (tooHotAmnt > 0) {
+		var plural = "varor"
+		if tooHotAmnt == 1{
+			plural = "vara";
+		}
+	    array_push(results, scoreResults_generateArray(
+	        string(tooHotAmnt) + " " + plural + " vid för varm temperatur",
+	        "[$9c0000]" + string(tooHotAmnt*-50)+ " poäng",
+	        "2",
+	        "$eee7e7"
+	    ));
+	}
+	array_push(results, noone);
+	
+	
+	scoreResults(scoreHand.currentScore, results, noone);
+
 }
-

@@ -63,7 +63,7 @@ function minigame_dragAndDrop_variant_finish(){
 				summonItemText(itemsArray[i],"$9c0000",itemPoints);
 				perfect = false;
 			}
-			scoreHand.totalScore += pointsEarned
+			scoreHand.currentScore += pointsEarned
 			dragAndDropIndexer++;
 	
 		}
@@ -83,7 +83,7 @@ function minigame_dragAndDrop_variant_finish(){
 					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 4;
 				}
 			}else{
-				if checkmark.life == checkmark.lifeTime{
+				if checkmark.life >= checkmark.lifeTime && inHand.anyKey{
 					exitMinigame();
 					miniHandRefresh();
 				}

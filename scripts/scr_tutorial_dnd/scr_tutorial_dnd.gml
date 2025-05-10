@@ -13,7 +13,6 @@ function dnd_start_func(dndState){
 }
 
 function dnd_ongoing_func(dndState){
-	print(dndState);
 	switch (dndState){
 		case dndStates.none: return dndState_none_ongoing();
 		case dndStates.mouseMoved: return dndState_mouseMoved_ongoing();
@@ -54,7 +53,6 @@ function dndState_none_ongoing(){
 		mouseDistanceMoved += point_distance(mouse_x,mouse_y,prevMousePosition[0],prevMousePosition[1]);
 	}
 	prevMousePosition = [mouse_x,mouse_y];
-	print(mouseDistanceMoved);
 	return mouseDistanceMoved > 1500
 }
 

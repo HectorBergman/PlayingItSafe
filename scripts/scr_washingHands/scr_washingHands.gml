@@ -30,6 +30,7 @@ function minigame_washingHands_step(){
 
 //template for minigames completed, doesnt have to look like this ofc
 function minigame_washingHands_finish(){
+	print("test");
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
@@ -39,7 +40,7 @@ function minigame_washingHands_finish(){
 			checkmark.visible = false;
 		}
 	}else{
-		if checkmark.life == checkmark.lifeTime{
+		if checkmark.life == checkmark.lifeTime && inHand.anyKey{
 			exitMinigame();
 			miniHandRefresh();
 		}
