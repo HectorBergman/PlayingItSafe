@@ -3,7 +3,7 @@ debugTime++ //for debugging only
 
 //follow dragAndDrop's example when creating minigames. See: scr_dragAndDrop
 //also see: scr_minigameTemplate
-if currentMinigame != minigame.none{
+if currentMinigame != minigame.kitchen{
 	if minigameStatus == status.started{
 		for (var i = 0; i < ds_list_size(mainGameHand.stationsAndAlerts); i++){
 			var currentStation = ds_list_find_value(mainGameHand.stationsAndAlerts, i);
@@ -16,7 +16,7 @@ if currentMinigame != minigame.none{
 	}
 }
 switch (currentMinigame){
-    case minigame.none: minigame_none_control(); break;
+    case minigame.kitchen: minigame_kitchen_control(); break;
 	case minigame.dragAndDrop: minigame_dragAndDrop_control(); break;
 	case minigame.dragAndDropFridgeLevels: minigame_dragAndDrop_variant_control(); break;
 	case minigame.fallingChicken: minigame_fallingChicken_control(); break;

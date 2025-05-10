@@ -75,7 +75,7 @@ function minigame_dragAndDrop_variant_finish(){
 				checkmark = summonObject(obj_correct, [[]]);
 				if !perfect{
 					checkmark.visible = false;
-					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty -= 1;
+					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 2;
 				}else{
 					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 4;
 				}
