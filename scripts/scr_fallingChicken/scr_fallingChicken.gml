@@ -7,25 +7,11 @@ function minigame_fallingChicken_control(){
 	}
 }
 function minigame_fallingChicken_create(){
-
-	//here goes any code you need to start the minigame
-	// if (keyboard_check_pressed(vk_enter)) {
-	// 	minigameStatus = status.ongoing;
-	// }
 	
-	if (keyboard_check_pressed(vk_enter) || keyboard_check(vk_space)) {
+	// TODO: Add pressed mouse
+	 if (keyboard_check_pressed(vk_enter) || keyboard_check(vk_space)) {
         minigameStatus = status.ongoing;
     }
-	
-	// if (room != rm_falling_chicken_start) {
-		// global.fallingChickenIntroShown = true;
-	//	room_goto(rm_falling_chicken_start);
-	//	return;
-	// }
-	
-
-	//this could also have a requirement in-case you want to have an animation or something b4 minigame start
-	
 }
 
 //template for ongoing minigame handler actions. You can also control the minigame via this
@@ -38,32 +24,53 @@ function minigame_fallingChicken_step(){
 	minigameComplete = false;
 	//or alternatively just have it be false and set to true when conditions met
 	
-	if minigameComplete{ 
-		checkmark = 1;
-		minigameStatus = status.finished;
-	}
+	// if minigameComplete{ 
+		// checkmark = 1;
+		
+		// var handler = instance_find(obj_minigameHandler, 0);
+		// if (instance_exists(handler)) {
+		// 	handler.fallingChickenDifficulty += 1;
+		// }
+
+		// minigameStatus = status.finished;
+	// }
 	scoreHand.currentScore = global.drop_score;
 }
 
 //template for minigames completed, doesnt have to look like this ofc
 function minigame_fallingChicken_finish(){
+	
+	
 
-	if (keyboard_check_pressed(ord("R"))) {
+	// if (keyboard_check_pressed(ord("R"))) {
 		// global.fallingChickenIntroShown = false; // Reset for next round
-		room_goto(rm_kitchen); // Change this to your actual gameplay room
-	}
+	//	room_goto(rm_kitchen); // Change this to your actual gameplay room
+	// }
+	
+
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
-		//code for checking if perfect or not goes here
+		// code for checking if perfect or not goes here
 		if !perfect{
-			checkmark.visible = false;
+		 checkmark.visible = false;
 		}
 	}else{
 		if checkmark.life == checkmark.lifeTime{
+			
+			var handler = instance_find(obj_minigameHandler, 0);
+			if (instance_exists(handler)) {
+				handler.fallingChickenDifficulty += 1;
+			}
+			
 			exitMinigame();
 			miniHandRefresh();
 		}
-	}
+			
+			// ---- DIFFICULTY ----
+			// fallingChickenDifficulty += 1;
+			// exitMinigame();
+			// miniHandRefresh();
+		}
 
 }

@@ -18,7 +18,6 @@ enum status{
 	none,
 }
 
-
 playerPosition = [592,736];
 //call this + minigameComplete when done with minigame,
 //add in any required variables here
@@ -29,10 +28,15 @@ lastMinigame = minigame.none;
 dndRead = [false,false,false];
 FFRead = [false];
 
+fallingChickenDifficulty = 1;
+
 function miniHandRefresh(){
 	
 	// Added to handle falling_chicken_start frame
 	global.drop_score = 0;
+	
+	
+	// fallingChickenDifficulty = 1;
 	
 	difficulty = 1;
 	currentMinigame = minigame.none

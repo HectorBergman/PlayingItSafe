@@ -6,24 +6,51 @@ function scr_food_drop()
 	
 	// Randomly assign a category of food
 	if (miniHand.minigameStatus == status.ongoing){
-		var food_category = food_options[irandom(array_length(food_options) - 1)];
+		
 	
+		// --- DIFFICULTY --- 
+		// what food categories are "allowed" at certain levels. 
+		var category_pool = [];
+		
+		var handler = instance_find(obj_minigameHandler, 0);
+		var current_difficulty = 1;
+
+		if (instance_exists(handler)) {
+			current_difficulty = handler.fallingChickenDifficulty;
+		}
+
+		if (current_difficulty < 3) 
+		{
+			category_pool = ["chicken", "meat", "vegetables"];
+		} else {
+			category_pool = ["chicken", "meat", "vegetables", "fish"];	
+		}
+		
+		
+		// var food_category = food_options[irandom(array_length(food_options) - 1)];
+		var food_category = category_pool[irandom(array_length(category_pool) - 1)];
 		var food_objects_array = [];
 	
-		switch(food_category) 
-		{
-			case "meat":
-				food_objects_array = array_meat;
-				break;
-			case "vegetables":
-				food_objects_array = array_veg;
-				break;
-			case "chicken":
-				food_objects_array = array_chicken;
-				break;
+			switch(food_category) 
+			{
+				case "meat":
+					food_objects_array = array_meat;
+					break;
+				case "vegetables":
+					food_objects_array = array_veg;
+					break;
+				case "chicken":
+					food_objects_array = array_chicken;
+					break;
+				case "fish":
+					food_objects_array = array_fish;
+			}
 		}
-	
+		
+		
+		// Instantiate food, i.e 
 		// Choose a random object from category 
+	
 		var food_object; 
 		food_object = food_objects_array[irandom(array_length(food_objects_array) - 1)];
 	
@@ -37,7 +64,7 @@ function scr_food_drop()
 		food_obj.is_active = true;
 	
 		global.drop_counter += 1;
-	
+		
 	
 		// Deactivate other parent object 
 		// TODO: fix 
@@ -55,4 +82,3 @@ function scr_food_drop()
 			return;
 		}
 	}
-}
