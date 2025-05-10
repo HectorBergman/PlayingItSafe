@@ -7,7 +7,9 @@ if stoveValue < -200{
 }else{
 	stoveControl.state = stoveState.high
 }
-
+if miniHand.minigameStatus == status.finished{
+	fryFoodState = fryFoodStates.normal;
+}
 if (inHand.mouseHeld){
 	if (image_index == 0){
 		firstGrab = true;
@@ -39,7 +41,7 @@ switch (movabilityState)
 
 switch fryFoodState{
 	case fryFoodStates.normal:{
-		if place_meeting(x, y, obj_stoveControl) && inHand.mouseHeld && firstGrab && note.stateOfNote != noteStates.reading{
+		if place_meeting(x, y, obj_stoveControl) && inHand.mouseHeld && firstGrab && note.stateOfNote != noteStates.reading && miniHand.minigameStatus != status.finished{
 			fryFoodState = fryFoodStates.changingTemp;
 			movabilityState = movability.unmovable;
 			TweenEasyMove(x,y,stoveControl.x,stoveControl.y,0,5,EaseOutQuint);

@@ -248,6 +248,7 @@
     {"id":{"name":"draw_text_scribble","path":"scripts/draw_text_scribble/draw_text_scribble.yy",},},
     {"id":{"name":"scr_alertFunctions","path":"scripts/scr_alertFunctions/scr_alertFunctions.yy",},},
     {"id":{"name":"scr_buttonActions","path":"scripts/scr_buttonActions/scr_buttonActions.yy",},},
+    {"id":{"name":"scr_dnd_draw_gui","path":"scripts/scr_dnd_draw_gui/scr_dnd_draw_gui.yy",},},
     {"id":{"name":"scr_dragAndDrop_variant","path":"scripts/scr_dragAndDrop_variant/scr_dragAndDrop_variant.yy",},},
     {"id":{"name":"scr_dragAndDrop","path":"scripts/scr_dragAndDrop/scr_dragAndDrop.yy",},},
     {"id":{"name":"scr_fallingChicken_draw_gui","path":"scripts/scr_fallingChicken_draw_gui/scr_fallingChicken_draw_gui.yy",},},

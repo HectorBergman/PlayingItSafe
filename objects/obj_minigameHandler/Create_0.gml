@@ -48,6 +48,11 @@ function miniHandRefresh(){
 	
 
 	//dragAndDrop
+	
+	tooColdAmnt = 0;
+	tooHotAmnt = 0;
+	justRightAmnt = 0;
+	
 	itemsArray = [];
 	doorsArray = [];
 	itemsArrayLength = 0;
