@@ -34,10 +34,14 @@ dialogueArray[minigame.fallingChicken] = createDialogueArray(
 );
 dialogueArray[minigame.washingHands] = createDialogueArray(
 "",
-"Använd musen för att använda handen",
-"Följ instruktioneran ovan och använd tangenterna som anges för att tvätta händerna!",
+"Använd musen för att röra på handen",
+"Klicka på kranen med musen för att sätta på vattnet",
+"Håll handen i vattnet",
+"Klicka på tvålen med musen för att ta tvål",
+"Tryck på tangenterna som anges för att skrubba händerna",
 "",
-"Ta av assesoarer från handen innan du börjar tvätta händerna!",
+"Ta av smycken och accessoarer genom att hålla ner musknappen och dra dem till smyckesbrickan",
+"",
 ""
 );
 dialogueArray[minigame.fryFood] = createDialogueArray(

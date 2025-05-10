@@ -75,7 +75,7 @@ switch (hand_state)
 	{
 		create_water_drops();
 		
-		if (place_meeting(x, y, obj_soap) && (keyboard_check_pressed(ord("E")))) {
+		if (place_meeting(x, y, obj_soap) && (mouse_check_button_pressed(1))) {
 			hand_state = HandState.scrubStart;
 			print("Hands are soapy")
 			movabilityState = movability.unmovable;
@@ -157,7 +157,7 @@ switch (hand_state)
 		create_water_drops()
 		image_angle = 0;
 		
-		if (place_meeting(x, y, obj_towl) && keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_towl) && mouse_check_button_pressed(1)) {
 			hand_state = HandState.DRY;
 			
 			// Destroy all water drops when leaving WET state

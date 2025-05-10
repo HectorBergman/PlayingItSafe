@@ -33,7 +33,10 @@ function WH_ongoing_func(WHState){ //remember to add new states to the WHStates 
 								   //it work. It's easy, but it's on a case-by-case basis.
 	switch (WHState){
 		case WHStates.none: return WHState_none_ongoing();
-		case WHStates.mouseMoved: return WHState_mousePressed_ongoing();
+		case WHStates.mouseMoved: return WHState_mouseMoved_ongoing();
+		case WHStates.tapPressed: return WHState_tapPressed_ongoing();
+		case WHStates.handWet: return WHState_handsWet_ongoing();
+		case WHStates.soapPressed: return WHState_soapPressed_ongoing();
 		case WHStates.keyPressed: return WHState_keyPressed_ongoing();
 		case WHStates.icy: return WHState_icy_ongoing();
 		case WHStates.finished: return WHState_finished_ongoing();
@@ -69,8 +72,32 @@ function WHState_none_ongoing(){ //return true to progress to next state,
 }
 
 
-function WHState_mousePressed_ongoing(){
-	return mouse_check_button_pressed(1);
+function WHState_mouseMoved_ongoing(){
+	if prevMousePosition[0] != -99{
+		mouseDistanceMoved += point_distance(mouse_x,mouse_y,prevMousePosition[0],prevMousePosition[1]);
+	}
+	prevMousePosition = [mouse_x,mouse_y];
+	print(mouseDistanceMoved);
+	return mouseDistanceMoved > 1500
+
+}
+
+function WHState_tapPressed_ongoing(){
+	if instance_exists(obj_water){
+		return true;
+	}
+}
+
+function WHState_handsWet_ongoing(){
+	if instance_exists(obj_waterDrop){
+		return true;
+	}
+}
+
+function WHState_soapPressed_ongoing(){
+	if instance_exists(obj_soapSquirt){
+		return true;
+	}
 }
 
 
@@ -83,6 +110,11 @@ function WHState_icy_ongoing(){
 }
 
 function WHState_finished_ongoing(){
-	return mouse_check_button_pressed(1);
+	var ice = instance_find(obj_ice, 0);
+	var tray = instance_find(obj_vanityTray, 0);
+	
+	return point_distance(ice.x, ice.y, tray.x, tray.y) <= 256;
+	
+	
 }
 

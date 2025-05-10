@@ -38,6 +38,9 @@ enum FFStates{ //fryFood
 enum WHStates{ //washHands
 	none,
 	mouseMoved,
+	tapPressed,
+	handWet,
+	soapPressed,
 	keyPressed,
 	icy,
 	finished,
