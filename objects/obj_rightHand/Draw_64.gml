@@ -16,7 +16,6 @@ switch (hand_state) {
         
     case HandState.WET:
         washingHandsText("Ta tvål [[Klicka med musen]");
-		pulsatingCharacterDisplay("E", 1730, 330);
         break;
         
     case HandState.SOAP:
