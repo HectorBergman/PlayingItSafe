@@ -16,14 +16,14 @@ function scoreResults(totalScore, arguments = [[noone]]){
 	var text = ""
 	text = "[fnt_bitmap_outline_big][scale,2][$eee7e7]Tjänade poäng: " + string(totalScore); 
 	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
-	toDraw.draw(window_get_width()/2, 700);
+	toDraw.draw(1920/2, 700);
 	var lastI = 0;
 	
 	if arguments != noone{
 		for (var i = 0; arguments[i] != noone; i++;) {
 			text = "[fnt_bitmap_outline_big][scale,1][$eee7e7]" + string(arguments[i][0]) + ": " + string(arguments[i][1]);
 			toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
-			toDraw.draw(window_get_width() / 2, 820+60*i);
+			toDraw.draw(1920 / 2, 820+60*i);
 			lastI = i;
 		}
 	}
@@ -31,7 +31,7 @@ function scoreResults(totalScore, arguments = [[noone]]){
 		if checkmark.life >= checkmark.lifeTime{
 			text = "[fnt_bitmap_outline_big][scale,1.5][$bed6ae]" + "Tryck på valfri tangent för att fortsätta."
 			toDraw = scribble(text).align(fa_center);
-			toDraw.draw(window_get_width() / 2, 820+60*(lastI+1));
+			toDraw.draw(1920 / 2, 820+60*(lastI+1));
 		}
 	}catch(e){
 	}

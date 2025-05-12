@@ -8,7 +8,7 @@ switch (currentMinigame){
     case minigame.fallingChicken: minigame_fallingChicken_control_draw_gui(); break;
 	case minigame.fryFood: minigame_fryFood_control_draw_gui(); break;
 	case minigame.dragAndDropFridgeLevels: minigame_dnd_control_draw_gui(); break;
-	case minigame.washingHands: minigame_WH_finish_draw_gui(); break;
+	case minigame.washingHands: minigame_WH_control_draw_gui(); break;
 	default: break;
 }
 

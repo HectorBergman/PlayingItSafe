@@ -40,7 +40,7 @@ function minigame_washingHands_finish(){
 			checkmark.visible = false;
 		}
 	}else{
-		if checkmark.life == checkmark.lifeTime && inHand.anyKey{
+		if checkmark.life >= checkmark.lifeTime && inHand.anyKey{
 			exitMinigame();
 			miniHandRefresh();
 		}
