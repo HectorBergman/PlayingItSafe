@@ -56,6 +56,7 @@ switch fryFoodState{
 			preTurnStoveValue = stoveValue
 			preTurnStoveAngle = stoveControl.image_angle;
 			mouseTracker.visible = true;
+			heatBar = summonObject(obj_heatBar, [["x", stoveControl.x], ["y", stoveControl.y-200]]);
 		}
 	}break;
 	case fryFoodStates.changingTemp:{

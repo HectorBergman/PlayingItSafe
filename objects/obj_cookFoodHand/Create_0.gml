@@ -12,6 +12,8 @@ stoveRanges = [-300,300];
 canHold = true;
 preTurnStoveAngle = 0;
 
+heatBar = noone;
+
 enum fryFoodStates{
 	normal,
 	changingTemp,
@@ -38,6 +40,8 @@ function stopChangingTemp(){
 	movabilityState = movability.halfmovable;
 	mouseTracker.visible = false;
 	TweenFire(id,EaseOutQuad,0, false, 0, 24, "image_angle", image_angle, 0);
+	instance_destroy(heatBar);
+	heatBar = noone;
 }
 
 
