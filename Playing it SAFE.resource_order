@@ -29,6 +29,7 @@
     {"name":"obj_itemHandler","order":2,"path":"objects/obj_itemHandler/obj_itemHandler.yy",},
     {"name":"obj_key","order":3,"path":"objects/obj_key/obj_key.yy",},
     {"name":"obj_mouse","order":6,"path":"objects/obj_mouse/obj_mouse.yy",},
+    {"name":"obj_mouseTracker","order":3,"path":"objects/obj_mouseTracker/obj_mouseTracker.yy",},
     {"name":"obj_notePanner","order":1,"path":"objects/obj_notePanner/obj_notePanner.yy",},
     {"name":"obj_noteSpawner","order":3,"path":"objects/obj_noteSpawner/obj_noteSpawner.yy",},
     {"name":"obj_notification_dnd","order":12,"path":"objects/obj_notification_dnd/obj_notification_dnd.yy",},

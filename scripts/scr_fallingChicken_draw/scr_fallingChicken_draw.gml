@@ -14,7 +14,7 @@ function minigame_fallingChicken_create_draw(){
 	draw_set_valign(fa_middle);
 	var wrapWidth = 1200;
 	var text = ""
-	text = "[scale,4][$eee7e7]Press Enter to Start";
+	text = "[scale,4][$eee7e7]Tryck på Enter för att börja";
 	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center).align(fa_middle);
 	toDraw.draw(1920/2, 1080/2);
 	//draw_text(room_width / 2, room_height / 2, "Press Enter to Start");

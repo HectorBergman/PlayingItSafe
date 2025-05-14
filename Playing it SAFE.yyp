@@ -151,6 +151,7 @@
     {"id":{"name":"obj_menuHandler","path":"objects/obj_menuHandler/obj_menuHandler.yy",},},
     {"id":{"name":"obj_minigameHandler","path":"objects/obj_minigameHandler/obj_minigameHandler.yy",},},
     {"id":{"name":"obj_mouse","path":"objects/obj_mouse/obj_mouse.yy",},},
+    {"id":{"name":"obj_mouseTracker","path":"objects/obj_mouseTracker/obj_mouseTracker.yy",},},
     {"id":{"name":"obj_mushroom","path":"objects/obj_mushroom/obj_mushroom.yy",},},
     {"id":{"name":"obj_musicHandler","path":"objects/obj_musicHandler/obj_musicHandler.yy",},},
     {"id":{"name":"obj_note_1","path":"objects/obj_note_1/obj_note_1.yy",},},
