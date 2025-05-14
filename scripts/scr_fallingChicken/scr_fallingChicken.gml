@@ -60,7 +60,7 @@ function minigame_fallingChicken_finish(){
 			checkmark.visible = false;
 		}
 	}else{
-		if checkmark.life == checkmark.lifeTime{
+		if checkmark.life >= checkmark.lifeTime && inHand.anyKey{
 			exitMinigame();
 			miniHandRefresh();
 		}

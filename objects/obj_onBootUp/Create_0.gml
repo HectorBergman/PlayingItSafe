@@ -9,7 +9,7 @@ gpu_set_texfilter(false);
 window_set_cursor(cr_none); //hide pc cursor todo: replace cursor with something fun :))
 
 
-window_set_size(display_get_width(),display_get_height());
+window_set_size(1920,1080); //window_get_width
 
 summonObject(obj_cam, [["swag", true], ["x", 100]])
 
