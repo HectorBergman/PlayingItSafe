@@ -1,5 +1,5 @@
 
-
+selected = false;
 
 category_set = false; // True when first food_object has hit the chopping board. 
 

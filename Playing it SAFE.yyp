@@ -364,6 +364,8 @@
     {"id":{"name":"spr_checkmark","path":"sprites/spr_checkmark/spr_checkmark.yy",},},
     {"id":{"name":"spr_chicken_fillet_raw","path":"sprites/spr_chicken_fillet_raw/spr_chicken_fillet_raw.yy",},},
     {"id":{"name":"spr_chopping_board_chicken","path":"sprites/spr_chopping_board_chicken/spr_chopping_board_chicken.yy",},},
+    {"id":{"name":"spr_chopping_board_clicked","path":"sprites/spr_chopping_board_clicked/spr_chopping_board_clicked.yy",},},
+    {"id":{"name":"spr_chopping_board_default","path":"sprites/spr_chopping_board_default/spr_chopping_board_default.yy",},},
     {"id":{"name":"spr_chopping_board_meat","path":"sprites/spr_chopping_board_meat/spr_chopping_board_meat.yy",},},
     {"id":{"name":"spr_chopping_board_veg","path":"sprites/spr_chopping_board_veg/spr_chopping_board_veg.yy",},},
     {"id":{"name":"spr_chopping_board","path":"sprites/spr_chopping_board/spr_chopping_board.yy",},},

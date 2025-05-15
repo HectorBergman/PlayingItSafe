@@ -5,6 +5,6 @@ sprite_index = spr_instruction;
 button_created = false;
 
 
-if (!instance_exists(obj_pointer_menu)) {
-    instance_create_layer(0, 0, "Instances", obj_pointer_menu);
-}
+// if (!instance_exists(obj_pointer_menu)) {
+//    instance_create_layer(0, 0, "Instances", obj_pointer_menu);
+// }

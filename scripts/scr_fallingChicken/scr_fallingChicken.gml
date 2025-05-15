@@ -6,7 +6,12 @@ function minigame_fallingChicken_control(){
 		case status.none: break;
 	}
 }
+
 function minigame_fallingChicken_create(){
+	
+	if (!instance_exists(obj_pointer_menu)) {
+		instance_create_layer(0, 0, "Instances", obj_pointer_menu);
+	}
 	
 	// TODO: Add pressed mouse
 	 if (keyboard_check_pressed(vk_enter) || keyboard_check(vk_space)) {
@@ -16,36 +21,23 @@ function minigame_fallingChicken_create(){
 
 //template for ongoing minigame handler actions. You can also control the minigame via this
 //but I chose to do it via the minigame items instead (obj_dnd_item, obj_doors)
-function minigame_fallingChicken_step(){
+function minigame_fallingChicken_step()
+{
+	
+	if (!instance_exists(obj_pointer_menu)) {
+		instance_create_layer(0, 0, "Instances", obj_pointer_menu);
+	}
 	
 	var minigameComplete = true;
 	
 	//if requirements for minigame completion not met:
 	minigameComplete = false;
 	//or alternatively just have it be false and set to true when conditions met
-	
-	// if minigameComplete{ 
-		// checkmark = 1;
-		
-		// var handler = instance_find(obj_minigameHandler, 0);
-		// if (instance_exists(handler)) {
-		// 	handler.fallingChickenDifficulty += 1;
-		// }
 
-		// minigameStatus = status.finished;
-	// }
 	scoreHand.currentScore = global.drop_score;
 }
 
-//template for minigames completed, doesnt have to look like this ofc
 function minigame_fallingChicken_finish(){
-	
-	
-
-	// if (keyboard_check_pressed(ord("R"))) {
-		// global.fallingChickenIntroShown = false; // Reset for next round
-	//	room_goto(rm_kitchen); // Change this to your actual gameplay room
-	// }
 	
 
 	if checkmark == noone{
@@ -67,10 +59,6 @@ function minigame_fallingChicken_finish(){
 			miniHandRefresh();
 		}
 			
-			// ---- DIFFICULTY ----
-			// fallingChickenDifficulty += 1;
-			// exitMinigame();
-			// miniHandRefresh();
-		}
+	}
 
 }

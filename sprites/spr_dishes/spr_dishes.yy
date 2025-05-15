@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"falling_chicken",
+    "path":"folders/Sprites/falling_chicken.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
