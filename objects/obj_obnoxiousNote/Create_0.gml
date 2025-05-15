@@ -5,7 +5,7 @@ image_yscale = scale;
 stateOfNote = noteStates.reading;
 hasBeenRead = false;
 
-exitButton = summonObject(obj_button, [["action", 8], ["pausable", true], ["buttonText", "Jag förstår"], ["scale", 1.5], ["x", display_get_width()/2], ["y", display_get_height()-256], ["gui", true]]); 
+exitButton = summonObject(obj_button, [["action", 8], ["pausable", true], ["buttonText", "Jag förstår"], ["scale", 1.5], ["x", 1920/2], ["y", 1080-256], ["gui", true]]); //window_get_width
 pointer = summonObject(obj_pointer_menu, [["gui", true]]);
 
 originCoords = [x,y];

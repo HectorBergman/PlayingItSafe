@@ -45,9 +45,11 @@ function minigame_dragAndDrop_variant_finish(){
 					//but not as much as having a perfect temperature.
 					itemPoints = 10;
 					pointsEarned += itemPoints
+					tooColdAmnt++;
 					perfect = false;
 					summonItemText(itemsArray[i],"$b0c5ff",itemPoints);
 				}else{
+					justRightAmnt++;
 					itemPoints = 20;
 					pointsEarned += itemPoints
 					summonItemText(itemsArray[i],"$61cc14",itemPoints);
@@ -55,12 +57,13 @@ function minigame_dragAndDrop_variant_finish(){
 
 			}else{//storing food at too high temperatures should be more punishing
 					//than storing them at correct temperatures is rewarding
+				tooHotAmnt++;
 				itemPoints = -50
 				pointsEarned += itemPoints;
 				summonItemText(itemsArray[i],"$9c0000",itemPoints);
 				perfect = false;
 			}
-			scoreHand.totalScore += pointsEarned
+			scoreHand.currentScore += pointsEarned
 			dragAndDropIndexer++;
 	
 		}
@@ -75,12 +78,12 @@ function minigame_dragAndDrop_variant_finish(){
 				checkmark = summonObject(obj_correct, [[]]);
 				if !perfect{
 					checkmark.visible = false;
-					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty -= 1;
+					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 2;
 				}else{
 					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 4;
 				}
 			}else{
-				if checkmark.life == checkmark.lifeTime{
+				if checkmark.life >= checkmark.lifeTime && inHand.anyKey{
 					exitMinigame();
 					miniHandRefresh();
 				}
