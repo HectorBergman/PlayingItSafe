@@ -3,13 +3,13 @@
 
 var handler = instance_find(obj_minigameHandler, 0);
 if (instance_exists(handler)) {
-	if(handler.fallingChickenDifficulty >= 3)
+	if(handler.fallingChickenDifficulty >= 2)
 	{
-		fall_speed = 1 + 0.5 * handler.fallingChickenDifficulty;
+		fall_speed = 1;
 	}
 	else
 	{
-		fall_speed = 1 + 0.5 * handler.fallingChickenDifficulty;
+		fall_speed = 1;
 	}
 } else {
     fall_speed = 1; // default fallback if handler not found

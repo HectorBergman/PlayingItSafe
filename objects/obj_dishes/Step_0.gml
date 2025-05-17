@@ -2,7 +2,7 @@
 var handler = instance_find(obj_minigameHandler, 0);
 if (instance_exists(handler)) 
 {
-    if (handler.fallingChickenDifficulty >= 3) 
+    if (handler.fallingChickenDifficulty >= 2) 
 	{    
         visible = true;
     } else {
@@ -24,7 +24,7 @@ if (visible && !washing) {
         washing = true;
         sprite_index = spr_dishes_soap;
         board.selected = false;
-        board.sprite_index = spr_chopping_board_chicken;   // Reset to normal sprite
+        board.sprite_index = spr_chopping_board_default;   // Reset to normal sprite
         alarm[4] = wash_time;
     }
 }

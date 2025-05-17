@@ -19,7 +19,7 @@ function scr_food_drop()
 			current_difficulty = handler.fallingChickenDifficulty;
 		}
 
-		if (current_difficulty < 3) 
+		if (current_difficulty < 2) 
 		{
 			category_pool = ["chicken", "meat", "vegetables"];
 		} else {
