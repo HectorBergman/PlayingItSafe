@@ -73,7 +73,7 @@ function FFState_hasTurnedStove_ongoing(){
 }
 
 function FFState_timerActivated_ongoing(){
-	return false
+	return miniHand.difficulty >= 8;
 }
 
 function FFState_difficultyHigh_ongoing(){
