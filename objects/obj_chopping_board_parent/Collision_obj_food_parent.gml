@@ -31,7 +31,6 @@ else
 
 
 // Removes the object from the world. 
-// Good way of handling instances. 
 with (other) instance_destroy();
 
 with (obj_food_dropper) {
