@@ -30,7 +30,7 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 );
 
 dialogueArray[minigame.fallingChicken] = createDialogueArray(
-"Text om fallande kyckling här"
+"",
 );
 dialogueArray[minigame.washingHands] = createDialogueArray(
 "Text om tvätta händer här"
