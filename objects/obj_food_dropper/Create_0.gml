@@ -3,7 +3,7 @@ global.drop_counter = 0;
 global.drop_score = 0;
 
 
-timer = 160;
+timer = 220;
 dropCooldown = 280
 // Arrays of food objects, add more when needed. 
 array_chicken = [obj_chicken_fillet_raw];

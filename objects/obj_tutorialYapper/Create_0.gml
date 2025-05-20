@@ -17,12 +17,12 @@ dialogueArray[minigame.kitchen] = createDialogueArray(
 );
 
 dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
-"Använd musen för att röra runt pekaren",
-"Håll ner musknappen över en vara för att dra runt den",
+"Använd musen för att röra runt pekaren.",
+"Håll ner musknappen över en vara för att dra runt den.",
 "Stoppa in rätt varor i kylen!",
 "",
 "Dra termometern till kylen för att mäta temperaturen!",
-"Animalistiska produkter rekommenderas att förvaras under 4°C",
+"Animalistiska produkter rekommenderas att förvaras under 4°C.",
 "",
 "Det finns begränsat med utrymme i kylen. Prioritera de mest temperaturkänsliga livsmedlena först!",
 "",
@@ -31,12 +31,12 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 );
 
 dialogueArray[minigame.fallingChicken] = createDialogueArray(
-"Fallande kyckling",
-"Flytta maten med höger & vänster piltangent eller med A & D",
-"test",
-"Håll grönsaker, gris- och nötkött, och kyckling på olika skärbrädor.",
 "",
-"Håll ner musknappen på en skärbräda och rör på musen för att dra en skärbräda.",
+"Flytta maten med höger & vänster piltangent eller med A & D.",
+"Snyggt! Håll nedåtpilen eller S för att få maten att falla snabbare.",
+"Håll grönsaker, kyckling, och gris-/nötkött på olika skärbrädor.",
+"",
+"Håll ner musknappen på en skärbräda och rör på musen för att dra den.",
 "Dra en skärbräda till handfatet för att diska den.",
 "",
 );
