@@ -34,6 +34,9 @@ enum FCStates{ //fallingChicken
 	pilotFood,
 	waitForFood,
 	pilotDifferentFood,
+	waitForDifficultyIncrease,
+	teachDragging,
+	teachWashing,
 	
 }
 enum FFStates{ //fryFood

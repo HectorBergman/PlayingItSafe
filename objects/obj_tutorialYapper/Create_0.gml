@@ -34,7 +34,11 @@ dialogueArray[minigame.fallingChicken] = createDialogueArray(
 "Fallande kyckling",
 "Flytta maten med höger & vänster piltangent eller med A & D",
 "test",
-"mer text",
+"Håll grönsaker, gris- och nötkött, och kyckling på olika skärbrädor.",
+"",
+"Håll ner musknappen på en skärbräda och rör på musen för att dra en skärbräda.",
+"Dra en skärbräda till handfatet för att diska den.",
+"",
 );
 dialogueArray[minigame.washingHands] = createDialogueArray(
 "Text om tvätta händer här"

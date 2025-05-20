@@ -1,5 +1,5 @@
 // check if player is in correct level
-CHICKENPAUSE
+
 switch (state){
 	case dishState.idle:{
     // If Enter is pressed AND a chopping board is selected

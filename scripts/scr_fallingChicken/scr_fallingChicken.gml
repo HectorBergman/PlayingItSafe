@@ -49,10 +49,8 @@ function minigame_fallingChicken_finish(){
 	}else{
 		if checkmark.life == checkmark.lifeTime{
 			
-			var handler = instance_find(obj_minigameHandler, 0);
-			if (instance_exists(handler)) {
-				handler.fallingChickenDifficulty += 1;
-			}
+			ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 1;
+			
 			instance_destroy(instance_find(obj_pointer_FC,0));
 			exitMinigame();
 			miniHandRefresh();

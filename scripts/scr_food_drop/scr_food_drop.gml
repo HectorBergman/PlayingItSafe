@@ -11,15 +11,10 @@ function scr_food_drop()
 		// --- DIFFICULTY --- 
 		// what food categories are "allowed" at certain levels. 
 		var category_pool = [];
+	
 		
-		var handler = instance_find(obj_minigameHandler, 0);
-		var current_difficulty = 1;
 
-		if (instance_exists(handler)) {
-			current_difficulty = handler.fallingChickenDifficulty;
-		}
-
-		if (current_difficulty < 2) 
+		if (miniHand.difficulty < 2) 
 		{
 			category_pool = ["chicken", "meat", "vegetables"];
 		} else {

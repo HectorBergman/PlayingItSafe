@@ -28,15 +28,13 @@ lastMinigame = minigame.kitchen;
 dndRead = [false,false,false];
 FFRead = [false];
 
-fallingChickenDifficulty = 1;
-
 function miniHandRefresh(){
 	
 	// Added to handle falling_chicken_start frame
 	global.drop_score = 0;
 	
 	
-	// fallingChickenDifficulty = 1;
+
 	
 	difficulty = 1;
 	currentMinigame = minigame.kitchen

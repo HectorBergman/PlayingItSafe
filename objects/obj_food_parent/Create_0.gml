@@ -3,7 +3,7 @@
 
 var handler = instance_find(obj_minigameHandler, 0);
 if (instance_exists(handler)) {
-	if(handler.fallingChickenDifficulty >= 2)
+	if(miniHand.difficulty >= 2)
 	{
 		fall_speed = 1;
 	}
