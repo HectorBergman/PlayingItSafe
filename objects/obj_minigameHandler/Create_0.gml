@@ -28,7 +28,7 @@ lastMinigame = minigame.kitchen;
 dndRead = [false,false,false];
 FFRead = [false];
 
-fallingChickenDifficulty = 1;
+fallingChickenDifficulty = 2;
 
 function miniHandRefresh(){
 	

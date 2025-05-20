@@ -10,7 +10,7 @@ function minigame_fallingChicken_control(){
 function minigame_fallingChicken_create(){
 	
 	if (!instance_exists(obj_pointer_menu)) {
-		instance_create_layer(0, 0, "Instances", obj_pointer_menu);
+		summonObject(obj_pointer_menu, [["image_xscale", 2], ["image_yscale",2], ["gui", false]])
 	}
 	
 	// TODO: Add pressed mouse
@@ -25,7 +25,7 @@ function minigame_fallingChicken_step()
 {
 	
 	if (!instance_exists(obj_pointer_menu)) {
-		instance_create_layer(0, 0, "Instances", obj_pointer_menu);
+		summonObject(obj_pointer_menu, [["image_xscale", 2], ["image_yscale",2], ["gui", false]])
 	}
 	
 	var minigameComplete = true;
