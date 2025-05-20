@@ -1,3 +1,4 @@
+CHICKENPAUSE
 image_xscale = scale;
 image_yscale = scale;
 color = make_colour_rgb(colorR,colorG,colorB)

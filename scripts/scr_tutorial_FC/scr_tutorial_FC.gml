@@ -10,6 +10,10 @@ function tutorial_FC_control(){
 //complete check
 function FC_start_func(FCState){
 	switch (FCState){
+		case FCStates.none: return FCState_none_start(); 
+		case FCStates.pilotFood: return FCState_pilotFood_start();
+		case FCStates.waitForFood: return FCState_waitForFood_start();
+		case FCStates.pilotDifferentFood: return FCState_pilotDifferentFood_start();
 		//case ExampleStates.backflip return ExampleState_backflip_ongoing();
 		default: return true;
 	}
@@ -31,8 +35,12 @@ function FC_ongoing_func(FCState){ //remember to add new states to the FCStates 
 								   //Note that states have to be in order of appearance on the enum list.
 								   //if you want to go to a state out of order, message Hector and we can make
 								   //it work. It's easy, but it's on a case-by-case basis.
+	print(FCState);
 	switch (FCState){
 		case FCStates.none: return FCState_none_ongoing();
+		case FCStates.pilotFood: return FCState_pilotFood_ongoing();
+		case FCStates.waitForFood: return FCState_waitForFood_ongoing();
+		case FCStates.pilotDifferentFood: return FCState_pilotDifferentFood_ongoing();
 	}
 }
 
@@ -54,12 +62,83 @@ function FCState_ongoing(){
 	}
 }//do not touch this
 
+function FCState_none_start(){
+	FCtutTimer = 0;
+	FCtutTime = 180;
+	return true;
+}
 
+function FCState_pilotFood_start(){
+	global.chickenPause = true;
+	food = instance_find(obj_food_parent, 1);
+	return true;
+	
+}
+
+function FCState_pilotDifferentFood_start(){
+	global.chickenPause = true;
+	for (var i = 0; i < instance_number(obj_food_parent); i++){
+		food = instance_find(obj_food_parent, i);
+		if food.is_active{
+			break;
+		}
+	}
+	return true;
+	
+}
+function FCState_waitForFood_start(){
+	FCtutTimer = -99999;
+	return true;
+}
+function FCState_waitForFood_ongoing(){
+	if !instance_exists(food) || !food.is_active{
+		for (var i = 0; i < instance_number(obj_food_parent); i++){
+			FCtutTimer = 100;
+			food = instance_find(obj_food_parent, i);
+			if food.is_active{
+				break;
+			}
+		}
+	}
+	FCtutTimer++
+	return FCtutTimer == FCtutTime
+	
+	
+}
+function FCState_pilotDifferentFood_ongoing(){
+}
+function FCState_pilotFood_ongoing(){
+	print("amIhere");
+	print(food);
+	if(inHand.moveLeft)
+	{
+		hasMoved[0] = true;
+		food.x -= 5;
+	}
+	if(inHand.moveRight)
+	{
+		hasMoved[1] = true;
+		food.x += 5;
+	}	
+	if hasMoved[0] && hasMoved[1]{
+		global.chickenPause = false;
+		return true;
+	}else{
+		return false
+	}
+	
+}
 
 function FCState_none_ongoing(){ //return true to progress to next state,
 								 //so return true when you feel the player has understood the instruction
 								 //like if you're instructing them to move a falling chicken,
 								 //check for when left & right keys or A and D have been pressed,
 								 //(then they likely understood the instruction)
-	return false
+								 
+	print("balle");
+	FCtutTimer++;
+	if FCtutTimer > FCtutTime{
+		return true;
+	}
+	return false;
 }

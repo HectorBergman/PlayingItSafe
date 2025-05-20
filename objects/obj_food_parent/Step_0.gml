@@ -1,3 +1,6 @@
+print(id);
+CHICKENPAUSE
+
 y += fall_speed; // Continues to fall 
 
 if (is_active)

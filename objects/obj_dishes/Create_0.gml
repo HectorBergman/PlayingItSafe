@@ -22,6 +22,7 @@ state = dishState.idle;
 
 handler = instance_find(obj_minigameHandler, 0);
 
-if (handler.fallingChickenDifficulty < 2) {    
+if (handler.fallingChickenDifficulty < 2) {   
+	visible = false;
     state = dishState.inactive
 }

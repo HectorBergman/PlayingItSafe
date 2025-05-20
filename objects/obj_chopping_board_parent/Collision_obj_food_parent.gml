@@ -1,4 +1,4 @@
-
+CHICKENPAUSE
 // If food_category has not been set 
 // Fetches the food_category that has collided 
 // and sets it to be that category

@@ -14,7 +14,7 @@ switch (circleState){
 	case circleStates.donezo: break;
 }
 
-image_alpha = phone.image_alpha;
+image_alpha = phone.imageAlphaMult;
 hitboxX = baseX*room_width/1920
 hitboxY = baseY*room_height/1080
 x = hitboxX;

@@ -6,6 +6,7 @@ depth = 20
 //Very short text: no overcomplications. Just explain the basics quickly.
 
 
+
 scale = room_width/1920
 paddingX = 180*scale;
 phoneCircle = summonObject(obj_phoneCircle, [["x", room_width-90], ["y", 490], ["depth", depth+10], ["parent", id]]);
@@ -30,7 +31,10 @@ dialogueArray[minigame.dragAndDropFridgeLevels] = createDialogueArray(
 );
 
 dialogueArray[minigame.fallingChicken] = createDialogueArray(
-"",
+"Fallande kyckling",
+"Flytta maten med höger & vänster piltangent eller med A & D",
+"test",
+"mer text",
 );
 dialogueArray[minigame.washingHands] = createDialogueArray(
 "Text om tvätta händer här"

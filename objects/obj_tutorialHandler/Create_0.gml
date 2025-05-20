@@ -30,7 +30,11 @@ enum dndStates{
 	hasChangedTemperature,
 }
 enum FCStates{ //fallingChicken
-	none
+	none,
+	pilotFood,
+	waitForFood,
+	pilotDifferentFood,
+	
 }
 enum FFStates{ //fryFood
 	none
@@ -76,6 +80,13 @@ thermoTime = 600;
 //cookFood variables
 
 //fallChicken variables
+
+FCtutTimer = 0;
+FCtutTime = 240;
+
+food = noone;
+
+hasMoved = [false,false];
 
 
 function destroyChildren(){
