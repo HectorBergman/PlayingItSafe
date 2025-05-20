@@ -2,7 +2,7 @@
 depth = 10;
 sprite_index = spr_dishes;
 
-wash_time = 60;      // 1 second at 60 FPS
+wash_time = 180;      // 1 second at 60 FPS
 washTimer = 0;
 tween = noone;
 start = false;

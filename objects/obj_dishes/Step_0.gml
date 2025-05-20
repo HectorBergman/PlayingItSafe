@@ -4,7 +4,6 @@ switch (state){
 	case dishState.idle:{
     // If Enter is pressed AND a chopping board is selected
 		board = instance_place(x,y,obj_chopping_board_parent);
-		print(board);
 		if board != noone{
 			if !board.held{
 				sprite_index = spr_dishes_soap;
@@ -12,6 +11,8 @@ switch (state){
 				board.sprite_index = spr_chopping_board_default;   // Reset to normal sprite
 				state = dishState.acceptingBoard;
 				tween = TweenFire(board,EaseInQuad,0,false,0,20,"scale",2,0);
+				TweenFire(board,EaseInQuad,0,false,0,20,"x",board.x,x+sprite_width/2)
+				TweenFire(board,EaseInQuad,0,false,0,20,"y",board.y,y+sprite_height/2)
 			}
 		}
 	}break;

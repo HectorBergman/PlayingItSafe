@@ -75,7 +75,7 @@ function scr_food_drop()
 				is_active = false;
 			}
 		}
-		if (global.drop_counter >= global.drop_interval) 
+		if (global.drop_counter > global.drop_interval) 
 		{
 			//room_goto(rm_falling_chicken_end);
 			miniHand.minigameStatus = status.finished;
