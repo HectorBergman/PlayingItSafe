@@ -1,10 +1,12 @@
 image_xscale = scale;
 image_yscale = scale;
-if place_meeting(x,y,obj_pointer_menu) && inHand.mouseHeld{
+if place_meeting(x,y,obj_pointer_FC) && inHand.mouseHeld && pointer.held == noone{
 	held = true;
 	offset = [x-mouse_x,y-mouse_y]
+	pointer.held = id;
 }
 if held && !inHand.mouseHeld{
+	pointer.held = noone;
 	held = false;
 	if !place_meeting(x,y,obj_dishes){
 		x = originalCoords[0]

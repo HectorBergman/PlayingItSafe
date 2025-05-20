@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chopping_board_chicken",
-    "path":"sprites/spr_chopping_board_chicken/spr_chopping_board_chicken.yy",
+    "name":"spr_chopping_board_animated",
+    "path":"sprites/spr_chopping_board_animated/spr_chopping_board_animated.yy",
   },
   "spriteMaskId":null,
   "visible":true,

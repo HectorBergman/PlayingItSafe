@@ -9,8 +9,8 @@ function minigame_fallingChicken_control(){
 
 function minigame_fallingChicken_create(){
 	
-	if (!instance_exists(obj_pointer_menu)) {
-		summonObject(obj_pointer_menu, [["image_xscale", 2], ["image_yscale",2], ["gui", false]])
+	if (!instance_exists(obj_pointer_FC)) {
+		summonObject(obj_pointer_FC, [["image_xscale", 2], ["image_yscale",2], ["gui", false]])
 	}
 	
 	// TODO: Add pressed mouse
@@ -24,8 +24,8 @@ function minigame_fallingChicken_create(){
 function minigame_fallingChicken_step()
 {
 	
-	if (!instance_exists(obj_pointer_menu)) {
-		summonObject(obj_pointer_menu, [["image_xscale", 2], ["image_yscale",2], ["gui", false]])
+	if (!instance_exists(obj_pointer_FC)) {
+		summonObject(obj_pointer_FC, [["image_xscale", 2], ["image_yscale",2], ["gui", false]])
 	}
 	
 	var minigameComplete = true;
@@ -53,7 +53,7 @@ function minigame_fallingChicken_finish(){
 			if (instance_exists(handler)) {
 				handler.fallingChickenDifficulty += 1;
 			}
-			
+			instance_destroy(instance_find(obj_pointer_FC,0));
 			exitMinigame();
 			miniHandRefresh();
 		}
