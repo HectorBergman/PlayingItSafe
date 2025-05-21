@@ -18,9 +18,6 @@ function createAlert(element){
 
 function getAlertInfo(info){
 	
-	if (info.chosenMinigame == "fallingChicken") {
-        info.minigameRoom = rm_falling_chicken_start; // override
-    }
 	
 	show_debug_message("Assigning minigame room: " + string(info.minigameRoom));
 

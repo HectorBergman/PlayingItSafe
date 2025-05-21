@@ -39,7 +39,6 @@ function FC_ongoing_func(FCState){ //remember to add new states to the FCStates 
 								   //Note that states have to be in order of appearance on the enum list.
 								   //if you want to go to a state out of order, message Hector and we can make
 								   //it work. It's easy, but it's on a case-by-case basis.
-	print(FCState);
 	switch (FCState){
 		case FCStates.none: return FCState_none_ongoing();
 		case FCStates.pilotFood: return FCState_pilotFood_ongoing();
@@ -81,9 +80,8 @@ function FCState_none_ongoing(){ //return true to progress to next state,
 								 //like if you're instructing them to move a falling chicken,
 								 //check for when left & right keys or A and D have been pressed,
 								 //(then they likely understood the instruction)
-								 print(FCtutTimer)
-								 print(FCtutTime);
-								 print("------");
+								 
+	print(FCtutTimer);
 	if room == rm_falling_chicken{
 		if inHand.moveDown{
 			FCtutTimer += 2
@@ -99,13 +97,12 @@ function FCState_none_ongoing(){ //return true to progress to next state,
 
 function FCState_pilotFood_start(){
 	global.chickenPause = true;
-	food = instance_find(obj_food_parent, 1);
+	food = instance_find(obj_food_parent, 0);
 	return true;
 }
 
 function FCState_pilotFood_ongoing(){
-	print("amIhere");
-	print(food);
+	
 	if(inHand.moveLeft)
 	{
 		hasMoved[0] = true;

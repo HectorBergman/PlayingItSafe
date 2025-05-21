@@ -1,4 +1,6 @@
-
+if !instance_exists(pointer){
+	pointer = instance_find(obj_pointer_FC,0);
+}
 image_xscale = scale;
 image_yscale = scale;
 color = make_colour_rgb(colorR,colorG,colorB)

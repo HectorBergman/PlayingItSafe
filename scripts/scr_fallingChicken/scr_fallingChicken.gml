@@ -1,4 +1,6 @@
 function minigame_fallingChicken_control(){
+	print(minigameStatus);
+	print("------");
 	switch (minigameStatus){
 		case status.started: minigame_fallingChicken_create(); break;
 		case status.ongoing: minigame_fallingChicken_step(); break;
@@ -13,10 +15,10 @@ function minigame_fallingChicken_create(){
 		summonObject(obj_pointer_FC, [["image_xscale", 2], ["image_yscale",2], ["gui", false]])
 	}
 	
-	// TODO: Add pressed mouse
-	 if (keyboard_check_pressed(vk_enter) || keyboard_check(vk_space)) {
-        minigameStatus = status.ongoing;
-    }
+
+	 
+    minigameStatus = status.ongoing;
+    
 }
 
 //template for ongoing minigame handler actions. You can also control the minigame via this

@@ -1,8 +1,7 @@
 //@function drop_food()
 //@description Spawns random food objects 
 
-function scr_food_drop()
-{	 
+function scr_food_drop(){	 
 	
 	// Randomly assign a category of food
 	if (miniHand.minigameStatus == status.ongoing){
@@ -28,6 +27,7 @@ function scr_food_drop()
 	
 			switch(food_category) 
 			{
+			
 				case "meat":
 					food_objects_array = array_meat;
 					break;
@@ -40,7 +40,7 @@ function scr_food_drop()
 				case "fish":
 					food_objects_array = array_fish;
 			}
-		}
+		
 		
 		
 		// Instantiate food, i.e 
@@ -77,3 +77,4 @@ function scr_food_drop()
 			return;
 		}
 	}
+}

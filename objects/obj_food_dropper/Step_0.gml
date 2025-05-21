@@ -1,6 +1,7 @@
-
 CHICKENPAUSE
+print(timer);
+
 timer++
-if timer == dropCooldown{
+if timer >= dropCooldown{
 	dropFood();
 }
