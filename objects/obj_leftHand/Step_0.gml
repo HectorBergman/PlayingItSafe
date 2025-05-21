@@ -2,7 +2,11 @@ switch (state){
 	case leftHandState.scrubbing:{
 		if (!parent.hand_state == HandState.DRYING){
 			create_soap_bubbles();
+		} else {
+			image_index = 0;
+			image_xscale = -1;
 		}
+			
 		image_xscale = 1;
 		image_index = 2;
 		if !found{
