@@ -45,6 +45,11 @@ switch (hand_state) {
     case HandState.RINSE:
         washingHandsText("Torka händerna på handduken [[Klicka med musen]");
         break;
+
+	 case HandState.DRYING:
+        washingHandsText("Se att händerna är helt torra [[" + dryKey + "]");
+		pulsatingCharacterDisplay(dryKey, 100, 50);
+        break;
         
     case HandState.DRY:
         washingHandsText("Avsluta [[Enter]");

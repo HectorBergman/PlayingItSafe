@@ -132,6 +132,7 @@
     {"id":{"name":"obj_dragAndDrop_item_vari","path":"objects/obj_dragAndDrop_item_vari/obj_dragAndDrop_item_vari.yy",},},
     {"id":{"name":"obj_dragAndDrop_item","path":"objects/obj_dragAndDrop_item/obj_dragAndDrop_item.yy",},},
     {"id":{"name":"obj_drop_gameover","path":"objects/obj_drop_gameover/obj_drop_gameover.yy",},},
+    {"id":{"name":"obj_dryPoint","path":"objects/obj_dryPoint/obj_dryPoint.yy",},},
     {"id":{"name":"obj_eggAlarm","path":"objects/obj_eggAlarm/obj_eggAlarm.yy",},},
     {"id":{"name":"obj_food_dropper","path":"objects/obj_food_dropper/obj_food_dropper.yy",},},
     {"id":{"name":"obj_food_parent","path":"objects/obj_food_parent/obj_food_parent.yy",},},

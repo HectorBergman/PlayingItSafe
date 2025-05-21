@@ -138,7 +138,7 @@ switch (hand_state)
 		if (place_meeting(x, y, obj_water)) {
 			hand_state = HandState.RINSE;
 			
-			// Destroy all water drops when leaving WET state
+			// Destroy all soap bubbles when leaving WET state
 	        for (var i = 0; i < array_length(soapBubbles); i++) {
 	            if (instance_exists(soapBubbles[i])) {
 	                instance_destroy(soapBubbles[i]);
@@ -158,18 +158,30 @@ switch (hand_state)
 		image_angle = 0;
 		
 		if (place_meeting(x, y, obj_towl) && mouse_check_button_pressed(1)) {
-			hand_state = HandState.DRY;
+			hand_state = HandState.DRYING
 			
-			// Destroy all water drops when leaving WET state
-	        for (var i = 0; i < array_length(waterDrops); i++) {
-	            if (instance_exists(waterDrops[i])) {
-	                instance_destroy(waterDrops[i]);
-	            }
-	        }
-	        waterDrops = [];
+			
 			
 			print("Hands are dried")
 		}
+	}
+	break;
+	
+	case HandState.DRYING:
+	{
+		
+		leftHand.depth = 1
+		movabilityState = movability.unmovable
+		if (handle_drying(dryKey)) {
+			movabilityState = movability.halfmovable
+		}	
+		// Destroy all water drops when leaving WET state
+	    for (var i = 0; i < array_length(waterDrops); i++) {
+	        if (instance_exists(waterDrops[i])) {
+	            instance_destroy(waterDrops[i]);
+	        }
+	    }
+	    waterDrops = [];
 	}
 	break;
 	

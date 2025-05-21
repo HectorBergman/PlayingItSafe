@@ -1,4 +1,6 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"obj_dryPoint","order":1,"path":"objects/obj_dryPoint/obj_dryPoint.yy",},
+  ],
 }
