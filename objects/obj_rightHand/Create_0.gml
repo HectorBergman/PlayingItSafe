@@ -68,6 +68,7 @@ enum HandState {
 	SCRUB3,
 	SCRUB4,
 	RINSE,
+	DRYSTART,
 	DRYING,
 	DRY,
 }

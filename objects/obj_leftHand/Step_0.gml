@@ -2,11 +2,13 @@ switch (state){
 	case leftHandState.scrubbing:{
 		if (!parent.hand_state == HandState.DRYING){
 			create_soap_bubbles();
+		} else if (parent.hand_state == HandState.DRYING) {
+			TweenEasyMove(x,y,dryPoint.x,dryPoint.y,0,60,EaseOutSine);
 		} else {
 			image_index = 0;
 			image_xscale = -1;
 		}
-			
+		
 		image_xscale = 1;
 		image_index = 2;
 		if !found{

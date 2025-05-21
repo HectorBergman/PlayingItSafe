@@ -158,7 +158,7 @@ switch (hand_state)
 		image_angle = 0;
 		
 		if (place_meeting(x, y, obj_towl) && mouse_check_button_pressed(1)) {
-			hand_state = HandState.DRYING
+			hand_state = HandState.DRYSTART
 			
 			
 			
@@ -167,6 +167,13 @@ switch (hand_state)
 	}
 	break;
 	
+	case HandState.DRYSTART:
+	{
+		TweenEasyMove(x,y,dryPoint.x,dryPoint.y,0,60,EaseOutSine);
+		hand_state = HandState.DRYING
+		
+	}
+	
 	case HandState.DRYING:
 	{
 		
@@ -174,7 +181,12 @@ switch (hand_state)
 		movabilityState = movability.unmovable
 		if (handle_drying(dryKey)) {
 			movabilityState = movability.halfmovable
-		}	
+		}
+	}
+	break;
+	
+	case HandState.DRY:
+	{	
 		// Destroy all water drops when leaving WET state
 	    for (var i = 0; i < array_length(waterDrops); i++) {
 	        if (instance_exists(waterDrops[i])) {
@@ -182,11 +194,6 @@ switch (hand_state)
 	        }
 	    }
 	    waterDrops = [];
-	}
-	break;
-	
-	case HandState.DRY:
-	{
 		if (keyboard_check_pressed(vk_enter)) || (keyboard_check_pressed(vk_space)){
 			global.tap_state = tapState.OFF;
 			print("Nicely washed hands boi")
