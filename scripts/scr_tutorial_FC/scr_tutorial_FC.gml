@@ -76,11 +76,52 @@ function FCState_none_start(){
 	return true;
 }
 
+function FCState_none_ongoing(){ //return true to progress to next state,
+								 //so return true when you feel the player has understood the instruction
+								 //like if you're instructing them to move a falling chicken,
+								 //check for when left & right keys or A and D have been pressed,
+								 //(then they likely understood the instruction)
+								 print(FCtutTimer)
+								 print(FCtutTime);
+								 print("------");
+	if room == rm_falling_chicken{
+		if inHand.moveDown{
+			FCtutTimer += 2
+		}else{
+			FCtutTimer++;
+		}
+		if FCtutTimer >= FCtutTime{
+			return true;
+		}
+		return false;
+	}else{return false;};
+}
+
 function FCState_pilotFood_start(){
 	global.chickenPause = true;
 	food = instance_find(obj_food_parent, 1);
 	return true;
-	
+}
+
+function FCState_pilotFood_ongoing(){
+	print("amIhere");
+	print(food);
+	if(inHand.moveLeft)
+	{
+		hasMoved[0] = true;
+		food.x -= 5;
+	}
+	if(inHand.moveRight)
+	{
+		hasMoved[1] = true;
+		food.x += 5;
+	}	
+	if hasMoved[0] && hasMoved[1]{
+		global.chickenPause = false;
+		return true;
+	}else{
+		return false
+	}
 }
 
 function FCState_pilotDifferentFood_start(){
@@ -144,17 +185,7 @@ function FCState_teachWashing_ongoing(){
 	}	
 }
 
-function FCState_none_ongoing(){ //return true to progress to next state,
-								 //so return true when you feel the player has understood the instruction
-								 //like if you're instructing them to move a falling chicken,
-								 //check for when left & right keys or A and D have been pressed,
-								 //(then they likely understood the instruction)
-	FCtutTimer++;
-	if FCtutTimer > FCtutTime{
-		return true;
-	}
-	return false;
-}
+
 function FCState_waitForFood_ongoing(){
 	if !instance_exists(food) || !food.is_active{
 		for (var i = 0; i < instance_number(obj_food_parent); i++){
@@ -185,26 +216,6 @@ function FCState_pilotDifferentFood_ongoing(){
 		return false;
 	}
 	
-}
-function FCState_pilotFood_ongoing(){
-	print("amIhere");
-	print(food);
-	if(inHand.moveLeft)
-	{
-		hasMoved[0] = true;
-		food.x -= 5;
-	}
-	if(inHand.moveRight)
-	{
-		hasMoved[1] = true;
-		food.x += 5;
-	}	
-	if hasMoved[0] && hasMoved[1]{
-		global.chickenPause = false;
-		return true;
-	}else{
-		return false
-	}
 }
 
 

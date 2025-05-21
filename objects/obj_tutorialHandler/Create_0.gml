@@ -84,7 +84,7 @@ thermoTime = 600;
 
 //fallChicken variables
 
-FCtutTimer = 0;
+FCtutTimer = 120;
 FCtutTime = 240;
 
 food = noone;

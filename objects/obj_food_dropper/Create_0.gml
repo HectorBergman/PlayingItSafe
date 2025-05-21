@@ -18,8 +18,6 @@ food_options = ["chicken", "meat", "vegetables", "fish"];
 
 
 function dropFood(){
-	print(global.drop_counter)
-	print(global.drop_interval);
 	if (global.drop_counter < global.drop_interval){
 		scr_food_drop();
 		timer = 0;
