@@ -1,4 +1,4 @@
-
+PAUSE
 goalTemp = mapRange(obj_stoveControl.image_angle, 120,-120,tempRange[0],tempRange[1]);
 if goalTemp > temp{
 	smoothingFactor = smoothingFactorHeating;

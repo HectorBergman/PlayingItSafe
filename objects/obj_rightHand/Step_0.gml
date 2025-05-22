@@ -1,3 +1,4 @@
+PAUSE
 if (inHand.mouseHeld){
 	if (image_index == 0){
 		firstGrab = true;

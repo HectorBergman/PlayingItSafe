@@ -1,3 +1,4 @@
+PAUSE
 if miniHand.minigameStatus == status.finished{
 	if !tweened{
 		if image_angle < 90{

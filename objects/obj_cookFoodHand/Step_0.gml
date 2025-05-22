@@ -1,3 +1,4 @@
+PAUSE
 if stoveValue < -200{
 	stoveControl.state = stoveState.off
 }else if stoveValue < 0{

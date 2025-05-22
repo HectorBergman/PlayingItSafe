@@ -1,3 +1,4 @@
+PAUSE
 switch (phoneState){
 	case phoneStates.offScreen: break;
 	case phoneStates.startRollIn: tween = TweenFire(id, EaseOutQuad,0,false,0,40,"baseX",offScreenX,0); phoneState = phoneStates.rollingIn;

@@ -1,3 +1,4 @@
+PAUSE
 if !instance_exists(pointer){
 	pointer = instance_find(obj_pointer_FC,0);
 }

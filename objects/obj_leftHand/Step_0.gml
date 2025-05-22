@@ -1,3 +1,4 @@
+PAUSE
 switch (state){
 	case leftHandState.scrubbing:{
 		image_xscale = 1;

@@ -1,6 +1,6 @@
 //x = mouse_x;
 //y = mouse_y;
-
+PAUSE
 // Stove mechanic, turning on and off the stove, includes four states
 
 

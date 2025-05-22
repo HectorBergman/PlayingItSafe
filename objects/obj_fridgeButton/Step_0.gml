@@ -1,4 +1,4 @@
-
+PAUSE
 if collision_point(mouse_x, mouse_y, id, true, false){
 	if inHand.mouseHeld{
 		if !clicked{

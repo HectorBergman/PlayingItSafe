@@ -1,3 +1,4 @@
+PAUSE
 // Only move if parent hand exists
 if (instance_exists(parentHand)) {
     // Calculate base position from initial relative position
