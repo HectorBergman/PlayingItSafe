@@ -14,7 +14,7 @@ function movementY(){
 	return movementVector[1]*movementSpeed;
 }
 
-
+interactCooldown = 30;
 playerVariables_movement() //initialize movement-related variables
 
 generalVariables(); //initialize general variables

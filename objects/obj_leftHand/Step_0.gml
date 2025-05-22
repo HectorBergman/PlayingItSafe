@@ -1,3 +1,4 @@
+PAUSE
 switch (state){
 	case leftHandState.scrubbing:{
 		if (!parent.hand_state == HandState.DRYING){

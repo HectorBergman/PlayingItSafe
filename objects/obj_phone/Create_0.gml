@@ -23,7 +23,7 @@ baseBBox = [bbox_left,bbox_right,bbox_top,bbox_bottom];
 
 
 function shouldFadePhone(){
-	return shouldFade(obj_player,obj_alert,obj_pointer_vari,obj_pointer,obj_pointer_menu,obj_rightHand, obj_cookFoodHand, obj_thermometer, obj_dragAndDrop_item_vari)
+	return shouldFade(obj_fcbullshittutorialsolution,obj_player,obj_alert,obj_pointer_vari,obj_pointer_menu,obj_rightHand, obj_cookFoodHand, obj_thermometer, obj_dragAndDrop_item_vari)
 }
 
 	

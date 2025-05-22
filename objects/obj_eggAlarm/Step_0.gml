@@ -1,3 +1,4 @@
+PAUSE
 switch (eggState){
 	case eggStates.idle:{
 		if place_meeting(x,y,obj_cookFoodHand) && inHand.mouseClick{

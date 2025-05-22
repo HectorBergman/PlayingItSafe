@@ -18,7 +18,6 @@ enum status{
 	none,
 }
 
-
 playerPosition = [592,736];
 //call this + minigameComplete when done with minigame,
 //add in any required variables here
@@ -30,6 +29,12 @@ dndRead = [false,false,false];
 FFRead = [false];
 
 function miniHandRefresh(){
+	
+	// Added to handle falling_chicken_start frame
+	global.drop_score = 0;
+	
+	
+
 	
 	difficulty = 1;
 	currentMinigame = minigame.kitchen
@@ -48,6 +53,11 @@ function miniHandRefresh(){
 	
 
 	//dragAndDrop
+	
+	tooColdAmnt = 0;
+	tooHotAmnt = 0;
+	justRightAmnt = 0;
+	
 	itemsArray = [];
 	doorsArray = [];
 	itemsArrayLength = 0;

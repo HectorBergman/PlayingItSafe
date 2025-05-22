@@ -1,0 +1,2 @@
+PAUSE
+draw_self();

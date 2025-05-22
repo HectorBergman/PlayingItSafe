@@ -1,3 +1,4 @@
+PAUSE
 if badOrderingWorkaround{
 	
 	for (var i = 0; i < instance_number(obj_interactableEvent); i++){

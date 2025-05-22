@@ -36,14 +36,14 @@ function minigame_washingHands_finish(){
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
-		scoreHand.currentScore += 30
+		scoreHand.currentScore += 50
 		//code for checking if perfect or not goes here
 		ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 1;
 		if !perfect{
 			checkmark.visible = false;
 		}
 	}else{
-		if checkmark.life == checkmark.lifeTime{
+		if checkmark.life >= checkmark.lifeTime && inHand.anyKey{
 			exitMinigame();
 			miniHandRefresh();
 		}

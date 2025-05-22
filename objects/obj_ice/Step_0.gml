@@ -1,3 +1,4 @@
+PAUSE
 if rightHand.hand_state == HandState.DIRTY{
 	if !hasBeenGrabbed{
 		x = parent.x

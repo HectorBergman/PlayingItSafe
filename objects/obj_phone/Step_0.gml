@@ -1,3 +1,4 @@
+PAUSE
 switch (phoneState){
 	case phoneStates.offScreen: break;
 	case phoneStates.startRollIn: tween = TweenFire(id, EaseOutQuad,0,false,0,40,"baseX",offScreenX,0); phoneState = phoneStates.rollingIn;
@@ -15,13 +16,9 @@ switch (phoneHoverState){
 	case bubbleStates.startFadeOut: tween = TweenFire(id, EaseOutQuad,0,false,0,10,"imageAlphaMult",1,0.4); phoneHoverState = bubbleStates.fadingOut;
 	case bubbleStates.fadingOut: if !TweenIsPlaying(tween){phoneHoverState = bubbleStates.notVisible}; break;
 }
-image_alpha = imageAlphaMult
+
 hitboxX = (baseX-200)*room_width/1920
 hitboxY = baseY*room_height/1080
 x = hitboxX;
 y = hitboxY;
 sprite_set_bbox(sprite_index,baseBBox[0]*room_width/1920,baseBBox[2]*room_height/1080,baseBBox[1]*room_width/1920,baseBBox[3]*room_height/1080);
-print(bbox_left);
-print(bbox_right);
-print(bbox_top);
-print(bbox_bottom);

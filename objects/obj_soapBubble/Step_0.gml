@@ -1,3 +1,4 @@
+PAUSE
 if (instance_exists(parentHand)) {
 	depth = parentHand.depth - 1;
     // Calculate base position from initial relative position
