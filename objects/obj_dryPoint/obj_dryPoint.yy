@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_soap",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_dryPoint",
+  "eventList":[],
   "managed":true,
-  "name":"obj_soap",
+  "name":"obj_dryPoint",
   "overriddenProperties":[],
   "parent":{
     "name":"washingHands",
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_soap",
-    "path":"sprites/spr_soap/spr_soap.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

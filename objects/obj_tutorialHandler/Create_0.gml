@@ -43,7 +43,14 @@ enum FFStates{ //fryFood
 	none
 }
 enum WHStates{ //washHands
-	none
+	none,
+	mouseMoved,
+	tapPressed,
+	handWet,
+	soapPressed,
+	keyPressed,
+	icy,
+	finished,
 }
 startSummonTimer = 0;
 startSummonTime = 30;
