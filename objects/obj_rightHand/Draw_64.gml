@@ -47,7 +47,7 @@ switch (hand_state) {
         break;
 
 	 case HandState.DRYING:
-        washingHandsText("Se att händerna är helt torra [[" + dryKey + "]");
+        washingHandsText("Se till att händerna är helt torra [[" + dryKey + "]");
 		pulsatingCharacterDisplay(dryKey, 100, 50);
         break;
         
