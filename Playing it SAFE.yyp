@@ -131,8 +131,6 @@
     {"id":{"name":"obj_dishes","path":"objects/obj_dishes/obj_dishes.yy",},},
     {"id":{"name":"obj_dndHandler","path":"objects/obj_dndHandler/obj_dndHandler.yy",},},
     {"id":{"name":"obj_dragAndDrop_item_vari","path":"objects/obj_dragAndDrop_item_vari/obj_dragAndDrop_item_vari.yy",},},
-    {"id":{"name":"obj_dragAndDrop_item","path":"objects/obj_dragAndDrop_item/obj_dragAndDrop_item.yy",},},
-    {"id":{"name":"obj_drop_gameover","path":"objects/obj_drop_gameover/obj_drop_gameover.yy",},},
     {"id":{"name":"obj_dryPoint","path":"objects/obj_dryPoint/obj_dryPoint.yy",},},
     {"id":{"name":"obj_eggAlarm","path":"objects/obj_eggAlarm/obj_eggAlarm.yy",},},
     {"id":{"name":"obj_fcbullshittutorialsolution","path":"objects/obj_fcbullshittutorialsolution/obj_fcbullshittutorialsolution.yy",},},
