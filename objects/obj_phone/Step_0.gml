@@ -15,7 +15,7 @@ switch (phoneHoverState){
 	case bubbleStates.startFadeOut: tween = TweenFire(id, EaseOutQuad,0,false,0,10,"imageAlphaMult",1,0.4); phoneHoverState = bubbleStates.fadingOut;
 	case bubbleStates.fadingOut: if !TweenIsPlaying(tween){phoneHoverState = bubbleStates.notVisible}; break;
 }
-image_alpha = imageAlphaMult
+
 hitboxX = (baseX-200)*room_width/1920
 hitboxY = baseY*room_height/1080
 x = hitboxX;

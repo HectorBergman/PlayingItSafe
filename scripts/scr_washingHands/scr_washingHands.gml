@@ -30,7 +30,6 @@ function minigame_washingHands_step(){
 
 //template for minigames completed, doesnt have to look like this ofc
 function minigame_washingHands_finish(){
-	print("test");
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);

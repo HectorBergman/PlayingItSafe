@@ -17,12 +17,15 @@ function createAlert(element){
 }
 
 function getAlertInfo(info){
+	
+	
+	show_debug_message("Assigning minigame room: " + string(info.minigameRoom));
+
 	return [["x", info.stationX+info.alertXOffset], ["y", info.stationY+info.alertYOffset], 
 			["minigame", info.minigameRoom], ["minigameEnum", info.chosenMinigame], 
 			["difficulty", info.difficulty], ["lifetime", info.alertLifetime], 
 			["summonCondition", info.summonCondition],["deletionCondition", info.deletionCondition]]
 }
-
 
 function summonCurrentAlert(index){
 	var currentStructs = ds_list_find_value(mainGameHand.stationsAndAlerts, index);
@@ -125,4 +128,3 @@ function washingHandsDeletionCondition(info){
 	}
 	return deletion
 }
-

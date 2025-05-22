@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_chopping_board_veg",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_chopping_board_veg",
   "overriddenProperties":[],
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_chopping_board_veg",
-    "path":"sprites/spr_chopping_board_veg/spr_chopping_board_veg.yy",
+    "name":"spr_chopping_board_animated",
+    "path":"sprites/spr_chopping_board_animated/spr_chopping_board_animated.yy",
   },
   "spriteMaskId":null,
   "visible":true,

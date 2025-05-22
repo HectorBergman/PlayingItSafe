@@ -1,7 +1,5 @@
 debugTime++
-print(x);
-print(y);
-print("-----");
+
 //print(inPosition);
 
 depth = -y;

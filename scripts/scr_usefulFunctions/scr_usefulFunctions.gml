@@ -12,6 +12,7 @@
 /// followed by a smaller text saying Avklarade bakåtvoltar: 10 in white
 
 function scoreResults(totalScore, arguments = [[noone]]){
+	
 	var wrapWidth = 1200;
 	var text = ""
 	text = "[fnt_bitmap_outline_big][scale,2][$eee7e7]Tjänade poäng: " + string(totalScore); 

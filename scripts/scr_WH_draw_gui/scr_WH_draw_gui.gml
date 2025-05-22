@@ -20,7 +20,7 @@ function minigame_WH_step_draw_gui(){
 
 
 function minigame_WH_finish_draw_gui(){
-	print("wtf")
+
 
 	scoreResults(scoreHand.currentScore, noone);
 
