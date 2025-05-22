@@ -30,7 +30,8 @@ function FF_start_func(FFState){
 function FF_ongoing_func(FFState){ //remember to add new states to the FFStates enum in the tutorialHandler
 								   //Note that states have to be in order of appearance on the enum list.
 								   //if you want to go to a state out of order, message Hector and we can make
-								   //it work. It's easy, but it's on a case-by-case basis.
+								   //it work. It's easy, but it's on a case-by-case basis
+	print("lol");
 	switch (FFState){
 		case FFStates.none: return FFState_none_ongoing();
 		case FFStates.hasTurnedStove: return FFState_hasTurnedStove_ongoing();
@@ -62,10 +63,13 @@ function FFState_ongoing(){
 
 
 function FFState_none_ongoing(){
+	
 	var truth = false;
-	if place_meeting(obj_cookFoodHand.x, obj_cookFoodHand.y, obj_stoveControl){
-		truth = true;
-	}	
+	var hand = instance_find(obj_cookFoodHand, 0);
+	print(place_meeting(hand.x, hand.y, obj_stoveControl));
+	with (hand){
+		truth = place_meeting(hand.x, hand.y, obj_stoveControl)
+	}
 	return truth
 }
 
