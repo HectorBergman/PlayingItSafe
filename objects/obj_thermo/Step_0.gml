@@ -4,17 +4,6 @@
 // Stove mechanic, turning on and off the stove, includes four states
 
 
-if place_meeting(x, y, obj_food)
-{
-	
-	
-	if keyboard_check_pressed(vk_enter)
-	{
-		miniHand.minigameStatus = status.finished;
-		print("Game is complete");
-	}
-}
-
 
 image_index = 0;
 

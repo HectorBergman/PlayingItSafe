@@ -34,7 +34,9 @@ function FF_ongoing_func(FFState){ //remember to add new states to the FFStates 
 	print("lol");
 	switch (FFState){
 		case FFStates.none: return FFState_none_ongoing();
+		case FFStates.hasTouchedStove: return FFState_hasTouchedStove_ongoing();
 		case FFStates.hasTurnedStove: return FFState_hasTurnedStove_ongoing();
+		case FFStates.waitForTimer: return FFState_waitForTimer_ongoing();
 		case FFStates.timerActivated: return FFState_timerActivated_ongoing();
 		case FFStates.finishEasy: return FFState_finishEasy_ongoing();
 		case FFStates.difficultyHigh: return FFState_difficultyHigh_ongoing();
@@ -73,9 +75,17 @@ function FFState_none_ongoing(){
 	return truth
 }
 
+function FFState_hasTouchedStove_ongoing(){
+	return obj_stoveControl.state != stoveState.off;
+}
+
 function FFState_hasTurnedStove_ongoing(){
+	return obj_food.temp >= 72;
+}
+
+function FFState_waitForTimer_ongoing(){
 	var timer = instance_find(obj_eggAlarm, 0);
-	return timer.clicked;
+	return timer.eggState == eggStates.alarming;
 }
 
 function FFState_timerActivated_ongoing(){
@@ -83,12 +93,11 @@ function FFState_timerActivated_ongoing(){
 }
 
 function FFState_finishEasy_ongoing(){
-	return miniHand.difficulty >= 8;
+	return miniHand.difficulty >= 4;
 }
 
 function FFState_difficultyHigh_ongoing(){
-	var thermo = instance_find(obj_thermo, 0);
-	return thermo.held;
+	return obj_thermo.held;
 }
 
 function FFState_moveThermo_ongoing(){

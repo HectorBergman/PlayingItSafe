@@ -38,9 +38,11 @@ dialogueArray[minigame.washingHands] = createDialogueArray(
 dialogueArray[minigame.fryFood] = createDialogueArray(
 "Förflytta musen till vredet ([spr_stoveControl])",
 "Vrid på vredet för att styra temperaturen av plattan",
-"Kött behöver vara varmt i en viss tid. Använd [spr_eggTimer] för att hålla koll på det",
+"Kött behöver bli tillräckligt varmt. Vänta tills köttet är 72 grader",
+"Kött behövar vara rätt temperatur i en viss tid. Använd [spr_eggTimer] för att hålla koll på tiden",
 "",
-"Ibland behöver man hålla koll på termometer själv. Flytta på [spr_thermo] och lägg den på lämplig plats",
+"",
+"Ibland behöver man flytta termometern själv",
 ""
 );
 

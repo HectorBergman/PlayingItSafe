@@ -34,7 +34,9 @@ enum FCStates{ //fallingChicken
 }
 enum FFStates{ //fryFood
 	none,
+	hasTouchedStove,
 	hasTurnedStove,
+	waitForTimer,
 	timerActivated,
 	finishEasy,
 	difficultyHigh,

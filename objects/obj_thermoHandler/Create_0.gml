@@ -1,7 +1,7 @@
 
 movableThermo = false;
 
-if miniHand.difficulty >= 8
+if miniHand.difficulty >= 4
 {
 	movableThermo = true;
 }
