@@ -31,7 +31,7 @@ function minigame_dnd_finish_draw_gui(){
 		}
 	    array_push(results, scoreResults_generateArray(
 	        string(justRightAmnt) + " " + plural + " vid rätt temperatur",
-	        "[$61cc14]+" + string(justRightAmnt*20) + " poäng",
+	        "[$61cc14]+" + string(justRightAmnt*15) + " poäng",
 	        "2",
 	        "$eee7e7"
 	    ));
@@ -44,7 +44,7 @@ function minigame_dnd_finish_draw_gui(){
 		}
 	    array_push(results, scoreResults_generateArray(
 	        string(tooColdAmnt) + " " + plural + " vid för kall temperatur",
-	        "[$b0c5ff]+" + string(tooColdAmnt*10) + " poäng",
+	        "[$b0c5ff]+" + string(tooColdAmnt*5) + " poäng",
 	        "2",
 	        "$eee7e7"
 	    ));
@@ -57,7 +57,7 @@ function minigame_dnd_finish_draw_gui(){
 		}
 	    array_push(results, scoreResults_generateArray(
 	        string(tooHotAmnt) + " " + plural + " vid för varm temperatur",
-	        "[$9c0000]" + string(tooHotAmnt*-50)+ " poäng",
+	        "[$9c0000]" + string(tooHotAmnt*-30)+ " poäng",
 	        "2",
 	        "$eee7e7"
 	    ));

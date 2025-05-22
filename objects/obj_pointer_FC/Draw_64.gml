@@ -1,2 +1,2 @@
-
-	draw_self();
+PAUSE
+draw_self();

@@ -1,3 +1,4 @@
+PAUSE
 if (instance_exists(parentHand)) {
     // Calculate base position from initial relative position
     var baseX = parentHand.x + initialX;

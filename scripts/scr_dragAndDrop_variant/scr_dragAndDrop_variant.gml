@@ -43,14 +43,14 @@ function minigame_dragAndDrop_variant_finish(){
 					//having items stored too cold can be bad for food quality,
 					//but generally not harmful, so award points for staying safe,
 					//but not as much as having a perfect temperature.
-					itemPoints = 10;
+					itemPoints = 5;
 					pointsEarned += itemPoints
 					tooColdAmnt++;
 					perfect = false;
 					summonItemText(itemsArray[i],"$b0c5ff",itemPoints);
 				}else{
 					justRightAmnt++;
-					itemPoints = 20;
+					itemPoints = 15;
 					pointsEarned += itemPoints
 					summonItemText(itemsArray[i],"$61cc14",itemPoints);
 				}
@@ -58,7 +58,7 @@ function minigame_dragAndDrop_variant_finish(){
 			}else{//storing food at too high temperatures should be more punishing
 					//than storing them at correct temperatures is rewarding
 				tooHotAmnt++;
-				itemPoints = -50
+				itemPoints = -30
 				pointsEarned += itemPoints;
 				summonItemText(itemsArray[i],"$9c0000",itemPoints);
 				perfect = false;

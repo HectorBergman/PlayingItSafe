@@ -41,7 +41,7 @@ function minigame_fallingChicken_step()
 
 function minigame_fallingChicken_finish(){
 	if checkmark == noone{
-		scoreHand.currentScore = global.drop_score;
+		scoreHand.currentScore = global.drop_score*5;
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
 		// code for checking if perfect or not goes here

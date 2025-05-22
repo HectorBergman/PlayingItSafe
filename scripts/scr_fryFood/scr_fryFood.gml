@@ -37,21 +37,21 @@ function minigame_fryFood_finish(){
 		//FFRead = note.FFRead;
 		// Check if perfect or not
 		if obj_food.after_done_counter >= fryFoodTime {
-			scoreHand.currentScore += 30;
+			scoreHand.currentScore += 40;
 			meatInside = true;
 		}else{
-			scoreHand.currentScore += -30;
+			scoreHand.currentScore += -40;
 			meatInside = false;
 			perfect = false;
 		}
 		if obj_food.image_index == 2{
-			scoreHand.currentScore += 30;
+			scoreHand.currentScore += 40;
 			meatOutside = 1;
 		} else if obj_food.image_index == 3{
 			meatOutside = 2;
 			perfect = false;
 		}else{
-			scoreHand.currentScore += -30;
+			scoreHand.currentScore += -40;
 			meatOutside = 0;
 			perfect = false;
 		}

@@ -1,3 +1,4 @@
+PAUSE
 CHICKENPAUSE
 print(timer);
 

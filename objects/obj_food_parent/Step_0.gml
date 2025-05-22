@@ -1,4 +1,4 @@
-
+PAUSE
 CHICKENPAUSE
 
 y += fall_speed; // Continues to fall 

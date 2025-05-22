@@ -1,4 +1,4 @@
-
+PAUSE
 if (global.alertsPaused) {exit};
 
 

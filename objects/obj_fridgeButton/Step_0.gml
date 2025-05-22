@@ -1,5 +1,5 @@
-
-if place_meeting(x,y,obj_pointer_vari){
+PAUSE
+if collision_point(mouse_x, mouse_y, id, true, false){
 	if inHand.mouseHeld{
 		if !clicked{
 			image_index = 1;
