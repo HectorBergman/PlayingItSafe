@@ -33,7 +33,7 @@ function minigame_washingHands_finish(){
 	if checkmark == noone{
 		perfect = true;
 		checkmark = summonObject(obj_correct, [[]]);
-		scoreHand.currentScore += 30
+		scoreHand.currentScore += 50
 		//code for checking if perfect or not goes here
 		if !perfect{
 			checkmark.visible = false;

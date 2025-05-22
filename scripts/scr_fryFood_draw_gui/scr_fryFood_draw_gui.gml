@@ -24,15 +24,15 @@ function minigame_fryFood_finish_draw_gui(){
 	//meat inside is 0 for too raw, 2 for burnt, 1 for juuuust right
 	var meatInsideText = "";
 	if (meatInside){
-		meatInsideText = "[scale,0.5][spr_correct,36][scale,1] [$61cc14]+30 poäng"
+		meatInsideText = "[scale,0.5][spr_correct,36][scale,1] [$61cc14]+40 poäng"
 	}else{
-		meatInsideText = "[scale,1][spr_wrongmark,0][scale,1] [$9c0000]-30 poäng"
+		meatInsideText = "[scale,1][spr_wrongmark,0][scale,1] [$9c0000]-40 poäng"
 	}
 	var meatOutsideText = "";
 	if meatOutside == 1{
-		meatOutsideText = "Fin! [$61cc14]+30 poäng"
+		meatOutsideText = "Fin! [$61cc14]+40 poäng"
 	}else if meatOutside == 0{
-		meatOutsideText = "För rå! [$9c0000]-30 poäng"
+		meatOutsideText = "För rå! [$9c0000]-40 poäng"
 	}else{
 		meatOutsideText = "Bränd! [$9c0000]0 poäng"
 	}
