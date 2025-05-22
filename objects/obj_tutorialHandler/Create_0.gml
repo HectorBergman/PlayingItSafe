@@ -36,6 +36,7 @@ enum FFStates{ //fryFood
 	none,
 	hasTurnedStove,
 	timerActivated,
+	finishEasy,
 	difficultyHigh,
 	moveThermo,
 }

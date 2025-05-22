@@ -36,7 +36,12 @@ dialogueArray[minigame.washingHands] = createDialogueArray(
 "Text om tvätta händer här"
 );
 dialogueArray[minigame.fryFood] = createDialogueArray(
-"Text om steka kött här"
+"Förflytta musen till vredet ([spr_stoveControl])",
+"Vrid på vredet för att styra temperaturen av plattan",
+"Kött behöver vara varmt i en viss tid. Använd [spr_eggTimer] för att hålla koll på det",
+"",
+"Ibland behöver man hålla koll på termometer själv. Flytta på [spr_thermo] och lägg den på lämplig plats",
+""
 );
 
 dialogueNoArray = [0,0,0,0,0,0,0,0,0,0,0];

@@ -35,6 +35,7 @@ function FF_ongoing_func(FFState){ //remember to add new states to the FFStates 
 		case FFStates.none: return FFState_none_ongoing();
 		case FFStates.hasTurnedStove: return FFState_hasTurnedStove_ongoing();
 		case FFStates.timerActivated: return FFState_timerActivated_ongoing();
+		case FFStates.finishEasy: return FFState_finishEasy_ongoing();
 		case FFStates.difficultyHigh: return FFState_difficultyHigh_ongoing();
 		case FFStates.moveThermo: return FFState_moveThermo_ongoing();
 	}
@@ -60,26 +61,32 @@ function FFState_ongoing(){
 
 
 
-function FFState_none_ongoing(){ //return true to progress to next state,
-								 //so return true when you feel the player has understood the instruction
-								 //like if you're instructing them to move the thermometer
-								 //check for if thermometer has been moved,
-								 //(then they likely understood the instruction)
-	return false
+function FFState_none_ongoing(){
+	var truth = false;
+	if place_meeting(obj_cookFoodHand.x, obj_cookFoodHand.y, obj_stoveControl){
+		truth = true;
+	}	
+	return truth
 }
 
 function FFState_hasTurnedStove_ongoing(){
-	return false
+	var timer = instance_find(obj_eggAlarm, 0);
+	return timer.clicked;
 }
 
 function FFState_timerActivated_ongoing(){
+	return miniHand.minigameStatus = status.finished;
+}
+
+function FFState_finishEasy_ongoing(){
 	return miniHand.difficulty >= 8;
 }
 
 function FFState_difficultyHigh_ongoing(){
-	return false
+	var thermo = instance_find(obj_thermo, 0);
+	return thermo.held;
 }
 
 function FFState_moveThermo_ongoing(){
-	return false
+
 }
