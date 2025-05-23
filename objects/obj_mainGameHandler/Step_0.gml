@@ -1,4 +1,4 @@
-
+PAUSE
 if (global.alertsPaused) {exit};
 if (global.gameEnded) {
    exit;
@@ -9,7 +9,7 @@ for (var i = 0; i < ds_list_size(stationsAndAlerts); i++){
 	var currentStation = ds_list_find_value(stationsAndAlerts, i);
 	updateAlert(i);	
 	switch (miniHand.currentMinigame){
-	    case minigame.none: {
+	    case minigame.kitchen: {
 		} break;
 		default:{ 
 		} break;

@@ -1,6 +1,7 @@
 ///Most of this code was written by Hector but then later improved upon by Deepseek,
 ///hence why it looks AI-generated. Because it kind of is (but not fully)
 // Initialize all distances to infinity (or a very large number)
+PAUSE
 shortestDistance = infinity;
 secondShortestDistance = infinity;
 thirdShortestDistance = infinity;

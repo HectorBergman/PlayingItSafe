@@ -1,7 +1,7 @@
 
 //add in new minigames here
 enum minigame{
-	none,
+	kitchen,
 	dragAndDrop,
 	dragAndDropFridgeLevels,
 	fallingChicken,
@@ -18,12 +18,11 @@ enum status{
 	none,
 }
 
-
 playerPosition = [592,736];
 //call this + minigameComplete when done with minigame,
 //add in any required variables here
-currentMinigame = minigame.none;
-lastMinigame = minigame.none;
+currentMinigame = minigame.kitchen;
+lastMinigame = minigame.kitchen;
 
 
 dndRead = [false,false,false];
@@ -31,8 +30,14 @@ FFRead = [false];
 
 function miniHandRefresh(){
 	
+	// Added to handle falling_chicken_start frame
+	global.drop_score = 0;
+	
+	
+
+	
 	difficulty = 1;
-	currentMinigame = minigame.none
+	currentMinigame = minigame.kitchen
 	minigameStatus = status.started
 
 	minigameScore = 0;
@@ -48,6 +53,11 @@ function miniHandRefresh(){
 	
 
 	//dragAndDrop
+	
+	tooColdAmnt = 0;
+	tooHotAmnt = 0;
+	justRightAmnt = 0;
+	
 	itemsArray = [];
 	doorsArray = [];
 	itemsArrayLength = 0;
@@ -76,6 +86,7 @@ function miniHandRefresh(){
            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     lettersArrayLength = array_length(letters)
     print(generateRandomLetter())
+	hasJewelry = false;
 	
 	//fryFood
 	

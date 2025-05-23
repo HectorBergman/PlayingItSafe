@@ -1,3 +1,4 @@
+PAUSE
 if (inHand.mouseHeld){
 	if (image_index == 0){
 		firstGrab = true;
@@ -29,6 +30,18 @@ switch (movabilityState)
 
 switch (hand_state)
 {
+	case HandState.START:
+	{
+		print(miniHand.difficulty)
+		if !miniHand.hasJewelry {
+			hand_state = HandState.JEWELRY;
+		}
+		else {
+			hand_state = HandState.DIRTY;
+		}
+	}
+	break;
+		
 	case HandState.DIRTY:
 	{
 		if (jewel_rand < 5 ) {
@@ -52,7 +65,7 @@ switch (hand_state)
 	
 	case HandState.JEWELRY:
 	{
-		if (place_meeting(x, y, obj_water) && (keyboard_check_pressed(ord("E")))){
+		if (place_meeting(x, y, obj_water)){
 			hand_state = HandState.WET;
 			print("Hands are wet")
 		}
@@ -63,7 +76,7 @@ switch (hand_state)
 	{
 		create_water_drops();
 		
-		if (place_meeting(x, y, obj_soap) && (keyboard_check_pressed(ord("E")))) {
+		if (place_meeting(x, y, obj_soap) && (mouse_check_button_pressed(1))) {
 			hand_state = HandState.scrubStart;
 			print("Hands are soapy")
 			movabilityState = movability.unmovable;
@@ -123,10 +136,10 @@ switch (hand_state)
 	{
 		image_angle = 0;
 		create_soap_bubbles();
-		if (place_meeting(x, y, obj_water) && keyboard_check_pressed(ord("E"))) {
+		if (place_meeting(x, y, obj_water)) {
 			hand_state = HandState.RINSE;
 			
-			// Destroy all water drops when leaving WET state
+			// Destroy all soap bubbles when leaving WET state
 	        for (var i = 0; i < array_length(soapBubbles); i++) {
 	            if (instance_exists(soapBubbles[i])) {
 	                instance_destroy(soapBubbles[i]);
@@ -142,27 +155,48 @@ switch (hand_state)
 	
 	case HandState.RINSE:
 	{
-		create_water_drops();
+		create_water_drops()
+		image_angle = 0;
 		
-		if (place_meeting(x, y, obj_towl) && keyboard_check_pressed(ord("E"))) {
-			hand_state = HandState.DRY;
+		if (place_meeting(x, y, obj_towl) && mouse_check_button_pressed(1)) {
+			hand_state = HandState.DRYSTART
 			
-			// Destroy all water drops when leaving WET state
-	        for (var i = 0; i < array_length(waterDrops); i++) {
-	            if (instance_exists(waterDrops[i])) {
-	                instance_destroy(waterDrops[i]);
-	            }
-	        }
-	        waterDrops = [];
+			
 			
 			print("Hands are dried")
 		}
 	}
 	break;
 	
-	case HandState.DRY:
+	case HandState.DRYSTART:
 	{
-		if (keyboard_check_pressed(ord("E")) && global.tap_state == tapState.OFF) {
+		TweenEasyMove(x,y,dryPoint.x,dryPoint.y,0,60,EaseOutSine);
+		hand_state = HandState.DRYING
+		
+	}
+	
+	case HandState.DRYING:
+	{
+		
+		leftHand.depth = 1
+		movabilityState = movability.unmovable
+		if (handle_drying(dryKey)) {
+			movabilityState = movability.halfmovable
+		}
+	}
+	break;
+	
+	case HandState.DRY:
+	{	
+		// Destroy all water drops when leaving WET state
+	    for (var i = 0; i < array_length(waterDrops); i++) {
+	        if (instance_exists(waterDrops[i])) {
+	            instance_destroy(waterDrops[i]);
+	        }
+	    }
+	    waterDrops = [];
+		if (keyboard_check_pressed(vk_enter)) || (keyboard_check_pressed(vk_space)){
+			global.tap_state = tapState.OFF;
 			print("Nicely washed hands boi")
 			miniHand.minigameStatus = status.finished;
 		}

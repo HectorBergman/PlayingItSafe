@@ -12,18 +12,34 @@
 /// followed by a smaller text saying Avklarade bakåtvoltar: 10 in white
 
 function scoreResults(totalScore, arguments = [[noone]]){
-	var wrapWidth = 1200;
-	var text = ""
-	text = "[scale,3][$eee7e7]Tjänade poäng: " + string(totalScore); 
-	var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
-	toDraw.draw(window_get_width()/2, 750);
+	if !global.pause{
+		draw_set_alpha(0.5);
+		draw_set_color(c_black)
+		draw_rectangle(0,0,1920,1080,false);
+		draw_set_alpha(1);
+		draw_set_color(c_white)
+		var wrapWidth = 1200;
+		var text = ""
+		text = "[fnt_bitmap_outline_big][scale,2][$eee7e7]Tjänade poäng: " + string(totalScore); 
+		var toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
+		toDraw.draw(1920/2, 700);
+		var lastI = 0;
 	
-	
-	if arguments != noone{
-		for (var i = 0; arguments[i] != noone; i++;) {
-			text = "[scale,2][$eee7e7]" + string(arguments[i][0]) + ": " + string(arguments[i][1]);
-			toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
-			toDraw.draw(window_get_width() / 2, 850+50*i);
+		if arguments != noone{
+			for (var i = 0; arguments[i] != noone; i++;) {
+				text = "[fnt_bitmap_outline_big][scale,1][$eee7e7]" + string(arguments[i][0]) + ": " + string(arguments[i][1]);
+				toDraw = scribble(text).wrap(wrapWidth).align(fa_center);
+				toDraw.draw(1920 / 2, 820+60*i);
+				lastI = i;
+			}
+		}
+		try{
+			if checkmark.life >= checkmark.lifeTime{
+				text = "[fnt_bitmap_outline_big][scale,1.5][$bed6ae]" + "Tryck på valfri tangent för att fortsätta."
+				toDraw = scribble(text).align(fa_center);
+				toDraw.draw(1920 / 2, 820+60*(lastI+1));
+			}
+		}catch(e){
 		}
 	}
 }
@@ -43,4 +59,14 @@ function scoreResults(totalScore, arguments = [[noone]]){
 function scoreResults_generateArray(text, displayScore, scale = "2", color = "$eee7e7"){
 	
 	return [text, string(displayScore), string(scale), string(color)];
+}
+
+
+function shouldFade(){
+	for (var i = 0; i < argument_count; i++) {
+        if place_meeting(x,y,argument[i]){
+			return true;
+		}
+	}
+	return false;
 }

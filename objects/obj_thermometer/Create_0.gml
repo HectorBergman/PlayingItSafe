@@ -2,7 +2,7 @@ currentTemperature = 20;
 scale = 0.5
 image_xscale = scale
 image_yscale = scale
-temperatureZones = ds_list_create();
+temperatureZones = ds_list_create(); //memory leak
 depth = -998;
 //cleaner to do a list and then sort it
 //but that takes more time

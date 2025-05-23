@@ -22,6 +22,8 @@ if (inHand.mouseHeld){
 			recencyGrabbedDepth--;
 			heldObject.depth = -999			//some of this might be garbage & should be deleted...
 			
+			ds_list_destroy(heldObjectList);
+			
 		}
 	}
 	image_index = 1;
