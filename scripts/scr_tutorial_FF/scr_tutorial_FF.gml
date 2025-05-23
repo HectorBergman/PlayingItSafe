@@ -76,7 +76,8 @@ function FFState_none_ongoing(){
 }
 
 function FFState_hasTouchedStove_ongoing(){
-	return obj_stoveControl.state != stoveState.off;
+	return obj_food.temp > 20;
+	//eturn obj_stoveControl.state != stoveState.off;
 }
 
 function FFState_hasTurnedStove_ongoing(){
