@@ -1,3 +1,4 @@
+PAUSE
 if stoveValue < -200{
 	stoveControl.state = stoveState.off
 }else if stoveValue < 0{
@@ -7,16 +8,25 @@ if stoveValue < -200{
 }else{
 	stoveControl.state = stoveState.high
 }
-
-if (inHand.mouseHeld){
-	if (image_index == 0){
-		firstGrab = true;
+if miniHand.minigameStatus == status.finished{
+	fryFoodState = fryFoodStates.normal;
+}
+if canHold{
+	if (inHand.mouseHeld){
+		if (image_index == 0){
+			firstGrab = true;
+		}else{
+			firstGrab = false;
+		}
+		image_index = 1;
 	}else{
-		firstGrab = false;
+		image_index = 0;
 	}
-	image_index = 1;
 }else{
 	image_index = 0;
+	if !inHand.mouseHeld{
+		canHold = true;
+	}
 }
 
 if miniHand.difficulty >= 6
@@ -45,34 +55,35 @@ switch (movabilityState)
 
 switch fryFoodState{
 	case fryFoodStates.normal:{
-		if place_meeting(x, y, obj_stoveControl) && inHand.mouseHeld && firstGrab && note.stateOfNote != noteStates.reading{
-			fryFoodState = fryFoodStates.changingTemp;
+		if place_meeting(x, y, obj_stoveControl) && inHand.mouseHeld && canHold && firstGrab && note.stateOfNote != noteStates.reading && miniHand.minigameStatus != status.finished{
+			 fryFoodState = fryFoodStates.changingTemp;
 			movabilityState = movability.unmovable;
 			TweenEasyMove(x,y,stoveControl.x,stoveControl.y,0,5,EaseOutQuint);
 			turnPoint = [x,y];
 			preTurnStoveValue = stoveValue
-
+			preTurnStoveAngle = stoveControl.image_angle;
+			mouseTracker.visible = true;
+			heatBar = summonObject(obj_heatBar, [["x", stoveControl.x], ["y", stoveControl.y-200]]);
 		}
 	}break;
 	case fryFoodStates.changingTemp:{
-		var inverse = 1
-		if mouse_x < turnPoint[0]{
-			inverse = -1;
+	    var angleToMouse = point_direction(turnPoint[0], turnPoint[1], mouseTracker.x, mouseTracker.y);
+		var angleDiff = angleToMouse - 90; 
+		
+
+		if (angleDiff > 180) angleDiff -= 360;
+		if (angleDiff < -180) angleDiff += 360;
+		if angleDiff < -160 || angleDiff > 160{
+			stopChangingTemp()
+			exit;
 		}
-		var value = inverse*point_distance(mouse_x,0,turnPoint[0],0);
-		if preTurnStoveValue+value < stoveRanges[0]{
-			value = stoveRanges[0]-preTurnStoveValue
-		}else if preTurnStoveValue+value > stoveRanges[1]{
-			value = stoveRanges[1]-preTurnStoveValue
-		}
-		stoveValue = clamp(preTurnStoveValue + value, stoveRanges[0], stoveRanges[1]);
-		image_angle = -mapRange(value, stoveRanges[0], stoveRanges[1], -120, 120);
-		stoveControl.image_angle = -mapRange(stoveValue, stoveRanges[0],stoveRanges[1],-120,120);
+		var knobRotation = angleDiff * 2; // double sensitivity
+
+		stoveControl.image_angle = clamp(preTurnStoveAngle + knobRotation, -120, 120);
+		image_angle = stoveControl.image_angle;
+		
 		if !inHand.mouseHeld{
-			fryFoodState = fryFoodStates.normal;
-			movabilityState = movability.halfmovable;
-			TweenFire(id,EaseOutQuad,0, false, 0, 24, "image_angle", image_angle, 0);
-			stoveValue = preTurnStoveValue + value;
+			 stopChangingTemp()
 		}
 	}break;
 }

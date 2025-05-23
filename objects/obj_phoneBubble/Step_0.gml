@@ -1,3 +1,4 @@
+PAUSE
 switch (bubbleState){
 	case bubbleStates.notVisible: break;
 	case bubbleStates.startFadeIn: tween = TweenFire(id, EaseOutQuad,0,false,0,20,"baseAlpha",0,1); bubbleState = bubbleStates.fadingIn;

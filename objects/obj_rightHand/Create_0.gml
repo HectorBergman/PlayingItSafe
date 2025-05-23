@@ -12,6 +12,7 @@ scrub_timer = 0;
 currentScrubTime = 0;
 
 scrubPoint = instance_find(obj_scrubPoint, 0);
+dryPoint = instance_find(obj_dryPoint, 0);
 scrubDirX = 0;
 scrubDirY = 0;
 bejeweled = true;
@@ -51,10 +52,12 @@ scrubKey1 = generateRandomLetter();
 scrubKey2 = generateRandomLetter();
 scrubKey3 = generateRandomLetter();
 scrubKey4 = generateRandomLetter();
+dryKey = generateRandomLetter();
 
 
 // Define hand states
 enum HandState {
+	START,
     DIRTY,
 	JEWELRY,
     WET,
@@ -65,6 +68,8 @@ enum HandState {
 	SCRUB3,
 	SCRUB4,
 	RINSE,
+	DRYSTART,
+	DRYING,
 	DRY,
 }
 
@@ -77,7 +82,7 @@ movabilityState = movability.movable
 
 scrubTween = noone;
 // Start in dirty state
-hand_state = HandState.DIRTY
+hand_state = HandState.START
 
 
 
@@ -94,6 +99,110 @@ function washingHandsText(newText){
 	//fråga Hector om ni undrar något mer
 }
 
+function pulsatingCharacterDisplay(_char, posX, posY) {
+    var scale = 6;
+    var colorHex = "$eee7e7";
+    var displayText = "[scale,5," + string(scale) + "][" + colorHex + "]" + string(_char);
+    var toDraw = scribble(displayText).align(fa_center);
+
+    // --- Manually assigned width/height ---
+    var charWidth = 16 * scale;  // adjust if font is wider/narrower
+    var charHeight = 16 * scale; // adjust to fit your font
+    var padding = 20;
+
+    // --- Pulsating background ---
+    var pulseSpeed = 0.005;
+    var alpha = 0.5 + 0.5 * sin(current_time * pulseSpeed);
+    var bgColor = make_color_rgb(255, 255, 200); // light yellow
+
+    draw_set_alpha(alpha);
+    draw_set_color(bgColor);
+    draw_rectangle(
+        posX - charWidth / 2 - padding,
+        posY - padding + 15,
+        posX + charWidth / 2 + padding,
+        posY + charHeight + padding + 15,
+        false
+    );
+    draw_set_alpha(1);
+
+    // Draw the character on top
+    toDraw.draw(posX, posY);
+}
+
+function handle_drying(_scrubKey){
+    var isDone = false;
+	// Initialize default tween parameters (important!)
+    var yDifference = 80;  // Default value
+    var tweenTime = currentScrubTime/3;
+    var xDifference = irandom_range(-12,12);
+    var easeType = EaseInOutQuint;
+    var highDestination, lowDestination;
+	
+    if (!instance_exists(scrubBar)) {
+        scrubBar = instance_create_layer(x, y, "Instances", obj_progressBar);
+    }
+	
+	if (scrub_timer <= 0 && keyboard_check_pressed(ord(_scrubKey))) {
+        scrub_count++;
+        scrub_timer = 18 + irandom_range(-6,6);
+        if scrub_timer mod 3 != 0 {
+            if scrub_timer mod 3 == 1 {
+                scrub_timer += 2;
+            } else {
+                scrub_timer++;
+            }
+        }
+        currentScrubTime = scrub_timer;
+        print("Scrub (Iteration: " + string(scrub_count) + ")");
+
+        if (instance_exists(scrubBar)) {
+            scrubBar.image_index = scrub_count;
+        }
+
+        if (scrub_count >= 5) {
+            hand_state = HandState.DRY;
+            print("Scrub completed!");
+            
+            if (instance_exists(scrubBar)) {
+                isDone = true;
+                instance_destroy(scrubBar);
+                scrubBar = noone;
+                scrub_count = 0;
+                scrub_timer = 0;
+            }
+        }
+    }
+	
+	if (scrub_timer > 0) {
+		if (scrubTween == noone || !TweenIsPlaying(scrubTween)) {
+			yDifference = 80;
+            tweenTime = currentScrubTime/3;
+			xDifference = irandom_range(-12,12);
+            easeType = EaseInOutQuint;
+			
+	// Calculate destinations with safety checks
+            if (instance_exists(dryPoint)) {
+                highDestination = dryPoint.y + yDifference + irandom_range(-30,10);
+                lowDestination = dryPoint.y - yDifference + irandom_range(-30,10);
+                
+                var leftHand_scrubHigh = false;
+				if (point_distance(0, y, 0, highDestination) > point_distance(0, y, 0, lowDestination)) {
+	                scrubTween = TweenEasyMove(x, y, dryPoint.x + xDifference, highDestination, 0, tweenTime, easeType);
+	            } else {
+	                scrubTween = TweenEasyMove(x, y, dryPoint.x + xDifference, lowDestination, 0, tweenTime, easeType);
+	                leftHand_scrubHigh = true;
+				}
+				
+            } else {
+                show_debug_message("Scrub point missing!");
+            }
+        }
+        scrub_timer--;
+    }
+    
+    return isDone;
+}
 
 /// @function handle_scrubbing(scrubKey1, scrubBar, scrub_timer, scrub_count, hand_state);
 /// @description Manages the scrubbing mechanic (progress bar, timer, and state changes).

@@ -43,24 +43,27 @@ function minigame_dragAndDrop_variant_finish(){
 					//having items stored too cold can be bad for food quality,
 					//but generally not harmful, so award points for staying safe,
 					//but not as much as having a perfect temperature.
-					itemPoints = 10;
+					itemPoints = 5;
 					pointsEarned += itemPoints
+					tooColdAmnt++;
 					perfect = false;
 					summonItemText(itemsArray[i],"$b0c5ff",itemPoints);
 				}else{
-					itemPoints = 20;
+					justRightAmnt++;
+					itemPoints = 15;
 					pointsEarned += itemPoints
 					summonItemText(itemsArray[i],"$61cc14",itemPoints);
 				}
 
 			}else{//storing food at too high temperatures should be more punishing
 					//than storing them at correct temperatures is rewarding
-				itemPoints = -50
+				tooHotAmnt++;
+				itemPoints = -30
 				pointsEarned += itemPoints;
 				summonItemText(itemsArray[i],"$9c0000",itemPoints);
 				perfect = false;
 			}
-			scoreHand.totalScore += pointsEarned
+			scoreHand.currentScore += pointsEarned
 			dragAndDropIndexer++;
 	
 		}
@@ -80,7 +83,7 @@ function minigame_dragAndDrop_variant_finish(){
 					ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 4;
 				}
 			}else{
-				if checkmark.life == checkmark.lifeTime{
+				if checkmark.life >= checkmark.lifeTime && inHand.anyKey{
 					exitMinigame();
 					miniHandRefresh();
 				}

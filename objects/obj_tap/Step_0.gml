@@ -1,4 +1,4 @@
-
+PAUSE
 //if (place_meeting(200, 100, obj_rightHand) && keyboard_check_pressed(ord("A"))) {
 //    tap_on = !tap_on; // Toggle state
 //    image_index = tap_on; // Set image_index (0 = off, 1 = on)
@@ -11,7 +11,7 @@ switch (global.tap_state)
 		if (!instance_exists(water)) {
 			water = instance_create_layer(640, 315, "Instances", obj_water);
 		}
-		if (place_meeting(200, 100, obj_rightHand) && (keyboard_check_pressed(ord("A")))) {
+		if (place_meeting(200, 100, obj_rightHand) && (mouse_check_button_pressed(1))) {
 			global.tap_state = tapState.OFF;
 			print("Tap off")
 		}
@@ -23,7 +23,7 @@ switch (global.tap_state)
             water = noone;
 		}
 		image_index = 0;
-		if (place_meeting(200, 100, obj_rightHand) && (keyboard_check_pressed(ord("A")))) {
+		if (place_meeting(200, 100, obj_rightHand) && (mouse_check_button_pressed(1))) {
 			global.tap_state = tapState.ON;
 			print("Tap on")
 		}

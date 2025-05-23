@@ -1,3 +1,4 @@
+PAUSE
 if area != -1 && dndHand.shelfLimit{
 	maxHolding = miniHand.shelfItemsAmount[area];
 }

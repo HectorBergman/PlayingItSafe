@@ -1,3 +1,4 @@
+PAUSE
 switch (stove.state){
 	case stoveState.off:{
 		if stateOfStove != stove.state{

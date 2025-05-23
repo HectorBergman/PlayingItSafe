@@ -9,7 +9,17 @@ try{
 	}
 }catch(e){
 }
-if (position_meeting(mouse_x, mouse_y, id)){ //hover over button
+var truthStatement = false;
+try{//jank ahh fix because dnd_variant has weird behaviour and its too late for me to fix it properly
+	if miniHand.currentMinigame == minigame.dragAndDropFridgeLevels && global.pause{
+		truthStatement = position_meeting(mouse_x*2, mouse_y*2, id)
+	}else{
+		truthStatement = position_meeting(mouse_x, mouse_y, id)
+	}
+}catch(e){
+	truthStatement = position_meeting(mouse_x, mouse_y, id)
+}
+if (truthStatement){ //hover over button
 	image_index = 1;
 	if (mouse_check_button_pressed(mb_left)){
 		//different buttons do different things, depending on action value
