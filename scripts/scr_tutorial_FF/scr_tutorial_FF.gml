@@ -30,9 +30,17 @@ function FF_start_func(FFState){
 function FF_ongoing_func(FFState){ //remember to add new states to the FFStates enum in the tutorialHandler
 								   //Note that states have to be in order of appearance on the enum list.
 								   //if you want to go to a state out of order, message Hector and we can make
-								   //it work. It's easy, but it's on a case-by-case basis.
+								   //it work. It's easy, but it's on a case-by-case basis
+	print("lol");
 	switch (FFState){
 		case FFStates.none: return FFState_none_ongoing();
+		case FFStates.hasTouchedStove: return FFState_hasTouchedStove_ongoing();
+		case FFStates.hasTurnedStove: return FFState_hasTurnedStove_ongoing();
+		case FFStates.waitForTimer: return FFState_waitForTimer_ongoing();
+		case FFStates.timerActivated: return FFState_timerActivated_ongoing();
+		case FFStates.finishEasy: return FFState_finishEasy_ongoing();
+		case FFStates.difficultyHigh: return FFState_difficultyHigh_ongoing();
+		case FFStates.moveThermo: return FFState_moveThermo_ongoing();
 	}
 }
 
@@ -56,10 +64,46 @@ function FFState_ongoing(){
 
 
 
-function FFState_none_ongoing(){ //return true to progress to next state,
-								 //so return true when you feel the player has understood the instruction
-								 //like if you're instructing them to move the thermometer
-								 //check for if thermometer has been moved,
-								 //(then they likely understood the instruction)
-	return false
+function FFState_none_ongoing(){
+	
+	var truth = false;
+	var hand = instance_find(obj_cookFoodHand, 0);
+	print(place_meeting(hand.x, hand.y, obj_stoveControl));
+	with (hand){
+		truth = place_meeting(hand.x, hand.y, obj_stoveControl)
+	}
+	return truth
+}
+
+function FFState_hasTouchedStove_ongoing(){
+	return obj_food.temp > 20;
+	//eturn obj_stoveControl.state != stoveState.off;
+}
+
+function FFState_hasTurnedStove_ongoing(){
+	return obj_food.temp >= 72;
+}
+
+function FFState_waitForTimer_ongoing(){
+	var timer = instance_find(obj_eggAlarm, 0);
+	if timer.eggState == eggStates.alarming{
+		eggHasLarmed = true;
+	}
+	return eggHasLarmed && miniHand.minigameStatus == status.finished;
+}
+
+function FFState_timerActivated_ongoing(){
+	return miniHand.minigameStatus = status.finished;
+}
+
+function FFState_finishEasy_ongoing(){
+	return miniHand.difficulty >= 4;
+}
+
+function FFState_difficultyHigh_ongoing(){
+	return obj_thermo.held;
+}
+
+function FFState_moveThermo_ongoing(){
+
 }

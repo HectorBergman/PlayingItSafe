@@ -40,7 +40,14 @@ enum FCStates{ //fallingChicken
 	
 }
 enum FFStates{ //fryFood
-	none
+	none,
+	hasTouchedStove,
+	hasTurnedStove,
+	waitForTimer,
+	timerActivated,
+	finishEasy,
+	difficultyHigh,
+	moveThermo,
 }
 enum WHStates{ //washHands
 	none,
@@ -88,6 +95,8 @@ thermoTime = 600;
 //washingHands variables
 
 //cookFood variables
+
+eggHasLarmed = false;
 
 //fallChicken variables
 

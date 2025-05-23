@@ -14,9 +14,13 @@ if (global.pause){
 		pauseMenu_drawButton(volumeBar.plusButton);
 		pauseMenu_drawButton(volumeBar.minusButton);
 	}
-	if miniHand.currentMinigame == minigame.dragAndDropFridgeLevels{
-		draw_sprite_ext(spr_hand, 0,mouse_x*2,mouse_y*2,scale,scale,0,c_white,1);
-	}else{
+	try{
+		if miniHand.currentMinigame == minigame.dragAndDropFridgeLevels{
+			draw_sprite_ext(spr_hand, 0,mouse_x*2,mouse_y*2,scale,scale,0,c_white,1);
+		}else{
+			draw_sprite_ext(spr_hand, 0,mouse_x,mouse_y,scale,scale,0,c_white,1);
+		}
+	}catch(e){
 		draw_sprite_ext(spr_hand, 0,mouse_x,mouse_y,scale,scale,0,c_white,1);
 	}
 	//check if centered:
