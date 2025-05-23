@@ -9,7 +9,6 @@ function minigame_fryFood_control(){
 function minigame_fryFood_create(){
 
 	//here goes any code you need to start the minigame
-
 	//this could also have a requirement in-case you want to have an animation or something b4 minigame start
 	minigameStatus = status.ongoing;
 }
@@ -27,6 +26,7 @@ function minigame_fryFood_step(){
 		minigameStatus = status.finished;
 	}
 }
+
 
 
 function minigame_fryFood_finish(){	
@@ -57,6 +57,10 @@ function minigame_fryFood_finish(){
 		}
 		if !perfect{
 			checkmark.visible = false;
+			ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty -= 1;
+		}
+		else {
+			ds_list_find_value(mainGameHand.stationsAndAlerts,mainGameHand.activeIndex).stationInfostruct.difficulty += 4;
 		}
 	}else{
 		if checkmark.life >= checkmark.lifeTime && inHand.anyKey{

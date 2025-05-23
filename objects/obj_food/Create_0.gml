@@ -1,5 +1,5 @@
 // Initialization statements
-
+depth = 0
 enum foodState{
 	raw,
 	partiallyDone,
