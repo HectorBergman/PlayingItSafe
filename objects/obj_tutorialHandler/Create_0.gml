@@ -96,6 +96,8 @@ thermoTime = 600;
 
 //cookFood variables
 
+eggHasLarmed = false;
+
 //fallChicken variables
 
 FCtutTimer = 120;

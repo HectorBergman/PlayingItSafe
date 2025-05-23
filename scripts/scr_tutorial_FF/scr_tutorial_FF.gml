@@ -86,7 +86,10 @@ function FFState_hasTurnedStove_ongoing(){
 
 function FFState_waitForTimer_ongoing(){
 	var timer = instance_find(obj_eggAlarm, 0);
-	return timer.eggState == eggStates.alarming;
+	if timer.eggState == eggStates.alarming{
+		eggHasLarmed = true;
+	}
+	return eggHasLarmed && miniHand.minigameStatus == status.finished;
 }
 
 function FFState_timerActivated_ongoing(){
