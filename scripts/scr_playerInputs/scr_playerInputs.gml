@@ -26,7 +26,7 @@ function playerInput(){
 	if keyboard_check_pressed(ord("E")){
 		interact = true;
 	}
-	if keyboard_check_pressed(vk_anykey){
+	if keyboard_check_pressed(vk_anykey) || mouse_check_button(mb_left) || mouse_check_button(mb_right){
 		anyKey = true;
 	}
 }
