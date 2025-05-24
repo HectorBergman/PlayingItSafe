@@ -3,7 +3,7 @@ draw_self();
 var wrapWidth = 1920;
 var text = ""
 text = "[scale,1][$eee7e7]" + string(string_format(currentTemperature, 1, 1)) + "°C";
-var toDraw = scribble(text).wrap(wrapWidth).align(fa_middle).align(fa_center);
+var toDraw = scribble(text).wrap(wrapWidth).align(fa_center,fa_middle);
 toDraw.draw(x,y);
 
 /*draw_line_width(x,y,tempZoneXDebug,tempZoneYDebug, 8);

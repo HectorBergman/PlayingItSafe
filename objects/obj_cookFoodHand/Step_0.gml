@@ -29,6 +29,12 @@ if canHold{
 	}
 }
 
+if miniHand.difficulty >= 6
+{
+	miniHand.movableThermo = true;
+}
+
+
 switch (movabilityState)
 {
 	case movability.movable:{
@@ -80,4 +86,15 @@ switch fryFoodState{
 			 stopChangingTemp()
 		}
 	}break;
+}
+
+
+if obj_thermoHandler.movableThermo
+{
+	if place_meeting(x, y, obj_thermo) && inHand.mouseHeld
+	{
+		obj_thermo.held = true;
+		obj_thermo.x = mouse_x;
+		obj_thermo.y = mouse_y;
+	}
 }
