@@ -6,6 +6,8 @@ image_index = 0;
 global.tap_state = tapState.OFF;
 
 water = noone;
+pool = noone;
+
 
 function tapText(newText){
 	//todo: customize
